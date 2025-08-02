@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import uploadRoutes from "./routes/uploadRoutes";
+import accuracyRoutes from "./routes/accuracyRoutes";
 import { errorHandler } from "./middleware/errorHandler";
 
 // Load environment variables
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api", uploadRoutes);
+app.use("/api/accuracy", accuracyRoutes);
 
 // Error handling middleware (must be last)
 app.use(errorHandler);
