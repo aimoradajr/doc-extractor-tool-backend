@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import multer from "multer";
+import pdf from "pdf-parse";
+import fs from "fs";
 import dotenv from "dotenv";
 
 // Load environment variables
@@ -30,7 +32,7 @@ app.get("/", (req, res) => {
 });
 
 // Upload PDF endpoint
-app.post("/upload", upload.single("pdf"), (req, res) => {
+app.post("/upload", upload.single("pdf"), async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: "No file uploaded" });
   }
@@ -39,15 +41,28 @@ app.post("/upload", upload.single("pdf"), (req, res) => {
     return res.status(400).json({ error: "File must be a PDF" });
   }
 
-  res.json({
-    message: "PDF uploaded successfully",
-    file: {
-      filename: req.file.filename,
-      originalName: req.file.originalname,
-      size: req.file.size,
-      path: req.file.path,
-    },
-  });
+  try {
+    // Read and extract text from PDF
+    const buffer = fs.readFileSync(req.file.path);
+    const data = await pdf(buffer);
+
+    res.json({
+      message: "PDF processed successfully",
+      file: {
+        filename: req.file.filename,
+        originalName: req.file.originalname,
+        size: req.file.size,
+      },
+      extracted: {
+        text: data.text,
+        pages: data.numpages,
+        textLength: data.text.length,
+      },
+    });
+  } catch (error) {
+    console.error("PDF parsing error:", error);
+    res.status(500).json({ error: "Failed to parse PDF" });
+  }
 });
 
 app.listen(PORT, () => {
