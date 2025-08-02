@@ -1,4 +1,15 @@
-// API Response Types
+/**
+ * API Response Interfaces for PDF Document Extractor
+ * Matches frontend interfaces exactly for type safety
+ */
+
+// =============================================================================
+// API Response Types (Backend Contract)
+// =============================================================================
+
+/**
+ * PDF extraction result from backend processing
+ */
 export interface PdfExtractionResult {
   text: string;
   pages: number;
@@ -15,11 +26,16 @@ export interface UploadResponse {
   extracted: PdfExtractionResult;
 }
 
+/**
+ * Error response from backend
+ */
 export interface ErrorResponse {
   error: string;
 }
 
-// Core interfaces for PDF extraction based on OpenAI analysis of 5 watershed PDFs
+/**
+ * Main extracted data structure from backend
+ */
 export interface ExtractedData {
   goals?: Goal[];
   bmps?: BMP[];
@@ -32,14 +48,22 @@ export interface ExtractedData {
   reportSummary?: ReportSummary;
 }
 
-// Summary of the watershed plan
+// =============================================================================
+// Domain-Specific Interfaces (Agricultural/Environmental Reports)
+// =============================================================================
+
+/**
+ * Summary of the watershed plan
+ */
 export interface ReportSummary {
   totalGoals: number;
   totalBMPs: number;
-  completionRate: number;
+  completionRate: number | null;
 }
 
-// A watershed management goal or objective
+/**
+ * A watershed management goal or objective
+ */
 export interface Goal {
   id?: string;
   description: string;
@@ -47,24 +71,28 @@ export interface Goal {
   targetArea?: string;
   schedule?: string;
   contacts?: Contact[];
-  desiredOutcomes?: string[];
+  desiredOutcomes?: string[] | null;
 }
 
-// Best Management Practice (BMP)
+/**
+ * Best Management Practice (BMP)
+ */
 export interface BMP {
   name: string;
-  description?: string;
-  type?: "Nutrient" | "Pathogen" | "Sediment" | string;
+  description?: string | null;
+  type?: "Nutrient" | "Pathogen" | "Sediment" | string | null;
   targetAreas?: string[];
-  quantity?: number;
-  unit?: string; // e.g. "ft", "ac", "ea"
-  estimatedCost?: number;
+  quantity?: number | null;
+  unit?: string | null; // e.g. "ft", "ac", "ea"
+  estimatedCost?: number | null;
   partners?: Organization[];
   schedule?: string;
-  priorityFactors?: string[];
+  priorityFactors?: string[] | null;
 }
 
-// Implementation activity or milestone
+/**
+ * Implementation activity or milestone
+ */
 export interface ImplementationActivity {
   description: string;
   responsibleParties?: Organization[];
@@ -75,7 +103,9 @@ export interface ImplementationActivity {
   probableCompletionDate?: string;
 }
 
-// Monitoring metric, threshold, or method
+/**
+ * Monitoring metric, threshold, or method
+ */
 export interface MonitoringMetric {
   description: string;
   indicator?: string;
@@ -87,14 +117,18 @@ export interface MonitoringMetric {
   sampleSchedule?: string;
 }
 
-// Numeric or narrative threshold for a monitored parameter
+/**
+ * Numeric or narrative threshold for a monitored parameter
+ */
 export interface Threshold {
   parameter: string; // e.g., "Dissolved Oxygen"
   value: string | number;
   units?: string;
 }
 
-// Education/outreach event or program
+/**
+ * Education/outreach event or program
+ */
 export interface OutreachActivity {
   name: string;
   description?: string;
@@ -106,7 +140,9 @@ export interface OutreachActivity {
   targetAudience?: string;
 }
 
-// Detail for a single outreach event
+/**
+ * Detail for a single outreach event
+ */
 export interface EventDetail {
   type: string;
   audience?: string;
@@ -116,40 +152,54 @@ export interface EventDetail {
   date?: string;
 }
 
-// Watershed, subwatershed, or area of interest
+/**
+ * Watershed, subwatershed, or area of interest
+ */
 export interface GeographicArea {
   name: string;
-  counties?: string[];
-  acreage?: number;
-  landUseTypes?: LandUseType[];
-  population?: number;
-  towns?: string[];
-  huc?: string;
+  counties?: string[] | null;
+  acreage?: number | null;
+  landUseTypes?: LandUseType[] | null;
+  population?: number | null;
+  towns?: string[] | null;
+  huc?: string | null;
   description?: string;
 }
 
-// Land use type and percent
+/**
+ * Land use type and percent
+ */
 export interface LandUseType {
   type: string; // e.g., "cropland"
   percent: number; // e.g., 11
 }
 
-// Contact for a person/team member/agency
+/**
+ * Contact for a person/team member/agency
+ */
 export interface Contact {
-  name: string;
-  role?: string;
-  organization?: string;
-  phone?: string;
-  email?: string;
+  name?: string | null;
+  role?: string | null;
+  organization?: string | null;
+  phone?: string | null;
+  email?: string | null;
 }
 
-// Organization or agency involved
+/**
+ * Organization or agency involved
+ */
 export interface Organization {
   name: string;
   contact?: Contact;
 }
 
+// =============================================================================
 // Accuracy Testing Types
+// =============================================================================
+
+/**
+ * Result from accuracy testing
+ */
 export interface AccuracyTestResult {
   testCase: string;
   metrics: {
@@ -165,6 +215,9 @@ export interface AccuracyTestResult {
   };
 }
 
+/**
+ * Accuracy metrics for a specific data type
+ */
 export interface AccuracyMetric {
   precision: number;
   recall: number;
@@ -174,38 +227,9 @@ export interface AccuracyMetric {
   totalExpected: number;
 }
 
-export interface TestCase {
-  id: string;
-  name: string;
-  pdfPath: string;
-  groundTruthPath: string;
-  hasGroundTruth: boolean;
-}
-
-export interface AccuracyTestResult {
-  testCase: string;
-  metrics: {
-    precision: number;
-    recall: number;
-    f1Score: number;
-  };
-  details: {
-    goals: AccuracyMetric;
-    bmps: AccuracyMetric;
-    implementation: AccuracyMetric;
-    monitoring: AccuracyMetric;
-  };
-}
-
-export interface AccuracyMetric {
-  precision: number;
-  recall: number;
-  f1Score: number;
-  correctCount: number;
-  totalExtracted: number;
-  totalExpected: number;
-}
-
+/**
+ * Test case definition
+ */
 export interface TestCase {
   id: string;
   name: string;
