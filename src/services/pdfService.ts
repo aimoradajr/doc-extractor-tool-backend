@@ -1,6 +1,7 @@
 import pdf from "pdf-parse";
 import fs from "fs";
-import { PdfExtractionResult } from "../types";
+import { PdfExtractionResult, ExtractedReport } from "../types";
+import { openAIService } from "./openAIService";
 
 export class PdfService {
   async extractText(filePath: string): Promise<PdfExtractionResult> {
@@ -12,6 +13,21 @@ export class PdfService {
       pages: data.numpages,
       textLength: data.text.length,
     };
+  }
+
+  async extractStructuredData(filePath: string): Promise<ExtractedReport> {
+    // First extract raw text
+    const textResult = await this.extractText(filePath);
+
+    // Clean the text
+    const cleanedText = this.cleanText(textResult.text);
+
+    // Use OpenAI to extract structured data
+    const structuredData = await openAIService.extractStructuredData(
+      cleanedText
+    );
+
+    return structuredData;
   }
 
   cleanText(text: string): string {

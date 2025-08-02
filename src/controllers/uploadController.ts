@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { pdfService } from "../services/pdfService";
-import { UploadResponse, ErrorResponse } from "../types";
+import { UploadResponse, ErrorResponse, ExtractedReport } from "../types";
 
 export class UploadController {
   uploadPdf = async (
@@ -22,6 +22,20 @@ export class UploadController {
     } catch (error) {
       console.error("PDF processing error:", error);
       res.status(500).json({ error: "Failed to process PDF" });
+    }
+  };
+
+  extractStructuredData = async (
+    req: Request,
+    res: Response<ExtractedReport | ErrorResponse>
+  ) => {
+    try {
+      const result = await pdfService.extractStructuredData(req.file!.path);
+
+      res.json(result);
+    } catch (error) {
+      console.error("Structured extraction error:", error);
+      res.status(500).json({ error: "Failed to extract structured data" });
     }
   };
 }

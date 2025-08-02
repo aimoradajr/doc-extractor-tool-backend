@@ -12,4 +12,12 @@ router.post(
   uploadController.uploadPdf
 );
 
+// New route for structured extraction
+router.post(
+  "/extract",
+  upload.single("pdf"),
+  validateFileUpload,
+  uploadController.extractStructuredData
+);
+
 export default router;
