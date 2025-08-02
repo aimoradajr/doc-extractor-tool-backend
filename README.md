@@ -30,6 +30,7 @@ API runs on: `http://localhost:5000`
 ## 🌐 API Endpoints
 
 ### Upload & Extract Text
+
 ```
 POST /api/upload
 Content-Type: multipart/form-data
@@ -37,6 +38,7 @@ Body: pdf file (key: "pdf")
 ```
 
 ### Extract Structured Data (OpenAI)
+
 ```
 POST /api/extract
 Content-Type: multipart/form-data
@@ -88,6 +90,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 ## 📊 Data Structure
 
 Extracts structured data including:
+
 - Goals and objectives
 - Best Management Practices (BMPs)
 - Implementation activities
