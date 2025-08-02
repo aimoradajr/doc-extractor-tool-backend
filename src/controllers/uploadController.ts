@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { pdfService } from "../services/pdfService";
-import { UploadResponse, ErrorResponse, ExtractedReport } from "../types";
+import { UploadResponse, ErrorResponse, ExtractedData } from "../types/types";
 
 export class UploadController {
   uploadPdf = async (
@@ -27,7 +27,7 @@ export class UploadController {
 
   extractStructuredData = async (
     req: Request,
-    res: Response<ExtractedReport | ErrorResponse>
+    res: Response<ExtractedData | ErrorResponse>
   ) => {
     try {
       const result = await pdfService.extractStructuredData(req.file!.path);

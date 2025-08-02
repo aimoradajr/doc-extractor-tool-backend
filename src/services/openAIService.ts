@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { ExtractedReport } from "../types";
+import { ExtractedData } from "../types/types";
 
 export class OpenAIService {
   private openai: OpenAI;
@@ -14,7 +14,7 @@ export class OpenAIService {
     });
   }
 
-  async extractStructuredData(text: string): Promise<ExtractedReport> {
+  async extractStructuredData(text: string): Promise<ExtractedData> {
     try {
       const prompt = this.buildExtractionPrompt(text);
 
@@ -59,75 +59,108 @@ ${text.substring(0, 8000)} // Limit text length for token limits
 
 Required JSON format:
 {
+  "reportSummary": {
+    "totalGoals": number,
+    "totalBMPs": number,
+    "completionRate": number_between_0_and_1
+  },
   "goals": [
     {
-      "id": "goal_1",
-      "title": "goal title",
-      "description": "detailed description",
-      "priority": "high|medium|low",
-      "targetDate": "YYYY-MM-DD or null",
-      "metrics": ["metric1", "metric2"]
+      "id": "optional_id",
+      "description": "goal description",
+      "objective": "specific objective",
+      "targetArea": "geographic target area",
+      "schedule": "timeline or schedule",
+      "contacts": [{"name": "contact name", "role": "role", "organization": "org"}],
+      "desiredOutcomes": ["outcome1", "outcome2"]
     }
   ],
   "bmps": [
     {
-      "id": "bmp_1", 
       "name": "BMP name",
-      "description": "description",
-      "category": "category",
-      "implementation": "implementation details",
-      "costEstimate": number_or_null,
-      "effectiveness": "effectiveness description"
+      "description": "BMP description",
+      "type": "Nutrient|Pathogen|Sediment|other",
+      "targetAreas": ["area1", "area2"],
+      "quantity": number_or_null,
+      "unit": "ft|ac|ea|other",
+      "estimatedCost": number_or_null,
+      "partners": [{"name": "organization name"}],
+      "schedule": "implementation schedule",
+      "priorityFactors": ["factor1", "factor2"]
     }
   ],
   "implementation": [
     {
-      "id": "impl_1",
-      "activity": "activity description", 
-      "responsible": "responsible party",
-      "timeline": "timeline",
-      "status": "planned|in-progress|completed",
-      "relatedGoals": ["goal_1"]
+      "description": "activity description",
+      "responsibleParties": [{"name": "organization"}],
+      "startDate": "YYYY-MM-DD or descriptive date",
+      "endDate": "YYYY-MM-DD or descriptive date",
+      "status": "status description",
+      "outcome": "expected or actual outcome",
+      "probableCompletionDate": "completion date"
     }
   ],
   "monitoring": [
     {
-      "id": "mon_1",
-      "parameter": "parameter name",
-      "target": "target value",
-      "frequency": "monitoring frequency", 
+      "description": "monitoring description",
+      "indicator": "what is being measured",
       "method": "monitoring method",
-      "currentValue": number_or_null
+      "frequency": "how often",
+      "thresholds": [{"parameter": "param name", "value": "threshold value", "units": "units"}],
+      "responsibleParties": [{"name": "organization"}],
+      "sampleLocations": ["location1", "location2"],
+      "sampleSchedule": "when samples are taken"
     }
   ],
   "outreach": [
     {
-      "id": "out_1",
-      "activity": "outreach activity",
-      "audience": "target audience",
-      "method": "outreach method",
-      "frequency": "frequency",
-      "relatedGoals": ["goal_1"]
+      "name": "outreach activity name",
+      "description": "activity description",
+      "partners": [{"name": "partner organization"}],
+      "indicators": "success indicators",
+      "schedule": "activity schedule",
+      "budget": number_or_null,
+      "events": [{"type": "event type", "audience": "target audience"}],
+      "targetAudience": "primary audience"
     }
   ],
   "geographicAreas": [
     {
-      "id": "geo_1",
       "name": "area name",
-      "type": "watershed|county|state|region",
-      "description": "description"
+      "counties": ["county1", "county2"],
+      "acreage": number_or_null,
+      "landUseTypes": [{"type": "cropland", "percent": 25}],
+      "population": number_or_null,
+      "towns": ["town1", "town2"],
+      "huc": "HUC code if available",
+      "description": "area description"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "contact name",
+      "role": "their role",
+      "organization": "their organization",
+      "phone": "phone number",
+      "email": "email address"
+    }
+  ],
+  "organizations": [
+    {
+      "name": "organization name",
+      "contact": {"name": "contact person", "role": "role"}
     }
   ]
 }
 
-Extract only information that is explicitly stated in the document. Do not infer or make up data.
+Extract only information that is explicitly stated in the document. Do not infer or make up data. If a field is not found, omit it or set to null.
 `;
   }
 
-  private validateAndStructureData(data: any): ExtractedReport {
+  private validateAndStructureData(data: any): ExtractedData {
     // Validate and provide defaults
     return {
-      summary: {
+      reportSummary: data.reportSummary || {
         totalGoals: data.goals?.length || 0,
         totalBMPs: data.bmps?.length || 0,
         completionRate: this.calculateCompletionRate(data.implementation || []),
@@ -138,6 +171,8 @@ Extract only information that is explicitly stated in the document. Do not infer
       monitoring: data.monitoring || [],
       outreach: data.outreach || [],
       geographicAreas: data.geographicAreas || [],
+      contacts: data.contacts || [],
+      organizations: data.organizations || [],
     };
   }
 

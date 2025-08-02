@@ -1,19 +1,29 @@
-import { ExtractedReport, AccuracyTestResult, AccuracyMetric } from "../types";
+import {
+  ExtractedData,
+  AccuracyTestResult,
+  AccuracyMetric,
+} from "../types/types";
 
 export class AccuracyService {
   calculateAccuracy(
-    extracted: ExtractedReport,
-    groundTruth: ExtractedReport
+    extracted: ExtractedData,
+    groundTruth: ExtractedData
   ): AccuracyTestResult {
-    const goalAccuracy = this.compareGoals(extracted.goals, groundTruth.goals);
-    const bmpAccuracy = this.compareBMPs(extracted.bmps, groundTruth.bmps);
+    const goalAccuracy = this.compareGoals(
+      extracted.goals || [],
+      groundTruth.goals || []
+    );
+    const bmpAccuracy = this.compareBMPs(
+      extracted.bmps || [],
+      groundTruth.bmps || []
+    );
     const implAccuracy = this.compareImplementation(
-      extracted.implementation,
-      groundTruth.implementation
+      extracted.implementation || [],
+      groundTruth.implementation || []
     );
     const monitoringAccuracy = this.compareMonitoring(
-      extracted.monitoring,
-      groundTruth.monitoring
+      extracted.monitoring || [],
+      groundTruth.monitoring || []
     );
 
     const overallPrecision =

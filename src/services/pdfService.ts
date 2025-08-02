@@ -1,5 +1,5 @@
 import fs from "fs";
-import { PdfExtractionResult, ExtractedReport } from "../types";
+import { PdfExtractionResult, ExtractedData } from "../types/types";
 import { openAIService } from "./openAIService";
 
 // Use require with type assertion for pdf-parse (no official types available)
@@ -17,7 +17,7 @@ export class PdfService {
     };
   }
 
-  async extractStructuredData(filePath: string): Promise<ExtractedReport> {
+  async extractStructuredData(filePath: string): Promise<ExtractedData> {
     // First extract raw text
     const textResult = await this.extractText(filePath);
 
