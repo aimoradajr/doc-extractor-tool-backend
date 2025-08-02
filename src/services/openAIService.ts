@@ -44,7 +44,8 @@ export class OpenAIService {
       return this.validateAndStructureData(extractedData);
     } catch (error) {
       console.error("OpenAI extraction failed:", error);
-      throw new Error(`OpenAI extraction failed: ${error.message}`);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      throw new Error(`OpenAI extraction failed: ${errorMessage}`);
     }
   }
 

@@ -1,7 +1,9 @@
-import pdf from "pdf-parse";
 import fs from "fs";
 import { PdfExtractionResult, ExtractedReport } from "../types";
 import { openAIService } from "./openAIService";
+
+// Use require with type assertion for pdf-parse (no official types available)
+const pdf = require('pdf-parse') as any;
 
 export class PdfService {
   async extractText(filePath: string): Promise<PdfExtractionResult> {
