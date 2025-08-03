@@ -5,7 +5,7 @@ import { pdfService } from "../services/pdfService";
 import { accuracyService } from "../services/accuracyService";
 import { AccuracyTestResult } from "../types/types";
 
-// 🎯 PRESET TEST CASES - Easy to add new ones!
+// PRESET TEST CASES - Easy to add new ones!
 const PRESET_TESTS = {
   preset1: {
     name: "Bell Creek Muddy Creek Watershed Plan 2012",
@@ -31,7 +31,7 @@ const PRESET_TESTS = {
 } as const;
 
 export class AccuracyController {
-  // 🚀 MAIN ACCURACY TEST ROUTE - Handles both modes elegantly
+  // MAIN ACCURACY TEST ROUTE - Handles both modes elegantly
   testAccuracy = async (req: Request, res: Response) => {
     try {
       const { mode } = req.body;
@@ -46,12 +46,12 @@ export class AccuracyController {
         });
       }
     } catch (error) {
-      console.error("❌ Accuracy test failed:", error);
+      console.error("Accuracy test failed:", error);
       res.status(500).json({ error: "Accuracy test failed" });
     }
   };
 
-  // 📄 UPLOAD MODE - User provides PDF + ground truth
+  // UPLOAD MODE - User provides PDF + ground truth
   private handleUploadMode = async (req: Request, res: Response) => {
     // Type guard for multer files
     if (!req.files || Array.isArray(req.files)) {
@@ -72,7 +72,7 @@ export class AccuracyController {
     const pdfFile = files["pdf"][0];
     const groundTruthFile = files["groundTruth"][0];
 
-    console.log(`📊 Testing uploaded PDF: ${pdfFile.originalname}`);
+    console.log(`Testing uploaded PDF: ${pdfFile.originalname}`);
 
     // Extract data from uploaded PDF
     const extractedData = await pdfService.extractStructuredData(pdfFile.path);
@@ -92,19 +92,19 @@ export class AccuracyController {
       model: extractedData.model, // Include the model used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
-      // 🔍 Include both datasets for comparison
+      // Include both datasets for comparison
       comparison: {
         expected: groundTruth,
         actual: extractedData,
       },
-      // 📊 Include detailed comparisons for debugging
+      // Include detailed comparisons for debugging
       detailedComparisons: accuracyResult.detailedComparisons,
     };
 
     res.json(result);
   };
 
-  // 🎯 PRESET MODE - Use predefined test cases
+  // PRESET MODE - Use predefined test cases
   private handlePresetMode = async (req: Request, res: Response) => {
     const { preset } = req.body;
 
@@ -138,7 +138,7 @@ export class AccuracyController {
       });
     }
 
-    console.log(`🎯 Testing preset: ${preset} (${testCase.name})`);
+    console.log(`Testing preset: ${preset} (${testCase.name})`);
 
     // Extract data from preset PDF
     const extractedData = await pdfService.extractStructuredData(pdfPath);
@@ -146,21 +146,17 @@ export class AccuracyController {
     // Load preset ground truth
     const groundTruth = JSON.parse(fs.readFileSync(groundTruthPath, "utf-8"));
 
-    // 🔍 DEBUG: Log data structures for comparison
-    console.log(`🔍 DEBUG: Comparing data structures for ${preset}...`);
-    console.log(`📊 Ground Truth Goals: ${groundTruth.goals?.length || 0}`);
-    console.log(`📊 Extracted Goals: ${extractedData.goals?.length || 0}`);
-    console.log(`📊 Ground Truth BMPs: ${groundTruth.bmps?.length || 0}`);
-    console.log(`📊 Extracted BMPs: ${extractedData.bmps?.length || 0}`);
+    // DEBUG: Log data structures for comparison
+    console.log(`DEBUG: Comparing data structures for ${preset}...`);
+    console.log(`Ground Truth Goals: ${groundTruth.goals?.length || 0}`);
+    console.log(`Extracted Goals: ${extractedData.goals?.length || 0}`);
+    console.log(`Ground Truth BMPs: ${groundTruth.bmps?.length || 0}`);
+    console.log(`Extracted BMPs: ${extractedData.bmps?.length || 0}`);
     console.log(
-      `📊 Ground Truth Implementation: ${
-        groundTruth.implementation?.length || 0
-      }`
+      `Ground Truth Implementation: ${groundTruth.implementation?.length || 0}`
     );
     console.log(
-      `📊 Extracted Implementation: ${
-        extractedData.implementation?.length || 0
-      }`
+      `Extracted Implementation: ${extractedData.implementation?.length || 0}`
     );
 
     // Calculate accuracy
@@ -174,12 +170,12 @@ export class AccuracyController {
       model: extractedData.model, // Include the model used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
-      // 🔍 Include both datasets for comparison
+      // Include both datasets for comparison
       comparison: {
         expected: groundTruth,
         actual: extractedData,
       },
-      // 📊 Include detailed comparisons for debugging
+      // Include detailed comparisons for debugging
       detailedComparisons: accuracyResult.detailedComparisons,
     };
 
@@ -197,7 +193,7 @@ export class AccuracyController {
     res.json(result);
   };
 
-  // 📋 LIST AVAILABLE PRESETS
+  // LIST AVAILABLE PRESETS
   getPresets = (req: Request, res: Response) => {
     const presets = Object.entries(PRESET_TESTS).map(([key, value]) => ({
       id: key,

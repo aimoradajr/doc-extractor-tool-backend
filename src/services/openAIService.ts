@@ -1,9 +1,9 @@
 import OpenAI from "openai";
 import { ExtractedData } from "../types/types";
 
-// 🔧 EASY MODEL SWITCHING - Just change this line!
-const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
-// const CURRENT_MODEL = "gpt-4"; // Use gpt-4 for better accuracy
+// EASY MODEL SWITCHING - Just change this line!
+// const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
+const CURRENT_MODEL = "gpt-4"; // Use gpt-4 for better accuracy
 
 export class OpenAIService {
   private openai: OpenAI;
@@ -17,7 +17,7 @@ export class OpenAIService {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    console.log(`🤖 Using ${CURRENT_MODEL} model`);
+    console.log(`Using ${CURRENT_MODEL} model`);
   }
 
   async extractStructuredData(text: string): Promise<ExtractedData> {
@@ -54,10 +54,7 @@ export class OpenAIService {
 
       return structuredData;
     } catch (error) {
-      console.error(
-        `❌ OpenAI extraction failed with ${CURRENT_MODEL}:`,
-        error
-      );
+      console.error(`OpenAI extraction failed with ${CURRENT_MODEL}:`, error);
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error occurred";
       throw new Error(
