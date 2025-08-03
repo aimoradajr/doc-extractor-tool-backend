@@ -102,18 +102,33 @@ export class AccuracyController {
   // Upload custom test (PDF + ground truth JSON)
   uploadTest = async (req: Request, res: Response) => {
     try {
-      if (!req.files || !req.files["pdf"] || !req.files["groundTruth"]) {
-        return res
-          .status(400)
-          .json({ error: "Both PDF and ground truth JSON files are required" });
+      // Type guard to ensure req.files is the named fields object
+      if (!req.files || Array.isArray(req.files)) {
+        return res.status(400).json({
+          error: "Both PDF and ground truth JSON files are required",
+        });
       }
 
-      const pdfFile = Array.isArray(req.files["pdf"])
-        ? req.files["pdf"][0]
-        : req.files["pdf"];
-      const groundTruthFile = Array.isArray(req.files["groundTruth"])
-        ? req.files["groundTruth"][0]
-        : req.files["groundTruth"];
+      const files = req.files as { [fieldname: string]: Express.Multer.File[] };
+
+      if (!files["pdf"] || !files["groundTruth"]) {
+        return res.status(400).json({
+          error: "Both PDF and ground truth JSON files are required",
+        });
+      }
+
+      const pdfFile = Array.isArray(files["pdf"])
+        ? files["pdf"][0]
+        : files["pdf"];
+      const groundTruthFile = Array.isArray(files["groundTruth"])
+        ? files["groundTruth"][0]
+        : files["groundTruth"];
+
+      if (!pdfFile || !groundTruthFile) {
+        return res.status(400).json({
+          error: "Both PDF file and ground truth file are required",
+        });
+      }
 
       // Extract data from uploaded PDF
       const extractedData = await pdfService.extractStructuredData(
