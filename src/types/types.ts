@@ -203,6 +203,7 @@ export interface Organization {
  */
 export interface AccuracyTestResult {
   testCase: string;
+  model?: string; // The AI model used for extraction
   metrics: {
     precision: number;
     recall: number;

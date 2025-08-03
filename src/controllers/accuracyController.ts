@@ -83,6 +83,7 @@ export class AccuracyController {
 
     const result: AccuracyTestResult = {
       testCase: `uploaded-${pdfFile.originalname}`,
+      model: extractedData.model, // Include the model used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
     };
@@ -140,6 +141,7 @@ export class AccuracyController {
 
     const result: AccuracyTestResult = {
       testCase: `${preset}-${testCase.name}`,
+      model: extractedData.model, // Include the model used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
     };
