@@ -2,8 +2,8 @@ import OpenAI from "openai";
 import { ExtractedData } from "../types/types";
 
 // EASY MODEL SWITCHING - Just change this line!
-// const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
-const CURRENT_MODEL = "gpt-4"; // Use gpt-4 for better accuracy
+const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
+// const CURRENT_MODEL = "gpt-4"; // Use gpt-4 for better accuracy
 
 export class OpenAIService {
   private openai: OpenAI;
@@ -64,6 +64,8 @@ export class OpenAIService {
   }
 
   private buildExtractionPrompt(text: string): string {
+    // TODO: provide a way to attach optionally a series of prompts to further enhance result. this will of course take more token but for the sake of increasing accuracy, it may be beneficial. something like a flag to 'attachEnhancementPrompts'
+
     return `
 Extract structured information from this watershed management document. Return ONLY valid JSON in the exact format specified below.
 
@@ -83,6 +85,12 @@ IMPORTANT INSTRUCTIONS:
    - Extract cost estimates, quantities, target values, thresholds
    - Include specific dates, timelines, and numeric goals
    - If a number is mentioned, capture both the value and unit
+6. GOAL EXTRACTION RULES:
+   - A goal is any major intended outcome, milestone, or management action that is explicitly stated in the watershed plan as something to be achieved, established, or completed. This includes environmental targets, project milestones, management steps, and outreach/education achievements.
+   - Only extract goals that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create goals that are not directly described or labeled in the text.
+   - Goals may be found in narrative text, bullet lists, or tables under sections like "Goals," "Objectives," "Milestones," "Expected Outcomes," or similar headings.
+   - Use the exact language from the document when possible. Paraphrase only for clarity if the goal is split across sentences, but do not invent new goals.
+   - CRITICAL: For each goal extracted, include the exact excerpt/quote from the document where you found this goal. This should be the literal text from the source document that you interpreted as a goal.
 
 Required JSON format:
 {
@@ -99,7 +107,8 @@ Required JSON format:
       "targetArea": "geographic target area",
       "schedule": "timeline or schedule",
       "contacts": [{"name": "contact name", "role": "role", "organization": "org"}],
-      "desiredOutcomes": ["outcome1", "outcome2"]
+      "desiredOutcomes": ["outcome1", "outcome2"],
+      "sourceExcerpt": "exact text from document where this goal was found"
     }
   ],
   "bmps": [

@@ -73,6 +73,7 @@ export interface Goal {
   schedule?: string;
   contacts?: Contact[];
   desiredOutcomes?: string[] | null;
+  sourceExcerpt?: string; // Exact text from document where this goal was found
 }
 
 /**
