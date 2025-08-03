@@ -104,7 +104,7 @@ export class AccuracyService {
 
     for (const extractedImpl of extracted) {
       const match = groundTruth.find((gt) =>
-        this.fuzzyMatch(extractedImpl.activity, gt.activity)
+        this.fuzzyMatch(extractedImpl.description, gt.description)
       );
       if (match) correctCount++;
     }
@@ -124,7 +124,7 @@ export class AccuracyService {
 
     for (const extractedMon of extracted) {
       const match = groundTruth.find((gt) =>
-        this.fuzzyMatch(extractedMon.parameter, gt.parameter)
+        this.fuzzyMatch(extractedMon.description, gt.description)
       );
       if (match) correctCount++;
     }
