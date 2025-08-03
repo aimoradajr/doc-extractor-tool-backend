@@ -1,211 +1,353 @@
 {
   "reportSummary": {
-    "totalGoals": 1,
-    "totalBMPs": 9,
-    "completionRate": 0.2
+    "totalGoals": 3,
+    "totalBMPs": 6,
+    "completionRate": null
   },
   "goals": [
     {
-      "description": "Reduce bacteria, nutrient, and sediment loadings to restore water quality and attain designated uses in Basket Creek and Hickahala Creek watersheds",
-      "objective": "Implement comprehensive watershed management through education, technical assistance, and BMP installation to address 9 key elements",
-      "targetArea": "Basket Creek and Hickahala Creek watersheds in Mississippi",
-      "schedule": "2018-2023",
-      "contacts": [
-        {
-          "name": "Mississippi Department of Environmental Quality",
-          "role": "Lead Agency",
-          "organization": "MDEQ"
-        },
-        {
-          "name": "Natural Resources Conservation Service",
-          "role": "Technical Partner",
-          "organization": "NRCS"
-        }
-      ],
+      "description": "Identification of Causes and Sources of Impairment",
+      "objective": "Identify causes and sources of impairment in the Basket Creek-Hickahala Creek watershed.",
+      "targetArea": "Basket Creek-Hickahala Creek watershed",
+      "schedule": "Ongoing",
+      "contacts": [],
       "desiredOutcomes": [
-        "Attain water quality standards",
-        "Reduce pathogen loading",
-        "Improve aquatic habitat",
-        "Support recreational uses"
+        "Identification of impaired water bodies using biological and chemical data",
+        "Development of TMDLs for impaired streams"
+      ]
+    },
+    {
+      "description": "Expected Load Reduction",
+      "objective": "Implement strategies to reduce pollutant loads as required by TMDLs.",
+      "targetArea": "Hickahala Creek, James-Wolf Creek, Basket Creek-Hickahala Creek watershed",
+      "schedule": "Ongoing",
+      "contacts": [],
+      "desiredOutcomes": [
+        "Meet TMDL requirements for organic enrichment, low DO, nutrients, and fecal coliform",
+        "Implement in-field nutrient and sediment BMPs",
+        "Achieve 50% reduction in fecal coliform in Hickahala Creek and 70% reduction in James Wolf Creek"
+      ]
+    },
+    {
+      "description": "Proposed Management Measures",
+      "objective": "Implement BMPs to address nutrients, sediment, and pathogen issues.",
+      "targetArea": "Basket Creek-Hickahala Creek watershed (priority: newly converted pasture areas)",
+      "schedule": "Ongoing",
+      "contacts": [],
+      "desiredOutcomes": [
+        "Prioritized implementation of BMPs based on water quality benefit, willing landowners, and TMDL recommendations",
+        "Effective monitoring and reporting of BMP effectiveness"
       ]
     }
   ],
   "bmps": [
     {
-      "name": "Riparian Buffers",
-      "description": "Vegetated areas along waterways to filter runoff and reduce erosion",
-      "type": "Nutrient",
-      "targetAreas": ["Stream corridors", "Critical source areas"],
-      "quantity": 150,
-      "unit": "ac",
-      "estimatedCost": 375000,
-      "partners": [{ "name": "NRCS" }, { "name": "Landowners" }],
-      "schedule": "2019-2022",
-      "priorityFactors": ["Stream proximity", "High nutrient loading areas"]
-    },
-    {
-      "name": "Waste Storage Systems",
-      "description": "Properly designed storage for animal waste to prevent direct discharge",
+      "name": "Fencing",
+      "description": "Install fencing to limit livestock access to streams and reduce pathogen and nutrient inputs.",
       "type": "Pathogen",
-      "targetAreas": ["Livestock operations"],
-      "quantity": 12,
-      "unit": "ea",
-      "estimatedCost": 600000,
-      "partners": [{ "name": "NRCS" }, { "name": "Livestock producers" }],
-      "schedule": "2018-2021",
-      "priorityFactors": ["Proximity to streams", "Animal density"]
-    },
-    {
-      "name": "Nutrient Management Plans",
-      "description": "Comprehensive plans for managing nutrient applications",
-      "type": "Nutrient",
-      "targetAreas": ["Agricultural operations"],
-      "quantity": 25,
-      "unit": "ea",
-      "estimatedCost": 50000,
+      "targetAreas": ["Pasturelands", "Grazing lands"],
+      "quantity": 10000,
+      "unit": "ft",
+      "estimatedCost": 23300,
       "partners": [
-        { "name": "Extension Service" },
-        { "name": "Certified Crop Advisors" }
+        { "name": "Natural Resources Conservation Service" },
+        { "name": "Mississippi Soil and Water Conservation Commission" }
       ],
-      "schedule": "2018-2023",
-      "priorityFactors": ["Soil test results", "Application timing"]
+      "schedule": "Prioritized for implementation in pasture areas",
+      "priorityFactors": [
+        "Likely water quality benefit",
+        "Willing landowners",
+        "TMDL recommendations",
+        "Ease of monitoring effectiveness",
+        "Shorter time for anticipated results"
+      ]
     },
     {
-      "name": "Prescribed Grazing",
-      "description": "Managed grazing systems to improve pasture health and reduce runoff",
+      "name": "Tank/Trough (Watering Facilities)",
+      "description": "Install watering facilities for livestock away from streams to reduce stream access.",
+      "type": "Pathogen",
+      "targetAreas": ["Pasturelands", "Grazing lands"],
+      "quantity": 3,
+      "unit": "ea",
+      "estimatedCost": 10500,
+      "partners": [
+        { "name": "Natural Resources Conservation Service" },
+        { "name": "Mississippi Soil and Water Conservation Commission" }
+      ],
+      "schedule": "Prioritized for implementation in pasture areas",
+      "priorityFactors": [
+        "Likely water quality benefit",
+        "Willing landowners",
+        "TMDL recommendations"
+      ]
+    },
+    {
+      "name": "Ponds",
+      "description": "Construct ponds to manage runoff and sedimentation from grazing areas.",
       "type": "Sediment",
-      "targetAreas": ["Pasture and rangeland"],
+      "targetAreas": ["Pasturelands"],
+      "quantity": 4,
+      "unit": "ea",
+      "estimatedCost": 36000,
+      "partners": [
+        { "name": "Natural Resources Conservation Service" },
+        { "name": "Mississippi Soil and Water Conservation Commission" }
+      ],
+      "schedule": "Prioritized for implementation in pasture areas",
+      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
+    },
+    {
+      "name": "Streambank and Shoreline Protection",
+      "description": "Implement measures to protect streambanks and shorelines from erosion.",
+      "type": "Sediment",
+      "targetAreas": ["Streambanks"],
       "quantity": 500,
-      "unit": "ac",
-      "estimatedCost": 125000,
-      "partners": [{ "name": "NRCS" }, { "name": "Ranchers" }],
-      "schedule": "2019-2023",
-      "priorityFactors": ["Overgrazing areas", "Slope"]
+      "unit": "ft",
+      "estimatedCost": 80500,
+      "partners": [
+        { "name": "Natural Resources Conservation Service" },
+        { "name": "Mississippi Soil and Water Conservation Commission" }
+      ],
+      "schedule": "To be implemented along streambanks",
+      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
     },
     {
-      "name": "Filter Strips",
-      "description": "Narrow strips of vegetation to filter runoff",
+      "name": "Grade Stabilization Structure",
+      "description": "Install structures to stabilize grades and prevent erosion.",
       "type": "Sediment",
-      "targetAreas": ["Field edges", "Concentrated flow areas"],
-      "quantity": 75,
+      "targetAreas": ["Erosion-prone areas"],
+      "quantity": 8,
       "unit": "ac",
-      "estimatedCost": 150000,
-      "partners": [{ "name": "NRCS" }, { "name": "Farmers" }],
-      "schedule": "2019-2022",
-      "priorityFactors": ["Runoff concentration", "Erosion potential"]
+      "estimatedCost": 52878,
+      "partners": [
+        { "name": "Natural Resources Conservation Service" },
+        { "name": "Mississippi Soil and Water Conservation Commission" }
+      ],
+      "schedule": "To be implemented in erosion-prone areas",
+      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
+    },
+    {
+      "name": "Heavy Use Area Protection",
+      "description": "Protect high-traffic areas from erosion and nutrient/pollutant runoff.",
+      "type": "Sediment",
+      "targetAreas": ["High-traffic livestock areas"],
+      "quantity": 1240,
+      "unit": "ft",
+      "estimatedCost": 35252,
+      "partners": [
+        { "name": "Natural Resources Conservation Service" },
+        { "name": "Mississippi Soil and Water Conservation Commission" }
+      ],
+      "schedule": "To be implemented in high-use areas",
+      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
     }
   ],
   "implementation": [
     {
-      "description": "Establish riparian buffers along priority stream segments",
+      "description": "Develop and execute subgrant agreement specifying roles and milestones.",
       "responsibleParties": [
-        { "name": "NRCS" },
-        { "name": "Conservation districts" }
+        { "name": "MDEQ" },
+        { "name": "Watershed Implementation Team" },
+        { "name": "Project Manager" }
       ],
-      "startDate": "2019-01-01",
-      "endDate": "2022-12-31",
-      "status": "ongoing",
-      "outcome": "Reduce nutrient and sediment loading to streams"
+      "startDate": "Month 1",
+      "endDate": null,
+      "status": "Planned",
+      "outcome": null,
+      "probableCompletionDate": null
     },
     {
-      "description": "Install waste storage systems at livestock operations",
+      "description": "Coordinate meetings, media, and social media promotion for project activities.",
       "responsibleParties": [
-        { "name": "NRCS" },
-        { "name": "Private contractors" }
+        { "name": "MDEQ" },
+        { "name": "Project Partners" }
       ],
-      "startDate": "2018-06-01",
-      "endDate": "2021-08-31",
-      "status": "completed",
-      "outcome": "Eliminate direct discharge of animal waste"
+      "startDate": "Months 1-36",
+      "endDate": null,
+      "status": "Ongoing",
+      "outcome": null,
+      "probableCompletionDate": null
+    },
+    {
+      "description": "Inform landowners/operators and secure participation for BMP implementation.",
+      "responsibleParties": [
+        { "name": "Tate County SWCD" },
+        { "name": "MSWCC" },
+        { "name": "NRCS" },
+        { "name": "MDEQ" }
+      ],
+      "startDate": "Months 1-6",
+      "endDate": null,
+      "status": "Ongoing",
+      "outcome": null,
+      "probableCompletionDate": null
+    },
+    {
+      "description": "Determine priority pollutant areas via GIS and site surveys, install BMPs.",
+      "responsibleParties": [
+        { "name": "Tate County SWCD" },
+        { "name": "MSWCC" },
+        { "name": "NRCS" },
+        { "name": "MDEQ" }
+      ],
+      "startDate": "Months 1-36",
+      "endDate": null,
+      "status": "Ongoing",
+      "outcome": null,
+      "probableCompletionDate": null
+    },
+    {
+      "description": "Monitor baseline and post-BMP water quality conditions.",
+      "responsibleParties": [{ "name": "MDEQ" }, { "name": "USGS" }],
+      "startDate": "Months 1-36",
+      "endDate": null,
+      "status": "Ongoing",
+      "outcome": null,
+      "probableCompletionDate": null
+    },
+    {
+      "description": "Conduct inspections and collect GPS/photo documentation of BMP installations.",
+      "responsibleParties": [
+        { "name": "Tate County SWCD" },
+        { "name": "MACD" },
+        { "name": "MSWCC" },
+        { "name": "NRCS" }
+      ],
+      "startDate": "Months 3-36",
+      "endDate": null,
+      "status": "Ongoing",
+      "outcome": null,
+      "probableCompletionDate": null
     }
   ],
   "monitoring": [
     {
-      "description": "Water quality monitoring to track BMP effectiveness",
-      "indicator": "E. coli, Total Nitrogen, Total Phosphorus, Turbidity",
-      "method": "Monthly grab samples and quarterly analysis",
-      "frequency": "Monthly during wet season, quarterly during dry season",
+      "description": "Water quality standards compliance monitoring",
+      "indicator": "Dissolved Oxygen, pH, Temperature, Conductivity, Total Nitrogen, Total Phosphorus, E. coli",
+      "method": "Routine chemical and biological sampling; M-BISQ index",
+      "frequency": "As scheduled and after BMP installation",
       "thresholds": [
-        { "parameter": "E. coli", "value": "126", "units": "CFU/100mL" },
-        { "parameter": "Total Nitrogen", "value": "1.5", "units": "mg/L" },
-        { "parameter": "Total Phosphorus", "value": "0.05", "units": "mg/L" }
+        {
+          "parameter": "Dissolved Oxygen",
+          "value": "Daily Average of 5.0 mg/L; Instantaneous threshold 4.0 mg/L"
+        },
+        { "parameter": "Dissolved Oxygen % Sat", "value": "≥ 70% - ≤ 125%" },
+        { "parameter": "pH", "value": "6.0-9.0" },
+        { "parameter": "Temperature", "value": "Not to exceed 90°F" },
+        {
+          "parameter": "Specific Conductance",
+          "value": "Less than 1000 micromhos/cm"
+        },
+        {
+          "parameter": "Dissolved Solids",
+          "value": "Monthly avg < 750 mg/L; instantaneous < 1500 mg/L"
+        },
+        { "parameter": "Total Nitrogen", "value": "0.940-1.110 mg/L" },
+        { "parameter": "Total Phosphorus", "value": "0.080-0.120 mg/L" },
+        {
+          "parameter": "E. coli",
+          "value": "30-day geometric mean of 126 per 100 ml; not to exceed 410 per 100 ml more than 10% of the time"
+        }
       ],
-      "responsibleParties": [
-        { "name": "MDEQ" },
-        { "name": "Local monitoring groups" }
-      ],
-      "sampleLocations": [
-        "Basket Creek at Highway 9",
-        "Hickahala Creek upstream of confluence"
-      ],
-      "sampleSchedule": "First Wednesday of each month"
+      "responsibleParties": [{ "name": "MDEQ" }, { "name": "USGS" }],
+      "sampleLocations": [],
+      "sampleSchedule": null
     }
   ],
   "outreach": [
     {
-      "name": "Watershed Education Program",
-      "description": "Educational outreach to landowners and communities",
+      "name": "Watershed Education and Outreach",
+      "description": "Conduct workshops, field days, and community events to educate the public on water quality and BMPs.",
       "partners": [
-        { "name": "Extension Service" },
-        { "name": "Conservation districts" }
+        { "name": "MDEQ" },
+        { "name": "Mississippi Soil and Water Conservation Commission" },
+        { "name": "Natural Resources Conservation Service" },
+        { "name": "Tate County Soil and Water Conservation District" }
       ],
-      "indicators": "Number of contacts, BMP adoption rate",
-      "schedule": "Ongoing throughout project period",
-      "budget": 75000,
+      "indicators": "Number of events, attendance, survey results",
+      "schedule": "Throughout project duration",
+      "budget": 9000,
       "events": [
-        { "type": "Field days", "audience": "Agricultural producers" },
-        { "type": "School programs", "audience": "Students" }
+        {
+          "type": "Water Model Presentations",
+          "audience": "Students, public",
+          "materialsProvided": ["Enviroscapes", "Lesson plans"],
+          "estimatedParticipants": null,
+          "cost": null,
+          "date": null
+        },
+        {
+          "type": "Teacher Workshops",
+          "audience": "Educators",
+          "materialsProvided": ["Educational materials"],
+          "estimatedParticipants": null,
+          "cost": null,
+          "date": null
+        },
+        {
+          "type": "Adopt A Stream",
+          "audience": "Citizens, teachers, students",
+          "materialsProvided": [],
+          "estimatedParticipants": null,
+          "cost": null,
+          "date": null
+        },
+        {
+          "type": "Watershed Harmony Mobile Classroom",
+          "audience": "K-12, adults",
+          "materialsProvided": [],
+          "estimatedParticipants": null,
+          "cost": null,
+          "date": null
+        },
+        {
+          "type": "Storm Drain Marking",
+          "audience": "Scouts, clubs, citizen groups",
+          "materialsProvided": [],
+          "estimatedParticipants": null,
+          "cost": null,
+          "date": null
+        },
+        {
+          "type": "Train the Trainer",
+          "audience": "Soil and Water districts, Extension Service",
+          "materialsProvided": ["Workshop materials"],
+          "estimatedParticipants": null,
+          "cost": null,
+          "date": null
+        }
       ],
-      "targetAudience": "Landowners and local communities"
+      "targetAudience": null
     }
   ],
   "geographicAreas": [
     {
-      "name": "Basket Creek Watershed",
-      "counties": ["Lafayette County", "Marshall County"],
-      "acreage": 45000,
+      "name": "Basket Creek-Hickahala Creek Watershed",
+      "counties": ["Tate County"],
+      "acreage": 35085,
       "landUseTypes": [
-        { "type": "agriculture", "percent": 60 },
-        { "type": "forest", "percent": 30 },
-        { "type": "pasture", "percent": 8 }
+        { "type": "Cropland", "percent": 11 },
+        { "type": "Forest", "percent": 17 },
+        { "type": "Pasture/Grass", "percent": 44 }
       ],
-      "population": 2100,
-      "towns": ["Oxford", "Water Valley"],
-      "huc": "08030203",
-      "description": "Mixed agricultural and forested watershed in north-central Mississippi"
+      "population": null,
+      "towns": null,
+      "huc": "080302040403",
+      "description": "Watershed located in Tate County, Mississippi, with diverse land use including cropland, forest, and pasture/grass."
     }
   ],
-  "contacts": [
-    {
-      "name": "Jennifer Smith",
-      "role": "Watershed Coordinator",
-      "organization": "Mississippi Department of Environmental Quality",
-      "phone": "601-961-5171",
-      "email": "jennifer.smith@mdeq.ms.gov"
-    },
-    {
-      "name": "Robert Johnson",
-      "role": "District Conservationist",
-      "organization": "NRCS Lafayette County",
-      "phone": "662-234-4531",
-      "email": "robert.johnson@usda.gov"
-    }
-  ],
+  "contacts": [],
   "organizations": [
+    { "name": "Natural Resources Conservation Service", "contact": null },
     {
-      "name": "Mississippi Department of Environmental Quality",
-      "contact": { "name": "Jennifer Smith", "role": "Watershed Coordinator" }
+      "name": "Mississippi Soil and Water Conservation Commission",
+      "contact": null
     },
     {
-      "name": "USDA Natural Resources Conservation Service",
-      "contact": {
-        "name": "Robert Johnson",
-        "role": "District Conservationist"
-      }
+      "name": "Tate County Soil and Water Conservation District",
+      "contact": null
     },
-    {
-      "name": "Lafayette County Conservation District",
-      "contact": { "name": "Local Board", "role": "Board Members" }
-    }
+    { "name": "USGS", "contact": null },
+    { "name": "MDEQ", "contact": null }
   ]
 }
