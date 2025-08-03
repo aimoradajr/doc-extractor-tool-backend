@@ -37,6 +37,7 @@ export interface ErrorResponse {
  * Main extracted data structure from backend
  */
 export interface ExtractedData {
+  model?: string; // The AI model used for extraction
   goals?: Goal[];
   bmps?: BMP[];
   implementation?: ImplementationActivity[];

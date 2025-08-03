@@ -46,7 +46,12 @@ export class OpenAIService {
       }
 
       const extractedData = JSON.parse(content);
-      return this.validateAndStructureData(extractedData);
+      const structuredData = this.validateAndStructureData(extractedData);
+
+      // Add the model information to the response
+      structuredData.model = CURRENT_MODEL;
+
+      return structuredData;
     } catch (error) {
       console.error(
         `❌ OpenAI extraction failed with ${CURRENT_MODEL}:`,
@@ -170,6 +175,7 @@ Extract only information that is explicitly stated in the document. Do not infer
   private validateAndStructureData(data: any): ExtractedData {
     // Validate and provide defaults
     return {
+      model: CURRENT_MODEL, // Will be overridden by caller
       reportSummary: data.reportSummary || {
         totalGoals: data.goals?.length || 0,
         totalBMPs: data.bmps?.length || 0,
