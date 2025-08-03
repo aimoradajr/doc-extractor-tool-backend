@@ -2,8 +2,8 @@ import OpenAI from "openai";
 import { ExtractedData, AccuracyTestResult } from "../types/types";
 
 // EASY MODEL SWITCHING - Just change this line!
-const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
-// const CURRENT_MODEL = "gpt-4"; // Use gpt-4 for better accuracy
+// const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
+const CURRENT_MODEL = "gpt-4.1"; // Use gpt-4 for better accuracy
 
 export class OpenAIService {
   private openai: OpenAI;
@@ -179,7 +179,7 @@ export class OpenAIService {
           detailedComparisons: {
             goals: [
               {
-                type: "unexpected_extra",
+                type: "surplus_actual",
                 category: "goals",
                 expected: null,
                 actual: "AI comparison failed - see logs",
@@ -445,7 +445,7 @@ Return a JSON response in this exact format:
   "detailedComparisons": {
     "goals": [
       {
-        "type": "perfect_match|partial_match|missing_expected|unexpected_extra",
+        "type": "perfect_match|partial_match|missing_expected|surplus_actual",
         "category": "goals",
         "expected": "expected text or null",
         "actual": "actual text or null",

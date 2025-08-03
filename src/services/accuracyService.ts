@@ -187,7 +187,7 @@ export class AccuracyService {
         });
       } else {
         comparisons.push({
-          type: "unexpected_extra",
+          type: "surplus_actual",
           category: "goals",
           expected: null,
           actual: extractedText,
@@ -254,7 +254,7 @@ export class AccuracyService {
         });
       } else {
         comparisons.push({
-          type: "unexpected_extra",
+          type: "surplus_actual",
           category: "bmps",
           expected: null,
           actual: extractedText,
@@ -320,7 +320,7 @@ export class AccuracyService {
         });
       } else {
         comparisons.push({
-          type: "unexpected_extra",
+          type: "surplus_actual",
           category: "implementation",
           expected: null,
           actual: extractedImpl.description,
@@ -380,7 +380,7 @@ export class AccuracyService {
         });
       } else {
         comparisons.push({
-          type: "unexpected_extra",
+          type: "surplus_actual",
           category: "monitoring",
           expected: null,
           actual: extractedMon.description,

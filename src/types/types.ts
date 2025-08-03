@@ -238,7 +238,7 @@ export interface ComparisonDetail {
     | "perfect_match"
     | "partial_match"
     | "missing_expected"
-    | "unexpected_extra";
+    | "surplus_actual";
   category: "goals" | "bmps" | "implementation" | "monitoring";
   expected?: string | null; // What we expected to find
   actual?: string | null; // What we actually found
