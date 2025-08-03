@@ -31,7 +31,6 @@ export class UploadController {
   ) => {
     try {
       const result = await pdfService.extractStructuredData(req.file!.path);
-
       res.json(result);
     } catch (error) {
       console.error("Structured extraction error:", error);

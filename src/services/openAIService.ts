@@ -1,6 +1,9 @@
 import OpenAI from "openai";
 import { ExtractedData } from "../types/types";
 
+// 🔧 EASY MODEL SWITCHING - Just change this line!
+const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
+
 export class OpenAIService {
   private openai: OpenAI;
 
@@ -12,6 +15,8 @@ export class OpenAIService {
     this.openai = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
+
+    console.log(`🤖 Using ${CURRENT_MODEL} model`);
   }
 
   async extractStructuredData(text: string): Promise<ExtractedData> {
@@ -19,7 +24,7 @@ export class OpenAIService {
       const prompt = this.buildExtractionPrompt(text);
 
       const response = await this.openai.chat.completions.create({
-        model: "gpt-4",
+        model: CURRENT_MODEL,
         messages: [
           {
             role: "system",
@@ -43,10 +48,15 @@ export class OpenAIService {
       const extractedData = JSON.parse(content);
       return this.validateAndStructureData(extractedData);
     } catch (error) {
-      console.error("OpenAI extraction failed:", error);
+      console.error(
+        `❌ OpenAI extraction failed with ${CURRENT_MODEL}:`,
+        error
+      );
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error occurred";
-      throw new Error(`OpenAI extraction failed: ${errorMessage}`);
+      throw new Error(
+        `OpenAI extraction failed (${CURRENT_MODEL}): ${errorMessage}`
+      );
     }
   }
 
@@ -55,7 +65,7 @@ export class OpenAIService {
 Extract structured information from this watershed management document. Return ONLY valid JSON in the exact format specified below.
 
 Document text:
-${text.substring(0, 8000)} // Limit text length for token limits
+${text.substring(0, 8000)}
 
 Required JSON format:
 {
@@ -186,4 +196,5 @@ Extract only information that is explicitly stated in the document. Do not infer
   }
 }
 
+// Create and export a simple service instance
 export const openAIService = new OpenAIService();
