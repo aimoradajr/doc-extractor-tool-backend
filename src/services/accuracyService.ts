@@ -172,7 +172,7 @@ export class AccuracyService {
           category: "goals",
           expected: match.title || match.description,
           actual: extractedText,
-          message: `✅ Found expected goal: "${extractedText}"`,
+          message: `Found expected goal: "${extractedText}"`,
         });
       } else {
         comparisons.push({
@@ -180,7 +180,7 @@ export class AccuracyService {
           category: "goals",
           expected: null,
           actual: extractedText,
-          message: `❓ Found unexpected goal: "${extractedText}" (not in ground truth)`,
+          message: `Found unexpected goal: "${extractedText}" (not in ground truth)`,
         });
       }
     }
@@ -198,7 +198,7 @@ export class AccuracyService {
           category: "goals",
           expected: gtText,
           actual: null,
-          message: `❌ Missing expected goal: "${gtText}"`,
+          message: `Missing expected goal: "${gtText}"`,
         });
       }
     }
@@ -239,7 +239,7 @@ export class AccuracyService {
           category: "bmps",
           expected: match.name || match.description,
           actual: extractedText,
-          message: `✅ Found expected BMP: "${extractedText}"`,
+          message: `Found expected BMP: "${extractedText}"`,
         });
       } else {
         comparisons.push({
@@ -247,7 +247,7 @@ export class AccuracyService {
           category: "bmps",
           expected: null,
           actual: extractedText,
-          message: `❓ Found unexpected BMP: "${extractedText}" (not in ground truth)`,
+          message: `Found unexpected BMP: "${extractedText}" (not in ground truth)`,
         });
       }
     }
@@ -270,7 +270,7 @@ export class AccuracyService {
           category: "bmps",
           expected: gtText,
           actual: null,
-          message: `❌ Missing expected BMP: "${gtText}"`,
+          message: `Missing expected BMP: "${gtText}"`,
         });
       }
     }
@@ -305,7 +305,7 @@ export class AccuracyService {
           category: "implementation",
           expected: match.description,
           actual: extractedImpl.description,
-          message: `✅ Found expected implementation: "${extractedImpl.description}"`,
+          message: `Found expected implementation: "${extractedImpl.description}"`,
         });
       } else {
         comparisons.push({
@@ -313,7 +313,7 @@ export class AccuracyService {
           category: "implementation",
           expected: null,
           actual: extractedImpl.description,
-          message: `❓ Found unexpected implementation: "${extractedImpl.description}" (not in ground truth)`,
+          message: `Found unexpected implementation: "${extractedImpl.description}" (not in ground truth)`,
         });
       }
     }
@@ -330,7 +330,7 @@ export class AccuracyService {
           category: "implementation",
           expected: gtImpl.description,
           actual: null,
-          message: `❌ Missing expected implementation: "${gtImpl.description}"`,
+          message: `Missing expected implementation: "${gtImpl.description}"`,
         });
       }
     }
@@ -365,7 +365,7 @@ export class AccuracyService {
           category: "monitoring",
           expected: match.description,
           actual: extractedMon.description,
-          message: `✅ Found expected monitoring: "${extractedMon.description}"`,
+          message: `Found expected monitoring: "${extractedMon.description}"`,
         });
       } else {
         comparisons.push({
@@ -373,7 +373,7 @@ export class AccuracyService {
           category: "monitoring",
           expected: null,
           actual: extractedMon.description,
-          message: `❓ Found unexpected monitoring: "${extractedMon.description}" (not in ground truth)`,
+          message: `Found unexpected monitoring: "${extractedMon.description}" (not in ground truth)`,
         });
       }
     }
@@ -390,7 +390,7 @@ export class AccuracyService {
           category: "monitoring",
           expected: gtMon.description,
           actual: null,
-          message: `❌ Missing expected monitoring: "${gtMon.description}"`,
+          message: `Missing expected monitoring: "${gtMon.description}"`,
         });
       }
     }
