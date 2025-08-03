@@ -3,6 +3,7 @@ import { ExtractedData } from "../types/types";
 
 // 🔧 EASY MODEL SWITCHING - Just change this line!
 const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
+// const CURRENT_MODEL = "gpt-4"; // Use gpt-4 for better accuracy
 
 export class OpenAIService {
   private openai: OpenAI;
@@ -71,6 +72,15 @@ Extract structured information from this watershed management document. Return O
 
 Document text:
 ${text.substring(0, 8000)}
+
+IMPORTANT INSTRUCTIONS:
+1. Extract all information into the appropriate arrays first
+2. THEN calculate reportSummary counts based on what you extracted:
+   - totalGoals = exact count of items in "goals" array
+   - totalBMPs = exact count of items in "bmps" array  
+   - completionRate = count of "completed" status items / total implementation items (0 if no implementation items)
+3. Double-check that your reportSummary numbers match your array lengths
+4. Do NOT use null for counts - use actual numbers (0 if empty)
 
 Required JSON format:
 {
@@ -168,12 +178,20 @@ Required JSON format:
   ]
 }
 
-Extract only information that is explicitly stated in the document. Do not infer or make up data. If a field is not found, omit it or set to null.
+CRITICAL: 
+- Extract only information explicitly stated in the document
+- Do not infer or make up data  
+- If a field is not found, omit it or set to null
+- ALWAYS calculate reportSummary counts accurately based on your extracted arrays
+- Verify: totalGoals should equal the number of items in your "goals" array
+- Verify: totalBMPs should equal the number of items in your "bmps" array
+- Use 0 instead of null for counts when arrays are empty
 `;
   }
 
   private validateAndStructureData(data: any): ExtractedData {
-    // Validate and provide defaults
+    // Trust the AI to calculate reportSummary correctly with improved prompt
+    // Only provide fallbacks if reportSummary is completely missing
     return {
       model: CURRENT_MODEL, // Will be overridden by caller
       reportSummary: data.reportSummary || {
