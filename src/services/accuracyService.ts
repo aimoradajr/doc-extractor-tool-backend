@@ -160,7 +160,8 @@ export class AccuracyService {
 
     // Check each extracted goal against ground truth
     for (const extractedGoal of extracted) {
-      const extractedText = extractedGoal.objective || extractedGoal.description;
+      const extractedText =
+        extractedGoal.objective || extractedGoal.description;
       const match = groundTruth.find((gt) =>
         this.fuzzyMatch(extractedText, gt.objective || gt.description)
       );
