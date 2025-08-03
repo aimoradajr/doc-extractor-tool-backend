@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { ExtractedData } from "../types/types";
+import { ExtractedData, AccuracyTestResult } from "../types/types";
 
 // EASY MODEL SWITCHING - Just change this line!
 const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
@@ -18,6 +18,184 @@ export class OpenAIService {
     });
 
     console.log(`Using ${CURRENT_MODEL} model`);
+  }
+
+  async compareWithAI(
+    extracted: ExtractedData,
+    groundTruth: ExtractedData,
+    model: string = "gpt-3.5-turbo"
+  ): Promise<AccuracyTestResult> {
+    try {
+      const prompt = this.buildComparisonPrompt(extracted, groundTruth);
+
+      const response = await this.openai.chat.completions.create({
+        model: model,
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are an expert at comparing extracted data from watershed management documents. Analyze the quality and accuracy of extracted data against ground truth. Return ONLY valid JSON without any markdown formatting or code blocks.",
+          },
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
+        temperature: 0.1,
+        max_tokens: 4000, // Increased for detailed comparison responses
+      });
+
+      const content = response.choices[0]?.message?.content;
+      if (!content) {
+        throw new Error("No content received from OpenAI for comparison");
+      }
+
+      // Check if the response was truncated
+      const finishReason = response.choices[0]?.finish_reason;
+      if (finishReason === "length") {
+        console.warn(
+          "AI response was truncated due to token limit. Consider increasing max_tokens."
+        );
+      }
+
+      // Clean the response by removing markdown code blocks
+      const cleanedContent = this.cleanJsonFromMarkdown(content);
+
+      try {
+        const comparisonResult = JSON.parse(cleanedContent);
+
+        // Ensure the result matches our expected format
+        return {
+          testCase: "ai-comparison",
+          model: model,
+          metrics: comparisonResult.metrics || {
+            precision: 0,
+            recall: 0,
+            f1Score: 0,
+          },
+          details: comparisonResult.details || {
+            goals: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: 0,
+              totalExpected: 0,
+            },
+            bmps: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: 0,
+              totalExpected: 0,
+            },
+            implementation: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: 0,
+              totalExpected: 0,
+            },
+            monitoring: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: 0,
+              totalExpected: 0,
+            },
+          },
+          comparison: {
+            expected: groundTruth,
+            actual: extracted,
+          },
+          detailedComparisons: comparisonResult.detailedComparisons || {
+            goals: [],
+            bmps: [],
+            implementation: [],
+            monitoring: [],
+          },
+        };
+      } catch (parseError) {
+        console.error("Failed to parse AI response as JSON:");
+        console.error("Original content:", content.substring(0, 500) + "...");
+        console.error(
+          "Cleaned content:",
+          cleanedContent.substring(0, 500) + "..."
+        );
+        console.warn(
+          "Falling back to simplified comparison due to parsing error"
+        );
+
+        // Fallback: Return a simplified response when parsing fails
+        return {
+          testCase: "ai-comparison-fallback",
+          model: model,
+          metrics: {
+            precision: 0,
+            recall: 0,
+            f1Score: 0,
+          },
+          details: {
+            goals: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: extracted.goals?.length || 0,
+              totalExpected: groundTruth.goals?.length || 0,
+            },
+            bmps: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: extracted.bmps?.length || 0,
+              totalExpected: groundTruth.bmps?.length || 0,
+            },
+            implementation: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: extracted.implementation?.length || 0,
+              totalExpected: groundTruth.implementation?.length || 0,
+            },
+            monitoring: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: extracted.monitoring?.length || 0,
+              totalExpected: groundTruth.monitoring?.length || 0,
+            },
+          },
+          comparison: {
+            expected: groundTruth,
+            actual: extracted,
+          },
+          detailedComparisons: {
+            goals: [
+              {
+                type: "unexpected_extra",
+                category: "goals",
+                expected: null,
+                actual: "AI comparison failed - see logs",
+                message: `JSON parsing failed: ${parseError}. Response was likely truncated.`,
+              },
+            ],
+            bmps: [],
+            implementation: [],
+            monitoring: [],
+          },
+        };
+      }
+    } catch (error) {
+      console.error("AI comparison failed:", error);
+      throw new Error(`AI comparison failed: ${error}`);
+    }
   }
 
   async extractStructuredData(text: string): Promise<ExtractedData> {
@@ -200,6 +378,99 @@ CRITICAL:
 `;
   }
 
+  private buildComparisonPrompt(
+    extracted: ExtractedData,
+    groundTruth: ExtractedData
+  ): string {
+    // Summarize data to reduce token usage for large documents
+    const summarizedExtracted = this.summarizeDataForComparison(extracted);
+    const summarizedGroundTruth = this.summarizeDataForComparison(groundTruth);
+
+    return `
+Compare the extracted watershed management data against the ground truth data and provide accuracy metrics.
+
+EXTRACTED DATA:
+${JSON.stringify(summarizedExtracted, null, 2)}
+
+GROUND TRUTH DATA:
+${JSON.stringify(summarizedGroundTruth, null, 2)}
+
+Please analyze the accuracy by comparing:
+1. Goals - Check how well the extracted goals match the expected goals
+2. BMPs - Compare extracted BMPs against ground truth BMPs  
+3. Implementation - Compare implementation activities
+4. Monitoring - Compare monitoring metrics
+
+Return a JSON response in this exact format:
+{
+  "metrics": {
+    "precision": number_between_0_and_1,
+    "recall": number_between_0_and_1,
+    "f1Score": number_between_0_and_1
+  },
+  "details": {
+    "goals": {
+      "precision": number_between_0_and_1,
+      "recall": number_between_0_and_1,
+      "f1Score": number_between_0_and_1,
+      "correctCount": number,
+      "totalExtracted": number,
+      "totalExpected": number
+    },
+    "bmps": {
+      "precision": number_between_0_and_1,
+      "recall": number_between_0_and_1,
+      "f1Score": number_between_0_and_1,
+      "correctCount": number,
+      "totalExtracted": number,
+      "totalExpected": number
+    },
+    "implementation": {
+      "precision": number_between_0_and_1,
+      "recall": number_between_0_and_1,
+      "f1Score": number_between_0_and_1,
+      "correctCount": number,
+      "totalExtracted": number,
+      "totalExpected": number
+    },
+    "monitoring": {
+      "precision": number_between_0_and_1,
+      "recall": number_between_0_and_1,
+      "f1Score": number_between_0_and_1,
+      "correctCount": number,
+      "totalExtracted": number,
+      "totalExpected": number
+    }
+  },
+  "detailedComparisons": {
+    "goals": [
+      {
+        "type": "perfect_match|partial_match|missing_expected|unexpected_extra",
+        "category": "goals",
+        "expected": "expected text or null",
+        "actual": "actual text or null",
+        "message": "brief explanation"
+      }
+    ],
+    "bmps": [{"type": "...", "category": "bmps", "expected": "...", "actual": "...", "message": "..."}],
+    "implementation": [{"type": "...", "category": "implementation", "expected": "...", "actual": "...", "message": "..."}],
+    "monitoring": [{"type": "...", "category": "monitoring", "expected": "...", "actual": "...", "message": "..."}]
+  }
+}
+
+INSTRUCTIONS:
+- Use semantic similarity to match items, not just exact text matching
+- Consider partial matches when content is similar but not identical
+- Keep messages brief and focused (max 50 words each)
+- Calculate precision as: correctCount / totalExtracted
+- Calculate recall as: correctCount / totalExpected  
+- Calculate F1 as: 2 * (precision * recall) / (precision + recall)
+- Be thorough but concise in your comparison
+
+CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks or add any other text.
+`;
+  }
+
   private validateAndStructureData(data: any): ExtractedData {
     // Trust the AI to calculate reportSummary correctly with improved prompt
     // Only provide fallbacks if reportSummary is completely missing
@@ -219,6 +490,53 @@ CRITICAL:
       contacts: data.contacts || [],
       organizations: data.organizations || [],
     };
+  }
+
+  private summarizeDataForComparison(data: ExtractedData): any {
+    // Limit the size of data sent to AI to avoid token limits
+    return {
+      goals: (data.goals || []).slice(0, 10).map((goal) => ({
+        description: goal.description?.substring(0, 200) || "",
+        objective: goal.objective?.substring(0, 200) || "",
+      })),
+      bmps: (data.bmps || []).slice(0, 10).map((bmp) => ({
+        name: bmp.name?.substring(0, 100) || "",
+        description: bmp.description?.substring(0, 200) || "",
+      })),
+      implementation: (data.implementation || []).slice(0, 10).map((impl) => ({
+        description: impl.description?.substring(0, 200) || "",
+      })),
+      monitoring: (data.monitoring || []).slice(0, 10).map((mon) => ({
+        description: mon.description?.substring(0, 200) || "",
+      })),
+    };
+  }
+
+  private cleanJsonFromMarkdown(content: string): string {
+    // Remove markdown code blocks like ```json and ```
+    let cleaned = content.trim();
+
+    // Remove opening markdown code block
+    if (cleaned.startsWith("```json")) {
+      cleaned = cleaned.substring(7);
+    } else if (cleaned.startsWith("```")) {
+      cleaned = cleaned.substring(3);
+    }
+
+    // Remove closing markdown code block
+    if (cleaned.endsWith("```")) {
+      cleaned = cleaned.substring(0, cleaned.length - 3);
+    }
+
+    // Check if JSON appears to be truncated (incomplete)
+    const trimmed = cleaned.trim();
+    if (trimmed.startsWith("{") && !trimmed.endsWith("}")) {
+      console.warn(
+        "JSON response appears to be truncated - missing closing brace"
+      );
+    }
+
+    return trimmed;
   }
 
   private calculateCompletionRate(implementation: any[]): number {

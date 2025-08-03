@@ -72,7 +72,13 @@ export class AccuracyController {
     const pdfFile = files["pdf"][0];
     const groundTruthFile = files["groundTruth"][0];
 
-    console.log(`Testing uploaded PDF: ${pdfFile.originalname}`);
+    // Get comparison mode from request body
+    const compareMode = req.body.compare_mode || "default";
+    const compareModeModel = req.body.compare_mode_model || "gpt-3.5-turbo";
+
+    console.log(
+      `Testing uploaded PDF: ${pdfFile.originalname} with ${compareMode} comparison mode`
+    );
 
     // Extract data from uploaded PDF
     const extractedData = await pdfService.extractStructuredData(pdfFile.path);
@@ -81,11 +87,22 @@ export class AccuracyController {
     const groundTruthContent = fs.readFileSync(groundTruthFile.path, "utf-8");
     const groundTruth = JSON.parse(groundTruthContent);
 
-    // Calculate accuracy
-    const accuracyResult = accuracyService.calculateAccuracy(
-      extractedData,
-      groundTruth
-    );
+    // Calculate accuracy based on mode
+    let accuracyResult: AccuracyTestResult;
+    if (compareMode === "ai") {
+      console.log(`Using AI comparison with model: ${compareModeModel}`);
+      accuracyResult = await accuracyService.calculateAccuracyWithAI(
+        extractedData,
+        groundTruth,
+        compareModeModel
+      );
+    } else {
+      console.log("Using default code-based comparison");
+      accuracyResult = accuracyService.calculateAccuracy(
+        extractedData,
+        groundTruth
+      );
+    }
 
     const result: AccuracyTestResult = {
       testCase: `uploaded-${pdfFile.originalname}`,
@@ -138,7 +155,13 @@ export class AccuracyController {
       });
     }
 
-    console.log(`Testing preset: ${preset} (${testCase.name})`);
+    // Get comparison mode from request body
+    const compareMode = req.body.compare_mode || "default";
+    const compareModeModel = req.body.compare_mode_model || "gpt-3.5-turbo";
+
+    console.log(
+      `Testing preset: ${preset} (${testCase.name}) with ${compareMode} comparison mode`
+    );
 
     // Extract data from preset PDF
     const extractedData = await pdfService.extractStructuredData(pdfPath);
@@ -159,11 +182,22 @@ export class AccuracyController {
       `Extracted Implementation: ${extractedData.implementation?.length || 0}`
     );
 
-    // Calculate accuracy
-    const accuracyResult = accuracyService.calculateAccuracy(
-      extractedData,
-      groundTruth
-    );
+    // Calculate accuracy based on mode
+    let accuracyResult: AccuracyTestResult;
+    if (compareMode === "ai") {
+      console.log(`Using AI comparison with model: ${compareModeModel}`);
+      accuracyResult = await accuracyService.calculateAccuracyWithAI(
+        extractedData,
+        groundTruth,
+        compareModeModel
+      );
+    } else {
+      console.log("Using default code-based comparison");
+      accuracyResult = accuracyService.calculateAccuracy(
+        extractedData,
+        groundTruth
+      );
+    }
 
     const result: AccuracyTestResult = {
       testCase: `${preset}-${testCase.name}`,

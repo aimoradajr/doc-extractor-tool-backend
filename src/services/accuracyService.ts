@@ -4,8 +4,18 @@ import {
   AccuracyMetric,
   ComparisonDetail,
 } from "../types/types";
+import { openAIService } from "./openAIService";
 
 export class AccuracyService {
+  async calculateAccuracyWithAI(
+    extracted: ExtractedData,
+    groundTruth: ExtractedData,
+    model: string = "gpt-3.5-turbo"
+  ): Promise<AccuracyTestResult> {
+    console.log(`Using AI comparison with model: ${model}`);
+    return await openAIService.compareWithAI(extracted, groundTruth, model);
+  }
+
   calculateAccuracy(
     extracted: ExtractedData,
     groundTruth: ExtractedData
