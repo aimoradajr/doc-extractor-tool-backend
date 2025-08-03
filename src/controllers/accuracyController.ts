@@ -92,6 +92,11 @@ export class AccuracyController {
       model: extractedData.model, // Include the model used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
+      // 🔍 Include both datasets for comparison
+      comparison: {
+        expected: groundTruth,
+        actual: extractedData,
+      },
     };
 
     res.json(result);
@@ -139,6 +144,23 @@ export class AccuracyController {
     // Load preset ground truth
     const groundTruth = JSON.parse(fs.readFileSync(groundTruthPath, "utf-8"));
 
+    // 🔍 DEBUG: Log data structures for comparison
+    console.log(`🔍 DEBUG: Comparing data structures for ${preset}...`);
+    console.log(`📊 Ground Truth Goals: ${groundTruth.goals?.length || 0}`);
+    console.log(`📊 Extracted Goals: ${extractedData.goals?.length || 0}`);
+    console.log(`📊 Ground Truth BMPs: ${groundTruth.bmps?.length || 0}`);
+    console.log(`📊 Extracted BMPs: ${extractedData.bmps?.length || 0}`);
+    console.log(
+      `📊 Ground Truth Implementation: ${
+        groundTruth.implementation?.length || 0
+      }`
+    );
+    console.log(
+      `📊 Extracted Implementation: ${
+        extractedData.implementation?.length || 0
+      }`
+    );
+
     // Calculate accuracy
     const accuracyResult = accuracyService.calculateAccuracy(
       extractedData,
@@ -150,6 +172,11 @@ export class AccuracyController {
       model: extractedData.model, // Include the model used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
+      // 🔍 Include both datasets for comparison
+      comparison: {
+        expected: groundTruth,
+        actual: extractedData,
+      },
     };
 
     // Save result for reference

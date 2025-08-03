@@ -215,6 +215,11 @@ export interface AccuracyTestResult {
     implementation: AccuracyMetric;
     monitoring: AccuracyMetric;
   };
+  // 🔍 DEBUG DATA - Compare expected vs actual
+  comparison?: {
+    expected: ExtractedData; // Ground truth data
+    actual: ExtractedData; // AI extracted data
+  };
 }
 
 /**
