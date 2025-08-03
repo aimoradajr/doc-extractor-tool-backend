@@ -90,7 +90,7 @@ IMPORTANT INSTRUCTIONS:
    - Only extract goals that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create goals that are not directly described or labeled in the text.
    - Goals may be found in narrative text, bullet lists, or tables under sections like "Goals," "Objectives," "Milestones," "Expected Outcomes," or similar headings.
    - Use the exact language from the document when possible. Paraphrase only for clarity if the goal is split across sentences, but do not invent new goals.
-   - CRITICAL: For each goal extracted, include the exact excerpt/quote from the document where you found this goal. This should be the literal text from the source document that you interpreted as a goal.
+   - CRITICAL: For each goal extracted, include a brief excerpt (approximately 20 words) from the document where you found this goal. This should be the key phrase or sentence that contains the goal statement.
 
 Required JSON format:
 {
