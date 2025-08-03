@@ -81,9 +81,12 @@ export class AccuracyService {
 
     for (const extractedBMP of extracted) {
       const match = groundTruth.find((gt) =>
+        // Use exact matching for BMP names to avoid false positives
         this.fuzzyMatch(
           extractedBMP.name || extractedBMP.description,
-          gt.name || gt.description
+          gt.name || gt.description,
+          0.7,
+          !!extractedBMP.name && !!gt.name // Exact match if both have names
         )
       );
       if (match) correctCount++;
@@ -139,12 +142,18 @@ export class AccuracyService {
   private fuzzyMatch(
     text1: string,
     text2: string,
-    threshold: number = 0.7
+    threshold: number = 0.7,
+    requireExactForNames: boolean = false
   ): boolean {
     if (!text1 || !text2) return false;
 
     const clean1 = text1.toLowerCase().trim();
     const clean2 = text2.toLowerCase().trim();
+
+    // For names and exact content, require exact match to avoid false positives
+    if (requireExactForNames) {
+      return clean1 === clean2;
+    }
 
     // Simple similarity check - can be improved with proper string similarity algorithms
     if (clean1.includes(clean2) || clean2.includes(clean1)) return true;

@@ -81,6 +81,11 @@ IMPORTANT INSTRUCTIONS:
    - completionRate = count of "completed" status items / total implementation items (0 if no implementation items)
 3. Double-check that your reportSummary numbers match your array lengths
 4. Do NOT use null for counts - use actual numbers (0 if empty)
+5. CRITICAL - Extract ALL quantitative data accurately:
+   - Look for numbers with units (acres, feet, dollars, percentages, etc.)
+   - Extract cost estimates, quantities, target values, thresholds
+   - Include specific dates, timelines, and numeric goals
+   - If a number is mentioned, capture both the value and unit
 
 Required JSON format:
 {
