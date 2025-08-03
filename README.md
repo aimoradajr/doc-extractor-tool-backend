@@ -217,10 +217,99 @@ Pre-configured watershed management documents for accuracy testing:
 
 - **Backend**: Node.js + Express + TypeScript
 - **AI Integration**: OpenAI API (GPT-3.5-turbo, GPT-4)
-- **PDF Processing**: pdf-parse
+- **PDF Processing**: pdf-parse, pdf2json
 - **File Handling**: Multer
 - **Testing**: Custom accuracy framework with dual comparison modes
 - **Architecture**: Clean separation with services, controllers, and routes
+
+## 🔮 Future Roadmap: PDFPlumber Integration
+
+### Planned Enhancement: Python-Node.js Hybrid Architecture
+
+We're planning to integrate **PDFPlumber** (Python library) to significantly improve PDF table extraction and structured data parsing capabilities.
+
+#### Current Limitations
+- pdf-parse and pdf2json struggle with complex table structures
+- Table formatting is often lost during extraction
+- Tabular data appears as unstructured text requiring AI interpretation
+
+#### Proposed Solution: PDFPlumber Integration
+
+**Architecture Plan:**
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Node.js API   │───▶│  Python Service  │───▶│   PDFPlumber    │
+│   (Express)     │    │   (FastAPI)      │    │   Processing    │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+```
+
+**Implementation Strategy:**
+
+1. **Python Microservice**
+   - FastAPI-based service for PDF processing
+   - PDFPlumber for advanced table detection and extraction
+   - Structured JSON output with table metadata
+   - Runs as separate containerized service
+
+2. **Enhanced Table Detection**
+   ```python
+   # PDFPlumber capabilities
+   - Precise table boundary detection
+   - Cell-level content extraction
+   - Table structure preservation
+   - Multi-page table handling
+   - Column/row span recognition
+   ```
+
+3. **Node.js Integration**
+   - HTTP client to communicate with Python service
+   - Fallback to current pdf2json if Python service unavailable
+   - Unified API interface for frontend compatibility
+   - Enhanced error handling and service orchestration
+
+4. **Expected Benefits**
+   ```
+   ✅ 90%+ improvement in table extraction accuracy
+   ✅ Preserved table structure and relationships
+   ✅ Better handling of complex watershed management documents
+   ✅ Reduced AI token usage (structured data vs. raw text)
+   ✅ Improved extraction of BMPs, implementation schedules, and monitoring data
+   ```
+
+**New API Endpoint (Planned):**
+```
+POST /api/upload3
+Content-Type: multipart/form-data
+Body: pdf file (key: "pdf")
+
+Response: Enhanced extraction with structured tables
+{
+  "text": "...",
+  "tables": [
+    {
+      "page": 1,
+      "bbox": [x1, y1, x2, y2],
+      "headers": ["Milestone", "Outcome", "Date"],
+      "rows": [
+        ["Coordinate with MD EQ", "Target priority areas", "Months 1-2"],
+        ["Establish WIT", "Establish WIT", "Months 1-2"]
+      ]
+    }
+  ],
+  "metadata": {
+    "tableCount": 2,
+    "processingMethod": "pdfplumber"
+  }
+}
+```
+
+**Development Timeline:**
+- Phase 1: Python service development and PDFPlumber integration
+- Phase 2: Node.js client implementation and API updates  
+- Phase 3: Testing with watershed management documents
+- Phase 4: Production deployment with Docker orchestration
+
+This enhancement will transform our PDF processing capabilities, especially for the complex tabular data commonly found in watershed management plans and environmental reports.
 
 ## 🚦 Next Steps
 

@@ -250,6 +250,8 @@ Extract structured information from this watershed management document. Return O
 Document text:
 ${text.substring(0, 8000)}
 
+Note: The input text is extracted from parsed PDFs, so tables and structured data may not appear in obvious table format. Please carefully analyze the text to identify information that likely originated from tables, such as repeated patterns, grouped short phrases, or sequences following headers like "Milestone," "Outcome," or "Date." Extract goals from these table-like structures as well, even if the table formatting is lost.
+
 IMPORTANT INSTRUCTIONS:
 1. Extract all information into the appropriate arrays first
 2. THEN calculate reportSummary counts based on what you extracted:
