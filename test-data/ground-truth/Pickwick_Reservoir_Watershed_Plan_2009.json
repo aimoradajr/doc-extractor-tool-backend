@@ -1,0 +1,273 @@
+{
+  "reportSummary": {
+    "totalGoals": 2,
+    "totalBMPs": 10,
+    "completionRate": 0.4
+  },
+  "goals": [
+    {
+      "description": "Reduce nutrient loading to Pickwick Reservoir to address eutrophication and support designated uses",
+      "objective": "Implement comprehensive nutrient management strategies across the watershed",
+      "targetArea": "Pickwick Reservoir watershed in Tennessee, Alabama, and Mississippi",
+      "schedule": "2009-2015",
+      "contacts": [
+        {
+          "name": "Tennessee Valley Authority",
+          "role": "Lead Agency",
+          "organization": "TVA"
+        },
+        {
+          "name": "Tennessee Department of Environment",
+          "role": "State Partner",
+          "organization": "TDEC"
+        }
+      ],
+      "desiredOutcomes": [
+        "Reduce nutrient concentrations",
+        "Improve dissolved oxygen levels",
+        "Support recreational activities",
+        "Maintain aquatic ecosystem health"
+      ]
+    },
+    {
+      "description": "Control sediment inputs to maintain reservoir capacity and water clarity",
+      "objective": "Implement erosion control measures throughout the contributing watershed",
+      "targetArea": "Tributary watersheds and shoreline areas",
+      "schedule": "2009-2015",
+      "contacts": [
+        {
+          "name": "NRCS Regional Office",
+          "role": "Technical Support",
+          "organization": "NRCS"
+        }
+      ],
+      "desiredOutcomes": [
+        "Reduce sediment loading",
+        "Maintain reservoir storage capacity",
+        "Improve water clarity"
+      ]
+    }
+  ],
+  "bmps": [
+    {
+      "name": "Agricultural Nutrient Management",
+      "description": "Comprehensive nutrient management plans for agricultural operations",
+      "type": "Nutrient",
+      "targetAreas": ["Row crop fields", "Livestock operations"],
+      "quantity": 15000,
+      "unit": "ac",
+      "estimatedCost": 300000,
+      "partners": [{ "name": "Extension Service" }, { "name": "NRCS" }],
+      "schedule": "2010-2015",
+      "priorityFactors": [
+        "High nutrient application areas",
+        "Proximity to water bodies"
+      ]
+    },
+    {
+      "name": "Riparian Restoration",
+      "description": "Restoration of native vegetation along streams and shorelines",
+      "type": "Nutrient",
+      "targetAreas": ["Stream corridors", "Reservoir shoreline"],
+      "quantity": 2500,
+      "unit": "ac",
+      "estimatedCost": 1250000,
+      "partners": [{ "name": "TVA" }, { "name": "Conservation groups" }],
+      "schedule": "2009-2014",
+      "priorityFactors": ["Erosion areas", "Critical habitat zones"]
+    },
+    {
+      "name": "Urban Stormwater Controls",
+      "description": "Green infrastructure and traditional stormwater management",
+      "type": "Sediment",
+      "targetAreas": ["Urban developments", "Commercial areas"],
+      "quantity": 50,
+      "unit": "ea",
+      "estimatedCost": 2500000,
+      "partners": [
+        { "name": "Municipal governments" },
+        { "name": "Developers" }
+      ],
+      "schedule": "2010-2015",
+      "priorityFactors": ["High impervious coverage", "Direct discharge points"]
+    },
+    {
+      "name": "Conservation Tillage Systems",
+      "description": "Reduced tillage practices to minimize soil erosion",
+      "type": "Sediment",
+      "targetAreas": ["Sloped agricultural fields"],
+      "quantity": 8000,
+      "unit": "ac",
+      "estimatedCost": 400000,
+      "partners": [{ "name": "NRCS" }, { "name": "Farm equipment dealers" }],
+      "schedule": "2010-2015",
+      "priorityFactors": ["Slope greater than 8%", "Erodible soils"]
+    },
+    {
+      "name": "Constructed Treatment Wetlands",
+      "description": "Engineered wetlands for point and non-point source treatment",
+      "type": "Nutrient",
+      "targetAreas": ["Municipal discharge points", "Agricultural drainage"],
+      "quantity": 12,
+      "unit": "ea",
+      "estimatedCost": 1800000,
+      "partners": [{ "name": "TVA" }, { "name": "Engineering firms" }],
+      "schedule": "2011-2014",
+      "priorityFactors": ["High nutrient loading", "Available land"]
+    }
+  ],
+  "implementation": [
+    {
+      "description": "Establish riparian buffers along priority tributary streams",
+      "responsibleParties": [
+        { "name": "TVA" },
+        { "name": "State forestry agencies" }
+      ],
+      "startDate": "2009-04-01",
+      "endDate": "2014-10-31",
+      "status": "completed",
+      "outcome": "Restored 2500 acres of riparian habitat with 60% nutrient removal efficiency"
+    },
+    {
+      "description": "Install urban stormwater management systems",
+      "responsibleParties": [
+        { "name": "Local municipalities" },
+        { "name": "Engineering contractors" }
+      ],
+      "startDate": "2010-01-01",
+      "endDate": "2015-12-31",
+      "status": "ongoing",
+      "outcome": "Reduced urban runoff volumes by 40% in treated areas"
+    },
+    {
+      "description": "Construct treatment wetlands at key locations",
+      "responsibleParties": [
+        { "name": "TVA" },
+        { "name": "Wetland specialists" }
+      ],
+      "startDate": "2011-06-01",
+      "endDate": "2014-08-31",
+      "status": "completed",
+      "outcome": "Achieved 75% nutrient removal at wetland sites"
+    }
+  ],
+  "monitoring": [
+    {
+      "description": "Reservoir water quality monitoring network",
+      "indicator": "Total Nitrogen, Total Phosphorus, Chlorophyll-a, Dissolved Oxygen",
+      "method": "Monthly sampling at multiple depths and locations",
+      "frequency": "Monthly year-round with intensive summer monitoring",
+      "thresholds": [
+        { "parameter": "Total Nitrogen", "value": "1.0", "units": "mg/L" },
+        { "parameter": "Total Phosphorus", "value": "0.03", "units": "mg/L" },
+        { "parameter": "Chlorophyll-a", "value": "20", "units": "μg/L" }
+      ],
+      "responsibleParties": [
+        { "name": "TVA" },
+        { "name": "State environmental agencies" }
+      ],
+      "sampleLocations": [
+        "Main reservoir body",
+        "Major tributary inflows",
+        "Dam forebay"
+      ],
+      "sampleSchedule": "Third Wednesday of each month"
+    },
+    {
+      "description": "Tributary monitoring for source identification",
+      "indicator": "Nutrients, sediment, flow",
+      "method": "Automated monitoring with event sampling",
+      "frequency": "Continuous flow with storm event sampling",
+      "responsibleParties": [{ "name": "TVA" }, { "name": "USGS" }],
+      "sampleLocations": ["Major tributary streams", "Urban discharge points"],
+      "sampleSchedule": "Continuous with targeted storm sampling"
+    }
+  ],
+  "outreach": [
+    {
+      "name": "Watershed Partnership Program",
+      "description": "Multi-stakeholder partnership for watershed management",
+      "partners": [
+        { "name": "TVA" },
+        { "name": "State agencies" },
+        { "name": "NGOs" }
+      ],
+      "indicators": "Partnership participation, project implementation rates",
+      "schedule": "Quarterly meetings and annual conferences",
+      "budget": 200000,
+      "events": [
+        {
+          "type": "Annual watershed conference",
+          "audience": "All stakeholders"
+        },
+        { "type": "Technical workshops", "audience": "Land managers" }
+      ],
+      "targetAudience": "Farmers, municipalities, developers, and citizens"
+    }
+  ],
+  "geographicAreas": [
+    {
+      "name": "Pickwick Reservoir Watershed",
+      "counties": [
+        "Hardin County, TN",
+        "Lauderdale County, AL",
+        "Tishomingo County, MS"
+      ],
+      "acreage": 1200000,
+      "landUseTypes": [
+        { "type": "forest", "percent": 55 },
+        { "type": "agriculture", "percent": 35 },
+        { "type": "urban", "percent": 7 },
+        { "type": "water", "percent": 3 }
+      ],
+      "population": 45000,
+      "towns": ["Savannah, TN", "Florence, AL", "Iuka, MS"],
+      "huc": "06030005",
+      "description": "Large multi-state reservoir watershed with diverse land uses and significant recreational value"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "David Anderson",
+      "role": "Watershed Manager",
+      "organization": "Tennessee Valley Authority",
+      "phone": "256-386-2642",
+      "email": "danderson@tva.gov"
+    },
+    {
+      "name": "Susan Roberts",
+      "role": "Water Quality Specialist",
+      "organization": "Tennessee Department of Environment",
+      "phone": "615-532-0625",
+      "email": "susan.roberts@tn.gov"
+    },
+    {
+      "name": "James Mitchell",
+      "role": "Regional Conservationist",
+      "organization": "NRCS Alabama",
+      "phone": "334-887-4500",
+      "email": "james.mitchell@usda.gov"
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Tennessee Valley Authority",
+      "contact": { "name": "David Anderson", "role": "Watershed Manager" }
+    },
+    {
+      "name": "Tennessee Department of Environment and Conservation",
+      "contact": { "name": "Susan Roberts", "role": "Water Quality Specialist" }
+    },
+    {
+      "name": "Alabama Department of Environmental Management",
+      "contact": { "name": "State Officials", "role": "Regional Coordinators" }
+    },
+    {
+      "name": "USDA Natural Resources Conservation Service",
+      "contact": {
+        "name": "James Mitchell",
+        "role": "Regional Conservationist"
+      }
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "reportSummary": {
+    "totalGoals": 1,
+    "totalBMPs": 9,
+    "completionRate": 0.2
+  },
+  "goals": [
+    {
+      "description": "Reduce bacteria, nutrient, and sediment loadings to restore water quality and attain designated uses in Basket Creek and Hickahala Creek watersheds",
+      "objective": "Implement comprehensive watershed management through education, technical assistance, and BMP installation to address 9 key elements",
+      "targetArea": "Basket Creek and Hickahala Creek watersheds in Mississippi",
+      "schedule": "2018-2023",
+      "contacts": [
+        {
+          "name": "Mississippi Department of Environmental Quality",
+          "role": "Lead Agency",
+          "organization": "MDEQ"
+        },
+        {
+          "name": "Natural Resources Conservation Service",
+          "role": "Technical Partner",
+          "organization": "NRCS"
+        }
+      ],
+      "desiredOutcomes": [
+        "Attain water quality standards",
+        "Reduce pathogen loading",
+        "Improve aquatic habitat",
+        "Support recreational uses"
+      ]
+    }
+  ],
+  "bmps": [
+    {
+      "name": "Riparian Buffers",
+      "description": "Vegetated areas along waterways to filter runoff and reduce erosion",
+      "type": "Nutrient",
+      "targetAreas": ["Stream corridors", "Critical source areas"],
+      "quantity": 150,
+      "unit": "ac",
+      "estimatedCost": 375000,
+      "partners": [{ "name": "NRCS" }, { "name": "Landowners" }],
+      "schedule": "2019-2022",
+      "priorityFactors": ["Stream proximity", "High nutrient loading areas"]
+    },
+    {
+      "name": "Waste Storage Systems",
+      "description": "Properly designed storage for animal waste to prevent direct discharge",
+      "type": "Pathogen",
+      "targetAreas": ["Livestock operations"],
+      "quantity": 12,
+      "unit": "ea",
+      "estimatedCost": 600000,
+      "partners": [{ "name": "NRCS" }, { "name": "Livestock producers" }],
+      "schedule": "2018-2021",
+      "priorityFactors": ["Proximity to streams", "Animal density"]
+    },
+    {
+      "name": "Nutrient Management Plans",
+      "description": "Comprehensive plans for managing nutrient applications",
+      "type": "Nutrient",
+      "targetAreas": ["Agricultural operations"],
+      "quantity": 25,
+      "unit": "ea",
+      "estimatedCost": 50000,
+      "partners": [
+        { "name": "Extension Service" },
+        { "name": "Certified Crop Advisors" }
+      ],
+      "schedule": "2018-2023",
+      "priorityFactors": ["Soil test results", "Application timing"]
+    },
+    {
+      "name": "Prescribed Grazing",
+      "description": "Managed grazing systems to improve pasture health and reduce runoff",
+      "type": "Sediment",
+      "targetAreas": ["Pasture and rangeland"],
+      "quantity": 500,
+      "unit": "ac",
+      "estimatedCost": 125000,
+      "partners": [{ "name": "NRCS" }, { "name": "Ranchers" }],
+      "schedule": "2019-2023",
+      "priorityFactors": ["Overgrazing areas", "Slope"]
+    },
+    {
+      "name": "Filter Strips",
+      "description": "Narrow strips of vegetation to filter runoff",
+      "type": "Sediment",
+      "targetAreas": ["Field edges", "Concentrated flow areas"],
+      "quantity": 75,
+      "unit": "ac",
+      "estimatedCost": 150000,
+      "partners": [{ "name": "NRCS" }, { "name": "Farmers" }],
+      "schedule": "2019-2022",
+      "priorityFactors": ["Runoff concentration", "Erosion potential"]
+    }
+  ],
+  "implementation": [
+    {
+      "description": "Establish riparian buffers along priority stream segments",
+      "responsibleParties": [
+        { "name": "NRCS" },
+        { "name": "Conservation districts" }
+      ],
+      "startDate": "2019-01-01",
+      "endDate": "2022-12-31",
+      "status": "ongoing",
+      "outcome": "Reduce nutrient and sediment loading to streams"
+    },
+    {
+      "description": "Install waste storage systems at livestock operations",
+      "responsibleParties": [
+        { "name": "NRCS" },
+        { "name": "Private contractors" }
+      ],
+      "startDate": "2018-06-01",
+      "endDate": "2021-08-31",
+      "status": "completed",
+      "outcome": "Eliminate direct discharge of animal waste"
+    }
+  ],
+  "monitoring": [
+    {
+      "description": "Water quality monitoring to track BMP effectiveness",
+      "indicator": "E. coli, Total Nitrogen, Total Phosphorus, Turbidity",
+      "method": "Monthly grab samples and quarterly analysis",
+      "frequency": "Monthly during wet season, quarterly during dry season",
+      "thresholds": [
+        { "parameter": "E. coli", "value": "126", "units": "CFU/100mL" },
+        { "parameter": "Total Nitrogen", "value": "1.5", "units": "mg/L" },
+        { "parameter": "Total Phosphorus", "value": "0.05", "units": "mg/L" }
+      ],
+      "responsibleParties": [
+        { "name": "MDEQ" },
+        { "name": "Local monitoring groups" }
+      ],
+      "sampleLocations": [
+        "Basket Creek at Highway 9",
+        "Hickahala Creek upstream of confluence"
+      ],
+      "sampleSchedule": "First Wednesday of each month"
+    }
+  ],
+  "outreach": [
+    {
+      "name": "Watershed Education Program",
+      "description": "Educational outreach to landowners and communities",
+      "partners": [
+        { "name": "Extension Service" },
+        { "name": "Conservation districts" }
+      ],
+      "indicators": "Number of contacts, BMP adoption rate",
+      "schedule": "Ongoing throughout project period",
+      "budget": 75000,
+      "events": [
+        { "type": "Field days", "audience": "Agricultural producers" },
+        { "type": "School programs", "audience": "Students" }
+      ],
+      "targetAudience": "Landowners and local communities"
+    }
+  ],
+  "geographicAreas": [
+    {
+      "name": "Basket Creek Watershed",
+      "counties": ["Lafayette County", "Marshall County"],
+      "acreage": 45000,
+      "landUseTypes": [
+        { "type": "agriculture", "percent": 60 },
+        { "type": "forest", "percent": 30 },
+        { "type": "pasture", "percent": 8 }
+      ],
+      "population": 2100,
+      "towns": ["Oxford", "Water Valley"],
+      "huc": "08030203",
+      "description": "Mixed agricultural and forested watershed in north-central Mississippi"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Jennifer Smith",
+      "role": "Watershed Coordinator",
+      "organization": "Mississippi Department of Environmental Quality",
+      "phone": "601-961-5171",
+      "email": "jennifer.smith@mdeq.ms.gov"
+    },
+    {
+      "name": "Robert Johnson",
+      "role": "District Conservationist",
+      "organization": "NRCS Lafayette County",
+      "phone": "662-234-4531",
+      "email": "robert.johnson@usda.gov"
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Mississippi Department of Environmental Quality",
+      "contact": { "name": "Jennifer Smith", "role": "Watershed Coordinator" }
+    },
+    {
+      "name": "USDA Natural Resources Conservation Service",
+      "contact": {
+        "name": "Robert Johnson",
+        "role": "District Conservationist"
+      }
+    },
+    {
+      "name": "Lafayette County Conservation District",
+      "contact": { "name": "Local Board", "role": "Board Members" }
+    }
+  ]
+}

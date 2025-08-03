@@ -1,0 +1,220 @@
+{
+  "reportSummary": {
+    "totalGoals": 1,
+    "totalBMPs": 7,
+    "completionRate": 0.1
+  },
+  "goals": [
+    {
+      "description": "Restore water quality in Broken Pumpkin Creek by reducing bacteria, nutrient, and sediment loadings through implementation of 9 key watershed management elements",
+      "objective": "Address impairments through targeted BMP implementation, monitoring, and stakeholder engagement",
+      "targetArea": "Broken Pumpkin Creek watershed in Mississippi",
+      "schedule": "2019-2024",
+      "contacts": [
+        {
+          "name": "Mississippi Department of Environmental Quality",
+          "role": "Project Lead",
+          "organization": "MDEQ"
+        },
+        {
+          "name": "NRCS Mississippi",
+          "role": "Technical Support",
+          "organization": "NRCS"
+        }
+      ],
+      "desiredOutcomes": [
+        "Meet water quality standards for bacteria",
+        "Reduce nutrient loading",
+        "Improve habitat conditions",
+        "Restore designated uses"
+      ]
+    }
+  ],
+  "bmps": [
+    {
+      "name": "Constructed Wetlands",
+      "description": "Engineered wetlands to treat agricultural and urban runoff",
+      "type": "Nutrient",
+      "targetAreas": [
+        "Agricultural drainage areas",
+        "Urban stormwater outlets"
+      ],
+      "quantity": 8,
+      "unit": "ea",
+      "estimatedCost": 400000,
+      "partners": [{ "name": "NRCS" }, { "name": "Engineering firms" }],
+      "schedule": "2020-2023",
+      "priorityFactors": ["High nutrient loading", "Suitable topography"]
+    },
+    {
+      "name": "Stream Restoration",
+      "description": "Physical restoration of degraded stream channels",
+      "type": "Sediment",
+      "targetAreas": ["Eroded stream sections"],
+      "quantity": 2500,
+      "unit": "ft",
+      "estimatedCost": 750000,
+      "partners": [
+        { "name": "Engineering contractors" },
+        { "name": "Environmental groups" }
+      ],
+      "schedule": "2021-2024",
+      "priorityFactors": ["Bank erosion", "Channel instability"]
+    },
+    {
+      "name": "Cover Crops",
+      "description": "Crops planted to provide soil cover between main crop seasons",
+      "type": "Nutrient",
+      "targetAreas": ["Row crop fields"],
+      "quantity": 800,
+      "unit": "ac",
+      "estimatedCost": 160000,
+      "partners": [{ "name": "NRCS" }, { "name": "Seed companies" }],
+      "schedule": "2019-2024",
+      "priorityFactors": ["Soil erosion potential", "Nutrient management needs"]
+    },
+    {
+      "name": "Septic System Improvements",
+      "description": "Upgrade failing septic systems to reduce bacteria loading",
+      "type": "Pathogen",
+      "targetAreas": ["Rural residential areas"],
+      "quantity": 35,
+      "unit": "ea",
+      "estimatedCost": 525000,
+      "partners": [
+        { "name": "Health Department" },
+        { "name": "Private contractors" }
+      ],
+      "schedule": "2020-2022",
+      "priorityFactors": ["System age", "Proximity to waterways"]
+    },
+    {
+      "name": "Urban Stormwater BMPs",
+      "description": "Green infrastructure for urban runoff management",
+      "type": "Sediment",
+      "targetAreas": ["Urban areas", "Commercial districts"],
+      "quantity": 15,
+      "unit": "ea",
+      "estimatedCost": 300000,
+      "partners": [
+        { "name": "Municipal governments" },
+        { "name": "Developers" }
+      ],
+      "schedule": "2020-2024",
+      "priorityFactors": ["Impervious surface coverage", "Direct discharge"]
+    }
+  ],
+  "implementation": [
+    {
+      "description": "Construct wetlands at priority agricultural sites",
+      "responsibleParties": [
+        { "name": "NRCS" },
+        { "name": "Design engineers" }
+      ],
+      "startDate": "2020-03-01",
+      "endDate": "2023-09-30",
+      "status": "ongoing",
+      "outcome": "Treat nutrient-rich agricultural runoff"
+    },
+    {
+      "description": "Restore eroded stream channels using natural channel design",
+      "responsibleParties": [
+        { "name": "Stream restoration contractors" },
+        { "name": "MDEQ" }
+      ],
+      "startDate": "2021-05-01",
+      "endDate": "2024-10-31",
+      "status": "planned",
+      "outcome": "Stabilize channels and reduce sediment loading"
+    }
+  ],
+  "monitoring": [
+    {
+      "description": "Comprehensive water quality monitoring program",
+      "indicator": "E. coli, Total Nitrogen, Total Phosphorus, Dissolved Oxygen",
+      "method": "Automated monitoring and grab sampling",
+      "frequency": "Continuous monitoring with monthly grab samples",
+      "thresholds": [
+        { "parameter": "E. coli", "value": "126", "units": "CFU/100mL" },
+        { "parameter": "Total Phosphorus", "value": "0.08", "units": "mg/L" },
+        { "parameter": "Dissolved Oxygen", "value": "5.0", "units": "mg/L" }
+      ],
+      "responsibleParties": [
+        { "name": "MDEQ" },
+        { "name": "University partners" }
+      ],
+      "sampleLocations": [
+        "Broken Pumpkin Creek at State Route 7",
+        "Tributary monitoring points"
+      ],
+      "sampleSchedule": "Continuous with monthly manual sampling"
+    }
+  ],
+  "outreach": [
+    {
+      "name": "Community Watershed Stewardship",
+      "description": "Community engagement and education program",
+      "partners": [
+        { "name": "Local nonprofits" },
+        { "name": "Extension Service" }
+      ],
+      "indicators": "Community participation, stewardship actions",
+      "schedule": "Quarterly events and ongoing outreach",
+      "budget": 85000,
+      "events": [
+        { "type": "Stream cleanups", "audience": "General public" },
+        { "type": "Technical workshops", "audience": "Land managers" }
+      ],
+      "targetAudience": "Local residents and land managers"
+    }
+  ],
+  "geographicAreas": [
+    {
+      "name": "Broken Pumpkin Creek Watershed",
+      "counties": ["Tippah County"],
+      "acreage": 35000,
+      "landUseTypes": [
+        { "type": "agriculture", "percent": 55 },
+        { "type": "forest", "percent": 35 },
+        { "type": "urban", "percent": 10 }
+      ],
+      "population": 1800,
+      "towns": ["Ripley", "Blue Mountain"],
+      "huc": "08030202",
+      "description": "Small agricultural watershed with growing urban development in northeast Mississippi"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Michael Davis",
+      "role": "Project Manager",
+      "organization": "Mississippi Department of Environmental Quality",
+      "phone": "601-961-5043",
+      "email": "michael.davis@mdeq.ms.gov"
+    },
+    {
+      "name": "Lisa Wilson",
+      "role": "Conservation Specialist",
+      "organization": "NRCS Tippah County",
+      "phone": "662-837-7231",
+      "email": "lisa.wilson@usda.gov"
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Mississippi Department of Environmental Quality",
+      "contact": { "name": "Michael Davis", "role": "Project Manager" }
+    },
+    {
+      "name": "USDA Natural Resources Conservation Service",
+      "contact": { "name": "Lisa Wilson", "role": "Conservation Specialist" }
+    },
+    {
+      "name": "Tippah County Health Department",
+      "contact": {
+        "name": "Health Officials",
+        "role": "Septic System Oversight"
+      }
+    }
+  ]
+}

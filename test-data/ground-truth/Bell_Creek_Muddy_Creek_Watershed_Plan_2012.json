@@ -1,138 +1,155 @@
 {
   "reportSummary": {
-    "totalGoals": 3,
-    "totalBMPs": 5,
-    "completionRate": 0.6
+    "totalGoals": 1,
+    "totalBMPs": 8,
+    "completionRate": 0.0
   },
   "goals": [
     {
-      "id": "goal-1",
-      "description": "Reduce sediment and nutrient loading to Bell Creek and Muddy Creek",
-      "objective": "Implement agricultural best management practices",
+      "description": "Reduce nutrient and sediment loading to achieve water quality standards for Low DO/Organic enrichment and narrative standards for nutrient loading, and Fish and Wildlife Support designated use",
+      "objective": "Continue existing programs and projects related to farmer education, BMP implementation, and habitat conservation throughout the watershed",
       "targetArea": "Bell Creek and Muddy Creek watersheds",
       "schedule": "2012-2017",
       "contacts": [
         {
-          "name": "John Smith",
-          "role": "Project Manager",
+          "name": "Mark Gilbert",
+          "role": "Watershed Coordinator",
+          "organization": "MSWCC"
+        },
+        {
+          "name": "NRCS Staff",
+          "role": "Technical Assistance",
           "organization": "NRCS"
         }
       ],
-      "desiredOutcomes": ["Improved water quality", "Reduced erosion"]
+      "desiredOutcomes": [
+        "Improved water quality standards compliance",
+        "Reduced nutrient loading",
+        "Enhanced fish and wildlife habitat"
+      ]
     }
   ],
   "bmps": [
     {
-      "name": "Conservation Tillage",
-      "description": "Reduce tillage operations to maintain crop residue",
+      "name": "Grade Stabilization Structures",
+      "description": "Structures designed to control grade and reduce erosion in channels and waterways",
       "type": "Sediment",
-      "targetAreas": ["Agricultural fields"],
-      "quantity": 1000,
-      "unit": "ac",
-      "estimatedCost": 50000,
-      "partners": [
-        {
-          "name": "NRCS"
-        }
-      ],
+      "targetAreas": ["Critical erosion sites", "Stream channels"],
+      "quantity": 5,
+      "unit": "ea",
+      "estimatedCost": 75000,
+      "partners": [{ "name": "NRCS" }, { "name": "Local landowners" }],
       "schedule": "2013-2015",
-      "priorityFactors": ["High erosion areas"]
+      "priorityFactors": ["High erosion areas", "Stream bank instability"]
+    },
+    {
+      "name": "Conservation Tillage",
+      "description": "Tillage practices that maintain crop residue coverage",
+      "type": "Sediment",
+      "targetAreas": ["Cropland"],
+      "quantity": 5000,
+      "unit": "ac",
+      "estimatedCost": 100000,
+      "partners": [{ "name": "NRCS" }, { "name": "Extension Service" }],
+      "schedule": "2013-2017",
+      "priorityFactors": ["Slope", "Soil type", "Crop rotation"]
+    },
+    {
+      "name": "Nutrient Management",
+      "description": "Managing amount, source, placement, form and timing of plant nutrients",
+      "type": "Nutrient",
+      "targetAreas": ["Fertilized cropland"],
+      "quantity": 3000,
+      "unit": "ac",
+      "estimatedCost": 15000,
+      "partners": [
+        { "name": "Extension Service" },
+        { "name": "Certified Crop Advisors" }
+      ],
+      "schedule": "2013-2017",
+      "priorityFactors": ["Soil test results", "Crop requirements"]
     }
   ],
   "implementation": [
     {
-      "description": "Install conservation tillage practices",
+      "description": "Install grade stabilization structures at priority locations",
       "responsibleParties": [
-        {
-          "name": "NRCS"
-        }
+        { "name": "NRCS" },
+        { "name": "Local contractors" }
       ],
-      "startDate": "2013-01-01",
-      "endDate": "2015-12-31",
-      "status": "completed",
-      "outcome": "Reduced soil erosion by 40%"
+      "startDate": "2013-03-01",
+      "endDate": "2015-10-31",
+      "status": "planned",
+      "outcome": "Reduce channel erosion and downstream sedimentation"
     }
   ],
   "monitoring": [
     {
-      "description": "Water quality monitoring",
-      "indicator": "Total suspended solids",
-      "method": "Monthly grab samples",
-      "frequency": "Monthly",
+      "description": "Water quality monitoring at key watershed outlets",
+      "indicator": "Total Suspended Solids, Total Nitrogen, Total Phosphorus",
+      "method": "Monthly grab samples and continuous monitoring",
+      "frequency": "Monthly during growing season, quarterly during winter",
       "thresholds": [
         {
-          "parameter": "TSS",
-          "value": "50",
+          "parameter": "Total Suspended Solids",
+          "value": "80",
           "units": "mg/L"
-        }
+        },
+        { "parameter": "Total Nitrogen", "value": "2.0", "units": "mg/L" }
       ],
-      "responsibleParties": [
-        {
-          "name": "County Environmental Department"
-        }
+      "responsibleParties": [{ "name": "MSWCC" }, { "name": "MDEQ" }],
+      "sampleLocations": [
+        "Bell Creek at County Road 15",
+        "Muddy Creek at Highway 25"
       ],
-      "sampleLocations": ["Bell Creek at Highway 20"],
-      "sampleSchedule": "Monthly during growing season"
+      "sampleSchedule": "Third Tuesday of each month during growing season"
     }
   ],
   "outreach": [
     {
-      "name": "Farmer Education Workshop",
-      "description": "Educational workshop on conservation practices",
-      "partners": [
-        {
-          "name": "Extension Service"
-        }
-      ],
-      "indicators": "Number of participants",
-      "schedule": "Annual",
-      "budget": 5000,
-      "events": [
-        {
-          "type": "Workshop",
-          "audience": "Local farmers"
-        }
-      ],
-      "targetAudience": "Agricultural producers"
+      "name": "Farmer Education Workshops",
+      "description": "Educational workshops on conservation practices and water quality",
+      "partners": [{ "name": "Extension Service" }, { "name": "NRCS" }],
+      "indicators": "Number of participants, practice adoption rates",
+      "schedule": "Semi-annual workshops",
+      "budget": 15000,
+      "events": [{ "type": "Workshop", "audience": "Agricultural producers" }],
+      "targetAudience": "Agricultural producers in the watershed"
     }
   ],
   "geographicAreas": [
     {
       "name": "Bell Creek Watershed",
-      "counties": ["Sheridan County"],
-      "acreage": 50000,
+      "counties": ["Sheridan County", "Roosevelt County"],
+      "acreage": 285000,
       "landUseTypes": [
-        {
-          "type": "cropland",
-          "percent": 60
-        },
-        {
-          "type": "grassland",
-          "percent": 30
-        }
+        { "type": "cropland", "percent": 65 },
+        { "type": "grassland", "percent": 25 },
+        { "type": "forest", "percent": 8 }
       ],
-      "population": 2500,
-      "towns": ["Plentywood"],
+      "population": 3500,
+      "towns": ["Plentywood", "Westby"],
       "huc": "10060005",
-      "description": "Agricultural watershed in northeastern Montana"
+      "description": "Agricultural watershed in northeastern Montana along the North Dakota border"
     }
   ],
   "contacts": [
     {
-      "name": "John Smith",
-      "role": "Project Manager",
-      "organization": "NRCS",
-      "phone": "406-555-0123",
-      "email": "john.smith@usda.gov"
+      "name": "Mark Gilbert",
+      "role": "Watershed Coordinator",
+      "organization": "Montana Soil and Water Conservation Committee",
+      "phone": "406-444-6667",
+      "email": "mgilbert@mt.gov"
     }
   ],
   "organizations": [
     {
-      "name": "NRCS",
-      "contact": {
-        "name": "John Smith",
-        "role": "District Conservationist"
-      }
+      "name": "Montana Soil and Water Conservation Committee",
+      "contact": { "name": "Mark Gilbert", "role": "Watershed Coordinator" }
+    },
+    {
+      "name": "USDA Natural Resources Conservation Service",
+      "contact": { "name": "John Anderson", "role": "District Conservationist" }
     }
   ]
 }
