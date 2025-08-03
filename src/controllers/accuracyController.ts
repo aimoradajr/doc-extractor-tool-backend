@@ -19,14 +19,14 @@ const PRESET_TESTS = {
       "Basket_Creek_Hickahala_Creek_9_Key_Element_Plan_2018.json",
   },
   preset3: {
-    name: "Broken Pumpkin 9 Key Element Plan 2019",
-    pdfFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.pdf",
-    groundTruthFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.json",
-  },
-  preset4: {
     name: "Pickwick Reservoir Watershed Plan 2009",
     pdfFile: "Pickwick_Reservoir_Watershed_Plan_2009.pdf",
     groundTruthFile: "Pickwick_Reservoir_Watershed_Plan_2009.json",
+  },
+  preset4: {
+    name: "Broken Pumpkin 9 Key Element Plan 2019",
+    pdfFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.pdf",
+    groundTruthFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.json",
   },
 } as const;
 
