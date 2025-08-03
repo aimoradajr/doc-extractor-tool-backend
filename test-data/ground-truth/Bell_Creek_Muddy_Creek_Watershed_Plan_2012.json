@@ -1,0 +1,138 @@
+{
+  "reportSummary": {
+    "totalGoals": 3,
+    "totalBMPs": 5,
+    "completionRate": 0.6
+  },
+  "goals": [
+    {
+      "id": "goal-1",
+      "description": "Reduce sediment and nutrient loading to Bell Creek and Muddy Creek",
+      "objective": "Implement agricultural best management practices",
+      "targetArea": "Bell Creek and Muddy Creek watersheds",
+      "schedule": "2012-2017",
+      "contacts": [
+        {
+          "name": "John Smith",
+          "role": "Project Manager",
+          "organization": "NRCS"
+        }
+      ],
+      "desiredOutcomes": ["Improved water quality", "Reduced erosion"]
+    }
+  ],
+  "bmps": [
+    {
+      "name": "Conservation Tillage",
+      "description": "Reduce tillage operations to maintain crop residue",
+      "type": "Sediment",
+      "targetAreas": ["Agricultural fields"],
+      "quantity": 1000,
+      "unit": "ac",
+      "estimatedCost": 50000,
+      "partners": [
+        {
+          "name": "NRCS"
+        }
+      ],
+      "schedule": "2013-2015",
+      "priorityFactors": ["High erosion areas"]
+    }
+  ],
+  "implementation": [
+    {
+      "description": "Install conservation tillage practices",
+      "responsibleParties": [
+        {
+          "name": "NRCS"
+        }
+      ],
+      "startDate": "2013-01-01",
+      "endDate": "2015-12-31",
+      "status": "completed",
+      "outcome": "Reduced soil erosion by 40%"
+    }
+  ],
+  "monitoring": [
+    {
+      "description": "Water quality monitoring",
+      "indicator": "Total suspended solids",
+      "method": "Monthly grab samples",
+      "frequency": "Monthly",
+      "thresholds": [
+        {
+          "parameter": "TSS",
+          "value": "50",
+          "units": "mg/L"
+        }
+      ],
+      "responsibleParties": [
+        {
+          "name": "County Environmental Department"
+        }
+      ],
+      "sampleLocations": ["Bell Creek at Highway 20"],
+      "sampleSchedule": "Monthly during growing season"
+    }
+  ],
+  "outreach": [
+    {
+      "name": "Farmer Education Workshop",
+      "description": "Educational workshop on conservation practices",
+      "partners": [
+        {
+          "name": "Extension Service"
+        }
+      ],
+      "indicators": "Number of participants",
+      "schedule": "Annual",
+      "budget": 5000,
+      "events": [
+        {
+          "type": "Workshop",
+          "audience": "Local farmers"
+        }
+      ],
+      "targetAudience": "Agricultural producers"
+    }
+  ],
+  "geographicAreas": [
+    {
+      "name": "Bell Creek Watershed",
+      "counties": ["Sheridan County"],
+      "acreage": 50000,
+      "landUseTypes": [
+        {
+          "type": "cropland",
+          "percent": 60
+        },
+        {
+          "type": "grassland",
+          "percent": 30
+        }
+      ],
+      "population": 2500,
+      "towns": ["Plentywood"],
+      "huc": "10060005",
+      "description": "Agricultural watershed in northeastern Montana"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "John Smith",
+      "role": "Project Manager",
+      "organization": "NRCS",
+      "phone": "406-555-0123",
+      "email": "john.smith@usda.gov"
+    }
+  ],
+  "organizations": [
+    {
+      "name": "NRCS",
+      "contact": {
+        "name": "John Smith",
+        "role": "District Conservationist"
+      }
+    }
+  ]
+}
