@@ -220,6 +220,29 @@ export interface AccuracyTestResult {
     expected: ExtractedData; // Ground truth data
     actual: ExtractedData; // AI extracted data
   };
+  // 📊 DETAILED COMPARISONS - Show exactly what matched/didn't match
+  detailedComparisons?: {
+    goals: ComparisonDetail[];
+    bmps: ComparisonDetail[];
+    implementation: ComparisonDetail[];
+    monitoring: ComparisonDetail[];
+  };
+}
+
+/**
+ * Detailed comparison for individual items
+ */
+export interface ComparisonDetail {
+  type:
+    | "perfect_match"
+    | "partial_match"
+    | "missing_expected"
+    | "unexpected_extra";
+  category: "goals" | "bmps" | "implementation" | "monitoring";
+  expected?: string | null; // What we expected to find
+  actual?: string | null; // What we actually found
+  similarity?: number; // Similarity score (0-1) for partial matches
+  message: string; // Human-readable explanation
 }
 
 /**

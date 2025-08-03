@@ -97,6 +97,8 @@ export class AccuracyController {
         expected: groundTruth,
         actual: extractedData,
       },
+      // 📊 Include detailed comparisons for debugging
+      detailedComparisons: accuracyResult.detailedComparisons,
     };
 
     res.json(result);
@@ -177,6 +179,8 @@ export class AccuracyController {
         expected: groundTruth,
         actual: extractedData,
       },
+      // 📊 Include detailed comparisons for debugging
+      detailedComparisons: accuracyResult.detailedComparisons,
     };
 
     // Save result for reference
