@@ -38,16 +38,16 @@ export class UploadController {
     }
   };
 
-  // NEW ROUTE USING PDFREADER
+  // NEW ROUTE USING PDF2JSON
   uploadPdf2 = async (
     req: Request,
     res: Response<UploadResponse | ErrorResponse>
   ) => {
     try {
-      const result = await pdfService.extractTextWithPdfReader(req.file!.path);
+      const result = await pdfService.extractTextWithPdf2Json(req.file!.path);
 
       res.json({
-        message: "PDF processed successfully with PDFReader",
+        message: "PDF processed successfully with PDF2Json",
         file: {
           filename: req.file!.filename,
           originalName: req.file!.originalname,
@@ -56,8 +56,8 @@ export class UploadController {
         extracted: result,
       });
     } catch (error) {
-      console.error("PDF processing error (PDFReader):", error);
-      res.status(500).json({ error: "Failed to process PDF with PDFReader" });
+      console.error("PDF processing error (PDF2Json):", error);
+      res.status(500).json({ error: "Failed to process PDF with PDF2Json" });
     }
   };
 }

@@ -22,7 +22,7 @@
     "multer": "^2.0.2",
     "openai": "^5.11.0",
     "pdf-parse": "^1.1.1",
-    "pdfreader": "^3.0.7"
+    "pdf2json": "^3.2.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",

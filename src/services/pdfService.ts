@@ -4,7 +4,7 @@ import { openAIService } from "./openAIService";
 
 // Use require with type assertion for pdf-parse (no official types available)
 const pdf = require("pdf-parse") as any;
-const pdfreader = require("pdfreader");
+const PDFParser = require("pdf2json");
 
 export class PdfService {
   async extractText(filePath: string): Promise<PdfExtractionResult> {
@@ -18,43 +18,56 @@ export class PdfService {
     };
   }
 
-  async extractTextWithPdfReader(
+  async extractTextWithPdf2Json(
     filePath: string
   ): Promise<PdfExtractionResult> {
     return new Promise((resolve, reject) => {
-      let fullText = "";
-      let pageCount = 0;
+      const pdfParser = new PDFParser();
 
-      new pdfreader.PdfReader().parseFileItems(
-        filePath,
-        (err: any, item: any) => {
-          if (err) {
-            reject(new Error(`PDFReader error: ${err.message}`));
-            return;
-          }
+      pdfParser.on("pdfParser_dataError", (errData: any) => {
+        reject(new Error(`PDF2Json error: ${errData.parserError}`));
+      });
 
-          if (!item) {
-            // End of file
-            resolve({
-              text: fullText.trim(),
-              pages: pageCount,
-              textLength: fullText.trim().length,
+      pdfParser.on("pdfParser_dataReady", (pdfData: any) => {
+        try {
+          let fullText = "";
+          let pageCount = 0;
+
+          if (pdfData.Pages && Array.isArray(pdfData.Pages)) {
+            pageCount = pdfData.Pages.length;
+
+            pdfData.Pages.forEach((page: any, pageIndex: number) => {
+              if (pageIndex > 0) {
+                fullText += `\n\n--- PAGE ${pageIndex + 1} ---\n\n`;
+              }
+
+              if (page.Texts && Array.isArray(page.Texts)) {
+                page.Texts.forEach((textItem: any) => {
+                  if (textItem.R && Array.isArray(textItem.R)) {
+                    textItem.R.forEach((textRun: any) => {
+                      if (textRun.T) {
+                        // Decode URI component to get actual text
+                        const decodedText = decodeURIComponent(textRun.T);
+                        fullText += decodedText + " ";
+                      }
+                    });
+                  }
+                });
+              }
             });
-            return;
           }
 
-          if (item.page) {
-            pageCount = Math.max(pageCount, item.page);
-            if (pageCount > 1) {
-              fullText += `\n\n--- PAGE ${pageCount} ---\n\n`;
-            }
-          }
-
-          if (item.text) {
-            fullText += item.text;
-          }
+          resolve({
+            text: fullText.trim(),
+            pages: pageCount,
+            textLength: fullText.trim().length,
+          });
+        } catch (error) {
+          reject(new Error(`Failed to process PDF data: ${error}`));
         }
-      );
+      });
+
+      pdfParser.loadPDF(filePath);
     });
   }
 
