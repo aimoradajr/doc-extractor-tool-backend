@@ -202,13 +202,14 @@ export class OpenAIService {
     try {
       const prompt = this.buildExtractionPrompt(text);
 
-      const response = await this.openai.chat.completions.create({
+      // Enhanced configuration for GPT-4.1 to ensure JSON output
+      const requestConfig: any = {
         model: CURRENT_MODEL,
         messages: [
           {
             role: "system",
             content:
-              "You are an expert at extracting structured information from environmental and agricultural watershed management documents. Return only valid JSON.",
+              "You are an expert at extracting structured information from environmental and agricultural watershed management documents. You MUST return ONLY valid JSON without any markdown formatting, code blocks, or additional text. Do not wrap the JSON in ```json or ``` blocks.",
           },
           {
             role: "user",
@@ -217,20 +218,42 @@ export class OpenAIService {
         ],
         temperature: 0.1,
         max_tokens: 4000,
-      });
+      };
+
+      // For GPT-4 models, use response_format to force JSON output
+      if (CURRENT_MODEL.includes("gpt-4")) {
+        requestConfig.response_format = { type: "json_object" };
+      }
+
+      const response = await this.openai.chat.completions.create(requestConfig);
 
       const content = response.choices[0]?.message?.content;
       if (!content) {
         throw new Error("No content received from OpenAI");
       }
 
-      const extractedData = JSON.parse(content);
-      const structuredData = this.validateAndStructureData(extractedData);
+      // Clean the response by removing markdown code blocks (fallback safety)
+      const cleanedContent = this.cleanJsonFromMarkdown(content);
 
-      // Add the model information to the response
-      structuredData.model = CURRENT_MODEL;
+      try {
+        const extractedData = JSON.parse(cleanedContent);
+        const structuredData = this.validateAndStructureData(extractedData);
 
-      return structuredData;
+        // Add the model information to the response
+        structuredData.model = CURRENT_MODEL;
+
+        return structuredData;
+      } catch (parseError) {
+        console.error("Failed to parse AI response as JSON:");
+        console.error("Original content:", content.substring(0, 500) + "...");
+        console.error(
+          "Cleaned content:",
+          cleanedContent.substring(0, 500) + "..."
+        );
+        throw new Error(
+          `JSON parsing failed: ${parseError}. AI response may be malformed or truncated.`
+        );
+      }
     } catch (error) {
       console.error(`OpenAI extraction failed with ${CURRENT_MODEL}:`, error);
       const errorMessage =
@@ -377,6 +400,13 @@ CRITICAL:
 - Verify: totalGoals should equal the number of items in your "goals" array
 - Verify: totalBMPs should equal the number of items in your "bmps" array
 - Use 0 instead of null for counts when arrays are empty
+
+RESPONSE FORMAT:
+- Return ONLY valid JSON
+- Do NOT use markdown code blocks
+- Do NOT add any explanatory text before or after the JSON
+- Start your response directly with the opening { brace
+- End your response with the closing } brace
 `;
   }
 

@@ -229,6 +229,7 @@ Pre-configured watershed management documents for accuracy testing:
 We're planning to integrate **PDFPlumber** (Python library) to significantly improve PDF table extraction and structured data parsing capabilities.
 
 #### Current Limitations
+
 - pdf-parse and pdf2json struggle with complex table structures
 - Table formatting is often lost during extraction
 - Tabular data appears as unstructured text requiring AI interpretation
@@ -236,6 +237,7 @@ We're planning to integrate **PDFPlumber** (Python library) to significantly imp
 #### Proposed Solution: PDFPlumber Integration
 
 **Architecture Plan:**
+
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │   Node.js API   │───▶│  Python Service  │───▶│   PDFPlumber    │
@@ -246,12 +248,14 @@ We're planning to integrate **PDFPlumber** (Python library) to significantly imp
 **Implementation Strategy:**
 
 1. **Python Microservice**
+
    - FastAPI-based service for PDF processing
    - PDFPlumber for advanced table detection and extraction
    - Structured JSON output with table metadata
    - Runs as separate containerized service
 
 2. **Enhanced Table Detection**
+
    ```python
    # PDFPlumber capabilities
    - Precise table boundary detection
@@ -262,6 +266,7 @@ We're planning to integrate **PDFPlumber** (Python library) to significantly imp
    ```
 
 3. **Node.js Integration**
+
    - HTTP client to communicate with Python service
    - Fallback to current pdf2json if Python service unavailable
    - Unified API interface for frontend compatibility
@@ -277,6 +282,7 @@ We're planning to integrate **PDFPlumber** (Python library) to significantly imp
    ```
 
 **New API Endpoint (Planned):**
+
 ```
 POST /api/upload3
 Content-Type: multipart/form-data
@@ -304,8 +310,9 @@ Response: Enhanced extraction with structured tables
 ```
 
 **Development Timeline:**
+
 - Phase 1: Python service development and PDFPlumber integration
-- Phase 2: Node.js client implementation and API updates  
+- Phase 2: Node.js client implementation and API updates
 - Phase 3: Testing with watershed management documents
 - Phase 4: Production deployment with Docker orchestration
 
