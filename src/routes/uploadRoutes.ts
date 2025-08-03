@@ -19,4 +19,12 @@ router.post(
   uploadController.extractStructuredData
 );
 
+// NEW ROUTE USING PDFREADER
+router.post(
+  "/upload2",
+  upload.single("pdf"),
+  validateFileUpload,
+  uploadController.uploadPdf2
+);
+
 export default router;

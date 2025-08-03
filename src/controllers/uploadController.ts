@@ -37,6 +37,29 @@ export class UploadController {
       res.status(500).json({ error: "Failed to extract structured data" });
     }
   };
+
+  // NEW ROUTE USING PDFREADER
+  uploadPdf2 = async (
+    req: Request,
+    res: Response<UploadResponse | ErrorResponse>
+  ) => {
+    try {
+      const result = await pdfService.extractTextWithPdfReader(req.file!.path);
+
+      res.json({
+        message: "PDF processed successfully with PDFReader",
+        file: {
+          filename: req.file!.filename,
+          originalName: req.file!.originalname,
+          size: req.file!.size,
+        },
+        extracted: result,
+      });
+    } catch (error) {
+      console.error("PDF processing error (PDFReader):", error);
+      res.status(500).json({ error: "Failed to process PDF with PDFReader" });
+    }
+  };
 }
 
 export const uploadController = new UploadController();
