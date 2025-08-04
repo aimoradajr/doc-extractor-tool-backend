@@ -1,1 +1,597 @@
-{}
+{
+  "reportSummary": {
+    "totalGoals": 1,
+    "totalBMPs": 8,
+    "completionRate": 0.0
+  },
+  "goals": [
+    {
+      "description": "Reduce sediment loading in Broken Pumpkin Creek to restore aquatic life use and improve water quality.",
+      "sourceExcerpt": "This analysis identified sediment as the primary probable stressor of the water body and a TMDL was developed... Based on the ranges of stable and unstable yield values, a reduction in sediment of 77% to 97% is recommended in the Broken Pumpkin Creek watershed."
+    },
+    {
+      "description": "Implement best management practices (BMPs) to control nonpoint source pollution and achieve TMDL targets.",
+      "sourceExcerpt": "The USDA NRCS has a list of approved BMPS to address sedimentation and this list will be used to identify candidate BMPs in Broken Pumpkin Creek watershed."
+    },
+    {
+      "description": "Monitor water quality and track biological integrity to evaluate the effectiveness of implemented BMPs.",
+      "sourceExcerpt": "Facilitate... the completion and implementation of an effective and efficient plan to monitor baseline water quality conditions in the watershed and track changes in water quality over time resulting from the BMPs implemented through this project."
+    },
+    {
+      "description": "Engage and educate stakeholders to promote community involvement and support for watershed protection.",
+      "sourceExcerpt": "The ultimate goal is to bring about behavior changes and the use of “best management practices” that will improve water quality and the overall quality of life in the watershed."
+    }
+  ],
+  "bmps": [
+    {
+      "name": "Brush Management",
+      "type": "Non-Structural",
+      "quantity": 5,
+      "unit": "ac",
+      "estimatedCost": 222.15,
+      "sourceExcerpt": "installation of the following BMPs would help to mitigate sediment issues in Broken Pumpkin Creek watershed: brush management;"
+    },
+    {
+      "name": "Herbaceous Weed Management",
+      "type": "Non-Structural",
+      "quantity": 325,
+      "unit": "ac",
+      "estimatedCost": 21060.0,
+      "sourceExcerpt": "brush management; weed management; prescribed burning;"
+    },
+    {
+      "name": "Prescribed Burning",
+      "type": "Non-Structural",
+      "quantity": 350,
+      "unit": "ac",
+      "estimatedCost": 14920.5,
+      "sourceExcerpt": "weed management; prescribed burning; cover crops;"
+    },
+    {
+      "name": "Cover Crop",
+      "type": "Nutrient",
+      "quantity": 2500,
+      "unit": "ac",
+      "estimatedCost": 139650.0,
+      "sourceExcerpt": "prescribed burning; cover crops; critical area planting;"
+    },
+    {
+      "name": "Critical Area Planting",
+      "type": "Sediment",
+      "quantity": 55,
+      "unit": "ac",
+      "estimatedCost": 26611.2,
+      "sourceExcerpt": "cover crops; critical area planting; sediment basins;"
+    },
+    {
+      "name": "Sediment Basin",
+      "type": "Sediment",
+      "quantity": 5000,
+      "unit": "cu yd",
+      "estimatedCost": 16700.0,
+      "sourceExcerpt": "critical area planting; sediment basins; diversions;"
+    },
+    {
+      "name": "Diversion",
+      "type": "Sediment",
+      "quantity": 2500,
+      "unit": "cu yd",
+      "estimatedCost": 6000.0,
+      "sourceExcerpt": "sediment basins; diversions; ponds;"
+    },
+    {
+      "name": "Pond",
+      "type": "Hydrologic",
+      "quantity": 8000,
+      "unit": "cu yd",
+      "estimatedCost": 31440.0,
+      "sourceExcerpt": "diversions; ponds; fencing;"
+    },
+    {
+      "name": "Fence",
+      "type": "Structural",
+      "quantity": 20000,
+      "unit": "ft",
+      "estimatedCost": 44400.0,
+      "sourceExcerpt": "ponds; fencing; filter strips and field borders;"
+    },
+    {
+      "name": "Field Border",
+      "type": "Sediment",
+      "quantity": 54,
+      "unit": "ac",
+      "estimatedCost": 34084.8,
+      "sourceExcerpt": "fencing; filter strips and field borders; firebreaks;"
+    },
+    {
+      "name": "Filter Strip",
+      "type": "Sediment",
+      "quantity": 50,
+      "unit": "ac",
+      "estimatedCost": 7317.5,
+      "sourceExcerpt": "fencing; filter strips and field borders; firebreaks;"
+    },
+    {
+      "name": "Firebreak",
+      "type": "Structural",
+      "quantity": 11000,
+      "unit": "ft",
+      "estimatedCost": 2640.0,
+      "sourceExcerpt": "filter strips and field borders; firebreaks; grade stabilization structures;"
+    },
+    {
+      "name": "Grade Stabilization Structure",
+      "type": "Structural",
+      "quantity": 18,
+      "unit": "ea",
+      "estimatedCost": 180000.0,
+      "sourceExcerpt": "firebreaks; grade stabilization structures; grassed waterways;"
+    },
+    {
+      "name": "Grassed Waterway",
+      "type": "Sediment",
+      "quantity": 10,
+      "unit": "ac",
+      "estimatedCost": 17538.1,
+      "sourceExcerpt": "grade stabilization structures; grassed waterways; irrigation pipeline;"
+    },
+    {
+      "name": "Irrigation Pipeline",
+      "type": "Structural",
+      "quantity": 20000,
+      "unit": "ft",
+      "estimatedCost": 437000.0,
+      "sourceExcerpt": "grassed waterways; irrigation pipeline; irrigation reservoirs;"
+    },
+    {
+      "name": "Irrigation Reservoir",
+      "type": "Hydrologic",
+      "quantity": 40000,
+      "unit": "cu yd",
+      "estimatedCost": 328400.0,
+      "sourceExcerpt": "irrigation pipeline; irrigation reservoirs; land clearing;"
+    },
+    {
+      "name": "Land Clearing",
+      "type": "Non-Structural",
+      "quantity": 20,
+      "unit": "ac",
+      "estimatedCost": 10613.0,
+      "sourceExcerpt": "irrigation reservoirs; land clearing; forage and biomass planting;"
+    },
+    {
+      "name": "Tree/Shrub Preparation",
+      "type": "Habitat",
+      "quantity": 350,
+      "unit": "ac",
+      "estimatedCost": 89267.5,
+      "sourceExcerpt": "land clearing; forage and biomass planting; livestock management practices;"
+    },
+    {
+      "name": "Forage and Biomass Planting",
+      "type": "Non-Structural",
+      "quantity": 60,
+      "unit": "ac",
+      "estimatedCost": 6568.8,
+      "sourceExcerpt": "land clearing; forage and biomass planting; livestock management practices;"
+    },
+    {
+      "name": "Livestock Pipeline",
+      "type": "Structural",
+      "quantity": 8000,
+      "unit": "ft",
+      "estimatedCost": 15280.0,
+      "sourceExcerpt": "forage and biomass planting; livestock management practices; streambank and shoreline protection;"
+    },
+    {
+      "name": "Prescribed Grazing",
+      "type": "Non-Structural",
+      "quantity": 500,
+      "unit": "ac",
+      "estimatedCost": 28565.0,
+      "sourceExcerpt": "forage and biomass planting; livestock management practices; streambank and shoreline protection;"
+    },
+    {
+      "name": "Heavy Use Area Protection",
+      "type": "Structural",
+      "quantity": 15000,
+      "unit": "ft",
+      "estimatedCost": 15600.0,
+      "sourceExcerpt": "livestock management practices; streambank and shoreline protection; water control structures;"
+    },
+    {
+      "name": "Livestock Shelter Structure",
+      "type": "Structural",
+      "quantity": 2000,
+      "unit": "ft",
+      "estimatedCost": 6760.0,
+      "sourceExcerpt": "livestock management practices; streambank and shoreline protection; water control structures;"
+    },
+    {
+      "name": "Stream Crossing",
+      "type": "Structural",
+      "quantity": 3000,
+      "unit": "ft",
+      "estimatedCost": 14460.0,
+      "sourceExcerpt": "livestock management practices; streambank and shoreline protection; water control structures;"
+    },
+    {
+      "name": "Streambank and Shoreline Protection",
+      "type": "Habitat",
+      "quantity": 275,
+      "unit": "ft",
+      "estimatedCost": 50479.0,
+      "sourceExcerpt": "livestock management practices; streambank and shoreline protection; water control structures;"
+    },
+    {
+      "name": "Structure for Water Control",
+      "type": "Structural",
+      "quantity": 4400,
+      "unit": "ft",
+      "estimatedCost": 9064.0,
+      "sourceExcerpt": "streambank and shoreline protection; water control structures; terraces;"
+    },
+    {
+      "name": "Terrace",
+      "type": "Sediment",
+      "quantity": 9000,
+      "unit": "ft",
+      "estimatedCost": 14310.0,
+      "sourceExcerpt": "water control structures; terraces; underground outlets;"
+    },
+    {
+      "name": "Tree/Shrub Establishment",
+      "type": "Habitat",
+      "quantity": 66700,
+      "unit": "ea",
+      "estimatedCost": 28014.0,
+      "sourceExcerpt": "terraces; underground outlets; habitat development and management; and forest stand improvements."
+    },
+    {
+      "name": "Watering Facility",
+      "type": "Structural",
+      "quantity": 2400,
+      "unit": "gal",
+      "estimatedCost": 6744.0,
+      "sourceExcerpt": "terraces; underground outlets; habitat development and management; and forest stand improvements."
+    },
+    {
+      "name": "Underground Outlet",
+      "type": "Structural",
+      "quantity": 2500,
+      "unit": "ft",
+      "estimatedCost": 13475.0,
+      "sourceExcerpt": "terraces; underground outlets; habitat development and management; and forest stand improvements."
+    },
+    {
+      "name": "Early Successional Habitat Development/Management",
+      "type": "Habitat",
+      "quantity": 25,
+      "unit": "ac",
+      "estimatedCost": 600.75,
+      "sourceExcerpt": "underground outlets; habitat development and management; and forest stand improvements."
+    },
+    {
+      "name": "Forest Stand Improvement",
+      "type": "Habitat",
+      "quantity": 500,
+      "unit": "ac",
+      "estimatedCost": 105295.0,
+      "sourceExcerpt": "underground outlets; habitat development and management; and forest stand improvements."
+    }
+  ],
+  "implementation": [
+    {
+      "description": "Develop, execute, and implement a Subgrant Agreement that specifies roles, tasks, requirements, and milestones for project implementation.",
+      "status": "planned",
+      "sourceExcerpt": "Work to develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones for project implementation. (Month 1)"
+    },
+    {
+      "description": "Facilitate meetings, media, and social media promotion of the project; coordinate activities to fully implement the plan.",
+      "status": "planned",
+      "sourceExcerpt": "Facilitate, in coordination with MDEQ and other partners, meetings, media and social media promotion of the project, and coordinate activities to fully implement this plan. (Months 1-36)"
+    },
+    {
+      "description": "Inform landowners and operators within the watershed about the project and secure commitments from priority area landowners and operators willing to participate.",
+      "status": "planned",
+      "sourceExcerpt": "Work with the Tallahatchie County SWCD, MSWCC, NRCS, and MDEQ to inform landowners and operators within the watershed about the project and work to secure commitments from priority area landowners and operators who are willing to participate in the project. (Months 1-6)"
+    },
+    {
+      "description": "Determine priority areas within the sub-watershed contributing significant pollutant loads using GIS applications and intensive site surveys.",
+      "status": "planned",
+      "sourceExcerpt": "Work with the local SWCD, MSWCC, NRCS, and MDEQ to determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads. (Months 1-36)"
+    },
+    {
+      "description": "Install all BMPs in accordance with NRCS Technical Field Manual or other approved guidelines.",
+      "status": "planned",
+      "sourceExcerpt": "All BMPs shall be installed in accordance with the guidelines developed in the latest edition of the NRCS Technical Field Manual, or other approved guidelines. (Months 1-36)"
+    },
+    {
+      "description": "Complete and implement a baseline water quality monitoring plan and track changes in water quality over time resulting from implemented BMPs.",
+      "status": "planned",
+      "sourceExcerpt": "Facilitate, in cooperation with MDEQ and other monitoring partners, the completion and implementation of an effective and efficient plan to monitor baseline water quality conditions in the watershed and track changes in water quality over time resulting from the BMPs implemented through this project. (Plan Completion:  Months 1-2); Implementation:  Months 3-36)"
+    },
+    {
+      "description": "Submit blank copies of standard maintenance agreements to MDEQ.",
+      "status": "planned",
+      "sourceExcerpt": "Submit blank copies of standard maintenance agreements to MDEQ. (Months 13-36)"
+    },
+    {
+      "description": "Conduct inspections of BMPs during construction.",
+      "status": "planned",
+      "sourceExcerpt": "Conduct inspections of BMPs during construction (Months 3-36)"
+    },
+    {
+      "description": "Collect GPS coordinates of all installed BMPs and incorporate into GIS format according to Federal Geographic Data Committee standards.",
+      "status": "planned",
+      "sourceExcerpt": "Coordinate with and support the local SWCD, MSWCC and NRCS in the collection of relevant GPS coordinates of all installed BMPs and incorporate this information into a GIS format. All geospatial data shall be collected in a manner consistent with the Federal Geographic Data committee-endorsed standards. (Months 3-36)"
+    },
+    {
+      "description": "Collect adequate photo documentation before, during, and after installation of approved BMPs.",
+      "status": "planned",
+      "sourceExcerpt": "Collect adequate photo documentation before, during, and after installation of the approved BMPs (Months 3-36)"
+    },
+    {
+      "description": "Report measured or estimated nonpoint source pollutant load reduction, acreage affected, pre- and post-site conditions, and GIS data.",
+      "status": "planned",
+      "sourceExcerpt": "Report measured, or estimated, nonpoint source pollutant load reduction, acreage affected, pre-and post- site conditions, and GIS data (1-36)"
+    },
+    {
+      "description": "Target priority areas for BMPs in coordination with project partners.",
+      "status": "planned",
+      "sourceExcerpt": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Noxubee and Lowndes Co. Soil and Water Districts to determine priority areas that are contributing significant pollutant loads to Broken Pumpkin Creek Watershed. (Months 1-2)"
+    },
+    {
+      "description": "Establish Watershed Implementation Team (WIT) to begin refinement of the watershed-based plan.",
+      "status": "planned",
+      "sourceExcerpt": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Broken Pumpkin Creek Watershed. (Months 1-2)"
+    },
+    {
+      "description": "Initiate baseline condition monitoring using historical data.",
+      "status": "completed",
+      "sourceExcerpt": "Initiate watershed monitoring  Baseline condition monitoring Completed using historical data"
+    },
+    {
+      "description": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas.",
+      "status": "planned",
+      "sourceExcerpt": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas. (Months 1-6)"
+    },
+    {
+      "description": "Establish routine meeting schedule for WIT to support watershed plan revision.",
+      "status": "planned",
+      "sourceExcerpt": "Establish routine meeting schedule for WIT to support WBP revision. (Months 1-36)"
+    },
+    {
+      "description": "Implement BMPs in the watershed.",
+      "status": "planned",
+      "sourceExcerpt": "Implement BMPs BMP installation (Months 6-36)"
+    },
+    {
+      "description": "Inspect BMPs installed using Section 319 funds.",
+      "status": "planned",
+      "sourceExcerpt": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds (Months 3-36)"
+    },
+    {
+      "description": "Begin monitoring to collect data on post-BMP water quality.",
+      "status": "planned",
+      "sourceExcerpt": "Begin monitoring to collect data on post BMP water quality (Months 42-48)"
+    },
+    {
+      "description": "Finalize education and outreach plan and schedule events.",
+      "status": "planned",
+      "sourceExcerpt": "Finalize education and outreach plan Education/Outreach events scheduled (Months 8-36)"
+    }
+  ],
+  "monitoring": [
+    {
+      "parameter": "Dissolved Oxygen",
+      "type": "chemical",
+      "thresholds": [
+        {
+          "parameter": "Dissolved Oxygen",
+          "description": ">= 5 mg/L (daily avg), >= 4 mg/L (instantaneous), 70–125% saturation"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "pH",
+      "type": "chemical",
+      "thresholds": [
+        {
+          "parameter": "pH",
+          "description": "6.0–9.0"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "Temperature",
+      "type": "physical",
+      "thresholds": [
+        {
+          "parameter": "Temperature",
+          "description": "<= 90°F"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "Specific Conductance",
+      "type": "chemical",
+      "thresholds": [
+        {
+          "parameter": "Specific Conductance",
+          "description": "< 1000 micromhos/cm"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "Dissolved Solids",
+      "type": "chemical",
+      "thresholds": [
+        {
+          "parameter": "Dissolved Solids",
+          "description": "< 750 mg/L (monthly avg), < 1500 mg/L (instantaneous)"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "Total Suspended Solids",
+      "type": "chemical",
+      "thresholds": [
+        {
+          "parameter": "Total Suspended Solids",
+          "description": "<= 65 mg/L"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "Turbidity",
+      "type": "physical",
+      "thresholds": [
+        {
+          "parameter": "Turbidity",
+          "description": "<= 75 NTU"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "Chemical Oxygen Demand",
+      "type": "chemical",
+      "thresholds": [
+        {
+          "parameter": "Chemical Oxygen Demand",
+          "description": "<= 35 mg/L"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    },
+    {
+      "parameter": "M-BISQ (Mississippi Benthic Index of Stream Quality)",
+      "type": "biological",
+      "method": "MDEQ macroinvertebrate protocol",
+      "thresholds": [
+        {
+          "parameter": "M-BISQ (Mississippi Benthic Index of Stream Quality)",
+          "description": ">= 71.6 (East Bioregion Attainment Score)"
+        }
+      ],
+      "locations": ["TB146", "TB562"]
+    }
+  ],
+  "outreach": [
+    {
+      "type": "presentation",
+      "description": "Water Model Presentations (Enviroscapes and groundwater aquifer models) distributed statewide with training and lesson plans",
+      "partners": ["MDEQ"]
+    },
+    {
+      "type": "teacher workshop",
+      "description": "Train educators near the watershed about nonpoint source (NPS) pollution and provide materials for classroom use",
+      "partners": ["MDEQ"]
+    },
+    {
+      "type": "workshop",
+      "description": "Adopt A Stream workshops and training for citizens, teachers, and students in the Dry Creek Watershed",
+      "partners": ["MDEQ"]
+    },
+    {
+      "type": "mobile classroom",
+      "description": "Watershed Harmony Mobile Classroom for ages kindergarten–adults, tailored for 4th and 5th grade students",
+      "partners": ["MDEQ"]
+    },
+    {
+      "type": "train-the-trainer",
+      "description": "Workshops and materials for Soil and Water Conservation Districts and Extension Service",
+      "partners": ["MDEQ", "SWCD", "Extension Service"]
+    },
+    {
+      "type": "stakeholder meeting",
+      "description": "Broken Pumpkin Creek Watershed Implementation Team (WIT) face-to-face meetings to provide updates, review, and modify the plan",
+      "schedule": "at least 3 meetings during project",
+      "partners": ["MDEQ", "WIT", "local stakeholders"]
+    },
+    {
+      "type": "field day",
+      "description": "Host field days to showcase implemented BMPs to the public",
+      "partners": ["MDEQ", "WIT"]
+    },
+    {
+      "type": "education/outreach event",
+      "description": "Education events including training workshops, festival event planning, soil and water conservation field days, poster/art/writing projects",
+      "partners": ["MDEQ", "WIT", "local stakeholders"]
+    },
+    {
+      "type": "incentive",
+      "description": "Provide food, refreshments, and facility support for stakeholder meetings and outreach events as allowed under Section 319",
+      "partners": ["MDEQ"]
+    },
+    {
+      "type": "evaluation",
+      "description": "Use evaluation forms, pre-test/post-test, surveys, and attendance reporting to measure outreach success",
+      "indicator": "number of people attending workshops, trainings, events",
+      "partners": ["MDEQ"]
+    }
+  ],
+  "geographicAreas": [
+    {
+      "huc": "031601060307",
+      "watershedName": "Broken Pumpkin Creek Watershed",
+      "counties": ["Noxubee", "Lowndes"],
+      "state": "Mississippi"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Mississippi Department of Environmental Quality",
+      "role": "Lead Agency / Project Management",
+      "organization": "MDEQ"
+    },
+    {
+      "name": "Mississippi Soil and Water Conservation Commission",
+      "role": "Implementation Partner",
+      "organization": "MSWCC"
+    },
+    {
+      "name": "Natural Resources Conservation Service",
+      "role": "Technical Assistance / Implementation Partner",
+      "organization": "NRCS"
+    },
+    {
+      "name": "Noxubee County Soil and Water Conservation District",
+      "role": "Local Partner",
+      "organization": "Noxubee County SWCD"
+    },
+    {
+      "name": "Lowndes County Soil and Water Conservation District",
+      "role": "Local Partner",
+      "organization": "Lowndes County SWCD"
+    },
+    {
+      "name": "United States Geological Survey",
+      "role": "Monitoring Partner",
+      "organization": "USGS"
+    },
+    {
+      "name": "Extension Service",
+      "role": "Education/Outreach Partner",
+      "organization": "Extension Service"
+    }
+  ],
+  "organizations": [
+    { "name": "Mississippi Department of Environmental Quality (MDEQ)" },
+    { "name": "Mississippi Soil and Water Conservation Commission (MSWCC)" },
+    { "name": "Natural Resources Conservation Service (NRCS)" },
+    { "name": "Noxubee County Soil and Water Conservation District" },
+    { "name": "Lowndes County Soil and Water Conservation District" },
+    { "name": "United States Geological Survey (USGS)" },
+    { "name": "Local Landowners" },
+    { "name": "Soil and Water Conservation Districts (SWCDs)" },
+    { "name": "Extension Service" }
+  ]
+}

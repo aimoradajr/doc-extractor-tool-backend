@@ -390,7 +390,7 @@ IMPORTANT INSTRUCTIONS:
      * Look for section headers or table titles containing the word "Goal" or "Objectives" (e.g., "Project Goals," "Watershed Goals," "Objectives," or "Goal Statement")—these sections usually state what the plan aims to achieve
      * Look for clear, concise statements in introductory or summary sections that describe desired outcomes or targets (e.g., "The goal of this plan is to reduce sediment loading by 40%," or "Objectives include improving water quality and increasing community awareness")
    - Use the exact language from the document when possible. Paraphrase only for clarity if the goal is split across sentences, but do not invent new goals.
-   - CRITICAL: For each goal extracted, include a brief excerpt (approximately 20 words) from the document where you found this goal. This should be the key phrase or sentence that contains the goal statement.
+   - CRITICAL: For each goal extracted, include a brief excerpt (approximately 10 words) from the document where you found this goal. This should be the key phrase or sentence that contains the goal statement.
 
 7. 'BMP' EXTRACTION RULES:
    - A BMP (Best Management Practice) is any specific action, measure, or practice described in the watershed plan to reduce pollution, manage water, or protect resources. This can include physical structures, management techniques, or operational practices.
@@ -400,7 +400,7 @@ IMPORTANT INSTRUCTIONS:
      * Look for section headers or table titles containing "Best Management Practices," "BMPs," or "Management Measures"—these sections almost always list the specific practices recommended for the watershed
      * Look for bulleted or numbered lists under "BMP" or "Management Measures" sections—these lists typically describe the individual practices (e.g., cover crops, fencing, buffer strips) that are considered BMPs
    - Use the exact language from the document when possible. Paraphrase only for clarity if the BMP is split across sentences, but do not invent new BMPs.
-   - CRITICAL: For each BMP extracted, include a brief excerpt (about 20 words) from the document where you found this BMP. This should be the key phrase or sentence that contains the BMP statement.
+   - CRITICAL: For each BMP extracted, include a brief excerpt (about 10 words) from the document where you found this BMP. This should be the key phrase or sentence that contains the BMP statement.
 
 8. 'IMPLEMENTATION' (ACTIVITIES) EXTRACTION RULES:
    - An implementation is any concrete action, step, or scheduled activity described in the watershed plan for putting goals or BMPs into practice. This includes project management steps, outreach efforts, monitoring, reporting, or any tasks with assigned timing or responsibility.
@@ -415,7 +415,7 @@ IMPORTANT INSTRUCTIONS:
      * Look for Element _ sections (common in 9-Element plans) as they typically contain implementation schedules
      * Look for tables with columns like "Activity," "Timeline," "Responsible Party," "Status," "Milestone"
    - Use the exact language from the document when possible. Paraphrase only for clarity if the implementation is split across sentences, but do not invent new implementations.
-   - CRITICAL: For each implementation extracted, include a brief excerpt (about 20 words) from the document where you found this implementation. This should be the key phrase or sentence that contains the implementation statement.
+   - CRITICAL: For each implementation extracted, include a brief excerpt (about 10 words) from the document where you found this implementation. This should be the key phrase or sentence that contains the implementation statement.
 
 9. 'MONITORING' (METRICS) EXTRACTION RULES:
    - IMPORTANT DISTINCTION: Extract only monitoring metrics, NOT monitoring activities.
@@ -432,7 +432,7 @@ IMPORTANT INSTRUCTIONS:
      * Look for structured, quantifiable elements rather than general monitoring descriptions
      * Focus on the MonitoringMetric interface: what's measured, how it's measured, frequency, thresholds, locations
    - Use the exact language from the document when possible. Paraphrase only for clarity if the monitoring metric is split across sentences, but do not invent new monitoring metrics.
-   - CRITICAL: For each monitoring metric extracted, include a brief excerpt (about 20 words) from the document where you found this monitoring metric. This should be the key phrase or sentence that contains the metric description.
+   - CRITICAL: For each monitoring metric extracted, include a brief excerpt (about 10 words) from the document where you found this monitoring metric. This should be the key phrase or sentence that contains the metric description.
 
 10. OUTREACH ACTIVITY EXTRACTION RULES:
    - An outreach activity is any concrete action, step, or scheduled effort described in the watershed plan for engaging, educating, or communicating with stakeholders, landowners, the public, or specific groups. This includes workshops, technical assistance, meetings, educational campaigns, communications materials, or events with assigned timing or responsibility.
@@ -446,7 +446,7 @@ IMPORTANT INSTRUCTIONS:
      * Look for activities with assigned responsibility: "Extension will lead...," "NRCS to provide...," "Project coordinator will organize..."
      * Look for tables with columns like "Outreach Activity," "Timeline," "Responsible Party," "Audience," "Status"
    - Use the exact language from the document when possible. Paraphrase only for clarity if the outreach activity is split across sentences, but do not invent new outreach items.
-   - CRITICAL: For each outreach activity extracted, include a brief excerpt (about 20 words) from the document where you found this outreach statement. This should be the key phrase or sentence that contains the outreach description.
+   - CRITICAL: For each outreach activity extracted, include a brief excerpt (about 10 words) from the document where you found this outreach statement. This should be the key phrase or sentence that contains the outreach description.
 
 11. 'WRIAs/GEOGRAPHIC AREAS' EXTRACTION RULES:
    - A WRIA (Water Resource Inventory Area) or geographic area is any explicitly defined spatial unit, boundary, or region described in the watershed plan for the purposes of water resource management, planning, monitoring, or reporting. This includes WRIAs, HUCs (Hydrologic Unit Codes), named watersheds, sub-watersheds, basins, catchments, and specific project areas.
@@ -459,7 +459,7 @@ IMPORTANT INSTRUCTIONS:
      * Look for references to boundaries, extents, maps, or figures that define spatial coverage, such as "see Figure 2 for project area"
      * Look for tables or lists with columns like "Geographic Area," "HUC," "WRIA," "Watershed," or "Project Area"
    - Use the exact language, codes, and names from the document when possible. Paraphrase only for clarity if the area is described across sentences, but do not invent new areas.
-   - CRITICAL: For each WRIA or geographic area extracted, include a brief excerpt (about 20 words) from the document where you found this area. This should be the key phrase or sentence that contains the area or code.
+   - CRITICAL: For each WRIA or geographic area extracted, include a brief excerpt (about 10 words) from the document where you found this area. This should be the key phrase or sentence that contains the area or code.
 
 Required JSON format:
 {
