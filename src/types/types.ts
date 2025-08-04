@@ -166,6 +166,7 @@ export interface GeographicArea {
   towns?: string[] | null;
   huc?: string | null;
   description?: string;
+  sourceExcerpt?: string;
 }
 
 /**
@@ -218,6 +219,7 @@ export interface AccuracyTestResult {
     implementation: AccuracyMetric;
     monitoring: AccuracyMetric;
     outreach: AccuracyMetric;
+    geographicAreas: AccuracyMetric;
   };
   // DEBUG DATA - Compare expected vs actual
   comparison?: {
@@ -231,6 +233,7 @@ export interface AccuracyTestResult {
     implementation: ComparisonDetail[];
     monitoring: ComparisonDetail[];
     outreach: ComparisonDetail[];
+    geographicAreas: ComparisonDetail[];
   };
 }
 
@@ -243,7 +246,13 @@ export interface ComparisonDetail {
     | "partial_match"
     | "missing_expected"
     | "surplus_actual";
-  category: "goals" | "bmps" | "implementation" | "monitoring" | "outreach";
+  category:
+    | "goals"
+    | "bmps"
+    | "implementation"
+    | "monitoring"
+    | "outreach"
+    | "geographicAreas";
   expected?: string | null; // What we expected to find
   actual?: string | null; // What we actually found
   similarity?: number; // Similarity score (0-1) for partial matches

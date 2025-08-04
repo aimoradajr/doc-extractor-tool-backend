@@ -106,6 +106,22 @@ export class OpenAIService {
               totalExtracted: 0,
               totalExpected: 0,
             },
+            outreach: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: 0,
+              totalExpected: 0,
+            },
+            geographicAreas: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: 0,
+              totalExpected: 0,
+            },
           },
           comparison: {
             expected: groundTruth,
@@ -116,6 +132,8 @@ export class OpenAIService {
             bmps: [],
             implementation: [],
             monitoring: [],
+            outreach: [],
+            geographicAreas: [],
           },
         };
       } catch (parseError) {
@@ -179,6 +197,14 @@ export class OpenAIService {
               totalExtracted: extracted.outreach?.length || 0,
               totalExpected: groundTruth.outreach?.length || 0,
             },
+            geographicAreas: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: extracted.geographicAreas?.length || 0,
+              totalExpected: groundTruth.geographicAreas?.length || 0,
+            },
           },
           comparison: {
             expected: groundTruth,
@@ -198,6 +224,7 @@ export class OpenAIService {
             implementation: [],
             monitoring: [],
             outreach: [],
+            geographicAreas: [],
           },
         };
       }
@@ -367,6 +394,19 @@ IMPORTANT INSTRUCTIONS:
    - Use the exact language from the document when possible. Paraphrase only for clarity if the outreach activity is split across sentences, but do not invent new outreach items.
    - CRITICAL: For each outreach activity extracted, include a brief excerpt (about 20 words) from the document where you found this outreach statement. This should be the key phrase or sentence that contains the outreach description.
 
+11. 'WRIAs/GEOGRAPHIC AREAS' EXTRACTION RULES:
+   - A WRIA (Water Resource Inventory Area) or geographic area is any explicitly defined spatial unit, boundary, or region described in the watershed plan for the purposes of water resource management, planning, monitoring, or reporting. This includes WRIAs, HUCs (Hydrologic Unit Codes), named watersheds, sub-watersheds, basins, catchments, and specific project areas.
+   - Only extract WRIAs or geographic areas that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create areas that are not directly described or labeled in the text.
+   - WRIAs or geographic areas may be found in narrative text, bullet lists, tables, maps, figure captions, or under sections such as "Geographic Area," "Watershed Description," "Project Area," "HUC," or similar headings.
+   - HINTS for finding WRIAs/geographic areas:
+     * Look for section headers, table titles, or map legends containing words like "WRIA," "Watershed," "HUC," "Subwatershed," "Basin," "Catchment," "Project Area," "Drainage Area," or similar
+     * Look for explicit mention of codes or names, such as "WRIA 9," "HUC 080302040403," "Basket Creek-Hickahala Creek Watershed," or "James-Wolf Creek sub-basin"
+     * Look for geographic identifiers (numbers or names) used for planning, monitoring, or reporting (e.g., "this plan covers HUC 080302040403")
+     * Look for references to boundaries, extents, maps, or figures that define spatial coverage, such as "see Figure 2 for project area"
+     * Look for tables or lists with columns like "Geographic Area," "HUC," "WRIA," "Watershed," or "Project Area"
+   - Use the exact language, codes, and names from the document when possible. Paraphrase only for clarity if the area is described across sentences, but do not invent new areas.
+   - CRITICAL: For each WRIA or geographic area extracted, include a brief excerpt (about 20 words) from the document where you found this area. This should be the key phrase or sentence that contains the area or code.
+
 Required JSON format:
 {
   "reportSummary": {
@@ -448,7 +488,8 @@ Required JSON format:
       "population": number_or_null,
       "towns": ["town1", "town2"],
       "huc": "HUC code if available",
-      "description": "area description"
+      "description": "area description",
+      "sourceExcerpt": "exact text from document where this geographic area was found"
     }
   ],
   "contacts": [
@@ -509,6 +550,7 @@ Please analyze the accuracy by comparing:
 3. Implementation - Compare implementation activities
 4. Monitoring - Compare monitoring metrics
 5. Outreach - Compare outreach activities
+6. Geographic Areas - Compare geographic areas, WRIAs, HUCs, and spatial boundaries
 
 Return a JSON response in this exact format:
 {
@@ -557,6 +599,14 @@ Return a JSON response in this exact format:
       "correctCount": number,
       "totalExtracted": number,
       "totalExpected": number
+    },
+    "geographicAreas": {
+      "precision": number_between_0_and_1,
+      "recall": number_between_0_and_1,
+      "f1Score": number_between_0_and_1,
+      "correctCount": number,
+      "totalExtracted": number,
+      "totalExpected": number
     }
   },
   "detailedComparisons": {
@@ -572,7 +622,8 @@ Return a JSON response in this exact format:
     "bmps": [{"type": "...", "category": "bmps", "expected": "...", "actual": "...", "message": "..."}],
     "implementation": [{"type": "...", "category": "implementation", "expected": "...", "actual": "...", "message": "..."}],
     "monitoring": [{"type": "...", "category": "monitoring", "expected": "...", "actual": "...", "message": "..."}],
-    "outreach": [{"type": "...", "category": "outreach", "expected": "...", "actual": "...", "message": "..."}]
+    "outreach": [{"type": "...", "category": "outreach", "expected": "...", "actual": "...", "message": "..."}],
+    "geographicAreas": [{"type": "...", "category": "geographicAreas", "expected": "...", "actual": "...", "message": "..."}]
   }
 }
 
@@ -631,6 +682,13 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
         name: outreach.name?.substring(0, 100) || "",
         description: outreach.description?.substring(0, 200) || "",
       })),
+      geographicAreas: (data.geographicAreas || [])
+        .slice(0, 10)
+        .map((area) => ({
+          name: area.name?.substring(0, 100) || "",
+          description: area.description?.substring(0, 200) || "",
+          huc: area.huc || "",
+        })),
     };
   }
 

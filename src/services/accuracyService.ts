@@ -41,21 +41,27 @@ export class AccuracyService {
       extracted.outreach || [],
       groundTruth.outreach || []
     );
+    const geographicAreasResults = this.compareGeographicAreasDetailed(
+      extracted.geographicAreas || [],
+      groundTruth.geographicAreas || []
+    );
 
     const overallPrecision =
       (goalResults.accuracy.precision +
         bmpResults.accuracy.precision +
         implResults.accuracy.precision +
         monitoringResults.accuracy.precision +
-        outreachResults.accuracy.precision) /
-      5;
+        outreachResults.accuracy.precision +
+        geographicAreasResults.accuracy.precision) /
+      6;
     const overallRecall =
       (goalResults.accuracy.recall +
         bmpResults.accuracy.recall +
         implResults.accuracy.recall +
         monitoringResults.accuracy.recall +
-        outreachResults.accuracy.recall) /
-      5;
+        outreachResults.accuracy.recall +
+        geographicAreasResults.accuracy.recall) /
+      6;
     const overallF1 = this.calculateF1(overallPrecision, overallRecall);
 
     return {
@@ -71,6 +77,7 @@ export class AccuracyService {
         implementation: implResults.accuracy,
         monitoring: monitoringResults.accuracy,
         outreach: outreachResults.accuracy,
+        geographicAreas: geographicAreasResults.accuracy,
       },
       detailedComparisons: {
         goals: goalResults.comparisons,
@@ -78,6 +85,7 @@ export class AccuracyService {
         implementation: implResults.comparisons,
         monitoring: monitoringResults.comparisons,
         outreach: outreachResults.comparisons,
+        geographicAreas: geographicAreasResults.comparisons,
       },
     };
   }
@@ -470,6 +478,84 @@ export class AccuracyService {
           expected: gtOutreach.description,
           actual: null,
           message: `Missing expected outreach: "${gtOutreach.description}"`,
+        });
+      }
+    }
+
+    return {
+      accuracy: this.calculateMetric(
+        correctCount,
+        extracted.length,
+        groundTruth.length
+      ),
+      comparisons,
+    };
+  }
+
+  private compareGeographicAreasDetailed(
+    extracted: any[],
+    groundTruth: any[]
+  ): { accuracy: AccuracyMetric; comparisons: ComparisonDetail[] } {
+    const comparisons: ComparisonDetail[] = [];
+    let correctCount = 0;
+
+    // Check each extracted geographic area against ground truth
+    for (const extractedArea of extracted) {
+      const match = groundTruth.find(
+        (gt) =>
+          this.fuzzyMatch(extractedArea.name, gt.name) ||
+          this.fuzzyMatch(extractedArea.description, gt.description) ||
+          (extractedArea.huc && gt.huc && extractedArea.huc === gt.huc)
+      );
+
+      if (match) {
+        correctCount++;
+        comparisons.push({
+          type: "perfect_match",
+          category: "geographicAreas",
+          expected: match.name || match.description || match.huc,
+          actual:
+            extractedArea.name ||
+            extractedArea.description ||
+            extractedArea.huc,
+          message: `Found expected geographic area: "${
+            extractedArea.name || extractedArea.description
+          }"`,
+        });
+      } else {
+        comparisons.push({
+          type: "surplus_actual",
+          category: "geographicAreas",
+          expected: null,
+          actual:
+            extractedArea.name ||
+            extractedArea.description ||
+            extractedArea.huc,
+          message: `Found unexpected geographic area: "${
+            extractedArea.name || extractedArea.description
+          }" (not in ground truth)`,
+        });
+      }
+    }
+
+    // Check for missing geographic areas
+    for (const gtArea of groundTruth) {
+      const found = extracted.find(
+        (ext) =>
+          this.fuzzyMatch(ext.name, gtArea.name) ||
+          this.fuzzyMatch(ext.description, gtArea.description) ||
+          (ext.huc && gtArea.huc && ext.huc === gtArea.huc)
+      );
+
+      if (!found) {
+        comparisons.push({
+          type: "missing_expected",
+          category: "geographicAreas",
+          expected: gtArea.name || gtArea.description || gtArea.huc,
+          actual: null,
+          message: `Missing expected geographic area: "${
+            gtArea.name || gtArea.description
+          }"`,
         });
       }
     }

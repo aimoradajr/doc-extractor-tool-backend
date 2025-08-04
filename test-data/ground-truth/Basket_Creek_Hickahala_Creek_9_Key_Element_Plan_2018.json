@@ -610,14 +610,44 @@
       "counties": ["Tate County"],
       "acreage": 35085,
       "landUseTypes": [
-        { "type": "Cropland", "percent": 11 },
-        { "type": "Forest", "percent": 17 },
-        { "type": "Pasture/Grass", "percent": 44 }
+        { "type": "cropland", "percent": 11 },
+        { "type": "forest", "percent": 17 },
+        { "type": "pasture/grass", "percent": 44 }
       ],
       "population": null,
       "towns": null,
       "huc": "080302040403",
-      "description": "Watershed located in Tate County, Mississippi, with diverse land use including cropland, forest, and pasture/grass."
+      "description": "The major watershed covered by the plan, located in Tate County, Mississippi. Dominant land uses are cropland, forest, and pasture/grass. Identified in the 2011 National Land Cover Database. Includes impaired segments MS305E, MS305M1, and MS305M2."
+    },
+    {
+      "name": "Hickahala Creek Drainage Area (DA)",
+      "counties": ["Tate County"],
+      "acreage": null,
+      "landUseTypes": null,
+      "population": null,
+      "towns": null,
+      "huc": "MS305E",
+      "description": "A drainage area included on Mississippi’s 1996 and 1998 Section 303(d) List as an 'evaluated' impairment. Subject to TMDLs for organic enrichment, low dissolved oxygen, and nutrients."
+    },
+    {
+      "name": "Hickahala Creek (Segment MS305M2)",
+      "counties": ["Tate County"],
+      "acreage": null,
+      "landUseTypes": null,
+      "population": null,
+      "towns": null,
+      "huc": "MS305M2",
+      "description": "A monitored segment of Hickahala Creek, listed as impaired for recreational use due to high fecal coliform levels."
+    },
+    {
+      "name": "James-Wolf Creek (Segment MS305M1)",
+      "counties": ["Tate County"],
+      "acreage": null,
+      "landUseTypes": null,
+      "population": null,
+      "towns": null,
+      "huc": "MS305M1",
+      "description": "A segment that flows into the watershed from the southwest, impaired for recreational use due to high fecal coliform. Confluences with Hickahala Creek."
     }
   ],
   "contacts": [],
