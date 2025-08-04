@@ -72,6 +72,21 @@ export interface ReportSummary {
 /**
  * A watershed management goal or objective
  */
+/**
+ * Represents a goal within the context of watershed plans.
+ *
+ * A goal defines a broad, desired outcome or objective that the watershed plan aims to achieve,
+ * such as improving water quality, restoring habitat, or reducing pollutant loads. Goals are
+ * typically aspirational and provide direction for the planning process.
+ *
+ * In contrast to Best Management Practices (BMPs) and implementation actions, which are specific,
+ * actionable steps or techniques used to achieve the goals, a goal is a high-level statement of
+ * intent. BMPs and implementation measures are developed and selected to fulfill these goals.
+ *
+ * @property description - A textual description of the goal.
+ * @property schedule - (Optional) The timeline or schedule associated with achieving the goal.
+ * @property sourceExcerpt - (Optional) The exact text from the source document where this goal was identified.
+ */
 export interface Goal {
   description: string;
   schedule?: string;
@@ -86,7 +101,41 @@ export interface Goal {
 }
 
 /**
- * Best Management Practice (BMP)
+ * Represents a Best Management Practice (BMP) within the context of watershed management plans.
+ *
+ * A BMP is a specific technique, action, or structural solution implemented to address particular
+ * environmental concerns in a watershed, such as reducing nutrient runoff, controlling sediment,
+ * improving habitat, or managing hydrology. BMPs are practical, actionable measures—examples include
+ * cover crops, buffer strips, detention ponds, livestock exclusion fencing, or rain gardens.
+ *
+ * In contrast to a "Goal," which is a broad, aspirational outcome (e.g., "improve water quality"),
+ * a BMP is a concrete method or intervention used to achieve those goals. BMPs are often selected,
+ * designed, and implemented as part of the plan to fulfill the stated goals.
+ *
+ * BMPs also differ from "Implementation Activities," which are the specific steps, milestones,
+ * or actions taken to put BMPs (and other plan elements) into practice. Implementation activities
+ * may include planning, permitting, construction, outreach, or monitoring tasks associated with
+ * deploying BMPs.
+ *
+ * Examples of BMPs:
+ * - Cover crops (to reduce nutrient runoff)
+ * - Buffer strips (to filter sediment and nutrients)
+ * - Detention ponds (to manage stormwater and reduce flooding)
+ * - Livestock exclusion fencing (to prevent streambank erosion)
+ * - Rain gardens (to improve infiltration and water quality)
+ * - Terraces (to control soil erosion)
+ * - Manure management systems (to reduce pathogen runoff)
+ * - Riparian habitat restoration (to improve habitat quality)
+ *
+ * @property name - The name of the BMP.
+ * @property description - (Optional) A description of the BMP.
+ * @property type - (Optional) The category/type of BMP (e.g., "Nutrient", "Sediment", etc.).
+ * @property quantity - (Optional) The amount or number of BMPs.
+ * @property unit - (Optional) The unit for the quantity (e.g., "ft", "ac", "ea").
+ * @property estimatedCost - (Optional) Estimated cost for the BMP.
+ * @property targetAreas - (Optional) Areas where the BMP is applied.
+ * @property schedule - (Optional) Timeline or schedule for the BMP.
+ * @property sourceExcerpt - (Optional) Exact text from the source document where this BMP was identified.
  */
 export interface BMP {
   name: string;
@@ -128,16 +177,36 @@ export interface BMP {
 }
 
 /**
- * Implementation activity or milestone
+ * Represents an implementation activity or milestone within the context of watershed management plans.
+ *
+ * An implementation activity is a specific action, task, or milestone that is carried out to put the watershed plan into practice.
+ * These activities are the concrete steps taken to achieve the plan's goals and to deploy Best Management Practices (BMPs).
+ * Examples include project planning, permitting, construction, public outreach, monitoring, or reporting.
+ *
+ * Note: Sometimes implementation activities are labeled as "milestones" in watershed plans.
+ *
+ * Implementation activities differ from "Goals" and "BMPs" as follows:
+ * - A "Goal" is a broad, aspirational outcome or objective (e.g., "improve water quality") that the plan aims to achieve.
+ * - A "BMP" (Best Management Practice) is a specific technique or intervention (e.g., buffer strips, rain gardens) used to address environmental concerns and fulfill the goals.
+ * - An "Implementation Activity" is the actionable step or milestone (e.g., "install buffer strips in subwatershed A by 2025") that puts BMPs and other plan elements into effect.
+ *
+ * @property description - A textual description of the implementation activity.
+ * @property responsibleParties - (Optional) Organizations or individuals responsible for the activity.
+ * @property status - (Optional) The current status of the activity (e.g., "planned", "in progress", "completed").
+ * @property sourceExcerpt - (Optional) The exact text from the source document where this activity was identified.
  */
 export interface ImplementationActivity {
   description: string;
   responsibleParties?: Organization[];
-  startDate?: string;
-  endDate?: string;
   status?: string;
-  outcome?: string;
-  probableCompletionDate?: string;
+
+  // -- non-mvp
+  // startDate?: string;
+  // endDate?: string;
+  // outcome?: string;
+  // probableCompletionDate?: string;
+
+  // meta
   sourceExcerpt?: string; // Exact text from document where this implementation was found
 }
 

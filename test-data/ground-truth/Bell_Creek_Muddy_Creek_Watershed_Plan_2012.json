@@ -80,10 +80,7 @@
         { "name": "NRCS" },
         { "name": "Local contractors" }
       ],
-      "startDate": "2013-03-01",
-      "endDate": "2015-10-31",
-      "status": "planned",
-      "outcome": "Reduce channel erosion and downstream sedimentation"
+      "status": "planned"
     }
   ],
   "monitoring": [

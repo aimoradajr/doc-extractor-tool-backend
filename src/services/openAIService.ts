@@ -383,9 +383,9 @@ IMPORTANT INSTRUCTIONS:
    - If a number is mentioned, capture both the value and unit
 
 6. 'GOAL' EXTRACTION RULES:
-   - A goal is any major intended outcome, milestone, or management action that is explicitly stated in the watershed plan as something to be achieved, established, or completed. This includes environmental targets, project milestones, management steps, and outreach/education achievements.
+   - A goal is any major intended goal that is explicitly stated in the watershed plan as something to be achieved, established, or completed. This includes environmental targets, project milestones, management steps, and outreach/education achievements.
    - Only extract goals that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create goals that are not directly described or labeled in the text.
-   - Goals may be found in narrative text, bullet lists, or tables under sections like "Goals," "Objectives," "Milestones," "Expected Outcomes," or similar headings.
+   - Goals may be found in narrative text, bullet lists, or tables under sections like "Goals," "Objectives," or similar headings.
    - HINTS for finding goals:
      * Look for section headers or table titles containing the word "Goal" or "Objectives" (e.g., "Project Goals," "Watershed Goals," "Objectives," or "Goal Statement")—these sections usually state what the plan aims to achieve
      * Look for clear, concise statements in introductory or summary sections that describe desired outcomes or targets (e.g., "The goal of this plan is to reduce sediment loading by 40%," or "Objectives include improving water quality and increasing community awareness")
@@ -491,7 +491,6 @@ Required JSON format:
       "quantity": number_or_null,
       "unit": "ft|ac|ea|other",
       "estimatedCost": number_or_null,
-      "partners": [{"name": "organization name"}],
       "schedule": "implementation schedule",
       "sourceExcerpt": "exact text from document where this BMP was found"
     }
@@ -500,11 +499,7 @@ Required JSON format:
     {
       "description": "activity description",
       "responsibleParties": [{"name": "organization"}],
-      "startDate": "YYYY-MM-DD or descriptive date",
-      "endDate": "YYYY-MM-DD or descriptive date",
-      "status": "status description",
-      "outcome": "expected or actual outcome",
-      "probableCompletionDate": "completion date",
+      "status": "status (e.g., 'completed', 'in progress', 'planned')",
       "sourceExcerpt": "exact text from document where this implementation was found"
     }
   ],

@@ -158,17 +158,11 @@
         { "name": "MDEQ" },
         { "name": "Watershed Implementation Team" },
         { "name": "Project Manager" }
-      ],
-      "startDate": "Month 1",
-      "probableCompletionDate": "Month 1",
-      "outcome": "Subgrant Agreement executed"
+      ]
     },
     {
       "description": "Facilitate meetings, media, and social media promotion of the project, and coordinate activities to fully implement this plan.",
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "Partners" }],
-      "startDate": "Month 1",
-      "endDate": "Month 36",
-      "outcome": "Public informed and project activities coordinated"
+      "responsibleParties": [{ "name": "MDEQ" }, { "name": "Partners" }]
     },
     {
       "description": "Inform landowners and operators within the watershed about the project and work to secure commitments from priority area landowners and operators willing to participate.",
@@ -177,10 +171,7 @@
         { "name": "MSWCC" },
         { "name": "NRCS" },
         { "name": "MDEQ" }
-      ],
-      "startDate": "Month 1",
-      "endDate": "Month 6",
-      "outcome": "Landowner commitments secured"
+      ]
     },
     {
       "description": "Determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads; install all BMPs in accordance with guidelines.",
@@ -189,34 +180,22 @@
         { "name": "MSWCC" },
         { "name": "NRCS" },
         { "name": "MDEQ" }
-      ],
-      "startDate": "Month 1",
-      "endDate": "Month 36",
-      "outcome": "Priority areas identified and BMPs installed"
+      ]
     },
     {
       "description": "Facilitate the completion and implementation of a plan to monitor baseline water quality conditions in the watershed and track changes resulting from BMPs.",
       "responsibleParties": [
         { "name": "MDEQ" },
         { "name": "Monitoring Partners" }
-      ],
-      "startDate": "Month 1",
-      "endDate": "Month 36",
-      "outcome": "Baseline and post-BMP water quality monitoring"
+      ]
     },
     {
       "description": "Submit blank copies of standard maintenance agreements to MDEQ.",
-      "responsibleParties": [{ "name": "Project Partners" }],
-      "startDate": "Month 13",
-      "endDate": "Month 36",
-      "outcome": "Maintenance agreements submitted"
+      "responsibleParties": [{ "name": "Project Partners" }]
     },
     {
       "description": "Conduct inspections of BMPs during construction.",
-      "responsibleParties": [{ "name": "Project Partners" }],
-      "startDate": "Month 3",
-      "endDate": "Month 36",
-      "outcome": "BMP construction inspections completed"
+      "responsibleParties": [{ "name": "Project Partners" }]
     },
     {
       "description": "Coordinate the collection of relevant GPS coordinates of all installed BMPs and incorporate this information into a GIS format.",
@@ -225,88 +204,53 @@
         { "name": "MACD" },
         { "name": "MSWCC" },
         { "name": "NRCS" }
-      ],
-      "startDate": "Month 3",
-      "endDate": "Month 36",
-      "outcome": "All BMPs geospatially documented"
+      ]
     },
     {
       "description": "Collect photo documentation before, during, and after installation of approved BMPs.",
-      "responsibleParties": [{ "name": "Project Partners" }],
-      "startDate": "Month 3",
-      "endDate": "Month 36",
-      "outcome": "Photo documentation completed"
+      "responsibleParties": [{ "name": "Project Partners" }]
     },
     {
       "description": "Report measured or estimated nonpoint source pollutant load reduction, acreage affected, pre-and post-site conditions, and GIS data.",
-      "responsibleParties": [{ "name": "Project Partners" }],
-      "startDate": "Month 1",
-      "endDate": "Month 36",
-      "outcome": "Load reduction and site condition reports submitted"
+      "responsibleParties": [{ "name": "Project Partners" }]
     },
     {
       "description": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan.",
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "WIT" }],
-      "startDate": "Month 1",
-      "probableCompletionDate": "Month 2",
-      "outcome": "WIT established"
+      "responsibleParties": [{ "name": "MDEQ" }, { "name": "WIT" }]
     },
     {
       "description": "Initiate watershed baseline monitoring using historical data.",
       "responsibleParties": [
         { "name": "MDEQ" },
         { "name": "Monitoring Partners" }
-      ],
-      "probableCompletionDate": "Completed using historical data",
-      "outcome": "Baseline condition monitoring completed"
+      ]
     },
     {
       "description": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas.",
-      "responsibleParties": [{ "name": "Project Partners" }],
-      "startDate": "Month 1",
-      "endDate": "Month 6",
-      "outcome": "Landowner commitment secured"
+      "responsibleParties": [{ "name": "Project Partners" }]
     },
     {
       "description": "Establish routine meeting schedule for WIT to support watershed plan revision.",
-      "responsibleParties": [{ "name": "WIT" }],
-      "startDate": "Month 1",
-      "endDate": "Month 36",
-      "outcome": "WIT meetings held and plan revisions supported"
+      "responsibleParties": [{ "name": "WIT" }]
     },
     {
       "description": "Implement BMPs in targeted areas.",
-      "responsibleParties": [{ "name": "Project Partners" }],
-      "startDate": "Month 6",
-      "endDate": "Month 36",
-      "outcome": "BMPs installed"
+      "responsibleParties": [{ "name": "Project Partners" }]
     },
     {
       "description": "Begin monitoring to collect data on post-BMP water quality.",
       "responsibleParties": [
         { "name": "MDEQ" },
         { "name": "Monitoring Partners" }
-      ],
-      "startDate": "Month 42",
-      "endDate": "Month 48",
-      "outcome": "Post-BMP monitoring completed"
+      ]
     },
     {
       "description": "Finalize education and outreach plan and schedule education/outreach events.",
-      "responsibleParties": [
-        { "name": "MDEQ" },
-        { "name": "Project Partners" }
-      ],
-      "startDate": "Month 8",
-      "endDate": "Month 36",
-      "outcome": "Education/outreach events scheduled and outreach plan finalized"
+      "responsibleParties": [{ "name": "MDEQ" }, { "name": "Project Partners" }]
     },
     {
       "description": "Finalize revised Watershed Based Plan.",
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "WIT" }],
-      "startDate": "Month 30",
-      "endDate": "Month 36",
-      "outcome": "Final revised WBP completed"
+      "responsibleParties": [{ "name": "MDEQ" }, { "name": "WIT" }]
     }
   ],
   "monitoring": [
