@@ -315,14 +315,16 @@ General Hints:
    - Watershed management documents often use structured headings with "Element" prefixes (e.g., "Element A:", "Element F: Implementation Schedule", "Element C: Goals and Objectives"). Pay special attention to these sections as they typically contain key information for extraction.
 
 IMPORTANT INSTRUCTIONS:
-1. Extract all information into the appropriate arrays first
-2. THEN calculate reportSummary counts based on what you extracted:
+1. First, write a brief 1-3 sentence summary of the entire watershed plan document describing what it is for, the main watershed/area covered, and the general purpose or objectives
+2. Extract all information into the appropriate arrays next
+3. THEN calculate reportSummary counts based on what you extracted:
+   - summary = your 1-3 sentence description of the plan
    - totalGoals = exact count of items in "goals" array
    - totalBMPs = exact count of items in "bmps" array  
    - completionRate = count of "completed" status items / total implementation items (0 if no implementation items)
-3. Double-check that your reportSummary numbers match your array lengths
-4. Do NOT use null for counts - use actual numbers (0 if empty)
-5. CRITICAL - Extract ALL quantitative data accurately:
+4. Double-check that your reportSummary numbers match your array lengths
+5. Do NOT use null for counts - use actual numbers (0 if empty)
+6. CRITICAL - Extract ALL quantitative data accurately:
    - Look for numbers with units (acres, feet, dollars, percentages, etc.)
    - Extract cost estimates, quantities, target values, thresholds
    - Include specific dates, timelines, and numeric goals
@@ -410,6 +412,7 @@ IMPORTANT INSTRUCTIONS:
 Required JSON format:
 {
   "reportSummary": {
+    "summary": "Brief 1-3 sentence description of the watershed plan, its purpose, and coverage area",
     "totalGoals": number,
     "totalBMPs": number,
     "completionRate": number_between_0_and_1
@@ -510,10 +513,12 @@ Required JSON format:
 }
 
 CRITICAL: 
+- Start with a brief 1-3 sentence summary of the entire watershed plan
 - Extract only information explicitly stated in the document
 - Do not infer or make up data  
 - If a field is not found, omit it or set to null
 - ALWAYS calculate reportSummary counts accurately based on your extracted arrays
+- Verify: summary should describe the plan's purpose and coverage area
 - Verify: totalGoals should equal the number of items in your "goals" array
 - Verify: totalBMPs should equal the number of items in your "bmps" array
 - Use 0 instead of null for counts when arrays are empty
@@ -646,6 +651,7 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
     return {
       model: CURRENT_MODEL, // Will be overridden by caller
       reportSummary: data.reportSummary || {
+        summary: data.reportSummary?.summary || "Summary not provided",
         totalGoals: data.goals?.length || 0,
         totalBMPs: data.bmps?.length || 0,
         completionRate: this.calculateCompletionRate(data.implementation || []),

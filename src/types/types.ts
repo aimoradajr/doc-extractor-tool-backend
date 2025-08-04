@@ -57,6 +57,7 @@ export interface ExtractedData {
  * Summary of the watershed plan
  */
 export interface ReportSummary {
+  summary: string;
   totalGoals: number;
   totalBMPs: number;
   completionRate: number | null;
