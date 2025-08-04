@@ -7,43 +7,36 @@
   "goals": [
     {
       "description": "Implement nutrient BMPs to reduce TN, TP, and sediment in the watershed.",
-      "objective": "Reduce nutrient and sediment loads.",
       "targetArea": "Basket Creek-Hickahala Creek Watershed",
       "sourceExcerpt": "Nutrient BMPs will be implemented watershed...target both TN, TP and sediment reduction as soils in MS are known to have high phosphorus content."
     },
     {
       "description": "Achieve 50% fecal coliform reduction in Hickahala Creek and 70% in James Wolf Creek.",
-      "objective": "Mitigate pathogens and meet TMDL targets.",
       "targetArea": "Hickahala Creek and James Wolf Creek sections",
       "sourceExcerpt": "The Fecal Coliform TMDL for Hickahala Creek is calling for a 50% reduction...The same TMDL also calls for a 70% reduction in James Wolf Creek."
     },
     {
       "description": "Install conservation BMPs such as fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures.",
-      "objective": "Mitigate sediment and nutrient issues and help the stream recover.",
       "targetArea": "Basket Creek-Hickahala Creek Watershed",
       "sourceExcerpt": "Installation of the following BMPs would mitigate sediment and nutrient issues...: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
     {
       "description": "Leverage and maximize education and outreach activities to promote best management practices and water quality improvement.",
-      "objective": "Increase adoption of BMPs and improve water quality through education.",
       "targetArea": "Basket Creek-Hickahala Creek Watershed",
       "sourceExcerpt": "To maximize education and outreach activities and monitoring efforts, MDEQ plans to leverage with existing programs already allocated for funding where possible."
     },
     {
       "description": "Monitor baseline and post-implementation water quality to track changes resulting from BMPs.",
-      "objective": "Track effectiveness of BMPs and overall water quality improvement.",
       "targetArea": "Basket Creek-Hickahala Creek Watershed",
       "sourceExcerpt": "Facilitate... the completion and implementation of an effective and efficient plan to monitor baseline water quality conditions in the watershed and track changes in water quality over time resulting from the BMPs implemented through this project."
     },
     {
       "description": "Establish the Watershed Implementation Team (WIT) to refine and implement the watershed-based plan.",
-      "objective": "Coordinate activities and ensure effective plan implementation.",
       "targetArea": "Basket Creek-Hickahala Creek Watershed",
       "sourceExcerpt": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Basket Creek-Hickahala Creek watershed"
     },
     {
       "description": "Achieve water quality standards for dissolved oxygen, nutrients, E. coli, and other key parameters.",
-      "objective": "Meet water quality criteria for aquatic life and public health.",
       "targetArea": "Basket Creek-Hickahala Creek Watershed",
       "sourceExcerpt": "The following thresholds will be used to measure compliance with water quality criteria: ... Dissolved Oxygen, Total Nitrogen, Total Phosphorus, E. coli, etc."
     }

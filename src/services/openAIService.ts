@@ -271,7 +271,7 @@ export class OpenAIService {
           },
         ],
         temperature: 0.1,
-        max_tokens: 4000,
+        max_tokens: 16000, // Increased to handle larger documents and complete JSON responses
       };
 
       // For GPT-4 models, use response_format to force JSON output
@@ -479,7 +479,6 @@ Required JSON format:
     {
       "id": "optional_id",
       "description": "goal description",
-      "objective": "specific objective",
       "targetArea": "geographic target area",
       "schedule": "timeline or schedule",
       "contacts": [{"name": "contact name", "role": "role", "organization": "org"}],
@@ -741,7 +740,6 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
     return {
       goals: (data.goals || []).slice(0, 10).map((goal) => ({
         description: goal.description?.substring(0, 200) || "",
-        objective: goal.objective?.substring(0, 200) || "",
       })),
       bmps: (data.bmps || []).slice(0, 10).map((bmp) => ({
         name: bmp.name?.substring(0, 100) || "",

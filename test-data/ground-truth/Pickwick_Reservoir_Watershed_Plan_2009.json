@@ -7,7 +7,6 @@
   "goals": [
     {
       "description": "Reduce nutrient loading to Pickwick Reservoir to address eutrophication and support designated uses",
-      "objective": "Implement comprehensive nutrient management strategies across the watershed",
       "targetArea": "Pickwick Reservoir watershed in Tennessee, Alabama, and Mississippi",
       "schedule": "2009-2015",
       "contacts": [
@@ -31,7 +30,6 @@
     },
     {
       "description": "Control sediment inputs to maintain reservoir capacity and water clarity",
-      "objective": "Implement erosion control measures throughout the contributing watershed",
       "targetArea": "Tributary watersheds and shoreline areas",
       "schedule": "2009-2015",
       "contacts": [

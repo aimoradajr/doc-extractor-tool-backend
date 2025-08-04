@@ -75,7 +75,6 @@ export interface ReportSummary {
 export interface Goal {
   id?: string;
   description: string;
-  objective?: string;
   targetArea?: string;
   schedule?: string;
   contacts?: Contact[];
