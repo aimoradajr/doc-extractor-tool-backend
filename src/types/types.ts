@@ -57,13 +57,13 @@ export interface ExtractedData {
  * Summary of the watershed plan
  */
 export interface ReportSummary {
-  summary: string;
-  watershedName: string;
-  planTitle: string;
-  planDate: string | null;
-  authors: string[];
-  organizations: string[];
-  geographicRegion: string;
+  summary?: string;
+  watershedName?: string;
+  planTitle?: string;
+  planDate?: string | null;
+  authors?: string[];
+  organizations?: string[];
+  geographicRegion?: string;
   totalGoals: number;
   totalBMPs: number;
   completionRate: number | null;
