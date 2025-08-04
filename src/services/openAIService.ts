@@ -292,6 +292,9 @@ IMPORTANT INSTRUCTIONS:
    - A goal is any major intended outcome, milestone, or management action that is explicitly stated in the watershed plan as something to be achieved, established, or completed. This includes environmental targets, project milestones, management steps, and outreach/education achievements.
    - Only extract goals that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create goals that are not directly described or labeled in the text.
    - Goals may be found in narrative text, bullet lists, or tables under sections like "Goals," "Objectives," "Milestones," "Expected Outcomes," or similar headings.
+   - HINTS for finding goals:
+     * Look for section headers or table titles containing the word "Goal" or "Objectives" (e.g., "Project Goals," "Watershed Goals," "Objectives," or "Goal Statement")—these sections usually state what the plan aims to achieve
+     * Look for clear, concise statements in introductory or summary sections that describe desired outcomes or targets (e.g., "The goal of this plan is to reduce sediment loading by 40%," or "Objectives include improving water quality and increasing community awareness")
    - Use the exact language from the document when possible. Paraphrase only for clarity if the goal is split across sentences, but do not invent new goals.
    - CRITICAL: For each goal extracted, include a brief excerpt (approximately 20 words) from the document where you found this goal. This should be the key phrase or sentence that contains the goal statement.
 
@@ -299,6 +302,9 @@ IMPORTANT INSTRUCTIONS:
    - A BMP (Best Management Practice) is any specific action, measure, or practice described in the watershed plan to reduce pollution, manage water, or protect resources. This can include physical structures, management techniques, or operational practices.
    - Only extract BMPs that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create BMPs that are not directly described or labeled in the text.
    - BMPs may be found in narrative text, bullet lists, or tables under sections like "Best Management Practices," "Management Measures," "Proposed Actions," or similar headings.
+   - HINTS for finding BMPs:
+     * Look for section headers or table titles containing "Best Management Practices," "BMPs," or "Management Measures"—these sections almost always list the specific practices recommended for the watershed
+     * Look for bulleted or numbered lists under "BMP" or "Management Measures" sections—these lists typically describe the individual practices (e.g., cover crops, fencing, buffer strips) that are considered BMPs
    - Use the exact language from the document when possible. Paraphrase only for clarity if the BMP is split across sentences, but do not invent new BMPs.
    - CRITICAL: For each BMP extracted, include a brief excerpt (about 20 words) from the document where you found this BMP. This should be the key phrase or sentence that contains the BMP statement.
 
@@ -306,6 +312,9 @@ IMPORTANT INSTRUCTIONS:
    - An implementation is any concrete action, step, or scheduled activity described in the watershed plan for putting goals or BMPs into practice. This includes project management steps, outreach efforts, monitoring, reporting, or any tasks with assigned timing or responsibility.
    - Only extract implementations that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create implementations that are not directly described or labeled in the text.
    - Implementations may be found in narrative text, bullet lists, timelines, tables, or under sections like "Implementation Schedule," "Milestones," "Action Plan," or similar headings.
+   - HINTS for finding implementations:
+     * Look for section headers or table titles containing the word "Implementation" (e.g., "Implementation Schedule," "Implementation Activities," "Implementation Plan")
+     * Look for bulleted or numbered lists under "Implementation" sections—these lists almost always describe the specific actions or steps to be carried out
    - Use the exact language from the document when possible. Paraphrase only for clarity if the implementation is split across sentences, but do not invent new implementations.
    - CRITICAL: For each implementation extracted, include a brief excerpt (about 20 words) from the document where you found this implementation. This should be the key phrase or sentence that contains the implementation statement.
 
