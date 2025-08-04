@@ -273,18 +273,6 @@ export interface OutreachActivity {
 }
 
 /**
- * Detail for a single outreach event
- */
-export interface EventDetail {
-  type: string;
-  audience?: string;
-  materialsProvided?: string[];
-  estimatedParticipants?: number;
-  cost?: number;
-  date?: string;
-}
-
-/**
  * Watershed, subwatershed, or area of interest
  */
 export interface GeographicArea {

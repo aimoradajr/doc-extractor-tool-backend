@@ -276,9 +276,7 @@
       "method": "Best professional judgement for station selection; SOPs; agency QA protocols",
       "frequency": "At least 1 year post-BMP, possibly up to 5 or more years",
       "thresholds": [],
-      "locations": [
-        "Locations downstream of BMP activity (to be selected)"
-      ],
+      "locations": ["Locations downstream of BMP activity (to be selected)"],
       "sourceExcerpt": "Post-BMP monitoring to assess water quality changes downstream of BMP activity, compared to baseline data."
     }
   ],
@@ -296,101 +294,34 @@
       "schedule": "Months 8-36",
       "sourceExcerpt": "Education and Outreach Events"
     },
-          "audience": "Public, landowners",
-          "materialsProvided": ["Demonstration materials", "Refreshments"],
-          "estimatedParticipants": null,
-          "date": "To be scheduled during project period"
-        }
-      ]
-    },
     {
-      "name": "MDEQ Statewide Information/Education Programs",
+      "type": "Information and Education Programs",
       "description": "Utilization of MDEQ-developed programs, manuals, literature, books, videos, and public service announcements tailored for the watershed.",
-      "partners": [{ "name": "MDEQ", "type": "Agency" }],
-      "indicators": "Number of programs delivered; audience reached; feedback and evaluation forms",
+      "partners": ["MDEQ"],
+      "indicator": "Number of programs delivered; audience reached; feedback and evaluation forms",
       "schedule": "Throughout project period",
-      "targetAudience": "Pre-school to adult; community members; school teachers; students",
-      "events": [
-        {
-          "type": "Water Model Presentations",
-          "audience": "Students, teachers",
-          "materialsProvided": [
-            "Enviroscapes models",
-            "Groundwater aquifer models",
-            "Lesson plans"
-          ]
-        },
-        {
-          "type": "Teacher Workshops",
-          "audience": "Local educators",
-          "materialsProvided": [
-            "NPS pollution materials",
-            "Classroom resources"
-          ]
-        },
-        {
-          "type": "Adopt A Stream Workshops",
-          "audience": "Citizens, teachers, students",
-          "materialsProvided": ["Training materials"]
-        },
-        {
-          "type": "Watershed Harmony Mobile Classroom",
-          "audience": "Kindergarten – adults, 4th/5th grade focus",
-          "materialsProvided": ["Mobile classroom resources"]
-        },
-        {
-          "type": "Storm Drain Marking Projects",
-          "audience": "Scouts, environmental clubs, citizen groups",
-          "materialsProvided": ["Storm drain marking kits"]
-        },
-        {
-          "type": "Train the Trainer Workshops",
-          "audience": "Soil and Water Districts, Extension Service staff",
-          "materialsProvided": ["Training materials"]
-        }
-      ]
+      "sourceExcerpt": "MDEQ Statewide Information/Education Programs"
     },
     {
-      "name": "Stakeholder Engagement and Meetings",
-      "description": "Engage stakeholders through meetings to provide updates, education, and review/modify the watershed plan. Support participation via food, refreshments, and facility rentals.",
+      "type": "Stakeholder Meetings",
+      "description": "Engage stakeholders through meetings to provide updates, education, and review/modify the watershed plan.",
       "partners": [
-        { "name": "MDEQ", "type": "Agency" },
-        { "name": "MSWCC", "type": "Agency" },
-        { "name": "NRCS", "type": "Agency" },
-        {
-          "name": "Tate County Soil and Water Conservation District",
-          "type": "Agency"
-        }
+        "MDEQ",
+        "MSWCC",
+        "NRCS",
+        "Tate County Soil and Water Conservation District"
       ],
-      "indicators": "Number of meetings, participant attendance, feedback",
+      "indicator": "Number of meetings, participant attendance, feedback",
       "schedule": "Throughout project period (at least 3 meetings)",
-      "budget": 4000,
-      "targetAudience": "Watershed Implementation Team (WIT), stakeholders",
-      "events": [
-        {
-          "type": "Stakeholder Meetings",
-          "audience": "WIT members, stakeholders",
-          "materialsProvided": ["Food", "Refreshments", "Meeting materials"],
-          "estimatedParticipants": null,
-          "date": "During project period"
-        }
-      ]
+      "sourceExcerpt": "Stakeholder Engagement and Meetings"
     },
     {
-      "name": "Media and Social Media Promotion",
+      "type": "Media Promotion",
       "description": "Promotion of the project and outreach activities through media and social media channels.",
-      "partners": [{ "name": "MDEQ", "type": "Agency" }],
-      "indicators": "Number of media mentions/social media posts; audience reached",
+      "partners": ["MDEQ"],
+      "indicator": "Number of media mentions/social media posts; audience reached",
       "schedule": "Months 1-36",
-      "targetAudience": "General public",
-      "events": [
-        {
-          "type": "Media Promotion",
-          "audience": "General public",
-          "materialsProvided": ["Press releases", "Social media posts"],
-          "date": "Throughout project period"
-        }
-      ]
+      "sourceExcerpt": "Media and Social Media Promotion"
     }
   ],
   "geographicAreas": [
