@@ -275,6 +275,9 @@ ${text.substring(0, 8000)}
 
 Note: The input text is extracted from parsed PDFs, so tables and structured data may not appear in obvious table format. Please carefully analyze the text to identify information that likely originated from tables, such as repeated patterns, grouped short phrases, or sequences following headers like "Milestone," "Outcome," or "Date." Extract goals from these table-like structures as well, even if the table formatting is lost.
 
+General Hints:
+   - Watershed management documents often use structured headings with "Element" prefixes (e.g., "Element A:", "Element F: Implementation Schedule", "Element C: Goals and Objectives"). Pay special attention to these sections as they typically contain key information for extraction.
+
 IMPORTANT INSTRUCTIONS:
 1. Extract all information into the appropriate arrays first
 2. THEN calculate reportSummary counts based on what you extracted:
@@ -288,6 +291,7 @@ IMPORTANT INSTRUCTIONS:
    - Extract cost estimates, quantities, target values, thresholds
    - Include specific dates, timelines, and numeric goals
    - If a number is mentioned, capture both the value and unit
+
 6. GOAL EXTRACTION RULES:
    - A goal is any major intended outcome, milestone, or management action that is explicitly stated in the watershed plan as something to be achieved, established, or completed. This includes environmental targets, project milestones, management steps, and outreach/education achievements.
    - Only extract goals that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create goals that are not directly described or labeled in the text.
@@ -315,6 +319,11 @@ IMPORTANT INSTRUCTIONS:
    - HINTS for finding implementations:
      * Look for section headers or table titles containing the word "Implementation" (e.g., "Implementation Schedule," "Implementation Activities," "Implementation Plan")
      * Look for bulleted or numbered lists under "Implementation" sections—these lists almost always describe the specific actions or steps to be carried out
+     * Look for action-oriented language with specific verbs: "install," "construct," "develop," "establish," "conduct," "monitor," "report," "coordinate," "maintain"
+     * Look for activities with timing/scheduling information: "by 2025," "within 6 months," "annually," "quarterly," "Phase 1," "Year 1-3"
+     * Look for activities with assigned responsibility: "NRCS will," "County to," "Landowner responsible for," "Contractor shall"
+     * Look for Element _ sections (common in 9-Element plans) as they typically contain implementation schedules
+     * Look for tables with columns like "Activity," "Timeline," "Responsible Party," "Status," "Milestone"
    - Use the exact language from the document when possible. Paraphrase only for clarity if the implementation is split across sentences, but do not invent new implementations.
    - CRITICAL: For each implementation extracted, include a brief excerpt (about 20 words) from the document where you found this implementation. This should be the key phrase or sentence that contains the implementation statement.
 
