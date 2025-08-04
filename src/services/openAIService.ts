@@ -302,6 +302,13 @@ IMPORTANT INSTRUCTIONS:
    - Use the exact language from the document when possible. Paraphrase only for clarity if the BMP is split across sentences, but do not invent new BMPs.
    - CRITICAL: For each BMP extracted, include a brief excerpt (about 20 words) from the document where you found this BMP. This should be the key phrase or sentence that contains the BMP statement.
 
+8. IMPLEMENTATION ACTIVITY EXTRACTION RULES:
+   - An implementation is any concrete action, step, or scheduled activity described in the watershed plan for putting goals or BMPs into practice. This includes project management steps, outreach efforts, monitoring, reporting, or any tasks with assigned timing or responsibility.
+   - Only extract implementations that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create implementations that are not directly described or labeled in the text.
+   - Implementations may be found in narrative text, bullet lists, timelines, tables, or under sections like "Implementation Schedule," "Milestones," "Action Plan," or similar headings.
+   - Use the exact language from the document when possible. Paraphrase only for clarity if the implementation is split across sentences, but do not invent new implementations.
+   - CRITICAL: For each implementation extracted, include a brief excerpt (about 20 words) from the document where you found this implementation. This should be the key phrase or sentence that contains the implementation statement.
+
 Required JSON format:
 {
   "reportSummary": {
@@ -344,7 +351,8 @@ Required JSON format:
       "endDate": "YYYY-MM-DD or descriptive date",
       "status": "status description",
       "outcome": "expected or actual outcome",
-      "probableCompletionDate": "completion date"
+      "probableCompletionDate": "completion date",
+      "sourceExcerpt": "exact text from document where this implementation was found"
     }
   ],
   "monitoring": [
