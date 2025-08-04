@@ -53,74 +53,7 @@ export class AccuracyController {
 
   // UPLOAD MODE - User provides PDF + ground truth
   private handleUploadMode = async (req: Request, res: Response) => {
-    // Type guard for multer files
-    if (!req.files || Array.isArray(req.files)) {
-      return res.status(400).json({
-        error:
-          "Both 'pdf' and 'groundTruth' files are required for upload mode",
-      });
-    }
-
-    const files = req.files as { [fieldname: string]: Express.Multer.File[] };
-
-    if (!files["pdf"] || !files["groundTruth"]) {
-      return res.status(400).json({
-        error: "Both 'pdf' and 'groundTruth' files are required",
-      });
-    }
-
-    const pdfFile = files["pdf"][0];
-    const groundTruthFile = files["groundTruth"][0];
-
-    // Get comparison mode from request body
-    const compareMode = req.body.compare_mode || "ai"; // ai or default
-    const compareModeModel = req.body.compare_mode_model || "gpt-4.1";
-
-    console.log(
-      `Testing uploaded PDF: ${pdfFile.originalname} with ${compareMode} comparison mode`
-    );
-
-    // Extract data from uploaded PDF
-    const extractedData = await pdfService.extractStructuredData(pdfFile.path);
-
-    // Parse uploaded ground truth
-    const groundTruthContent = fs.readFileSync(groundTruthFile.path, "utf-8");
-    const groundTruth = JSON.parse(groundTruthContent);
-
-    // Calculate accuracy based on mode
-    let accuracyResult: AccuracyTestResult;
-    if (compareMode === "ai") {
-      console.log(`Using AI comparison with model: ${compareModeModel}`);
-      accuracyResult = await accuracyService.calculateAccuracyWithAI(
-        extractedData,
-        groundTruth,
-        compareModeModel
-      );
-    } else {
-      console.log("Using default code-based comparison");
-      accuracyResult = accuracyService.calculateAccuracy(
-        extractedData,
-        groundTruth
-      );
-    }
-
-    const result: AccuracyTestResult = {
-      testCase: `uploaded-${pdfFile.originalname}`,
-      extract_ai_model: extractedData.model, // The model used for extraction
-      compare_ai_model: compareMode === "ai" ? compareModeModel : undefined, // Only set if AI comparison is used
-      compare_mode: compareMode, // The comparison mode used
-      metrics: accuracyResult.metrics,
-      details: accuracyResult.details,
-      // Include both datasets for comparison
-      comparison: {
-        expected: groundTruth,
-        actual: extractedData,
-      },
-      // Include detailed comparisons for debugging
-      detailedComparisons: accuracyResult.detailedComparisons,
-    };
-
-    res.json(result);
+    throw new Error("Upload mode is not supported");
   };
 
   // PRESET MODE - Use predefined test cases
