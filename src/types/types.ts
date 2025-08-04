@@ -91,14 +91,39 @@ export interface Goal {
 export interface BMP {
   name: string;
   description?: string | null;
-  type?: "Nutrient" | "Pathogen" | "Sediment" | string | null;
-  targetAreas?: string[];
+  /**
+   * BMP type/category:
+   * - "Nutrient": practices targeting nitrogen or phosphorus (e.g. cover crops, buffer strips)
+   * - "Sediment": soil-erosion controls (e.g. terraces, filter strips, check dams)
+   * - "Pathogen": bacteria reduction (e.g. livestock exclusion fencing, manure management)
+   * - "Habitat": improvements for in-stream or riparian habitat (not just water quality)
+   * - "Hydrologic": flow attenuation (e.g. detention ponds, rain gardens)
+   * - "Structural": engineered structures
+   * - "Non-Structural": management practices
+   * - string | null: allows any other category or blank if unknown
+   */
+  type?:
+    | "Nutrient"
+    | "Sediment"
+    | "Pathogen"
+    | "Habitat"
+    | "Hydrologic"
+    | "Structural"
+    | "Non-Structural"
+    | string
+    | null;
+
   quantity?: number | null;
   unit?: string | null; // e.g. "ft", "ac", "ea"
   estimatedCost?: number | null;
+  targetAreas?: string[];
+
   partners?: Organization[];
   schedule?: string;
-  priorityFactors?: string[] | null;
+
+  // non-mvp
+  // priorityFactors?: string[] | null; // these are factors considered to determine specific location for the BMP
+
   sourceExcerpt?: string; // Exact text from document where this BMP was found
 }
 

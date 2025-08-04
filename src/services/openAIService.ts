@@ -493,7 +493,6 @@ Required JSON format:
       "estimatedCost": number_or_null,
       "partners": [{"name": "organization name"}],
       "schedule": "implementation schedule",
-      "priorityFactors": ["factor1", "factor2"],
       "sourceExcerpt": "exact text from document where this BMP was found"
     }
   ],

@@ -51,8 +51,7 @@
       "unit": "ea",
       "estimatedCost": 75000,
       "partners": [{ "name": "NRCS" }, { "name": "Local landowners" }],
-      "schedule": "2013-2015",
-      "priorityFactors": ["High erosion areas", "Stream bank instability"]
+      "schedule": "2013-2015"
     },
     {
       "name": "Conservation Tillage",
@@ -63,8 +62,7 @@
       "unit": "ac",
       "estimatedCost": 100000,
       "partners": [{ "name": "NRCS" }, { "name": "Extension Service" }],
-      "schedule": "2013-2017",
-      "priorityFactors": ["Slope", "Soil type", "Crop rotation"]
+      "schedule": "2013-2017"
     },
     {
       "name": "Nutrient Management",
@@ -78,8 +76,7 @@
         { "name": "Extension Service" },
         { "name": "Certified Crop Advisors" }
       ],
-      "schedule": "2013-2017",
-      "priorityFactors": ["Soil test results", "Crop requirements"]
+      "schedule": "2013-2017"
     }
   ],
   "implementation": [
