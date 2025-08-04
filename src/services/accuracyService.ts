@@ -37,19 +37,25 @@ export class AccuracyService {
       extracted.monitoring || [],
       groundTruth.monitoring || []
     );
+    const outreachResults = this.compareOutreachDetailed(
+      extracted.outreach || [],
+      groundTruth.outreach || []
+    );
 
     const overallPrecision =
       (goalResults.accuracy.precision +
         bmpResults.accuracy.precision +
         implResults.accuracy.precision +
-        monitoringResults.accuracy.precision) /
-      4;
+        monitoringResults.accuracy.precision +
+        outreachResults.accuracy.precision) /
+      5;
     const overallRecall =
       (goalResults.accuracy.recall +
         bmpResults.accuracy.recall +
         implResults.accuracy.recall +
-        monitoringResults.accuracy.recall) /
-      4;
+        monitoringResults.accuracy.recall +
+        outreachResults.accuracy.recall) /
+      5;
     const overallF1 = this.calculateF1(overallPrecision, overallRecall);
 
     return {
@@ -64,12 +70,14 @@ export class AccuracyService {
         bmps: bmpResults.accuracy,
         implementation: implResults.accuracy,
         monitoring: monitoringResults.accuracy,
+        outreach: outreachResults.accuracy,
       },
       detailedComparisons: {
         goals: goalResults.comparisons,
         bmps: bmpResults.comparisons,
         implementation: implResults.comparisons,
         monitoring: monitoringResults.comparisons,
+        outreach: outreachResults.comparisons,
       },
     };
   }
@@ -402,6 +410,66 @@ export class AccuracyService {
           expected: gtMon.description,
           actual: null,
           message: `Missing expected monitoring: "${gtMon.description}"`,
+        });
+      }
+    }
+
+    return {
+      accuracy: this.calculateMetric(
+        correctCount,
+        extracted.length,
+        groundTruth.length
+      ),
+      comparisons,
+    };
+  }
+
+  private compareOutreachDetailed(
+    extracted: any[],
+    groundTruth: any[]
+  ): { accuracy: AccuracyMetric; comparisons: ComparisonDetail[] } {
+    const comparisons: ComparisonDetail[] = [];
+    let correctCount = 0;
+
+    // Check each extracted outreach against ground truth
+    for (const extractedOutreach of extracted) {
+      const match = groundTruth.find((gt) =>
+        this.fuzzyMatch(extractedOutreach.description, gt.description)
+      );
+
+      if (match) {
+        correctCount++;
+        comparisons.push({
+          type: "perfect_match",
+          category: "outreach",
+          expected: match.description,
+          actual: extractedOutreach.description,
+          message: `Found expected outreach: "${extractedOutreach.description}"`,
+        });
+      } else {
+        comparisons.push({
+          type: "surplus_actual",
+          category: "outreach",
+          expected: null,
+          actual: extractedOutreach.description,
+          message: `Found unexpected outreach: "${extractedOutreach.description}" (not in ground truth)`,
+        });
+      }
+    }
+
+    // Check for missing outreach
+    for (const gtOutreach of groundTruth) {
+      const found = extracted.find((ext) =>
+        this.fuzzyMatch(ext.description, gtOutreach.description)
+      );
+
+      if (!found) {
+        comparisons.push({
+          type: "missing_expected",
+          category: "outreach",
+          expected: gtOutreach.description,
+          actual: null,
+          message: `Missing expected outreach: "${gtOutreach.description}"`,
         });
       }
     }

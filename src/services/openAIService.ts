@@ -67,7 +67,7 @@ export class OpenAIService {
         // Ensure the result matches our expected format
         return {
           testCase: "ai-comparison",
-          model: model,
+          compare_ai_model: model,
           metrics: comparisonResult.metrics || {
             precision: 0,
             recall: 0,
@@ -132,7 +132,7 @@ export class OpenAIService {
         // Fallback: Return a simplified response when parsing fails
         return {
           testCase: "ai-comparison-fallback",
-          model: model,
+          compare_ai_model: model,
           metrics: {
             precision: 0,
             recall: 0,
@@ -171,6 +171,14 @@ export class OpenAIService {
               totalExtracted: extracted.monitoring?.length || 0,
               totalExpected: groundTruth.monitoring?.length || 0,
             },
+            outreach: {
+              precision: 0,
+              recall: 0,
+              f1Score: 0,
+              correctCount: 0,
+              totalExtracted: extracted.outreach?.length || 0,
+              totalExpected: groundTruth.outreach?.length || 0,
+            },
           },
           comparison: {
             expected: groundTruth,
@@ -189,6 +197,7 @@ export class OpenAIService {
             bmps: [],
             implementation: [],
             monitoring: [],
+            outreach: [],
           },
         };
       }
@@ -344,6 +353,20 @@ IMPORTANT INSTRUCTIONS:
    - Use the exact language from the document when possible. Paraphrase only for clarity if the monitoring metric is split across sentences, but do not invent new monitoring metrics.
    - CRITICAL: For each monitoring metric extracted, include a brief excerpt (about 20 words) from the document where you found this monitoring metric. This should be the key phrase or sentence that contains the metric description.
 
+10. OUTREACH ACTIVITY EXTRACTION RULES:
+   - An outreach activity is any concrete action, step, or scheduled effort described in the watershed plan for engaging, educating, or communicating with stakeholders, landowners, the public, or specific groups. This includes workshops, technical assistance, meetings, educational campaigns, communications materials, or events with assigned timing or responsibility.
+   - Only extract outreach activities that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create outreach actions that are not directly described or labeled in the text.
+   - Outreach activities may be found in narrative text, bullet lists, timelines, tables, or under sections like "Outreach," "Education," "Public Involvement," "Technical Assistance," "Stakeholder Engagement," or similar headings.
+   - HINTS for finding outreach activities:
+     * Look for section headers or table titles containing words like "Outreach," "Education," "Public Involvement," "Technical Assistance," "Stakeholder Engagement," or similar
+     * Look for bulleted or numbered lists under these sections—these often detail specific outreach steps, events, or materials
+     * Look for action-oriented language with verbs such as: "educate," "inform," "engage," "assist," "train," "hold meetings," "conduct workshops," "provide materials," "coordinate," "contact"
+     * Look for activities with timing or scheduling information: "quarterly workshops," "annual field days," "by 2026," "during Phase 2"
+     * Look for activities with assigned responsibility: "Extension will lead...," "NRCS to provide...," "Project coordinator will organize..."
+     * Look for tables with columns like "Outreach Activity," "Timeline," "Responsible Party," "Audience," "Status"
+   - Use the exact language from the document when possible. Paraphrase only for clarity if the outreach activity is split across sentences, but do not invent new outreach items.
+   - CRITICAL: For each outreach activity extracted, include a brief excerpt (about 20 words) from the document where you found this outreach statement. This should be the key phrase or sentence that contains the outreach description.
+
 Required JSON format:
 {
   "reportSummary": {
@@ -412,7 +435,8 @@ Required JSON format:
       "schedule": "activity schedule",
       "budget": number_or_null,
       "events": [{"type": "event type", "audience": "target audience"}],
-      "targetAudience": "primary audience"
+      "targetAudience": "primary audience",
+      "sourceExcerpt": "exact text from document where this outreach was found"
     }
   ],
   "geographicAreas": [
@@ -484,6 +508,7 @@ Please analyze the accuracy by comparing:
 2. BMPs - Compare extracted BMPs against ground truth BMPs  
 3. Implementation - Compare implementation activities
 4. Monitoring - Compare monitoring metrics
+5. Outreach - Compare outreach activities
 
 Return a JSON response in this exact format:
 {
@@ -524,6 +549,14 @@ Return a JSON response in this exact format:
       "correctCount": number,
       "totalExtracted": number,
       "totalExpected": number
+    },
+    "outreach": {
+      "precision": number_between_0_and_1,
+      "recall": number_between_0_and_1,
+      "f1Score": number_between_0_and_1,
+      "correctCount": number,
+      "totalExtracted": number,
+      "totalExpected": number
     }
   },
   "detailedComparisons": {
@@ -538,7 +571,8 @@ Return a JSON response in this exact format:
     ],
     "bmps": [{"type": "...", "category": "bmps", "expected": "...", "actual": "...", "message": "..."}],
     "implementation": [{"type": "...", "category": "implementation", "expected": "...", "actual": "...", "message": "..."}],
-    "monitoring": [{"type": "...", "category": "monitoring", "expected": "...", "actual": "...", "message": "..."}]
+    "monitoring": [{"type": "...", "category": "monitoring", "expected": "...", "actual": "...", "message": "..."}],
+    "outreach": [{"type": "...", "category": "outreach", "expected": "...", "actual": "...", "message": "..."}]
   }
 }
 
@@ -592,6 +626,10 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
       })),
       monitoring: (data.monitoring || []).slice(0, 10).map((mon) => ({
         description: mon.description?.substring(0, 200) || "",
+      })),
+      outreach: (data.outreach || []).slice(0, 10).map((outreach) => ({
+        name: outreach.name?.substring(0, 100) || "",
+        description: outreach.description?.substring(0, 200) || "",
       })),
     };
   }

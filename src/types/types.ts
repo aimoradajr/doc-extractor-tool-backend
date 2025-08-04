@@ -217,6 +217,7 @@ export interface AccuracyTestResult {
     bmps: AccuracyMetric;
     implementation: AccuracyMetric;
     monitoring: AccuracyMetric;
+    outreach: AccuracyMetric;
   };
   // DEBUG DATA - Compare expected vs actual
   comparison?: {
@@ -229,6 +230,7 @@ export interface AccuracyTestResult {
     bmps: ComparisonDetail[];
     implementation: ComparisonDetail[];
     monitoring: ComparisonDetail[];
+    outreach: ComparisonDetail[];
   };
 }
 
@@ -241,7 +243,7 @@ export interface ComparisonDetail {
     | "partial_match"
     | "missing_expected"
     | "surplus_actual";
-  category: "goals" | "bmps" | "implementation" | "monitoring";
+  category: "goals" | "bmps" | "implementation" | "monitoring" | "outreach";
   expected?: string | null; // What we expected to find
   actual?: string | null; // What we actually found
   similarity?: number; // Similarity score (0-1) for partial matches
