@@ -292,7 +292,7 @@ IMPORTANT INSTRUCTIONS:
    - Include specific dates, timelines, and numeric goals
    - If a number is mentioned, capture both the value and unit
 
-6. GOAL EXTRACTION RULES:
+6. 'GOAL' EXTRACTION RULES:
    - A goal is any major intended outcome, milestone, or management action that is explicitly stated in the watershed plan as something to be achieved, established, or completed. This includes environmental targets, project milestones, management steps, and outreach/education achievements.
    - Only extract goals that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create goals that are not directly described or labeled in the text.
    - Goals may be found in narrative text, bullet lists, or tables under sections like "Goals," "Objectives," "Milestones," "Expected Outcomes," or similar headings.
@@ -302,7 +302,7 @@ IMPORTANT INSTRUCTIONS:
    - Use the exact language from the document when possible. Paraphrase only for clarity if the goal is split across sentences, but do not invent new goals.
    - CRITICAL: For each goal extracted, include a brief excerpt (approximately 20 words) from the document where you found this goal. This should be the key phrase or sentence that contains the goal statement.
 
-7. BMP EXTRACTION RULES:
+7. 'BMP' EXTRACTION RULES:
    - A BMP (Best Management Practice) is any specific action, measure, or practice described in the watershed plan to reduce pollution, manage water, or protect resources. This can include physical structures, management techniques, or operational practices.
    - Only extract BMPs that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create BMPs that are not directly described or labeled in the text.
    - BMPs may be found in narrative text, bullet lists, or tables under sections like "Best Management Practices," "Management Measures," "Proposed Actions," or similar headings.
@@ -312,7 +312,7 @@ IMPORTANT INSTRUCTIONS:
    - Use the exact language from the document when possible. Paraphrase only for clarity if the BMP is split across sentences, but do not invent new BMPs.
    - CRITICAL: For each BMP extracted, include a brief excerpt (about 20 words) from the document where you found this BMP. This should be the key phrase or sentence that contains the BMP statement.
 
-8. IMPLEMENTATION ACTIVITY EXTRACTION RULES:
+8. 'IMPLEMENTATION' (ACTIVITIES) EXTRACTION RULES:
    - An implementation is any concrete action, step, or scheduled activity described in the watershed plan for putting goals or BMPs into practice. This includes project management steps, outreach efforts, monitoring, reporting, or any tasks with assigned timing or responsibility.
    - Only extract implementations that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create implementations that are not directly described or labeled in the text.
    - Implementations may be found in narrative text, bullet lists, timelines, tables, or under sections like "Implementation Schedule," "Milestones," "Action Plan," or similar headings.
@@ -326,6 +326,23 @@ IMPORTANT INSTRUCTIONS:
      * Look for tables with columns like "Activity," "Timeline," "Responsible Party," "Status," "Milestone"
    - Use the exact language from the document when possible. Paraphrase only for clarity if the implementation is split across sentences, but do not invent new implementations.
    - CRITICAL: For each implementation extracted, include a brief excerpt (about 20 words) from the document where you found this implementation. This should be the key phrase or sentence that contains the implementation statement.
+
+9. 'MONITORING' (METRICS) EXTRACTION RULES:
+   - IMPORTANT DISTINCTION: Extract only monitoring metrics, NOT monitoring activities.
+     * Monitoring activities are broad actions (e.g., "conduct water quality sampling," "monitor stream conditions")
+     * Monitoring metrics are specific, measurable parameters or indicators (e.g., "Total Suspended Solids concentration in mg/L sampled monthly at Site 3")
+   - Extract only monitoring metrics: specific, measurable indicators, parameters, or thresholds described in the watershed plan for tracking progress, effectiveness, or compliance of goals or BMPs.
+   - These should specify what is being measured (e.g., nutrient concentration, biological index), how it's measured (method or protocol), how often (frequency or schedule), and who is responsible.
+   - Only extract monitoring metrics that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create monitoring metrics that are not directly described or labeled in the text.
+   - HINTS for finding monitoring metrics:
+     * Look for tables or text describing parameters, indicators, or methods used in monitoring (e.g., "phosphorus concentration," "biological index," "sampling protocol")
+     * Look for sections or lists that specify thresholds, frequencies, or sample locations for monitoring
+     * Look for mention of "monitoring metric," "indicator," "parameter," "threshold," or "criteria"
+     * Look for specific measurable values with units and measurement details (e.g., "Total Suspended Solids concentration in mg/L sampled monthly at Site 3")
+     * Look for structured, quantifiable elements rather than general monitoring descriptions
+     * Focus on the MonitoringMetric interface: what's measured, how it's measured, frequency, thresholds, responsible parties
+   - Use the exact language from the document when possible. Paraphrase only for clarity if the monitoring metric is split across sentences, but do not invent new monitoring metrics.
+   - CRITICAL: For each monitoring metric extracted, include a brief excerpt (about 20 words) from the document where you found this monitoring metric. This should be the key phrase or sentence that contains the metric description.
 
 Required JSON format:
 {
@@ -382,7 +399,8 @@ Required JSON format:
       "thresholds": [{"parameter": "param name", "value": "threshold value", "units": "units"}],
       "responsibleParties": [{"name": "organization"}],
       "sampleLocations": ["location1", "location2"],
-      "sampleSchedule": "when samples are taken"
+      "sampleSchedule": "when samples are taken",
+      "sourceExcerpt": "exact text from document where this monitoring was found"
     }
   ],
   "outreach": [

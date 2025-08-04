@@ -438,36 +438,42 @@
   ],
   "monitoring": [
     {
-      "description": "Water quality standards compliance monitoring",
-      "indicator": "Dissolved Oxygen, pH, Temperature, Conductivity, Total Nitrogen, Total Phosphorus, E. coli",
-      "method": "Routine chemical and biological sampling; M-BISQ index",
-      "frequency": "As scheduled and after BMP installation",
+      "description": "Pre-implementation (baseline) monitoring using chemical and biological sampling data to assess stream condition before BMP installation.",
+      "indicator": "M-BISQ score; other chemical and biological parameters",
+      "method": "Standard Operating Procedures; agency Quality Assurance protocols",
+      "frequency": "Prior to BMP installation",
       "thresholds": [
         {
-          "parameter": "Dissolved Oxygen",
-          "value": "Daily Average of 5.0 mg/L; Instantaneous threshold 4.0 mg/L"
-        },
-        { "parameter": "Dissolved Oxygen % Sat", "value": "≥ 70% - ≤ 125%" },
-        { "parameter": "pH", "value": "6.0-9.0" },
-        { "parameter": "Temperature", "value": "Not to exceed 90°F" },
-        {
-          "parameter": "Specific Conductance",
-          "value": "Less than 1000 micromhos/cm"
-        },
-        {
-          "parameter": "Dissolved Solids",
-          "value": "Monthly avg < 750 mg/L; instantaneous < 1500 mg/L"
-        },
-        { "parameter": "Total Nitrogen", "value": "0.940-1.110 mg/L" },
-        { "parameter": "Total Phosphorus", "value": "0.080-0.120 mg/L" },
-        {
-          "parameter": "E. coli",
-          "value": "30-day geometric mean of 126 per 100 ml; not to exceed 410 per 100 ml more than 10% of the time"
+          "description": "M-BISQ score 10 points below attainment threshold for West Bioregion"
         }
       ],
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "USGS" }],
-      "sampleLocations": [],
-      "sampleSchedule": null
+      "responsibleParties": [
+        {
+          "name": "Trained personnel",
+          "type": "Agency or partner staff"
+        }
+      ],
+      "sampleLocations": [
+        "Historical monitoring stations on Basket Creek and Hickahala Creek"
+      ],
+      "sampleSchedule": "One-time (before BMP installation)"
+    },
+    {
+      "description": "Post-BMP monitoring to assess water quality changes downstream of BMP activity, compared to baseline data.",
+      "indicator": "M-BISQ score; chemical and biological parameters",
+      "method": "Best professional judgement for station selection; SOPs; agency QA protocols",
+      "frequency": "At least 1 year post-BMP, possibly up to 5 or more years",
+      "thresholds": [],
+      "responsibleParties": [
+        {
+          "name": "Trained personnel",
+          "type": "Agency or partner staff"
+        }
+      ],
+      "sampleLocations": [
+        "Locations downstream of BMP activity (to be selected)"
+      ],
+      "sampleSchedule": "Initiated after BMP installation and stream stabilization, repeated annually or as needed"
     }
   ],
   "outreach": [
