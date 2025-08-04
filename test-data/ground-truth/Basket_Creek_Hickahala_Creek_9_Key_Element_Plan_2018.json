@@ -255,75 +255,47 @@
   ],
   "monitoring": [
     {
-      "description": "Pre-implementation (baseline) monitoring using chemical and biological sampling data to assess stream condition before BMP installation.",
-      "indicator": "M-BISQ score; other chemical and biological parameters",
+      "parameter": "M-BISQ score; other chemical and biological parameters",
+      "type": "biological",
       "method": "Standard Operating Procedures; agency Quality Assurance protocols",
       "frequency": "Prior to BMP installation",
       "thresholds": [
         {
+          "parameter": "M-BISQ score",
           "description": "M-BISQ score 10 points below attainment threshold for West Bioregion"
         }
       ],
-      "responsibleParties": [
-        {
-          "name": "Trained personnel",
-          "type": "Agency or partner staff"
-        }
-      ],
-      "sampleLocations": [
+      "locations": [
         "Historical monitoring stations on Basket Creek and Hickahala Creek"
       ],
-      "sampleSchedule": "One-time (before BMP installation)"
+      "sourceExcerpt": "Pre-implementation (baseline) monitoring using chemical and biological sampling data to assess stream condition before BMP installation."
     },
     {
-      "description": "Post-BMP monitoring to assess water quality changes downstream of BMP activity, compared to baseline data.",
-      "indicator": "M-BISQ score; chemical and biological parameters",
+      "parameter": "M-BISQ score; chemical and biological parameters",
+      "type": "biological",
       "method": "Best professional judgement for station selection; SOPs; agency QA protocols",
       "frequency": "At least 1 year post-BMP, possibly up to 5 or more years",
       "thresholds": [],
-      "responsibleParties": [
-        {
-          "name": "Trained personnel",
-          "type": "Agency or partner staff"
-        }
-      ],
-      "sampleLocations": [
+      "locations": [
         "Locations downstream of BMP activity (to be selected)"
       ],
-      "sampleSchedule": "Initiated after BMP installation and stream stabilization, repeated annually or as needed"
+      "sourceExcerpt": "Post-BMP monitoring to assess water quality changes downstream of BMP activity, compared to baseline data."
     }
   ],
   "outreach": [
     {
-      "name": "Education and Outreach Events",
+      "type": "Education and Outreach Events",
       "description": "Implementation of education and outreach activities to inform and engage the community about water quality, BMPs, and watershed stewardship.",
       "partners": [
-        { "name": "MDEQ", "type": "Agency" },
-        { "name": "MSWCC", "type": "Agency" },
-        { "name": "NRCS", "type": "Agency" },
-        {
-          "name": "Tate County Soil and Water Conservation District",
-          "type": "Agency"
-        }
+        "MDEQ",
+        "MSWCC",
+        "NRCS",
+        "Tate County Soil and Water Conservation District"
       ],
-      "indicators": "Number of education/outreach events held; attendance; participant feedback; number of materials distributed",
+      "indicator": "Number of education/outreach events held; attendance; participant feedback; number of materials distributed",
       "schedule": "Months 8-36",
-      "budget": 9000,
-      "targetAudience": "Landowners, operators, teachers, students, public, stakeholders in the watershed",
-      "events": [
-        {
-          "type": "Watershed Implementation Team (WIT) Meetings",
-          "audience": "Stakeholders, project partners",
-          "materialsProvided": [
-            "Meeting agendas",
-            "Project updates",
-            "Educational materials"
-          ],
-          "estimatedParticipants": null,
-          "date": "At least 3 meetings during project period"
-        },
-        {
-          "type": "Field Days",
+      "sourceExcerpt": "Education and Outreach Events"
+    },
           "audience": "Public, landowners",
           "materialsProvided": ["Demonstration materials", "Refreshments"],
           "estimatedParticipants": null,

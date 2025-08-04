@@ -430,7 +430,7 @@ IMPORTANT INSTRUCTIONS:
      * Look for mention of "monitoring metric," "indicator," "parameter," "threshold," or "criteria"
      * Look for specific measurable values with units and measurement details (e.g., "Total Suspended Solids concentration in mg/L sampled monthly at Site 3")
      * Look for structured, quantifiable elements rather than general monitoring descriptions
-     * Focus on the MonitoringMetric interface: what's measured, how it's measured, frequency, thresholds, responsible parties
+     * Focus on the MonitoringMetric interface: what's measured, how it's measured, frequency, thresholds, locations
    - Use the exact language from the document when possible. Paraphrase only for clarity if the monitoring metric is split across sentences, but do not invent new monitoring metrics.
    - CRITICAL: For each monitoring metric extracted, include a brief excerpt (about 20 words) from the document where you found this monitoring metric. This should be the key phrase or sentence that contains the metric description.
 
@@ -505,27 +505,22 @@ Required JSON format:
   ],
   "monitoring": [
     {
-      "description": "monitoring description",
-      "indicator": "what is being measured",
+      "parameter": "what is being measured (e.g., 'Total Suspended Solids', 'M-BISQ')",
+      "type": "type of monitoring (e.g., 'chemical', 'biological', 'physical')",
       "method": "monitoring method",
       "frequency": "how often",
-      "thresholds": [{"parameter": "param name", "value": "threshold value", "units": "units"}],
-      "responsibleParties": [{"name": "organization"}],
-      "sampleLocations": ["location1", "location2"],
-      "sampleSchedule": "when samples are taken",
+      "thresholds": [{"parameter": "param name", "description": ">= 5 mg/L (daily avg), >= 4 mg/L (instantaneous)"}],
+      "locations": ["location1", "location2"],
       "sourceExcerpt": "exact text from document where this monitoring was found"
     }
   ],
   "outreach": [
     {
-      "name": "outreach activity name",
+      "type": "activity category (e.g., 'signage', 'field day', 'mailer')",
       "description": "activity description",
-      "partners": [{"name": "partner organization"}],
-      "indicators": "success indicators",
       "schedule": "activity schedule",
-      "budget": number_or_null,
-      "events": [{"type": "event type", "audience": "target audience"}],
-      "targetAudience": "primary audience",
+      "indicator": "success indicators",
+      "partners": ["partner1", "partner2"],
       "sourceExcerpt": "exact text from document where this outreach was found"
     }
   ],
@@ -739,10 +734,10 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
         description: impl.description?.substring(0, 200) || "",
       })),
       monitoring: (data.monitoring || []).slice(0, 10).map((mon) => ({
-        description: mon.description?.substring(0, 200) || "",
+        parameter: mon.parameter?.substring(0, 200) || "",
       })),
       outreach: (data.outreach || []).slice(0, 10).map((outreach) => ({
-        name: outreach.name?.substring(0, 100) || "",
+        type: outreach.type?.substring(0, 100) || "",
         description: outreach.description?.substring(0, 200) || "",
       })),
       geographicAreas: (data.geographicAreas || [])

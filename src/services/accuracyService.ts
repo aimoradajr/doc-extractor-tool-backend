@@ -298,7 +298,7 @@ export class AccuracyService {
     // Check each extracted monitoring against ground truth
     for (const extractedMon of extracted) {
       const match = groundTruth.find((gt) =>
-        this.fuzzyMatch(extractedMon.description, gt.description)
+        this.fuzzyMatch(extractedMon.parameter, gt.parameter)
       );
 
       if (match) {
@@ -306,17 +306,17 @@ export class AccuracyService {
         comparisons.push({
           type: "perfect_match",
           category: "monitoring",
-          expected: match.description,
-          actual: extractedMon.description,
-          message: `Found expected monitoring: "${extractedMon.description}"`,
+          expected: match.parameter,
+          actual: extractedMon.parameter,
+          message: `Found expected monitoring: "${extractedMon.parameter}"`,
         });
       } else {
         comparisons.push({
           type: "surplus_actual",
           category: "monitoring",
           expected: null,
-          actual: extractedMon.description,
-          message: `Found unexpected monitoring: "${extractedMon.description}" (not in ground truth)`,
+          actual: extractedMon.parameter,
+          message: `Found unexpected monitoring: "${extractedMon.parameter}" (not in ground truth)`,
         });
       }
     }
@@ -324,16 +324,16 @@ export class AccuracyService {
     // Check for missing monitoring
     for (const gtMon of groundTruth) {
       const found = extracted.find((ext) =>
-        this.fuzzyMatch(ext.description, gtMon.description)
+        this.fuzzyMatch(ext.parameter, gtMon.parameter)
       );
 
       if (!found) {
         comparisons.push({
           type: "missing_expected",
           category: "monitoring",
-          expected: gtMon.description,
+          expected: gtMon.parameter,
           actual: null,
-          message: `Missing expected monitoring: "${gtMon.description}"`,
+          message: `Missing expected monitoring: "${gtMon.parameter}"`,
         });
       }
     }

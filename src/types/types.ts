@@ -83,6 +83,8 @@ export interface ReportSummary {
  * actionable steps or techniques used to achieve the goals, a goal is a high-level statement of
  * intent. BMPs and implementation measures are developed and selected to fulfill these goals.
  *
+ * Goals are usually found in the beginning of watershed plans.
+ *
  * @property description - A textual description of the goal.
  * @property schedule - (Optional) The timeline or schedule associated with achieving the goal.
  * @property sourceExcerpt - (Optional) The exact text from the source document where this goal was identified.
@@ -211,42 +213,63 @@ export interface ImplementationActivity {
 }
 
 /**
- * Monitoring metric, threshold, or method
+ * Monitoring metric, threshold, or method (for watershed plans)
+ */
+/**
+ * Represents a monitoring metric, threshold, or method within the context of watershed plans.
+ *
+ * Monitoring metrics are used to track progress toward plan goals and to evaluate the effectiveness of implemented BMPs and activities.
+ * These metrics may include chemical, biological, or physical parameters (e.g., "Total Suspended Solids", "M-BISQ"), the type of monitoring,
+ * the method used, frequency, thresholds, and sampling locations.
+ *
+ * @property parameter - What you’re measuring (e.g. "Total Suspended Solids", "M-BISQ").
+ * @property type - (Optional) The type of monitoring (e.g. "chemical", "biological", "physical", etc.).
+ * @property method - (Optional) The method used for measurement (e.g. "MDEQ macroinvert protocol", "Standard 2540D turbidimeter").
+ * @property frequency - (Optional) How often or when monitoring occurs (e.g. "monthly", "at start/end of project", "2x in 5 yrs").
+ * @property thresholds - (Optional) Numeric or categorical thresholds you’re comparing against.
+ * @property locations - (Optional) Where samples are taken (station IDs, coordinates, etc.).
  */
 export interface MonitoringMetric {
-  description: string;
-  indicator?: string;
+  parameter: string;
+  type?: string;
   method?: string;
   frequency?: string;
   thresholds?: Threshold[];
-  responsibleParties?: Organization[];
-  sampleLocations?: string[];
-  sampleSchedule?: string;
-  sourceExcerpt?: string; // Exact text from document where this monitoring metric was found
+  locations?: string[];
 }
 
 /**
- * Numeric or narrative threshold for a monitored parameter
+ * A simple threshold or criterion for a monitored parameter.
+ *
+ * For MVP we collapse operator, value, and units into a single free-form description.
  */
 export interface Threshold {
-  parameter: string; // e.g., "Dissolved Oxygen"
-  value: string | number;
-  units?: string;
+  /** e.g. "Dissolved Oxygen" */
+  parameter: string;
+
+  /** e.g. ">= 5 mg/L (daily avg), >= 4 mg/L (instantaneous)" or "pH 6.0–9.0" */
+  description: string;
 }
 
 /**
- * Education/outreach event or program
+ * A minimal representation of an education or outreach activity
+ * for a watershed implementation plan MVP.
  */
 export interface OutreachActivity {
-  name: string;
-  description?: string;
-  partners?: Organization[];
-  indicators?: string;
-  sourceExcerpt?: string; // Exact text from document where this outreach activity was found
+  /** Short label or category (e.g. "signage", "field day", "mailer") */
+  type: string;
+
+  /** What will be done or was done (e.g. "Erect BMP signage along Hwy 15") */
+  description: string;
+
+  /** When it happens or happened (e.g. "2012–2014", "August 2013", "monthly") */
   schedule?: string;
-  budget?: number;
-  events?: EventDetail[];
-  targetAudience?: string;
+
+  /** How success is measured (e.g. "20 signs erected", "300 flyers distributed", "30 participants") */
+  indicator?: string;
+
+  /** Who’s involved (e.g. ["MSWCC", "SWCD", "NRCS"]) */
+  partners?: string[];
 }
 
 /**

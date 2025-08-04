@@ -85,36 +85,32 @@
   ],
   "monitoring": [
     {
-      "description": "Water quality monitoring at key watershed outlets",
-      "indicator": "Total Suspended Solids, Total Nitrogen, Total Phosphorus",
+      "parameter": "Total Suspended Solids, Total Nitrogen, Total Phosphorus",
+      "type": "chemical",
       "method": "Monthly grab samples and continuous monitoring",
       "frequency": "Monthly during growing season, quarterly during winter",
       "thresholds": [
         {
           "parameter": "Total Suspended Solids",
-          "value": "80",
-          "units": "mg/L"
+          "description": "80 mg/L"
         },
-        { "parameter": "Total Nitrogen", "value": "2.0", "units": "mg/L" }
+        { "parameter": "Total Nitrogen", "description": "2.0 mg/L" }
       ],
-      "responsibleParties": [{ "name": "MSWCC" }, { "name": "MDEQ" }],
-      "sampleLocations": [
+      "locations": [
         "Bell Creek at County Road 15",
         "Muddy Creek at Highway 25"
       ],
-      "sampleSchedule": "Third Tuesday of each month during growing season"
+      "sourceExcerpt": "The following thresholds will be used to measure compliance with water quality criteria: ... Dissolved Oxygen, Total Nitrogen, Total Phosphorus, E. coli, etc."
     }
   ],
   "outreach": [
     {
-      "name": "Farmer Education Workshops",
+      "type": "Workshop",
       "description": "Educational workshops on conservation practices and water quality",
-      "partners": [{ "name": "Extension Service" }, { "name": "NRCS" }],
-      "indicators": "Number of participants, practice adoption rates",
+      "partners": ["Extension Service", "NRCS"],
+      "indicator": "Number of participants, practice adoption rates",
       "schedule": "Semi-annual workshops",
-      "budget": 15000,
-      "events": [{ "type": "Workshop", "audience": "Agricultural producers" }],
-      "targetAudience": "Agricultural producers in the watershed"
+      "sourceExcerpt": "Farmer Education Workshops"
     }
   ],
   "geographicAreas": [
