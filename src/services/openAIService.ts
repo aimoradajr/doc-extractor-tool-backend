@@ -306,6 +306,8 @@ export class OpenAIService {
     return `
 Extract structured information from this watershed management document. Return ONLY valid JSON in the exact format specified below.
 
+IMPORTANT: If any property has a value of null, do not include that property in the output at all. Only return properties that have a real value. Do not return properties with null values anywhere in the output JSON.
+
 Document text:
 ${text.substring(0, 8000)}
 
