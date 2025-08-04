@@ -92,20 +92,6 @@
       "quantity": 10000,
       "unit": "ft",
       "estimatedCost": 23300,
-      "partners": [
-        {
-          "name": "MDEQ"
-        },
-        {
-          "name": "MSWCC"
-        },
-        {
-          "name": "NRCS"
-        },
-        {
-          "name": "SWCD"
-        }
-      ],
       "schedule": null,
       "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
@@ -117,20 +103,6 @@
       "quantity": 3,
       "unit": "ea",
       "estimatedCost": 10500,
-      "partners": [
-        {
-          "name": "MDEQ"
-        },
-        {
-          "name": "MSWCC"
-        },
-        {
-          "name": "NRCS"
-        },
-        {
-          "name": "SWCD"
-        }
-      ],
       "schedule": null,
       "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
@@ -142,20 +114,6 @@
       "quantity": 1240,
       "unit": "ft",
       "estimatedCost": 3522,
-      "partners": [
-        {
-          "name": "MDEQ"
-        },
-        {
-          "name": "MSWCC"
-        },
-        {
-          "name": "NRCS"
-        },
-        {
-          "name": "SWCD"
-        }
-      ],
       "schedule": null,
       "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
@@ -167,20 +125,6 @@
       "quantity": 4,
       "unit": "ea",
       "estimatedCost": 36000,
-      "partners": [
-        {
-          "name": "MDEQ"
-        },
-        {
-          "name": "MSWCC"
-        },
-        {
-          "name": "NRCS"
-        },
-        {
-          "name": "SWCD"
-        }
-      ],
       "schedule": null,
       "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
@@ -192,20 +136,6 @@
       "quantity": 500,
       "unit": "ft",
       "estimatedCost": 80500,
-      "partners": [
-        {
-          "name": "MDEQ"
-        },
-        {
-          "name": "MSWCC"
-        },
-        {
-          "name": "NRCS"
-        },
-        {
-          "name": "SWCD"
-        }
-      ],
       "schedule": null,
       "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
@@ -217,20 +147,6 @@
       "quantity": 8,
       "unit": "ac",
       "estimatedCost": 52878,
-      "partners": [
-        {
-          "name": "MDEQ"
-        },
-        {
-          "name": "MSWCC"
-        },
-        {
-          "name": "NRCS"
-        },
-        {
-          "name": "SWCD"
-        }
-      ],
       "schedule": null,
       "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     }

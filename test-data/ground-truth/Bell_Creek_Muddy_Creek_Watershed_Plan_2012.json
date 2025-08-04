@@ -50,7 +50,6 @@
       "quantity": 5,
       "unit": "ea",
       "estimatedCost": 75000,
-      "partners": [{ "name": "NRCS" }, { "name": "Local landowners" }],
       "schedule": "2013-2015"
     },
     {
@@ -61,7 +60,6 @@
       "quantity": 5000,
       "unit": "ac",
       "estimatedCost": 100000,
-      "partners": [{ "name": "NRCS" }, { "name": "Extension Service" }],
       "schedule": "2013-2017"
     },
     {
@@ -72,10 +70,6 @@
       "quantity": 3000,
       "unit": "ac",
       "estimatedCost": 15000,
-      "partners": [
-        { "name": "Extension Service" },
-        { "name": "Certified Crop Advisors" }
-      ],
       "schedule": "2013-2017"
     }
   ],

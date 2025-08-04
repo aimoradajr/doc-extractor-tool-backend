@@ -118,10 +118,10 @@ export interface BMP {
   estimatedCost?: number | null;
   targetAreas?: string[];
 
-  partners?: Organization[];
   schedule?: string;
 
   // non-mvp
+  // partners?: Organization[];
   // priorityFactors?: string[] | null; // these are factors considered to determine specific location for the BMP
 
   sourceExcerpt?: string; // Exact text from document where this BMP was found
