@@ -137,11 +137,23 @@ export class OpenAIService {
           },
         };
       } catch (parseError) {
-        console.error("Failed to parse AI response as JSON:");
-        console.error("Original content:", content.substring(0, 500) + "...");
+        const errorDetails = {
+          operation: "COMPARISON",
+          model: model,
+          error:
+            parseError instanceof Error
+              ? parseError.message
+              : "Unknown parsing error",
+          originalContentLength: content.length,
+          originalContentPreview: content.substring(0, 500),
+          cleanedContentPreview: cleanedContent.substring(0, 500),
+          finishReason: response.choices[0]?.finish_reason,
+          truncated: response.choices[0]?.finish_reason === "length",
+        };
+
         console.error(
-          "Cleaned content:",
-          cleanedContent.substring(0, 500) + "..."
+          "COMPARISON AI FAILED - JSON parsing error:",
+          errorDetails
         );
         console.warn(
           "Falling back to simplified comparison due to parsing error"
@@ -216,8 +228,14 @@ export class OpenAIService {
                 type: "surplus_actual",
                 category: "goals",
                 expected: null,
-                actual: "AI comparison failed - see logs",
-                message: `JSON parsing failed: ${parseError}. Response was likely truncated.`,
+                actual: "COMPARISON AI failed - see logs",
+                message: `COMPARISON AI JSON parsing failed (${model}): ${
+                  errorDetails.error
+                }. Response ${
+                  errorDetails.truncated
+                    ? "was truncated"
+                    : "appears incomplete"
+                }.`,
               },
             ],
             bmps: [],
@@ -229,8 +247,8 @@ export class OpenAIService {
         };
       }
     } catch (error) {
-      console.error("AI comparison failed:", error);
-      throw new Error(`AI comparison failed: ${error}`);
+      console.error(`COMPARISON AI failed with ${model}:`, error);
+      throw new Error(`COMPARISON AI failed (${model}): ${error}`);
     }
   }
 
@@ -280,22 +298,40 @@ export class OpenAIService {
 
         return structuredData;
       } catch (parseError) {
-        console.error("Failed to parse AI response as JSON:");
-        console.error("Original content:", content.substring(0, 500) + "...");
+        const errorDetails = {
+          operation: "DATA_EXTRACTION",
+          model: CURRENT_MODEL,
+          error:
+            parseError instanceof Error
+              ? parseError.message
+              : "Unknown parsing error",
+          originalContentLength: content.length,
+          originalContentPreview: content.substring(0, 500),
+          cleanedContentPreview: cleanedContent.substring(0, 500),
+          finishReason: response.choices[0]?.finish_reason,
+          truncated: response.choices[0]?.finish_reason === "length",
+        };
+
         console.error(
-          "Cleaned content:",
-          cleanedContent.substring(0, 500) + "..."
+          "EXTRACTION AI FAILED - JSON parsing error:",
+          errorDetails
         );
+
         throw new Error(
-          `JSON parsing failed: ${parseError}. AI response may be malformed or truncated.`
+          `EXTRACTION AI JSON parsing failed (${CURRENT_MODEL}): ${parseError}. ` +
+            `Response ${
+              errorDetails.truncated ? "was truncated" : "appears incomplete"
+            }. ` +
+            `Content length: ${errorDetails.originalContentLength} chars. ` +
+            `Preview: ${errorDetails.cleanedContentPreview}...`
         );
       }
     } catch (error) {
-      console.error(`OpenAI extraction failed with ${CURRENT_MODEL}:`, error);
+      console.error(`EXTRACTION AI failed with ${CURRENT_MODEL}:`, error);
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error occurred";
       throw new Error(
-        `OpenAI extraction failed (${CURRENT_MODEL}): ${errorMessage}`
+        `EXTRACTION AI failed (${CURRENT_MODEL}): ${errorMessage}`
       );
     }
   }
@@ -309,7 +345,9 @@ Extract structured information from this watershed management document. Return O
 IMPORTANT: If any property has a value of null, do not include that property in the output at all. Only return properties that have a real value. Do not return properties with null values anywhere in the output JSON.
 
 Document text:
-${text.substring(0, 8000)}
+<<<PDF_START>>>
+${text.substring(0, 30000)}
+<<<PDF_END>>>
 
 Note: The input text is extracted from parsed PDFs, so tables and structured data may not appear in obvious table format. Please carefully analyze the text to identify information that likely originated from tables, such as repeated patterns, grouped short phrases, or sequences following headers like "Milestone," "Outcome," or "Date." Extract goals from these table-like structures as well, even if the table formatting is lost.
 
