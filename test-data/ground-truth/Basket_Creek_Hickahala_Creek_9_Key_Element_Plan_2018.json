@@ -1,6 +1,17 @@
 {
   "reportSummary": {
     "summary": "A watershed-based plan for the Basket Creek-Hickahala Creek watershed in Tate County, Mississippi, addressing nutrient, sediment, and pathogen impairments through BMP implementation and stakeholder engagement. The plan targets a 35,085-acre watershed with agricultural land uses and aims to achieve TMDL requirements for fecal coliform reduction and water quality improvement.",
+    "watershedName": "Basket Creek-Hickahala Creek Watershed",
+    "planTitle": "Basket Creek-Hickahala Creek 9 Key Element Plan",
+    "planDate": "2018",
+    "authors": [],
+    "organizations": [
+      "MDEQ",
+      "Mississippi Soil and Water Conservation Commission",
+      "Natural Resources Conservation Service",
+      "Tate County Soil and Water Conservation District"
+    ],
+    "geographicRegion": "Tate County, Mississippi",
     "totalGoals": 3,
     "totalBMPs": 6,
     "completionRate": null

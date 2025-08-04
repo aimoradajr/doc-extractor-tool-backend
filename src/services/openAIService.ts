@@ -313,12 +313,24 @@ Note: The input text is extracted from parsed PDFs, so tables and structured dat
 
 General Hints:
    - Watershed management documents often use structured headings with "Element" prefixes (e.g., "Element A:", "Element F: Implementation Schedule", "Element C: Goals and Objectives"). Pay special attention to these sections as they typically contain key information for extraction.
+   - Look for document metadata on the cover page, title page, headers, footers, and introductory sections:
+     * Watershed name is often in the title or early sections
+     * Plan title appears on cover page or document header
+     * Publication dates may be on cover, title page, or in document properties
+     * Author names and organizations are typically on cover page, title page, or acknowledgments
+     * Geographic region is usually specified in title, introduction, or project area descriptions
 
 IMPORTANT INSTRUCTIONS:
-1. First, write a brief 1-3 sentence summary of the entire watershed plan document describing what it is for, the main watershed/area covered, and the general purpose or objectives
+1. First, extract key document metadata:
+   - summary: Write a brief 1-3 sentence summary of the entire watershed plan document describing what it is for, the main watershed/area covered, and the general purpose or objectives
+   - watershedName: Extract the primary watershed name (e.g., "Basket Creek-Hickahala Creek Watershed")
+   - planTitle: Extract the full document title as it appears on the cover or header
+   - planDate: Extract the publication date, completion date, or plan year (format as YYYY, YYYY-MM, or YYYY-MM-DD)
+   - authors: Extract individual author names if explicitly listed
+   - organizations: Extract all organizations involved in creating/publishing the plan
+   - geographicRegion: Extract the geographic coverage (e.g., "Tate County, Mississippi" or "Northwest Arkansas")
 2. Extract all information into the appropriate arrays next
 3. THEN calculate reportSummary counts based on what you extracted:
-   - summary = your 1-3 sentence description of the plan
    - totalGoals = exact count of items in "goals" array
    - totalBMPs = exact count of items in "bmps" array  
    - completionRate = count of "completed" status items / total implementation items (0 if no implementation items)
@@ -413,6 +425,12 @@ Required JSON format:
 {
   "reportSummary": {
     "summary": "Brief 1-3 sentence description of the watershed plan, its purpose, and coverage area",
+    "watershedName": "Primary watershed name from the document",
+    "planTitle": "Full document title as it appears",
+    "planDate": "YYYY or YYYY-MM or YYYY-MM-DD or null if not found",
+    "authors": ["Author Name 1", "Author Name 2"],
+    "organizations": ["Organization 1", "Organization 2"],
+    "geographicRegion": "Geographic coverage area (county, state, region)",
     "totalGoals": number,
     "totalBMPs": number,
     "completionRate": number_between_0_and_1
@@ -513,12 +531,14 @@ Required JSON format:
 }
 
 CRITICAL: 
-- Start with a brief 1-3 sentence summary of the entire watershed plan
+- Start by extracting key document metadata (summary, watershed name, title, date, authors, organizations, geographic region)
+- Look for metadata on cover pages, title pages, headers, footers, and introductory sections
 - Extract only information explicitly stated in the document
 - Do not infer or make up data  
-- If a field is not found, omit it or set to null
+- If a metadata field is not found, use appropriate fallback (null for dates, empty arrays for lists, descriptive text for missing fields)
 - ALWAYS calculate reportSummary counts accurately based on your extracted arrays
 - Verify: summary should describe the plan's purpose and coverage area
+- Verify: watershedName should be the primary watershed from the document
 - Verify: totalGoals should equal the number of items in your "goals" array
 - Verify: totalBMPs should equal the number of items in your "bmps" array
 - Use 0 instead of null for counts when arrays are empty
@@ -652,6 +672,15 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
       model: CURRENT_MODEL, // Will be overridden by caller
       reportSummary: data.reportSummary || {
         summary: data.reportSummary?.summary || "Summary not provided",
+        watershedName:
+          data.reportSummary?.watershedName || "Watershed name not found",
+        planTitle: data.reportSummary?.planTitle || "Plan title not found",
+        planDate: data.reportSummary?.planDate || null,
+        authors: data.reportSummary?.authors || [],
+        organizations: data.reportSummary?.organizations || [],
+        geographicRegion:
+          data.reportSummary?.geographicRegion ||
+          "Geographic region not specified",
         totalGoals: data.goals?.length || 0,
         totalBMPs: data.bmps?.length || 0,
         completionRate: this.calculateCompletionRate(data.implementation || []),

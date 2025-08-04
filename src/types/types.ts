@@ -58,6 +58,12 @@ export interface ExtractedData {
  */
 export interface ReportSummary {
   summary: string;
+  watershedName: string;
+  planTitle: string;
+  planDate: string | null;
+  authors: string[];
+  organizations: string[];
+  geographicRegion: string;
   totalGoals: number;
   totalBMPs: number;
   completionRate: number | null;
