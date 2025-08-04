@@ -87,103 +87,195 @@
   "bmps": [
     {
       "name": "Fencing",
-      "description": "Install fencing to limit livestock access to streams and reduce pathogen and nutrient inputs.",
+      "description": "Install fencing on pasturelands and grazing lands to limit livestock access to streams.",
       "type": "Pathogen",
-      "targetAreas": ["Pasturelands", "Grazing lands"],
+      "targetAreas": ["pasturelands", "lands used for grazing"],
       "quantity": 10000,
       "unit": "ft",
       "estimatedCost": 23300,
       "partners": [
-        { "name": "Natural Resources Conservation Service" },
-        { "name": "Mississippi Soil and Water Conservation Commission" }
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "SWCD"
+        }
       ],
-      "schedule": "Prioritized for implementation in pasture areas",
+      "schedule": null,
       "priorityFactors": [
         "Likely water quality benefit",
         "Willing landowners",
-        "TMDL recommendations",
-        "Ease of monitoring effectiveness",
-        "Shorter time for anticipated results"
-      ]
+        "Implementation of the recommendations of the TMDLs (this includes implementation of BMPs appropriate for nutrients, sediment, and pathogens)",
+        "Ease of showing effectiveness of the BMP(s) through monitoring",
+        "Shorter length of time for anticipated results (i.e., within the grant period)"
+      ],
+      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
     {
-      "name": "Tank/Trough (Watering Facilities)",
-      "description": "Install watering facilities for livestock away from streams to reduce stream access.",
+      "name": "Watering Facilities",
+      "description": "Install watering facilities such as tanks or troughs to provide alternative water sources for livestock, keeping them out of streams.",
       "type": "Pathogen",
-      "targetAreas": ["Pasturelands", "Grazing lands"],
+      "targetAreas": ["pasturelands", "lands used for grazing"],
       "quantity": 3,
       "unit": "ea",
       "estimatedCost": 10500,
       "partners": [
-        { "name": "Natural Resources Conservation Service" },
-        { "name": "Mississippi Soil and Water Conservation Commission" }
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "SWCD"
+        }
       ],
-      "schedule": "Prioritized for implementation in pasture areas",
+      "schedule": null,
       "priorityFactors": [
         "Likely water quality benefit",
         "Willing landowners",
-        "TMDL recommendations"
-      ]
+        "Implementation of the recommendations of the TMDLs (this includes implementation of BMPs appropriate for nutrients, sediment, and pathogens)",
+        "Ease of showing effectiveness of the BMP(s) through monitoring",
+        "Shorter length of time for anticipated results (i.e., within the grant period)"
+      ],
+      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
+    },
+    {
+      "name": "Heavy Use Area Protection",
+      "description": "Provide protection for heavy use areas to reduce erosion and runoff from locations with high livestock traffic.",
+      "type": "Sediment",
+      "targetAreas": ["heavy use areas", "pasturelands"],
+      "quantity": 1240,
+      "unit": "ft",
+      "estimatedCost": 3522,
+      "partners": [
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "SWCD"
+        }
+      ],
+      "schedule": null,
+      "priorityFactors": [
+        "Likely water quality benefit",
+        "Willing landowners",
+        "Implementation of the recommendations of the TMDLs (this includes implementation of BMPs appropriate for nutrients, sediment, and pathogens)",
+        "Ease of showing effectiveness of the BMP(s) through monitoring",
+        "Shorter length of time for anticipated results (i.e., within the grant period)"
+      ],
+      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
     {
       "name": "Ponds",
-      "description": "Construct ponds to manage runoff and sedimentation from grazing areas.",
-      "type": "Sediment",
-      "targetAreas": ["Pasturelands"],
+      "description": "Construct ponds to manage runoff and provide water for livestock away from streams.",
+      "type": "Nutrient",
+      "targetAreas": ["pasturelands", "lands used for grazing"],
       "quantity": 4,
       "unit": "ea",
       "estimatedCost": 36000,
       "partners": [
-        { "name": "Natural Resources Conservation Service" },
-        { "name": "Mississippi Soil and Water Conservation Commission" }
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "SWCD"
+        }
       ],
-      "schedule": "Prioritized for implementation in pasture areas",
-      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
+      "schedule": null,
+      "priorityFactors": [
+        "Likely water quality benefit",
+        "Willing landowners",
+        "Implementation of the recommendations of the TMDLs (this includes implementation of BMPs appropriate for nutrients, sediment, and pathogens)",
+        "Ease of showing effectiveness of the BMP(s) through monitoring",
+        "Shorter length of time for anticipated results (i.e., within the grant period)"
+      ],
+      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
     {
       "name": "Streambank and Shoreline Protection",
-      "description": "Implement measures to protect streambanks and shorelines from erosion.",
+      "description": "Apply streambank and shoreline protection practices to stabilize banks and prevent erosion.",
       "type": "Sediment",
-      "targetAreas": ["Streambanks"],
+      "targetAreas": ["streams", "shorelines"],
       "quantity": 500,
       "unit": "ft",
       "estimatedCost": 80500,
       "partners": [
-        { "name": "Natural Resources Conservation Service" },
-        { "name": "Mississippi Soil and Water Conservation Commission" }
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "SWCD"
+        }
       ],
-      "schedule": "To be implemented along streambanks",
-      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
+      "schedule": null,
+      "priorityFactors": [
+        "Likely water quality benefit",
+        "Willing landowners",
+        "Implementation of the recommendations of the TMDLs (this includes implementation of BMPs appropriate for nutrients, sediment, and pathogens)",
+        "Ease of showing effectiveness of the BMP(s) through monitoring",
+        "Shorter length of time for anticipated results (i.e., within the grant period)"
+      ],
+      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     },
     {
-      "name": "Grade Stabilization Structure",
-      "description": "Install structures to stabilize grades and prevent erosion.",
+      "name": "Grade Stabilization Structures",
+      "description": "Install grade stabilization structures to reduce erosion (gully and slope stabilization).",
       "type": "Sediment",
-      "targetAreas": ["Erosion-prone areas"],
+      "targetAreas": ["newly converted pasture areas"],
       "quantity": 8,
       "unit": "ac",
       "estimatedCost": 52878,
       "partners": [
-        { "name": "Natural Resources Conservation Service" },
-        { "name": "Mississippi Soil and Water Conservation Commission" }
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "SWCD"
+        }
       ],
-      "schedule": "To be implemented in erosion-prone areas",
-      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
-    },
-    {
-      "name": "Heavy Use Area Protection",
-      "description": "Protect high-traffic areas from erosion and nutrient/pollutant runoff.",
-      "type": "Sediment",
-      "targetAreas": ["High-traffic livestock areas"],
-      "quantity": 1240,
-      "unit": "ft",
-      "estimatedCost": 35252,
-      "partners": [
-        { "name": "Natural Resources Conservation Service" },
-        { "name": "Mississippi Soil and Water Conservation Commission" }
+      "schedule": null,
+      "priorityFactors": [
+        "Likely water quality benefit",
+        "Willing landowners",
+        "Implementation of the recommendations of the TMDLs (this includes implementation of BMPs appropriate for nutrients, sediment, and pathogens)",
+        "Ease of showing effectiveness of the BMP(s) through monitoring",
+        "Shorter length of time for anticipated results (i.e., within the grant period)"
       ],
-      "schedule": "To be implemented in high-use areas",
-      "priorityFactors": ["Likely water quality benefit", "Willing landowners"]
+      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
     }
   ],
   "implementation": [

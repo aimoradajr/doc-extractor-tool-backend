@@ -295,6 +295,13 @@ IMPORTANT INSTRUCTIONS:
    - Use the exact language from the document when possible. Paraphrase only for clarity if the goal is split across sentences, but do not invent new goals.
    - CRITICAL: For each goal extracted, include a brief excerpt (approximately 20 words) from the document where you found this goal. This should be the key phrase or sentence that contains the goal statement.
 
+7. BMP EXTRACTION RULES:
+   - A BMP (Best Management Practice) is any specific action, measure, or practice described in the watershed plan to reduce pollution, manage water, or protect resources. This can include physical structures, management techniques, or operational practices.
+   - Only extract BMPs that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create BMPs that are not directly described or labeled in the text.
+   - BMPs may be found in narrative text, bullet lists, or tables under sections like "Best Management Practices," "Management Measures," "Proposed Actions," or similar headings.
+   - Use the exact language from the document when possible. Paraphrase only for clarity if the BMP is split across sentences, but do not invent new BMPs.
+   - CRITICAL: For each BMP extracted, include a brief excerpt (about 20 words) from the document where you found this BMP. This should be the key phrase or sentence that contains the BMP statement.
+
 Required JSON format:
 {
   "reportSummary": {
@@ -325,7 +332,8 @@ Required JSON format:
       "estimatedCost": number_or_null,
       "partners": [{"name": "organization name"}],
       "schedule": "implementation schedule",
-      "priorityFactors": ["factor1", "factor2"]
+      "priorityFactors": ["factor1", "factor2"],
+      "sourceExcerpt": "exact text from document where this BMP was found"
     }
   ],
   "implementation": [
