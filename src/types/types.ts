@@ -204,7 +204,8 @@ export interface Organization {
  */
 export interface AccuracyTestResult {
   testCase: string;
-  model?: string; // The AI model used for extraction
+  extract_ai_model?: string; // The AI model used for extraction
+  compare_ai_model?: string; // The AI model used for comparison (undefined for default mode)
   metrics: {
     precision: number;
     recall: number;

@@ -106,7 +106,8 @@ export class AccuracyController {
 
     const result: AccuracyTestResult = {
       testCase: `uploaded-${pdfFile.originalname}`,
-      model: extractedData.model, // Include the model used
+      extract_ai_model: extractedData.model, // The model used for extraction
+      compare_ai_model: compareMode === "ai" ? compareModeModel : undefined, // Only set if AI comparison is used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
       // Include both datasets for comparison
@@ -201,7 +202,8 @@ export class AccuracyController {
 
     const result: AccuracyTestResult = {
       testCase: `${preset}-${testCase.name}`,
-      model: extractedData.model, // Include the model used
+      extract_ai_model: extractedData.model, // The model used for extraction
+      compare_ai_model: compareMode === "ai" ? compareModeModel : undefined, // Only set if AI comparison is used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
       // Include both datasets for comparison
