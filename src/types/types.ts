@@ -236,6 +236,8 @@ export interface MonitoringMetric {
   frequency?: string;
   thresholds?: Threshold[];
   locations?: string[];
+
+  sourceExcerpt?: string;
 }
 
 /**
@@ -249,6 +251,8 @@ export interface Threshold {
 
   /** e.g. ">= 5 mg/L (daily avg), >= 4 mg/L (instantaneous)" or "pH 6.0–9.0" */
   description: string;
+
+  sourceExcerpt?: string;
 }
 
 /**
@@ -270,6 +274,8 @@ export interface OutreachActivity {
 
   /** Who’s involved (e.g. ["MSWCC", "SWCD", "NRCS"]) */
   partners?: string[];
+
+  sourceExcerpt?: string;
 }
 
 /**
@@ -288,6 +294,8 @@ export interface GeographicArea {
 
   /** State in which the watershed lies (e.g. "Mississippi") */
   state: string;
+
+  sourceExcerpt?: string; // Exact text from document where this geographic area was found
 }
 
 /**
