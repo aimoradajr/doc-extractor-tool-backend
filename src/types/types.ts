@@ -206,6 +206,7 @@ export interface AccuracyTestResult {
   testCase: string;
   extract_ai_model?: string; // The AI model used for extraction
   compare_ai_model?: string; // The AI model used for comparison (undefined for default mode)
+  compare_mode?: string; // The comparison mode used ("ai" or "default")
   metrics: {
     precision: number;
     recall: number;

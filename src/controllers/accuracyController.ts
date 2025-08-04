@@ -73,8 +73,8 @@ export class AccuracyController {
     const groundTruthFile = files["groundTruth"][0];
 
     // Get comparison mode from request body
-    const compareMode = req.body.compare_mode || "default";
-    const compareModeModel = req.body.compare_mode_model || "gpt-3.5-turbo";
+    const compareMode = req.body.compare_mode || "ai"; // ai or default
+    const compareModeModel = req.body.compare_mode_model || "gpt-4.1";
 
     console.log(
       `Testing uploaded PDF: ${pdfFile.originalname} with ${compareMode} comparison mode`
@@ -108,6 +108,7 @@ export class AccuracyController {
       testCase: `uploaded-${pdfFile.originalname}`,
       extract_ai_model: extractedData.model, // The model used for extraction
       compare_ai_model: compareMode === "ai" ? compareModeModel : undefined, // Only set if AI comparison is used
+      compare_mode: compareMode, // The comparison mode used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
       // Include both datasets for comparison
@@ -157,8 +158,8 @@ export class AccuracyController {
     }
 
     // Get comparison mode from request body
-    const compareMode = req.body.compare_mode || "default";
-    const compareModeModel = req.body.compare_mode_model || "gpt-3.5-turbo";
+    const compareMode = req.body.compare_mode || "ai"; // ai or default
+    const compareModeModel = req.body.compare_mode_model || "gpt-4.1";
 
     console.log(
       `Testing preset: ${preset} (${testCase.name}) with ${compareMode} comparison mode`
@@ -204,6 +205,7 @@ export class AccuracyController {
       testCase: `${preset}-${testCase.name}`,
       extract_ai_model: extractedData.model, // The model used for extraction
       compare_ai_model: compareMode === "ai" ? compareModeModel : undefined, // Only set if AI comparison is used
+      compare_mode: compareMode, // The comparison mode used
       metrics: accuracyResult.metrics,
       details: accuracyResult.details,
       // Include both datasets for comparison
