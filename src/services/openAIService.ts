@@ -477,12 +477,8 @@ Required JSON format:
   },
   "goals": [
     {
-      "id": "optional_id",
       "description": "goal description",
-      "targetArea": "geographic target area",
       "schedule": "timeline or schedule",
-      "contacts": [{"name": "contact name", "role": "role", "organization": "org"}],
-      "desiredOutcomes": ["outcome1", "outcome2"],
       "sourceExcerpt": "exact text from document where this goal was found"
     }
   ],

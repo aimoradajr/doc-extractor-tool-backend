@@ -103,10 +103,9 @@ export class AccuracyService {
 
     // Check each extracted goal against ground truth
     for (const extractedGoal of extracted) {
-      const extractedText =
-        extractedGoal.objective || extractedGoal.description;
+      const extractedText = extractedGoal.description;
       const match = groundTruth.find((gt) =>
-        this.fuzzyMatch(extractedText, gt.objective || gt.description)
+        this.fuzzyMatch(extractedText, gt.description)
       );
 
       if (match) {
@@ -114,7 +113,7 @@ export class AccuracyService {
         comparisons.push({
           type: "perfect_match",
           category: "goals",
-          expected: match.objective || match.description,
+          expected: match.description,
           actual: extractedText,
           message: `Found expected goal: "${extractedText}"`,
         });
@@ -131,9 +130,9 @@ export class AccuracyService {
 
     // Check for missing goals (in ground truth but not extracted)
     for (const gtGoal of groundTruth) {
-      const gtText = gtGoal.objective || gtGoal.description;
+      const gtText = gtGoal.description;
       const found = extracted.find((ext) =>
-        this.fuzzyMatch(ext.objective || ext.description, gtText)
+        this.fuzzyMatch(ext.description, gtText)
       );
 
       if (!found) {

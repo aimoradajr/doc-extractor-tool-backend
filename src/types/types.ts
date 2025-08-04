@@ -73,12 +73,15 @@ export interface ReportSummary {
  * A watershed management goal or objective
  */
 export interface Goal {
-  id?: string;
   description: string;
-  targetArea?: string;
   schedule?: string;
-  contacts?: Contact[];
-  desiredOutcomes?: string[] | null;
+
+  // id?: string;
+  // -- none mvp
+  // targetArea?: string;
+  // contacts?: Contact[];
+  // desiredOutcomes?: string[] | null;
+
   sourceExcerpt?: string; // Exact text from document where this goal was found
 }
 
