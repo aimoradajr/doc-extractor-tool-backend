@@ -97,6 +97,7 @@ export interface BMP {
   partners?: Organization[];
   schedule?: string;
   priorityFactors?: string[] | null;
+  sourceExcerpt?: string; // Exact text from document where this BMP was found
 }
 
 /**
@@ -110,6 +111,7 @@ export interface ImplementationActivity {
   status?: string;
   outcome?: string;
   probableCompletionDate?: string;
+  sourceExcerpt?: string; // Exact text from document where this implementation was found
 }
 
 /**
@@ -124,6 +126,7 @@ export interface MonitoringMetric {
   responsibleParties?: Organization[];
   sampleLocations?: string[];
   sampleSchedule?: string;
+  sourceExcerpt?: string; // Exact text from document where this monitoring metric was found
 }
 
 /**
@@ -143,6 +146,7 @@ export interface OutreachActivity {
   description?: string;
   partners?: Organization[];
   indicators?: string;
+  sourceExcerpt?: string; // Exact text from document where this outreach activity was found
   schedule?: string;
   budget?: number;
   events?: EventDetail[];
