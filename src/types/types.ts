@@ -273,18 +273,21 @@ export interface OutreachActivity {
 }
 
 /**
- * Watershed, subwatershed, or area of interest
+ * The primary geographic unit covered by a watershed plan.
+ * For MVP, we capture the watershed (by HUC) and the counties it spans.
  */
 export interface GeographicArea {
-  name: string;
-  counties?: string[] | null;
-  acreage?: number | null;
-  landUseTypes?: LandUseType[] | null;
-  population?: number | null;
-  towns?: string[] | null;
-  huc?: string | null;
-  description?: string;
-  sourceExcerpt?: string;
+  /** The watershed’s HUC code (e.g. "031601060307") */
+  huc: string;
+
+  /** Human-readable watershed name (e.g. "Broken Pumpkin Creek Watershed") */
+  watershedName: string;
+
+  /** List of counties intersected by the watershed (e.g. ["Noxubee", "Lowndes"]) */
+  counties: string[];
+
+  /** State in which the watershed lies (e.g. "Mississippi") */
+  state: string;
 }
 
 /**

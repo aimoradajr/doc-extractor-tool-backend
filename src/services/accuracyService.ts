@@ -419,9 +419,9 @@ export class AccuracyService {
     for (const extractedArea of extracted) {
       const match = groundTruth.find(
         (gt) =>
-          this.fuzzyMatch(extractedArea.name, gt.name) ||
-          this.fuzzyMatch(extractedArea.description, gt.description) ||
-          (extractedArea.huc && gt.huc && extractedArea.huc === gt.huc)
+          this.fuzzyMatch(extractedArea.watershedName, gt.watershedName) ||
+          (extractedArea.huc && gt.huc && extractedArea.huc === gt.huc) ||
+          this.fuzzyMatch(extractedArea.state, gt.state)
       );
 
       if (match) {
@@ -429,13 +429,10 @@ export class AccuracyService {
         comparisons.push({
           type: "perfect_match",
           category: "geographicAreas",
-          expected: match.name || match.description || match.huc,
-          actual:
-            extractedArea.name ||
-            extractedArea.description ||
-            extractedArea.huc,
+          expected: match.watershedName || match.huc,
+          actual: extractedArea.watershedName || extractedArea.huc,
           message: `Found expected geographic area: "${
-            extractedArea.name || extractedArea.description
+            extractedArea.watershedName || extractedArea.huc
           }"`,
         });
       } else {
@@ -443,12 +440,9 @@ export class AccuracyService {
           type: "surplus_actual",
           category: "geographicAreas",
           expected: null,
-          actual:
-            extractedArea.name ||
-            extractedArea.description ||
-            extractedArea.huc,
+          actual: extractedArea.watershedName || extractedArea.huc,
           message: `Found unexpected geographic area: "${
-            extractedArea.name || extractedArea.description
+            extractedArea.watershedName || extractedArea.huc
           }" (not in ground truth)`,
         });
       }
@@ -458,19 +452,19 @@ export class AccuracyService {
     for (const gtArea of groundTruth) {
       const found = extracted.find(
         (ext) =>
-          this.fuzzyMatch(ext.name, gtArea.name) ||
-          this.fuzzyMatch(ext.description, gtArea.description) ||
-          (ext.huc && gtArea.huc && ext.huc === gtArea.huc)
+          this.fuzzyMatch(ext.watershedName, gtArea.watershedName) ||
+          (ext.huc && gtArea.huc && ext.huc === gtArea.huc) ||
+          this.fuzzyMatch(ext.state, gtArea.state)
       );
 
       if (!found) {
         comparisons.push({
           type: "missing_expected",
           category: "geographicAreas",
-          expected: gtArea.name || gtArea.description || gtArea.huc,
+          expected: gtArea.watershedName || gtArea.huc,
           actual: null,
           message: `Missing expected geographic area: "${
-            gtArea.name || gtArea.description
+            gtArea.watershedName || gtArea.huc
           }"`,
         });
       }

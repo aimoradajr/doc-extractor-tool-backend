@@ -526,14 +526,10 @@ Required JSON format:
   ],
   "geographicAreas": [
     {
-      "name": "area name",
+      "huc": "HUC code (e.g. '031601060307')",
+      "watershedName": "watershed name (e.g. 'Broken Pumpkin Creek Watershed')",
       "counties": ["county1", "county2"],
-      "acreage": number_or_null,
-      "landUseTypes": [{"type": "cropland", "percent": 25}],
-      "population": number_or_null,
-      "towns": ["town1", "town2"],
-      "huc": "HUC code if available",
-      "description": "area description",
+      "state": "state name (e.g. 'Mississippi')",
       "sourceExcerpt": "exact text from document where this geographic area was found"
     }
   ],
@@ -743,9 +739,9 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
       geographicAreas: (data.geographicAreas || [])
         .slice(0, 10)
         .map((area) => ({
-          name: area.name?.substring(0, 100) || "",
-          description: area.description?.substring(0, 200) || "",
+          watershedName: area.watershedName?.substring(0, 100) || "",
           huc: area.huc || "",
+          state: area.state || "",
         })),
     };
   }

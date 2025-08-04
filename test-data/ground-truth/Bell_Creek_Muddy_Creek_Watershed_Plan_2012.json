@@ -115,18 +115,10 @@
   ],
   "geographicAreas": [
     {
-      "name": "Bell Creek Watershed",
-      "counties": ["Sheridan County", "Roosevelt County"],
-      "acreage": 285000,
-      "landUseTypes": [
-        { "type": "cropland", "percent": 65 },
-        { "type": "grassland", "percent": 25 },
-        { "type": "forest", "percent": 8 }
-      ],
-      "population": 3500,
-      "towns": ["Plentywood", "Westby"],
       "huc": "10060005",
-      "description": "Agricultural watershed in northeastern Montana along the North Dakota border"
+      "watershedName": "Bell Creek Watershed",
+      "counties": ["Sheridan County", "Roosevelt County"],
+      "state": "Montana"
     }
   ],
   "contacts": [

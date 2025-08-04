@@ -1,6 +1,11 @@
 {
   "reportSummary": {
-    "summary": "A watershed-based plan for the Basket Creek-Hickahala Creek watershed in Tate County, Mississippi, addressing nutrient, sediment, and pathogen impairments through BMP implementation and stakeholder engagement. The plan targets a 35,085-acre watershed with agricultural land uses and aims to achieve TMDL requirements for fecal coliform reduction and water quality improvement.",
+    "summary": "A watershed-based plan for the Basket Creek-Hickahala Creek watershed in Tate County, Mississippi, addressing nutrient, sediment, and pathogen impairments through BMP implementation and stakeholder engagement. The plan targets a 35,085-acre watershed with agricultural land uses and aims to a    {
+      "huc": "MS305E",
+      "watershedName": "Hickahala Creek Drainage Area (DA)",
+      "counties": ["Tate County"],
+      "state": "Mississippi"
+    },L requirements for fecal coliform reduction and water quality improvement.",
     "watershedName": "Basket Creek-Hickahala Creek Watershed",
     "planTitle": "Basket Creek-Hickahala Creek 9 Key Element Plan",
     "planDate": "2018",
@@ -326,18 +331,10 @@
   ],
   "geographicAreas": [
     {
-      "name": "Basket Creek-Hickahala Creek Watershed",
-      "counties": ["Tate County"],
-      "acreage": 35085,
-      "landUseTypes": [
-        { "type": "cropland", "percent": 11 },
-        { "type": "forest", "percent": 17 },
-        { "type": "pasture/grass", "percent": 44 }
-      ],
-      "population": null,
-      "towns": null,
       "huc": "080302040403",
-      "description": "The major watershed covered by the plan, located in Tate County, Mississippi. Dominant land uses are cropland, forest, and pasture/grass. Identified in the 2011 National Land Cover Database. Includes impaired segments MS305E, MS305M1, and MS305M2."
+      "watershedName": "Basket Creek-Hickahala Creek Watershed",
+      "counties": ["Tate County"],
+      "state": "Mississippi"
     },
     {
       "name": "Hickahala Creek Drainage Area (DA)",
