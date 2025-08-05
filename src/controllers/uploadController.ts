@@ -62,8 +62,7 @@ export class UploadController {
     try {
       const result = await pdfService.extractStructuredData_WithResponsesAPI(
         req.file!.path,
-        true, // Use direct file upload
-        req.file!.originalname // Pass original filename
+        true // Use direct file upload
       );
       res.json(result);
     } catch (error) {

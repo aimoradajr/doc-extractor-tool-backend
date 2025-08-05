@@ -88,8 +88,7 @@ export class PdfService {
 
   async extractStructuredData_WithResponsesAPI(
     filePath: string,
-    useDirectFileUpload: boolean = false,
-    originalFilename?: string
+    useDirectFileUpload: boolean = false
   ): Promise<ExtractedData> {
     if (useDirectFileUpload) {
       console.log("Using direct PDF file upload to OpenAI Responses API");
@@ -97,7 +96,6 @@ export class PdfService {
       const structuredData =
         await openAIService.extractStructuredData_WithResponsesAPI({
           filePath: filePath,
-          originalFilename: originalFilename,
         });
       return structuredData;
     } else {

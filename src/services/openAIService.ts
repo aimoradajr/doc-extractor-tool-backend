@@ -1,7 +1,5 @@
 import OpenAI from "openai";
 import { ExtractedData, AccuracyTestResult } from "../types/types";
-import fs from "fs";
-import path from "path";
 
 // EASY MODEL SWITCHING - Just change this line!
 // const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
@@ -339,7 +337,7 @@ export class OpenAIService {
   }
 
   async extractStructuredData_WithResponsesAPI(
-    input: string | { filePath: string; originalFilename?: string }
+    input: string | { filePath: string }
   ): Promise<ExtractedData> {
     try {
       let responseInput: any[];
@@ -369,27 +367,11 @@ export class OpenAIService {
         ];
       } else {
         // File-based extraction (new functionality)
-        console.log("Uploading PDF file to OpenAI for direct processing...");
+        console.log("***Uploading PDF file to OpenAI for direct processing...");
 
         // Upload the PDF file to OpenAI
-        const originalFilename =
-          input.originalFilename || path.basename(input.filePath);
-
-        // Ensure the filename has .pdf extension for OpenAI to recognize it
-        const filename = originalFilename.endsWith(".pdf")
-          ? originalFilename
-          : `${originalFilename}.pdf`;
-
-        console.log(`Original filename: ${originalFilename}`);
-        console.log(`Filename for upload: ${filename}`);
-        console.log(`File path: ${input.filePath}`);
-
-        // Create a File-like object with proper filename
-        const fileBuffer = fs.readFileSync(input.filePath);
-        console.log(`File size: ${fileBuffer.length} bytes`);
-
         const file = await this.openai.files.create({
-          file: new File([fileBuffer], filename, { type: "application/pdf" }),
+          file: require("fs").createReadStream(input.filePath),
           purpose: "user_data",
         });
 

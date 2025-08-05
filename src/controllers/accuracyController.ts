@@ -120,11 +120,9 @@ export class AccuracyController {
       console.log(
         "Using extract3 (Responses API - direct file upload) for extraction"
       );
-      const originalFilename = pdfPath.split("\\").pop(); // Extract filename from path
       extractedData = await pdfService.extractStructuredData_WithResponsesAPI(
         pdfPath,
-        true,
-        originalFilename
+        true
       );
     } else {
       console.log(
