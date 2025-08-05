@@ -1,9 +1,23 @@
 import multer from "multer";
 import { Request, Response, NextFunction } from "express";
+import path from "path";
+import crypto from "crypto";
 
-// File upload configuration
+// File upload configuration with proper filename handling
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    // Generate a unique filename while preserving the .pdf extension
+    const uniqueName = crypto.randomBytes(16).toString("hex");
+    const extension = path.extname(file.originalname); // Should be .pdf
+    cb(null, uniqueName + extension);
+  },
+});
+
 export const upload = multer({
-  dest: "uploads/",
+  storage: storage,
   limits: { fileSize: 100 * 1024 * 1024 }, // 100MB limit
   fileFilter: (req, file, cb) => {
     if (file.mimetype === "application/pdf") {
