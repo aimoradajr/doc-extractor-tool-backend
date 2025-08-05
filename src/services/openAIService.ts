@@ -339,6 +339,14 @@ export class OpenAIService {
   private buildExtractionPrompt(text: string): string {
     // TODO: provide a way to attach optionally a series of prompts to further enhance result. this will of course take more token but for the sake of increasing accuracy, it may be beneficial. something like a flag to 'attachEnhancementPrompts'
 
+    // if text is more that max length,
+    const maxlen = 100000;
+    if (text.length > maxlen) {
+      console.log(
+        `------Input text exceeds maximum length of ${maxlen} characters. Actual length ${text.length}`
+      );
+    }
+
     return `
 Extract structured information from this watershed management document. Return ONLY valid JSON in the exact format specified below.
 
@@ -346,7 +354,7 @@ IMPORTANT: If any property has a value of null, do not include that property in 
 
 Document text:
 <<<PDF_START>>>
-${text.substring(0, 30000)}
+${text.substring(0, maxlen)}
 <<<PDF_END>>>
 
 Note: The input text is extracted from parsed PDFs, so tables and structured data may not appear in obvious table format. Please carefully analyze the text to identify information that likely originated from tables, such as repeated patterns, grouped short phrases, or sequences following headers like "Milestone," "Outcome," or "Date." Extract goals from these table-like structures as well, even if the table formatting is lost.
