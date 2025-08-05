@@ -86,6 +86,22 @@ export class PdfService {
     return structuredData;
   }
 
+  async extractStructuredData_WithResponsesAPI(
+    filePath: string
+  ): Promise<ExtractedData> {
+    // First extract raw text
+    const textResult = await this.extractText(filePath);
+
+    // Clean the text
+    const cleanedText = this.cleanText(textResult.text);
+
+    // Use OpenAI Responses API to extract structured data
+    const structuredData =
+      await openAIService.extractStructuredData_WithResponsesAPI(cleanedText);
+
+    return structuredData;
+  }
+
   cleanText(text: string): string {
     return text
       .replace(/\r\n/g, "\n")

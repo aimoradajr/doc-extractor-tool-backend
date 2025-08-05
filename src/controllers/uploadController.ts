@@ -38,6 +38,23 @@ export class UploadController {
     }
   };
 
+  extractStructuredData_WithResponsesAPI = async (
+    req: Request,
+    res: Response<ExtractedData | ErrorResponse>
+  ) => {
+    try {
+      const result = await pdfService.extractStructuredData_WithResponsesAPI(
+        req.file!.path
+      );
+      res.json(result);
+    } catch (error) {
+      console.error("Structured extraction error (Responses API):", error);
+      res.status(500).json({
+        error: "Failed to extract structured data with Responses API",
+      });
+    }
+  };
+
   // NEW ROUTE USING PDF2JSON
   uploadPdf2 = async (
     req: Request,

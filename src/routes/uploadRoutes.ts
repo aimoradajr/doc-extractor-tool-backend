@@ -4,14 +4,7 @@ import { upload, validateFileUpload } from "../middleware/uploadMiddleware";
 
 const router = express.Router();
 
-// Routes
-router.post(
-  "/upload",
-  upload.single("pdf"),
-  validateFileUpload,
-  uploadController.uploadPdf
-);
-
+// Extract using OpenAI Chat Completions API
 router.post(
   "/extract",
   upload.single("pdf"),
@@ -19,7 +12,25 @@ router.post(
   uploadController.extractStructuredData
 );
 
-// NEW ROUTE USING PDF2JSON
+// Extract using OpenAI Responses API
+router.post(
+  "/extract2",
+  upload.single("pdf"),
+  validateFileUpload,
+  uploadController.extractStructuredData_WithResponsesAPI
+);
+
+// TEST ROUTES ---------------------------------------------
+
+// Test route: upload and pdf parse
+router.post(
+  "/upload",
+  upload.single("pdf"),
+  validateFileUpload,
+  uploadController.uploadPdf
+);
+
+// Test route: upload and pdf2json
 router.post(
   "/upload2",
   upload.single("pdf"),

@@ -336,6 +336,91 @@ export class OpenAIService {
     }
   }
 
+  async extractStructuredData_WithResponsesAPI(
+    text: string
+  ): Promise<ExtractedData> {
+    try {
+      const prompt = this.buildExtractionPrompt(text);
+
+      // Use the OpenAI Responses API instead of Chat Completions
+      const response = await this.openai.responses.create({
+        model: CURRENT_MODEL,
+        input: [
+          {
+            role: "system",
+            content: [
+              {
+                type: "input_text",
+                text: "You are an expert at extracting structured information from environmental and agricultural watershed management documents. You MUST return ONLY valid JSON without any markdown formatting, code blocks, or additional text. Do not wrap the JSON in ```json or ``` blocks.",
+              },
+            ],
+          },
+          {
+            role: "user",
+            content: [
+              {
+                type: "input_text",
+                text: prompt,
+              },
+            ],
+          },
+        ],
+      });
+
+      const content = response.output_text;
+      if (!content) {
+        throw new Error("No content received from OpenAI Responses API");
+      }
+
+      // Clean the response by removing markdown code blocks (fallback safety)
+      const cleanedContent = this.cleanJsonFromMarkdown(content);
+
+      try {
+        const extractedData = JSON.parse(cleanedContent);
+        const structuredData = this.validateAndStructureData(extractedData);
+
+        // Add the model information to the response
+        structuredData.model = `${CURRENT_MODEL} (Responses API)`;
+
+        return structuredData;
+      } catch (parseError) {
+        const errorDetails = {
+          operation: "DATA_EXTRACTION_RESPONSES",
+          model: CURRENT_MODEL,
+          error:
+            parseError instanceof Error
+              ? parseError.message
+              : "Unknown parsing error",
+          originalContentLength: content.length,
+          originalContentPreview: content.substring(0, 500),
+          cleanedContentPreview: cleanedContent.substring(0, 500),
+        };
+
+        console.error(
+          "EXTRACTION AI FAILED (Responses API) - JSON parsing error:",
+          errorDetails
+        );
+
+        throw new Error(
+          `EXTRACTION AI JSON parsing failed (${CURRENT_MODEL} Responses API): ${parseError}. ` +
+            `Response appears incomplete. ` +
+            `Content length: ${errorDetails.originalContentLength} chars. ` +
+            `Preview: ${errorDetails.cleanedContentPreview}...`
+        );
+      }
+    } catch (error) {
+      console.error(
+        `EXTRACTION AI failed with ${CURRENT_MODEL} (Responses API):`,
+        error
+      );
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
+      throw new Error(
+        `EXTRACTION AI failed (${CURRENT_MODEL} Responses API): ${errorMessage}`
+      );
+    }
+  }
+
   private buildExtractionPrompt(text: string): string {
     // TODO: provide a way to attach optionally a series of prompts to further enhance result. this will of course take more token but for the sake of increasing accuracy, it may be beneficial. something like a flag to 'attachEnhancementPrompts'
 
