@@ -55,6 +55,25 @@ export class UploadController {
     }
   };
 
+  extractStructuredData_WithDirectFileUpload = async (
+    req: Request,
+    res: Response<ExtractedData | ErrorResponse>
+  ) => {
+    try {
+      const result = await pdfService.extractStructuredData_WithResponsesAPI(
+        req.file!.path,
+        true, // Use direct file upload
+        req.file!.originalname // Pass original filename
+      );
+      res.json(result);
+    } catch (error) {
+      console.error("Structured extraction error (Direct File Upload):", error);
+      res.status(500).json({
+        error: "Failed to extract structured data with direct file upload",
+      });
+    }
+  };
+
   // NEW ROUTE USING PDF2JSON
   uploadPdf2 = async (
     req: Request,

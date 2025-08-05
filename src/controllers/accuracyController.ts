@@ -70,9 +70,11 @@ export class AccuracyController {
 
     // Validate extract_mode parameter
     const extractMode = extract_mode || "extract"; // Default to 'extract'
-    if (!["extract", "extract1", "extract2"].includes(extractMode)) {
+    if (
+      !["extract", "extract1", "extract2", "extract3"].includes(extractMode)
+    ) {
       return res.status(400).json({
-        error: `Invalid extract_mode. Available: extract, extract1, extract2`,
+        error: `Invalid extract_mode. Available: extract, extract1, extract2, extract3`,
       });
     }
 
@@ -109,10 +111,25 @@ export class AccuracyController {
     // Extract data from preset PDF using the specified extract mode
     let extractedData;
     if (extractMode === "extract2") {
+      console.log("Using extract2 (Responses API - text input) for extraction");
       extractedData = await pdfService.extractStructuredData_WithResponsesAPI(
-        pdfPath
+        pdfPath,
+        false
+      );
+    } else if (extractMode === "extract3") {
+      console.log(
+        "Using extract3 (Responses API - direct file upload) for extraction"
+      );
+      const originalFilename = pdfPath.split("\\").pop(); // Extract filename from path
+      extractedData = await pdfService.extractStructuredData_WithResponsesAPI(
+        pdfPath,
+        true,
+        originalFilename
       );
     } else {
+      console.log(
+        "Using extract/extract1 (Chat Completions API) for extraction"
+      );
       extractedData = await pdfService.extractStructuredData(pdfPath);
     }
 

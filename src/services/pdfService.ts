@@ -87,19 +87,33 @@ export class PdfService {
   }
 
   async extractStructuredData_WithResponsesAPI(
-    filePath: string
+    filePath: string,
+    useDirectFileUpload: boolean = false,
+    originalFilename?: string
   ): Promise<ExtractedData> {
-    // First extract raw text
-    const textResult = await this.extractText(filePath);
+    if (useDirectFileUpload) {
+      console.log("Using direct PDF file upload to OpenAI Responses API");
+      // Use direct file upload to OpenAI
+      const structuredData =
+        await openAIService.extractStructuredData_WithResponsesAPI({
+          filePath: filePath,
+          originalFilename: originalFilename,
+        });
+      return structuredData;
+    } else {
+      console.log("Using text extraction with OpenAI Responses API");
+      // First extract raw text (existing behavior)
+      const textResult = await this.extractText(filePath);
 
-    // Clean the text
-    const cleanedText = this.cleanText(textResult.text);
+      // Clean the text
+      const cleanedText = this.cleanText(textResult.text);
 
-    // Use OpenAI Responses API to extract structured data
-    const structuredData =
-      await openAIService.extractStructuredData_WithResponsesAPI(cleanedText);
+      // Use OpenAI Responses API to extract structured data
+      const structuredData =
+        await openAIService.extractStructuredData_WithResponsesAPI(cleanedText);
 
-    return structuredData;
+      return structuredData;
+    }
   }
 
   cleanText(text: string): string {

@@ -1,5 +1,7 @@
 import OpenAI from "openai";
 import { ExtractedData, AccuracyTestResult } from "../types/types";
+import fs from "fs";
+import path from "path";
 
 // EASY MODEL SWITCHING - Just change this line!
 // const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
@@ -337,15 +339,15 @@ export class OpenAIService {
   }
 
   async extractStructuredData_WithResponsesAPI(
-    text: string
+    input: string | { filePath: string; originalFilename?: string }
   ): Promise<ExtractedData> {
     try {
-      const prompt = this.buildExtractionPrompt(text);
+      let responseInput: any[];
 
-      // Use the OpenAI Responses API instead of Chat Completions
-      const response = await this.openai.responses.create({
-        model: CURRENT_MODEL,
-        input: [
+      if (typeof input === "string") {
+        // Text-based extraction (existing functionality)
+        const prompt = this.buildExtractionPrompt(input);
+        responseInput = [
           {
             role: "system",
             content: [
@@ -364,7 +366,68 @@ export class OpenAIService {
               },
             ],
           },
-        ],
+        ];
+      } else {
+        // File-based extraction (new functionality)
+        console.log("Uploading PDF file to OpenAI for direct processing...");
+
+        // Upload the PDF file to OpenAI
+        const originalFilename =
+          input.originalFilename || path.basename(input.filePath);
+
+        // Ensure the filename has .pdf extension for OpenAI to recognize it
+        const filename = originalFilename.endsWith(".pdf")
+          ? originalFilename
+          : `${originalFilename}.pdf`;
+
+        console.log(`Original filename: ${originalFilename}`);
+        console.log(`Filename for upload: ${filename}`);
+        console.log(`File path: ${input.filePath}`);
+
+        // Create a File-like object with proper filename
+        const fileBuffer = fs.readFileSync(input.filePath);
+        console.log(`File size: ${fileBuffer.length} bytes`);
+
+        const file = await this.openai.files.create({
+          file: new File([fileBuffer], filename, { type: "application/pdf" }),
+          purpose: "user_data",
+        });
+
+        console.log(`File uploaded with ID: ${file.id}`);
+
+        // Create the prompt for file-based extraction
+        const filePrompt = this.buildExtractionPromptForFile();
+
+        responseInput = [
+          {
+            role: "system",
+            content: [
+              {
+                type: "input_text",
+                text: "You are an expert at extracting structured information from environmental and agricultural watershed management documents. You MUST return ONLY valid JSON without any markdown formatting, code blocks, or additional text. Do not wrap the JSON in ```json or ``` blocks.",
+              },
+            ],
+          },
+          {
+            role: "user",
+            content: [
+              {
+                type: "input_file",
+                file_id: file.id,
+              },
+              {
+                type: "input_text",
+                text: filePrompt,
+              },
+            ],
+          },
+        ];
+      }
+
+      // Use the OpenAI Responses API
+      const response = await this.openai.responses.create({
+        model: CURRENT_MODEL,
+        input: responseInput,
       });
 
       const content = response.output_text;
@@ -380,13 +443,15 @@ export class OpenAIService {
         const structuredData = this.validateAndStructureData(extractedData);
 
         // Add the model information to the response
-        structuredData.model = `${CURRENT_MODEL} (Responses API)`;
+        const inputType = typeof input === "string" ? "text" : "file";
+        structuredData.model = `${CURRENT_MODEL} (Responses API - ${inputType} input)`;
 
         return structuredData;
       } catch (parseError) {
         const errorDetails = {
           operation: "DATA_EXTRACTION_RESPONSES",
           model: CURRENT_MODEL,
+          inputType: typeof input === "string" ? "text" : "file",
           error:
             parseError instanceof Error
               ? parseError.message
@@ -444,6 +509,24 @@ ${text.substring(0, maxlen)}
 
 Note: The input text is extracted from parsed PDFs, so tables and structured data may not appear in obvious table format. Please carefully analyze the text to identify information that likely originated from tables, such as repeated patterns, grouped short phrases, or sequences following headers like "Milestone," "Outcome," or "Date." Extract goals from these table-like structures as well, even if the table formatting is lost.
 
+${this.getExtractionInstructions()}
+`;
+  }
+
+  private buildExtractionPromptForFile(): string {
+    return `
+Extract structured information from this watershed management document (PDF file). Return ONLY valid JSON in the exact format specified below.
+
+IMPORTANT: If any property has a value of null, do not include that property in the output at all. Only return properties that have a real value. Do not return properties with null values anywhere in the output JSON.
+
+Note: You have direct access to the original PDF document, so you can see the actual formatting, tables, figures, and structure. Use this advantage to extract information more accurately than text-only extraction.
+
+${this.getExtractionInstructions()}
+`;
+  }
+
+  private getExtractionInstructions(): string {
+    return `
 General Hints:
    - Watershed management documents often use structured headings with "Element" prefixes (e.g., "Element A:", "Element F: Implementation Schedule", "Element C: Goals and Objectives"). Pay special attention to these sections as they typically contain key information for extraction.
    - Look for document metadata on the cover page, title page, headers, footers, and introductory sections:

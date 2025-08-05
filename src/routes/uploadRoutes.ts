@@ -12,12 +12,20 @@ router.post(
   uploadController.extractStructuredData
 );
 
-// Extract using OpenAI Responses API
+// Extract using OpenAI Responses API (text-based)
 router.post(
   "/extract2",
   upload.single("pdf"),
   validateFileUpload,
   uploadController.extractStructuredData_WithResponsesAPI
+);
+
+// Extract using OpenAI Responses API (direct file upload)
+router.post(
+  "/extract3",
+  upload.single("pdf"),
+  validateFileUpload,
+  uploadController.extractStructuredData_WithDirectFileUpload
 );
 
 // TEST ROUTES ---------------------------------------------
