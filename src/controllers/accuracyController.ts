@@ -58,13 +58,21 @@ export class AccuracyController {
 
   // PRESET MODE - Use predefined test cases
   private handlePresetMode = async (req: Request, res: Response) => {
-    const { preset } = req.body;
+    const { preset, extract_mode } = req.body;
 
     if (!preset || !PRESET_TESTS[preset as keyof typeof PRESET_TESTS]) {
       return res.status(400).json({
         error: `Invalid preset. Available: ${Object.keys(PRESET_TESTS).join(
           ", "
         )}`,
+      });
+    }
+
+    // Validate extract_mode parameter
+    const extractMode = extract_mode || "extract"; // Default to 'extract'
+    if (!["extract", "extract1", "extract2"].includes(extractMode)) {
+      return res.status(400).json({
+        error: `Invalid extract_mode. Available: extract, extract1, extract2`,
       });
     }
 
@@ -95,27 +103,21 @@ export class AccuracyController {
     const compareModeModel = req.body.compare_mode_model || "gpt-4.1";
 
     console.log(
-      `Testing preset: ${preset} (${testCase.name}) with ${compareMode} comparison mode`
+      `Testing preset: ${preset} (${testCase.name}) with ${compareMode} comparison mode using ${extractMode} extraction`
     );
 
-    // Extract data from preset PDF
-    const extractedData = await pdfService.extractStructuredData(pdfPath);
+    // Extract data from preset PDF using the specified extract mode
+    let extractedData;
+    if (extractMode === "extract2") {
+      extractedData = await pdfService.extractStructuredData_WithResponsesAPI(
+        pdfPath
+      );
+    } else {
+      extractedData = await pdfService.extractStructuredData(pdfPath);
+    }
 
     // Load preset ground truth
     const groundTruth = JSON.parse(fs.readFileSync(groundTruthPath, "utf-8"));
-
-    // DEBUG: Log data structures for comparison
-    console.log(`DEBUG: Comparing data structures for ${preset}...`);
-    console.log(`Ground Truth Goals: ${groundTruth.goals?.length || 0}`);
-    console.log(`Extracted Goals: ${extractedData.goals?.length || 0}`);
-    console.log(`Ground Truth BMPs: ${groundTruth.bmps?.length || 0}`);
-    console.log(`Extracted BMPs: ${extractedData.bmps?.length || 0}`);
-    console.log(
-      `Ground Truth Implementation: ${groundTruth.implementation?.length || 0}`
-    );
-    console.log(
-      `Extracted Implementation: ${extractedData.implementation?.length || 0}`
-    );
 
     // Calculate accuracy based on mode
     let accuracyResult: AccuracyTestResult;
@@ -137,6 +139,7 @@ export class AccuracyController {
     const result: AccuracyTestResult = {
       testCase: `${preset}-${testCase.name}`,
       extract_ai_model: extractedData.model, // The model used for extraction
+      extract_mode: extractMode, // The extraction mode used (extract/extract1 or extract2)
       compare_ai_model: compareMode === "ai" ? compareModeModel : undefined, // Only set if AI comparison is used
       compare_mode: compareMode, // The comparison mode used
       metrics: accuracyResult.metrics,
@@ -157,7 +160,7 @@ export class AccuracyController {
     }
 
     fs.writeFileSync(
-      path.join(resultsDir, `${preset}-result.json`),
+      path.join(resultsDir, `${preset}-${extractMode}-result.json`),
       JSON.stringify({ extractedData, accuracyResult }, null, 2)
     );
 

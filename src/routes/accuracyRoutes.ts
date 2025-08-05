@@ -6,7 +6,7 @@ const router = express.Router();
 
 // 🎯 MAIN ACCURACY TEST ROUTE - Handles both upload and preset modes
 // POST /api/accuracy/test
-// Body: { "mode": "upload" } + files OR { "mode": "preset", "preset": "preset1" }
+// Body: { "mode": "upload" } + files OR { "mode": "preset", "preset": "preset1", "extract_mode": "extract|extract1|extract2" }
 router.post(
   "/test",
   upload.fields([
