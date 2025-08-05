@@ -8,25 +8,29 @@ import { AccuracyTestResult } from "../types/types";
 // PRESET TEST CASES - Easy to add new ones!
 const PRESET_TESTS = {
   preset1: {
-    name: "Bell Creek Muddy Creek Watershed Plan 2012",
-    pdfFile: "Bell_Creek_Muddy_Creek_Watershed_Plan_2012.pdf",
-    groundTruthFile: "Bell_Creek_Muddy_Creek_Watershed_Plan_2012.json",
+    name: "Broken Pumpkin 9 Key Element Plan 2019",
+    pdfFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.pdf",
+    pdfFileSize: "939 KB",
+    groundTruthFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.json",
   },
   preset2: {
     name: "Basket Creek Hickahala Creek 9 Key Element Plan 2018",
     pdfFile: "Basket_Creek_Hickahala_Creek_9_Key_Element_Plan_2018.pdf",
+    pdfFileSize: "1.04 MB",
     groundTruthFile:
       "Basket_Creek_Hickahala_Creek_9_Key_Element_Plan_2018.json",
   },
   preset3: {
     name: "Pickwick Reservoir Watershed Plan 2009",
     pdfFile: "Pickwick_Reservoir_Watershed_Plan_2009.pdf",
+    pdfFileSize: "6.73 MB",
     groundTruthFile: "Pickwick_Reservoir_Watershed_Plan_2009.json",
   },
   preset4: {
-    name: "Broken Pumpkin 9 Key Element Plan 2019",
-    pdfFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.pdf",
-    groundTruthFile: "Broken_Pumpkin_9_Key_Element_Plan_2019.json",
+    name: "Bell Creek Muddy Creek Watershed Plan 2012",
+    pdfFile: "Bell_Creek_Muddy_Creek_Watershed_Plan_2012.pdf",
+    pdfFileSize: "1.79 MB",
+    groundTruthFile: "Bell_Creek_Muddy_Creek_Watershed_Plan_2012.json",
   },
 } as const;
 
@@ -188,6 +192,7 @@ export class AccuracyController {
       id: key,
       name: value.name,
       pdfFile: value.pdfFile,
+      pdfFileSize: value.pdfFileSize,
       groundTruthFile: value.groundTruthFile,
     }));
 
