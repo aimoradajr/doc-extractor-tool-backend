@@ -340,77 +340,149 @@ export class OpenAIService {
     input: string | { filePath: string }
   ): Promise<ExtractedData> {
     try {
-      let responseInput: any[];
+      let responseConfig: any;
 
-      if (typeof input === "string") {
-        // Text-based extraction (existing functionality)
-        const prompt = this.buildExtractionPrompt(input);
-        responseInput = [
-          {
-            role: "system",
-            content: [
+      // prompt presets
+      const promptId = "pmpt_688f1bd9609c8196a4047f87ee2884dd00afa5e2eb852274"; // comment out to return to pass prompt
+      const promptVersion = "6";
+
+      if (promptId) {
+        // Use pre-created prompt from OpenAI Playground
+        console.log(
+          `***Using prompt ID: ${promptId} (version: ${
+            promptVersion || "latest"
+          })`
+        );
+
+        if (typeof input === "string") {
+          // Text-based extraction with prompt ID
+          responseConfig = {
+            prompt: {
+              id: promptId,
+              version: promptVersion || undefined,
+            },
+            input: [
               {
-                type: "input_text",
-                text: "You are an expert at extracting structured information from environmental and agricultural watershed management documents. You MUST return ONLY valid JSON without any markdown formatting, code blocks, or additional text. Do not wrap the JSON in ```json or ``` blocks.",
+                role: "user",
+                content: [
+                  {
+                    type: "input_text",
+                    text: input,
+                  },
+                ],
               },
             ],
-          },
-          {
-            role: "user",
-            content: [
+          };
+        } else {
+          // File-based extraction with prompt ID
+          console.log(
+            "***Uploading PDF file to OpenAI for direct processing..."
+          );
+
+          // Upload the PDF file to OpenAI
+          const file = await this.openai.files.create({
+            file: require("fs").createReadStream(input.filePath),
+            purpose: "user_data",
+          });
+
+          console.log(`File uploaded with ID: ${file.id}`);
+
+          responseConfig = {
+            prompt: {
+              id: promptId,
+              version: promptVersion || undefined,
+            },
+            input: [
               {
-                type: "input_text",
-                text: prompt,
+                role: "user",
+                content: [
+                  {
+                    type: "input_file",
+                    file_id: file.id,
+                  },
+                ],
               },
             ],
-          },
-        ];
+          };
+        }
       } else {
-        // File-based extraction (new functionality)
-        console.log("***Uploading PDF file to OpenAI for direct processing...");
+        // Use inline prompts (existing functionality)
+        let responseInput: any[];
 
-        // Upload the PDF file to OpenAI
-        const file = await this.openai.files.create({
-          file: require("fs").createReadStream(input.filePath),
-          purpose: "user_data",
-        });
+        if (typeof input === "string") {
+          // Text-based extraction (existing functionality)
+          const prompt = this.buildExtractionPrompt(input);
+          responseInput = [
+            {
+              role: "system",
+              content: [
+                {
+                  type: "input_text",
+                  text: "You are an expert at extracting structured information from environmental and agricultural watershed management documents. You MUST return ONLY valid JSON without any markdown formatting, code blocks, or additional text. Do not wrap the JSON in ```json or ``` blocks.",
+                },
+              ],
+            },
+            {
+              role: "user",
+              content: [
+                {
+                  type: "input_text",
+                  text: prompt,
+                },
+              ],
+            },
+          ];
+        } else {
+          // File-based extraction (new functionality)
+          console.log(
+            "***Uploading PDF file to OpenAI for direct processing..."
+          );
 
-        console.log(`File uploaded with ID: ${file.id}`);
+          // Upload the PDF file to OpenAI
+          const file = await this.openai.files.create({
+            file: require("fs").createReadStream(input.filePath),
+            purpose: "user_data",
+          });
 
-        // Create the prompt for file-based extraction
-        const filePrompt = this.buildExtractionPromptForFile();
+          console.log(`File uploaded with ID: ${file.id}`);
 
-        responseInput = [
-          {
-            role: "system",
-            content: [
-              {
-                type: "input_text",
-                text: "You are an expert at extracting structured information from environmental and agricultural watershed management documents. You MUST return ONLY valid JSON without any markdown formatting, code blocks, or additional text. Do not wrap the JSON in ```json or ``` blocks.",
-              },
-            ],
-          },
-          {
-            role: "user",
-            content: [
-              {
-                type: "input_file",
-                file_id: file.id,
-              },
-              {
-                type: "input_text",
-                text: filePrompt,
-              },
-            ],
-          },
-        ];
+          // Create the prompt for file-based extraction
+          const filePrompt = this.buildExtractionPromptForFile();
+
+          responseInput = [
+            {
+              role: "system",
+              content: [
+                {
+                  type: "input_text",
+                  text: "You are an expert at extracting structured information from environmental and agricultural watershed management documents. You MUST return ONLY valid JSON without any markdown formatting, code blocks, or additional text. Do not wrap the JSON in ```json or ``` blocks.",
+                },
+              ],
+            },
+            {
+              role: "user",
+              content: [
+                {
+                  type: "input_file",
+                  file_id: file.id,
+                },
+                {
+                  type: "input_text",
+                  text: filePrompt,
+                },
+              ],
+            },
+          ];
+        }
+
+        responseConfig = {
+          model: CURRENT_MODEL,
+          input: responseInput,
+        };
       }
 
       // Use the OpenAI Responses API
-      const response = await this.openai.responses.create({
-        model: CURRENT_MODEL,
-        input: responseInput,
-      });
+      const response = await this.openai.responses.create(responseConfig);
 
       const content = response.output_text;
       if (!content) {
