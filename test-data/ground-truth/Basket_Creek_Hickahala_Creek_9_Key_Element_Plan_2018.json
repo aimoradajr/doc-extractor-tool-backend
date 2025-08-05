@@ -1,384 +1,390 @@
 {
   "reportSummary": {
-    "summary": "A watershed-based plan for the Basket Creek-Hickahala Creek watershed in Tate County, Mississippi, addressing nutrient, sediment, and pathogen impairments through BMP implementation and stakeholder engagement. The plan targets a 35,085-acre watershed with agricultural land uses and aims to a    {
-      "huc": "MS305E",
-      "watershedName": "Hickahala Creek Drainage Area (DA)",
-      "counties": ["Tate County"],
-      "state": "Mississippi"
-    },L requirements for fecal coliform reduction and water quality improvement.",
+    "summary": "The Basket Creek-Hickahala Creek Watershed Plan details a comprehensive strategy to address nutrient, sediment, and pathogen impairments through the implementation of BMPs, targeted outreach, and ongoing monitoring. Covering 35,085 acres in Tate County, Mississippi, this plan sets reduction goals for organic enrichment, nutrients, and fecal coliform, coordinates federal and state partners, and provides a timeline and measurable benchmarks to guide water quality restoration efforts.",
     "watershedName": "Basket Creek-Hickahala Creek Watershed",
-    "planTitle": "Basket Creek-Hickahala Creek 9 Key Element Plan",
-    "planDate": "2018",
-    "authors": [],
+    "planTitle": "Basket Creek-Hickahala Creek Watershed Plan GY 2017",
+    "planDate": "2018-09-20",
     "organizations": [
-      "MDEQ",
+      "Mississippi Department of Environmental Quality",
       "Mississippi Soil and Water Conservation Commission",
       "Natural Resources Conservation Service",
-      "Tate County Soil and Water Conservation District"
+      "Tate County Soil and Water Conservation District",
+      "USGS"
     ],
     "geographicRegion": "Tate County, Mississippi",
-    "totalGoals": 3,
+    "totalGoals": 4,
     "totalBMPs": 6,
-    "completionRate": null
+    "completionRate": 0
   },
   "goals": [
     {
-      "description": "Implement nutrient BMPs to reduce TN, TP and sediment in the watershed.",
-      "targetArea": "Basket Creek-Hickahala Creek Watershed",
-      "sourceExcerpt": "Nutrient BMPs will be implemented watershed...target both TN, TP and sediment reduction as soils in MS are known to have high phosphorus content."
+      "description": "Achieve a 50% reduction in fecal coliform in the section of Hickahala Creek located within the Basket Creek-Hickahala Creek Watershed and a 70% reduction in James Wolf Creek.",
+      "schedule": "Project period as defined by TMDL and plan implementation",
+      "sourceExcerpt": "The Fecal Coliform TMDL for Hickahala Creek is calling for a 50% reduction in the section of Hickahala Creek that is located within the Basket Creek-Hickahala Creek Watershed. The same TMDL also calls for a 70% reduction in James Wolf Creek."
     },
     {
-      "description": "Achieve 50% fecal coliform reduction in Hickahala Creek and 70% in James Wolf Creek.",
-      "targetArea": "Hickahala Creek and James Wolf Creek sections",
-      "sourceExcerpt": "The Fecal Coliform TMDL...is calling for a 50% reduction...also calls for a 70% reduction in James Wolf Creek."
+      "description": "Ensure the maximum load of TBODu specified in the TMDL of 1,317 lbs/day will not be exceeded.",
+      "schedule": "Ongoing/NPDES permit period",
+      "sourceExcerpt": "These restrictions will ensure the maximum load of TBODu specified in the TMDL of 1,317 lbs/day will not be exceeded."
     },
     {
-      "description": "Install BMPs (fencing, ponds, grade stabilization, etc.) prioritizing newly converted pasture areas.",
-      "targetArea": "Basket Creek-Hickahala Creek watershed",
-      "sourceExcerpt": "Installation of the following BMPs would mitigate sediment and nutrient issues...BMPs will be prioritized for implementation in the newly converted pasture areas."
+      "description": "Implement nutrient BMPs to achieve reductions in TN, TP, and sediment loads as modeled in the TMDL.",
+      "schedule": "During grant/project implementation",
+      "sourceExcerpt": "In order to achieve the modeled NPS loads in the TMDL, nutrient BMPs will be implemented watershed. This will be done by implementing in-field conservation practices that target both TN, TP and sediment reduction."
     },
     {
-      "description": "Promote behavior changes and BMPs through education and outreach.",
-      "targetArea": "Basket Creek-Hickahala Creek watershed",
-      "sourceExcerpt": "The ultimate goal is to bring about behavior changes and the use of 'best management practices' that will improve water quality."
-    },
-    {
-      "description": "Establish Watershed Implementation Team to refine the Watershed Based Plan.",
-      "schedule": "Months 1-2",
-      "sourceExcerpt": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Basket Creek-Hickahala Creek watershed."
-    },
-    {
-      "description": "Conduct baseline condition monitoring with historical and new data.",
-      "schedule": "Completed using historical data",
-      "sourceExcerpt": "Initiate watershed monitoring Baseline condition monitoring Completed using historical data."
-    },
-    {
-      "description": "Meet with landowners to secure commitment to install BMPs.",
-      "schedule": "Months 1-6",
-      "sourceExcerpt": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas."
-    },
-    {
-      "description": "Establish routine meetings for the Team to support plan revision.",
-      "schedule": "Months 1-36",
-      "sourceExcerpt": "Establish routine meeting schedule for WIT to support WBP revision."
-    },
-    {
-      "description": "Implement BMPs by schedule per TMDL and project requirements.",
-      "schedule": "Months 6-36",
-      "sourceExcerpt": "Implement BMPs BMP installation Months 6-36."
-    },
-    {
-      "description": "Coordinate to inspect BMPs installed with Section 319 funds.",
-      "schedule": "Months 3-36",
-      "sourceExcerpt": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds."
-    },
-    {
-      "description": "Begin monitoring to collect data on post-BMP water quality.",
-      "schedule": "Months 42-48",
-      "sourceExcerpt": "Begin monitoring to collect data on post-BMP water quality Post-BMP Monitoring Months 42-48."
-    },
-    {
-      "description": "Finalize education/outreach plan and schedule events.",
-      "schedule": "Months 8-36",
-      "sourceExcerpt": "Finalize education and outreach plan Education/Outreach events scheduled Months 8-36."
-    },
-    {
-      "description": "Finalize revised Watershed Based Plan.",
-      "schedule": "Months 30-36",
-      "sourceExcerpt": "Finalize revised WBP Final Revised WBP Months 30-36."
+      "description": "Meet state water quality criteria for dissolved oxygen, nutrients, and E. coli in the watershed as detailed in Mississippi Water Quality Criteria.",
+      "schedule": "Throughout and after project, with post-BMP evaluation",
+      "sourceExcerpt": "The following thresholds will be used to measure compliance with water quality criteria: Dissolved Oxygen Daily Average of 5.0 mg/L; ... Total Nitrogen 0.940-1.110 mg/L ... E. coli 30-day geometric mean of 126 per 100 ml..."
     }
   ],
   "bmps": [
     {
       "name": "Fencing",
-      "description": "Install fencing on pasturelands and grazing lands to limit livestock access to streams.",
+      "description": "Install 10,000 feet of fencing to restrict livestock access to streams, limiting pathogen and nutrient input.",
       "type": "Pathogen",
-      "targetAreas": ["pasturelands", "lands used for grazing"],
+      "targetAreas": ["Pasture", "Livestock grazing lands"],
       "quantity": 10000,
       "unit": "ft",
       "estimatedCost": 23300,
-      "schedule": null,
-      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
+      "schedule": "Months 6-36 implementation window",
+      "sourceExcerpt": "Fencing 10,000ft @$2.33 23,300 15,533"
     },
     {
-      "name": "Watering Facilities",
-      "description": "Install watering facilities such as tanks or troughs to provide alternative water sources for livestock, keeping them out of streams.",
+      "name": "Tank/Trough (Watering Facility)",
+      "description": "Provide 3 livestock watering facilities to support exclusion of animals from streams.",
       "type": "Pathogen",
-      "targetAreas": ["pasturelands", "lands used for grazing"],
+      "targetAreas": ["Pasture", "Livestock exclusion areas"],
       "quantity": 3,
       "unit": "ea",
       "estimatedCost": 10500,
-      "schedule": null,
-      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
-    },
-    {
-      "name": "Heavy Use Area Protection",
-      "description": "Provide protection for heavy use areas to reduce erosion and runoff from locations with high livestock traffic.",
-      "type": "Sediment",
-      "targetAreas": ["heavy use areas", "pasturelands"],
-      "quantity": 1240,
-      "unit": "ft",
-      "estimatedCost": 3522,
-      "schedule": null,
-      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
+      "schedule": "Months 6-36 implementation window",
+      "sourceExcerpt": "Tank/Trough 3@$3,500 10,500 7,500"
     },
     {
       "name": "Ponds",
-      "description": "Construct ponds to manage runoff and provide water for livestock away from streams.",
-      "type": "Nutrient",
-      "targetAreas": ["pasturelands", "lands used for grazing"],
+      "description": "Construct 4 ponds as alternative water sources for livestock participation in exclusion efforts.",
+      "type": "Pathogen",
+      "targetAreas": ["Livestock exclusion areas"],
       "quantity": 4,
       "unit": "ea",
       "estimatedCost": 36000,
-      "schedule": null,
-      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
+      "schedule": "Months 6-36 implementation window",
+      "sourceExcerpt": "Ponds 4 ea @ $9,000 36,000 24,000"
     },
     {
       "name": "Streambank and Shoreline Protection",
-      "description": "Apply streambank and shoreline protection practices to stabilize banks and prevent erosion.",
+      "description": "Install 500 feet of streambank and shoreline protection to reduce erosion and sediment input.",
       "type": "Sediment",
-      "targetAreas": ["streams", "shorelines"],
+      "targetAreas": ["Streambanks", "Shorelines"],
       "quantity": 500,
       "unit": "ft",
       "estimatedCost": 80500,
-      "schedule": null,
-      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
+      "schedule": "Months 6-36 implementation window",
+      "sourceExcerpt": "Streambank and Shoreline Protection 500 ft @ $161.00 ft 80,500 54,167"
     },
     {
       "name": "Grade Stabilization Structures",
-      "description": "Install grade stabilization structures to reduce erosion (gully and slope stabilization).",
+      "description": "Construct grade stabilization structures on 8 acres to reduce gully and surface erosion.",
       "type": "Sediment",
-      "targetAreas": ["newly converted pasture areas"],
+      "targetAreas": ["Eroded/gully areas"],
       "quantity": 8,
       "unit": "ac",
       "estimatedCost": 52878,
-      "schedule": null,
-      "excerpt": "installation of the following BMPs would mitigate sediment and nutrient issues in the Basket Creek-Hickahala Creek watershed helping the stream recover: fencing, watering facilities, heavy use areas, ponds, streambank and shoreline protection, and grade stabilization structures."
+      "schedule": "Months 6-36 implementation window",
+      "sourceExcerpt": "Grade Stabilization Structure 8 ac @ $6,609.80 52,878 35,252"
+    },
+    {
+      "name": "Heavy Use Area Protection",
+      "description": "Protect 1,240 feet of heavy use areas (livestock or equipment) by hardening surfaces.",
+      "type": "Sediment",
+      "targetAreas": ["Heavy use livestock/equipment areas"],
+      "quantity": 1240,
+      "unit": "ft",
+      "estimatedCost": 3522,
+      "schedule": "Months 6-36 implementation window",
+      "sourceExcerpt": "Heavy Use Area Protection 1,240 ft @ $2.84 3,522 2,348"
     }
   ],
   "implementation": [
     {
-      "description": "Develop, execute, and implement a Subgrant Agreement that specifies the roles, tasks, requirements, and milestones for project implementation.",
+      "description": "Coordinate with partners to determine priority areas contributing significant pollutant loads to the watershed.",
       "responsibleParties": [
-        { "name": "MDEQ" },
-        { "name": "Watershed Implementation Team" },
-        { "name": "Project Manager" }
-      ]
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "USGS"
+        },
+        {
+          "name": "Tate County Soil and Water District"
+        }
+      ],
+      "status": "planned",
+      "sourceExcerpt": "Coordinate with the MDEQ, NRCS, MSWCC, USGS, and the Tate Co. Soil and Water District to determine priority areas that are contributing significant pollutant loads to Basket Creek-Hickahala Creek watershed"
     },
     {
-      "description": "Facilitate meetings, media, and social media promotion of the project, and coordinate activities to fully implement this plan.",
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "Partners" }]
-    },
-    {
-      "description": "Inform landowners and operators within the watershed about the project and work to secure commitments from priority area landowners and operators willing to participate.",
+      "description": "Establish Watershed Implementation Team (WIT) for plan refinement and oversight.",
       "responsibleParties": [
-        { "name": "Tate County SWCD" },
-        { "name": "MSWCC" },
-        { "name": "NRCS" },
-        { "name": "MDEQ" }
-      ]
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "MSWCC"
+        },
+        {
+          "name": "Tate County Soil and Water District"
+        }
+      ],
+      "status": "planned",
+      "sourceExcerpt": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan for Basket Creek-Hickahala Creek watershed"
     },
     {
-      "description": "Determine through GIS applications and intensive site surveys the priority areas within the sub-watershed that are contributing significant pollutant loads; install all BMPs in accordance with guidelines.",
+      "description": "Initiate monitoring for baseline conditions using historical and new data.",
       "responsibleParties": [
-        { "name": "SWCD" },
-        { "name": "MSWCC" },
-        { "name": "NRCS" },
-        { "name": "MDEQ" }
-      ]
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "USGS"
+        }
+      ],
+      "status": "completed",
+      "sourceExcerpt": "Initiate watershed monitoring Baseline condition monitoring Completed using historical data"
     },
     {
-      "description": "Facilitate the completion and implementation of a plan to monitor baseline water quality conditions in the watershed and track changes resulting from BMPs.",
+      "description": "Meet with landowners/cooperators to secure commitments for BMP installation.",
       "responsibleParties": [
-        { "name": "MDEQ" },
-        { "name": "Monitoring Partners" }
-      ]
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "Tate County Soil and Water Conservation District"
+        }
+      ],
+      "status": "planned",
+      "sourceExcerpt": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas"
     },
     {
-      "description": "Submit blank copies of standard maintenance agreements to MDEQ.",
-      "responsibleParties": [{ "name": "Project Partners" }]
-    },
-    {
-      "description": "Conduct inspections of BMPs during construction.",
-      "responsibleParties": [{ "name": "Project Partners" }]
-    },
-    {
-      "description": "Coordinate the collection of relevant GPS coordinates of all installed BMPs and incorporate this information into a GIS format.",
+      "description": "Establish routine meeting schedule for WIT to support plan revision.",
       "responsibleParties": [
-        { "name": "SWCD" },
-        { "name": "MACD" },
-        { "name": "MSWCC" },
-        { "name": "NRCS" }
-      ]
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "MSWCC"
+        }
+      ],
+      "status": "in progress",
+      "sourceExcerpt": "Establish routine meeting schedule for WIT to support WBP revision"
     },
     {
-      "description": "Collect photo documentation before, during, and after installation of approved BMPs.",
-      "responsibleParties": [{ "name": "Project Partners" }]
-    },
-    {
-      "description": "Report measured or estimated nonpoint source pollutant load reduction, acreage affected, pre-and post-site conditions, and GIS data.",
-      "responsibleParties": [{ "name": "Project Partners" }]
-    },
-    {
-      "description": "Establish Watershed Implementation Team to begin refinement of Watershed Based Plan.",
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "WIT" }]
-    },
-    {
-      "description": "Initiate watershed baseline monitoring using historical data.",
+      "description": "Implement BMPs in priority areas per plan and TMDL recommendations.",
       "responsibleParties": [
-        { "name": "MDEQ" },
-        { "name": "Monitoring Partners" }
-      ]
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "MSWCC"
+        }
+      ],
+      "status": "planned",
+      "sourceExcerpt": "Implement BMPs BMP installation Months 6-36"
     },
     {
-      "description": "Meet with landowners and cooperators to secure commitments to install BMPs in priority areas.",
-      "responsibleParties": [{ "name": "Project Partners" }]
-    },
-    {
-      "description": "Establish routine meeting schedule for WIT to support watershed plan revision.",
-      "responsibleParties": [{ "name": "WIT" }]
-    },
-    {
-      "description": "Implement BMPs in targeted areas.",
-      "responsibleParties": [{ "name": "Project Partners" }]
-    },
-    {
-      "description": "Begin monitoring to collect data on post-BMP water quality.",
+      "description": "Inspect BMPs installed using Section 319 funds to ensure proper construction and maintenance.",
       "responsibleParties": [
-        { "name": "MDEQ" },
-        { "name": "Monitoring Partners" }
-      ]
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "NRCS"
+        },
+        {
+          "name": "MSWCC"
+        }
+      ],
+      "status": "planned",
+      "sourceExcerpt": "Coordinate with Landowners to inspect BMPs that were installed using Section 319 funds"
     },
     {
-      "description": "Finalize education and outreach plan and schedule education/outreach events.",
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "Project Partners" }]
+      "description": "Begin post-BMP monitoring to assess water quality improvements.",
+      "responsibleParties": [
+        {
+          "name": "MDEQ"
+        },
+        {
+          "name": "USGS"
+        }
+      ],
+      "status": "planned",
+      "sourceExcerpt": "Begin monitoring to collect data on post-BMP water quality"
     },
     {
-      "description": "Finalize revised Watershed Based Plan.",
-      "responsibleParties": [{ "name": "MDEQ" }, { "name": "WIT" }]
+      "description": "Finalize education and outreach plan and hold events.",
+      "responsibleParties": [
+        {
+          "name": "MDEQ"
+        }
+      ],
+      "status": "in progress",
+      "sourceExcerpt": "Finalize education and outreach plan Education/Outreach events scheduled"
+    },
+    {
+      "description": "Finalize the revised Watershed Based Plan.",
+      "responsibleParties": [
+        {
+          "name": "MDEQ"
+        }
+      ],
+      "status": "planned",
+      "sourceExcerpt": "Finalize revised WBP Final Revised WBP"
     }
   ],
   "monitoring": [
     {
-      "parameter": "M-BISQ score; other chemical and biological parameters",
-      "type": "biological",
-      "method": "Standard Operating Procedures; agency Quality Assurance protocols",
-      "frequency": "Prior to BMP installation",
+      "parameter": "Dissolved Oxygen (DO)",
+      "type": "chemical",
+      "method": "In situ and laboratory sample; Mississippi SOPs",
+      "frequency": "Pre- and post-BMP monthly/seasonal as per project QAPP",
       "thresholds": [
         {
-          "parameter": "M-BISQ score",
-          "description": "M-BISQ score 10 points below attainment threshold for West Bioregion"
+          "parameter": "Dissolved Oxygen",
+          "description": "Daily Average ≥5.0 mg/L; Instantaneous ≥4.0 mg/L"
+        },
+        {
+          "parameter": "DO Percent Saturation",
+          "description": "≥70% - ≤125%"
         }
       ],
-      "locations": [
-        "Historical monitoring stations on Basket Creek and Hickahala Creek"
-      ],
-      "sourceExcerpt": "Pre-implementation (baseline) monitoring using chemical and biological sampling data to assess stream condition before BMP installation."
+      "locations": ["Basket Creek", "Hickahala Creek"],
+      "sourceExcerpt": "The following thresholds will be used... Dissolved Oxygen Daily Average of 5.0 mg/L; ... Dissolved Oxygen % Sat ≥ 70% - ≤ 125%"
     },
     {
-      "parameter": "M-BISQ score; chemical and biological parameters",
+      "parameter": "Total Nitrogen (TN)",
+      "type": "chemical",
+      "method": "Laboratory sample, standard/state protocol",
+      "frequency": "Pre- and post-BMP",
+      "thresholds": [
+        {
+          "parameter": "Total Nitrogen",
+          "description": "0.940-1.110 mg/L"
+        }
+      ],
+      "locations": ["Basket Creek", "Hickahala Creek"],
+      "sourceExcerpt": "Total Nitrogen 0.940-1.110 mg/L (threshold range based on healthy biologically attaining streams in West Bioregion)"
+    },
+    {
+      "parameter": "Total Phosphorus (TP)",
+      "type": "chemical",
+      "method": "Laboratory sample, standard/state protocol",
+      "frequency": "Pre- and post-BMP",
+      "thresholds": [
+        {
+          "parameter": "Total Phosphorus",
+          "description": "0.080-0.120 mg/L"
+        }
+      ],
+      "locations": ["Basket Creek", "Hickahala Creek"],
+      "sourceExcerpt": "Total Phosphorus 0.080-0.120 mg/L (threshold range based on healthy biologically attaining streams in West Bioregion)"
+    },
+    {
+      "parameter": "E. coli",
+      "type": "chemical",
+      "method": "Water sample; laboratory enumeration",
+      "frequency": "Pre- and post-BMP (seasonal/specified in QAPP)",
+      "thresholds": [
+        {
+          "parameter": "E. coli",
+          "description": "30-day geometric mean of 126 per 100 ml; ≤410 per 100 ml no more than 10%"
+        }
+      ],
+      "locations": ["Basket Creek", "Hickahala Creek"],
+      "sourceExcerpt": "E. coli 30-day geometric mean of 126 per 100 ml; samples during 30-day period should not exceed 410 per 100 ml more than 10% of the time"
+    },
+    {
+      "parameter": "Macroinvertebrate Index of Biotic Integrity (M-BISQ)",
       "type": "biological",
-      "method": "Best professional judgement for station selection; SOPs; agency QA protocols",
-      "frequency": "At least 1 year post-BMP, possibly up to 5 or more years",
-      "thresholds": [],
-      "locations": ["Locations downstream of BMP activity (to be selected)"],
-      "sourceExcerpt": "Post-BMP monitoring to assess water quality changes downstream of BMP activity, compared to baseline data."
+      "method": "Mississippi Benthic Index of Stream Quality (M-BISQ)",
+      "frequency": "Pre- and post-BMP (one or more years post-implementation)",
+      "thresholds": [
+        {
+          "parameter": "M-BISQ (West Bioregion threshold)",
+          "description": "Attainment threshold: 43.7"
+        }
+      ],
+      "locations": ["Hickahala Creek"],
+      "sourceExcerpt": "Basket Creek-Hickahala Creek is in the West bioregion and the attainment threshold is 43.7. Along with overall MBISQ scores, the in-stream habitat surveys will also be used to determine change over time."
     }
   ],
   "outreach": [
     {
-      "type": "Education and Outreach Events",
-      "description": "Implementation of education and outreach activities to inform and engage the community about water quality, BMPs, and watershed stewardship.",
-      "partners": [
-        "MDEQ",
-        "MSWCC",
-        "NRCS",
-        "Tate County Soil and Water Conservation District"
-      ],
-      "indicator": "Number of education/outreach events held; attendance; participant feedback; number of materials distributed",
-      "schedule": "Months 8-36",
-      "sourceExcerpt": "Education and Outreach Events"
-    },
-    {
-      "type": "Information and Education Programs",
-      "description": "Utilization of MDEQ-developed programs, manuals, literature, books, videos, and public service announcements tailored for the watershed.",
-      "partners": ["MDEQ"],
-      "indicator": "Number of programs delivered; audience reached; feedback and evaluation forms",
+      "type": "information/education events",
+      "description": "Educational programs and literature targeted to stakeholder groups, schools, and the public regarding nonpoint source pollution and best management practices specific to the project.",
       "schedule": "Throughout project period",
-      "sourceExcerpt": "MDEQ Statewide Information/Education Programs"
+      "indicator": "Evaluation forms, pre/post tests, survey responses, event participation",
+      "partners": ["MDEQ", "MSWCC", "NRCS", "SWCDs"],
+      "sourceExcerpt": "A positive approach is used to reach the full diversity of people in the community with projects that foster a 'sense of place'... Evaluation forms, pre-test/ post-test, surveys, and reporting of the number of people who attend workshops, trainings and events are among the methods used to measure the success of education/information programs."
     },
     {
-      "type": "Stakeholder Meetings",
-      "description": "Engage stakeholders through meetings to provide updates, education, and review/modify the watershed plan.",
-      "partners": [
-        "MDEQ",
-        "MSWCC",
-        "NRCS",
-        "Tate County Soil and Water Conservation District"
-      ],
-      "indicator": "Number of meetings, participant attendance, feedback",
-      "schedule": "Throughout project period (at least 3 meetings)",
-      "sourceExcerpt": "Stakeholder Engagement and Meetings"
+      "type": "stakeholder meetings",
+      "description": "At least 3 face-to-face meetings of the Watershed Implementation Team to provide updates, coordinate education events, and review the plan.",
+      "schedule": "Minimum of 3 meetings scheduled throughout the project",
+      "indicator": "Attendance and meeting records",
+      "partners": ["WIT", "MDEQ", "MSWCC", "NRCS", "Tate Co. SWCD"],
+      "sourceExcerpt": "As part of the education outreach efforts, the stakeholder group forming the Basket Creek-Hickahala Creek Watershed Implementation Team (WIT) will participate in a minimum of 3 face-to-face meetings."
     },
     {
-      "type": "Media Promotion",
-      "description": "Promotion of the project and outreach activities through media and social media channels.",
-      "partners": ["MDEQ"],
-      "indicator": "Number of media mentions/social media posts; audience reached",
-      "schedule": "Months 1-36",
-      "sourceExcerpt": "Media and Social Media Promotion"
+      "type": "field day/tour",
+      "description": "Field days to showcase implemented BMPs for the public.",
+      "schedule": "At least once during project period",
+      "indicator": "Event participation, post-event surveys",
+      "partners": ["WIT", "MDEQ"],
+      "sourceExcerpt": "hosting field days to showcase the implemented BMPs for the public"
+    },
+    {
+      "type": "classroom/workshop",
+      "description": "Teacher workshops, Water Model Presentations, Adopt A Stream and mobile classroom events for local educators and students.",
+      "schedule": "As available throughout project",
+      "indicator": "Number of workshops; teacher/student participation",
+      "partners": ["MDEQ", "SWCDs"],
+      "sourceExcerpt": "Teacher Workshops – train educators in proximity to the watershed about NPS pollution and provide materials and information..."
     }
   ],
   "geographicAreas": [
     {
       "huc": "080302040403",
       "watershedName": "Basket Creek-Hickahala Creek Watershed",
-      "counties": ["Tate County"],
-      "state": "Mississippi"
+      "counties": ["Tate"],
+      "state": "Mississippi",
+      "sourceExcerpt": "Basket Creek-Hickahala Creek watershed is located in Tate County and covers 35,085 acres. HUC 080302040403"
     },
     {
-      "name": "Hickahala Creek Drainage Area (DA)",
-      "counties": ["Tate County"],
-      "acreage": null,
-      "landUseTypes": null,
-      "population": null,
-      "towns": null,
-      "huc": "MS305E",
-      "description": "A drainage area included on Mississippi’s 1996 and 1998 Section 303(d) List as an 'evaluated' impairment. Subject to TMDLs for organic enrichment, low dissolved oxygen, and nutrients."
+      "watershedName": "Hickahala Creek (MS305E, MS305M2)",
+      "counties": ["Tate"],
+      "state": "Mississippi",
+      "sourceExcerpt": "A segment of Hickahala Creek (MS305M2) was also included on the 'monitored' portion... Figure 2 shows the extent of all three impaired reaches in the watershed (MS305E, MS305M2, and MS305M1)."
     },
     {
-      "name": "Hickahala Creek (Segment MS305M2)",
-      "counties": ["Tate County"],
-      "acreage": null,
-      "landUseTypes": null,
-      "population": null,
-      "towns": null,
-      "huc": "MS305M2",
-      "description": "A monitored segment of Hickahala Creek, listed as impaired for recreational use due to high fecal coliform levels."
-    },
-    {
-      "name": "James-Wolf Creek (Segment MS305M1)",
-      "counties": ["Tate County"],
-      "acreage": null,
-      "landUseTypes": null,
-      "population": null,
-      "towns": null,
-      "huc": "MS305M1",
-      "description": "A segment that flows into the watershed from the southwest, impaired for recreational use due to high fecal coliform. Confluences with Hickahala Creek."
+      "watershedName": "James-Wolf Creek (MS305M1)",
+      "counties": ["Tate"],
+      "state": "Mississippi",
+      "sourceExcerpt": "a segment of James-Wolf Creek (MS305M1) that flows into the watershed and confluences with Hickahala Creek"
     }
-  ],
-  "contacts": [],
-  "organizations": [
-    { "name": "Natural Resources Conservation Service", "contact": null },
-    {
-      "name": "Mississippi Soil and Water Conservation Commission",
-      "contact": null
-    },
-    {
-      "name": "Tate County Soil and Water Conservation District",
-      "contact": null
-    },
-    { "name": "USGS", "contact": null },
-    { "name": "MDEQ", "contact": null }
   ]
 }
