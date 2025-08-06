@@ -7,9 +7,17 @@ import cors from "cors";
 import uploadRoutes from "./routes/uploadRoutes";
 import accuracyRoutes from "./routes/accuracyRoutes";
 import { errorHandler } from "./middleware/errorHandler";
+import fs from "fs";
+import path from "path";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Ensure uploads directory exists at startup
+const uploadsDir = path.join(__dirname, "..", "uploads");
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir);
+}
 
 // CORS for frontend
 app.use(cors());
