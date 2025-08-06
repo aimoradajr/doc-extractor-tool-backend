@@ -107,7 +107,7 @@ Tests the accuracy of extraction using sample data presets.
 Edit the model in `src/services/openAIService.ts`:
 
 ```typescript
-const CURRENT_MODEL = "gpt-4.1"; // or "gpt-3.5-turbo", "gpt-4"
+const EXTRACT_MODEL = "gpt-4.1"; // or "gpt-3.5-turbo", "gpt-4"
 ```
 
 ### Prompt Management

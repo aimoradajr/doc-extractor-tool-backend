@@ -2,8 +2,8 @@ import OpenAI from "openai";
 import { ExtractedData, AccuracyTestResult } from "../types/types";
 
 // EASY MODEL SWITCHING - Just change this line!
-// const CURRENT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
-const CURRENT_MODEL = "gpt-4.1"; // Use gpt-4 for better accuracy
+// const EXTRACT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
+const EXTRACT_MODEL = "gpt-4.1"; // Use gpt-4 for better accuracy
 
 export class OpenAIService {
   private openai: OpenAI;
@@ -17,7 +17,7 @@ export class OpenAIService {
       apiKey: process.env.OPENAI_API_KEY,
     });
 
-    console.log(`Using ${CURRENT_MODEL} model`);
+    console.log(`Using ${EXTRACT_MODEL} model`);
   }
 
   async compareWithAI(
@@ -258,7 +258,7 @@ export class OpenAIService {
 
       // Enhanced configuration for GPT-4.1 to ensure JSON output
       const requestConfig: any = {
-        model: CURRENT_MODEL,
+        model: EXTRACT_MODEL,
         messages: [
           {
             role: "system",
@@ -275,7 +275,7 @@ export class OpenAIService {
       };
 
       // For GPT-4 models, use response_format to force JSON output
-      if (CURRENT_MODEL.includes("gpt-4")) {
+      if (EXTRACT_MODEL.includes("gpt-4")) {
         requestConfig.response_format = { type: "json_object" };
       }
 
@@ -294,13 +294,13 @@ export class OpenAIService {
         const structuredData = this.validateAndStructureData(extractedData);
 
         // Add the model information to the response
-        structuredData.model = CURRENT_MODEL;
+        structuredData.model = EXTRACT_MODEL;
 
         return structuredData;
       } catch (parseError) {
         const errorDetails = {
           operation: "DATA_EXTRACTION",
-          model: CURRENT_MODEL,
+          model: EXTRACT_MODEL,
           error:
             parseError instanceof Error
               ? parseError.message
@@ -318,7 +318,7 @@ export class OpenAIService {
         );
 
         throw new Error(
-          `EXTRACTION AI JSON parsing failed (${CURRENT_MODEL}): ${parseError}. ` +
+          `EXTRACTION AI JSON parsing failed (${EXTRACT_MODEL}): ${parseError}. ` +
             `Response ${
               errorDetails.truncated ? "was truncated" : "appears incomplete"
             }. ` +
@@ -327,11 +327,11 @@ export class OpenAIService {
         );
       }
     } catch (error) {
-      console.error(`EXTRACTION AI failed with ${CURRENT_MODEL}:`, error);
+      console.error(`EXTRACTION AI failed with ${EXTRACT_MODEL}:`, error);
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error occurred";
       throw new Error(
-        `EXTRACTION AI failed (${CURRENT_MODEL}): ${errorMessage}`
+        `EXTRACTION AI failed (${EXTRACT_MODEL}): ${errorMessage}`
       );
     }
   }
@@ -476,7 +476,7 @@ export class OpenAIService {
         }
 
         responseConfig = {
-          model: CURRENT_MODEL,
+          model: EXTRACT_MODEL,
           input: responseInput,
         };
       }
@@ -498,13 +498,13 @@ export class OpenAIService {
 
         // Add the model information to the response
         const inputType = typeof input === "string" ? "text" : "file";
-        structuredData.model = `${CURRENT_MODEL} (Responses API - ${inputType} input)`;
+        structuredData.model = `${EXTRACT_MODEL} (Responses API - ${inputType} input)`;
 
         return structuredData;
       } catch (parseError) {
         const errorDetails = {
           operation: "DATA_EXTRACTION_RESPONSES",
-          model: CURRENT_MODEL,
+          model: EXTRACT_MODEL,
           inputType: typeof input === "string" ? "text" : "file",
           error:
             parseError instanceof Error
@@ -521,7 +521,7 @@ export class OpenAIService {
         );
 
         throw new Error(
-          `EXTRACTION AI JSON parsing failed (${CURRENT_MODEL} Responses API): ${parseError}. ` +
+          `EXTRACTION AI JSON parsing failed (${EXTRACT_MODEL} Responses API): ${parseError}. ` +
             `Response appears incomplete. ` +
             `Content length: ${errorDetails.originalContentLength} chars. ` +
             `Preview: ${errorDetails.cleanedContentPreview}...`
@@ -529,13 +529,13 @@ export class OpenAIService {
       }
     } catch (error) {
       console.error(
-        `EXTRACTION AI failed with ${CURRENT_MODEL} (Responses API):`,
+        `EXTRACTION AI failed with ${EXTRACT_MODEL} (Responses API):`,
         error
       );
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error occurred";
       throw new Error(
-        `EXTRACTION AI failed (${CURRENT_MODEL} Responses API): ${errorMessage}`
+        `EXTRACTION AI failed (${EXTRACT_MODEL} Responses API): ${errorMessage}`
       );
     }
   }
@@ -919,7 +919,7 @@ CRITICAL: Return ONLY the JSON response. Do not wrap it in markdown code blocks 
     // Trust the AI to calculate reportSummary correctly with improved prompt
     // Only provide fallbacks if reportSummary is completely missing
     return {
-      model: CURRENT_MODEL, // Will be overridden by caller
+      model: EXTRACT_MODEL, // Will be overridden by caller
       reportSummary: data.reportSummary || {
         summary: data.reportSummary?.summary || "Summary not provided",
         watershedName:
