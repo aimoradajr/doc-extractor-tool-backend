@@ -4,6 +4,10 @@ import { ExtractedData, AccuracyTestResult } from "../types/types";
 // EASY MODEL SWITCHING - Now configured via .env (OPENAI_MODEL)
 const EXTRACT_MODEL = process.env.OPENAI_MODEL || "gpt-4.1";
 
+// Prompt ID for OpenAI Playground prompt (configurable via .env)
+const PROMPT_ID = process.env.OPENAI_PROMPT_ID;
+const PROMPT_VERSION = process.env.OPENAI_PROMPT_VERSION || "1";
+
 export class OpenAIService {
   private openai: OpenAI;
 
@@ -342,8 +346,8 @@ export class OpenAIService {
       let responseConfig: any;
 
       // prompt presets
-      const promptId = "pmpt_688f1bd9609c8196a4047f87ee2884dd00afa5e2eb852274"; // comment out to return to pass prompt
-      const promptVersion = "6";
+      const promptId = PROMPT_ID;
+      const promptVersion = PROMPT_VERSION;
 
       if (promptId) {
         // Use pre-created prompt from OpenAI Playground

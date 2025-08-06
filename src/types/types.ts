@@ -47,6 +47,7 @@ export interface ExtractedData {
   contacts?: Contact[];
   organizations?: Organization[];
   reportSummary?: ReportSummary;
+  prompt_id_used?: boolean;
 }
 
 // =============================================================================
