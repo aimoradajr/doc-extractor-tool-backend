@@ -18,24 +18,14 @@
   },
   "goals": [
     {
-      "description": "Achieve a 50% reduction in fecal coliform in the section of Hickahala Creek located within the Basket Creek-Hickahala Creek Watershed and a 70% reduction in James Wolf Creek.",
-      "schedule": "Project period as defined by TMDL and plan implementation",
+      "description": "Achieve the modeled nonpoint source (NPS) loads in the TMDL for nutrients by implementing conservation practices that target both TN, TP, and sediment reduction.",
+      "schedule": "During the project implementation period, through BMP installation.",
+      "sourceExcerpt": "In order to achieve the modeled NPS loads in the TMDL, nutrient BMPs will be implemented watershed. This will be done by implementing in-field conservation practices that target both TN, TP and sediment reduction as soils in MS are known to have high phosphorus content."
+    },
+    {
+      "description": "Reduce fecal coliform loading by 50% in Hickahala Creek and by 70% in James Wolf Creek within the watershed.",
+      "schedule": "During the project implementation period, in accordance with the 2003 TMDL.",
       "sourceExcerpt": "The Fecal Coliform TMDL for Hickahala Creek is calling for a 50% reduction in the section of Hickahala Creek that is located within the Basket Creek-Hickahala Creek Watershed. The same TMDL also calls for a 70% reduction in James Wolf Creek."
-    },
-    {
-      "description": "Ensure the maximum load of TBODu specified in the TMDL of 1,317 lbs/day will not be exceeded.",
-      "schedule": "Ongoing/NPDES permit period",
-      "sourceExcerpt": "These restrictions will ensure the maximum load of TBODu specified in the TMDL of 1,317 lbs/day will not be exceeded."
-    },
-    {
-      "description": "Implement nutrient BMPs to achieve reductions in TN, TP, and sediment loads as modeled in the TMDL.",
-      "schedule": "During grant/project implementation",
-      "sourceExcerpt": "In order to achieve the modeled NPS loads in the TMDL, nutrient BMPs will be implemented watershed. This will be done by implementing in-field conservation practices that target both TN, TP and sediment reduction."
-    },
-    {
-      "description": "Meet state water quality criteria for dissolved oxygen, nutrients, and E. coli in the watershed as detailed in Mississippi Water Quality Criteria.",
-      "schedule": "Throughout and after project, with post-BMP evaluation",
-      "sourceExcerpt": "The following thresholds will be used to measure compliance with water quality criteria: Dissolved Oxygen Daily Average of 5.0 mg/L; ... Total Nitrogen 0.940-1.110 mg/L ... E. coli 30-day geometric mean of 126 per 100 ml..."
     }
   ],
   "bmps": [
@@ -372,19 +362,7 @@
       "watershedName": "Basket Creek-Hickahala Creek Watershed",
       "counties": ["Tate"],
       "state": "Mississippi",
-      "sourceExcerpt": "Basket Creek-Hickahala Creek watershed is located in Tate County and covers 35,085 acres. HUC 080302040403"
-    },
-    {
-      "watershedName": "Hickahala Creek (MS305E, MS305M2)",
-      "counties": ["Tate"],
-      "state": "Mississippi",
-      "sourceExcerpt": "A segment of Hickahala Creek (MS305M2) was also included on the 'monitored' portion... Figure 2 shows the extent of all three impaired reaches in the watershed (MS305E, MS305M2, and MS305M1)."
-    },
-    {
-      "watershedName": "James-Wolf Creek (MS305M1)",
-      "counties": ["Tate"],
-      "state": "Mississippi",
-      "sourceExcerpt": "a segment of James-Wolf Creek (MS305M1) that flows into the watershed and confluences with Hickahala Creek"
+      "sourceExcerpt": "The Basket Creek-Hickahala Creek watershed is located in Tate County and covers 35,085 acres."
     }
   ]
 }
