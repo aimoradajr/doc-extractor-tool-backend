@@ -53,6 +53,7 @@ The backend accepts a watershed plan PDF and supports three extraction modes, de
 
 - Integrate other LLMs (e.g., Anthropic Claude, Google Gemini) for broader model support and cost/accuracy options.
 - Explore advanced PDF parsing libraries that can better identify tables, images, and document structure for richer extraction.
+- Develop a curated set of third-party PDF documents with corresponding ground truth data. This enables benchmarking extraction accuracy and facilitates automated evaluation and comparison of different extraction modes and models.
 
 ## Endpoint Summary
 
