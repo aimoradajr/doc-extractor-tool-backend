@@ -5,6 +5,9 @@ import { pdfService } from "../services/pdfService";
 import { accuracyService } from "../services/accuracyService";
 import { AccuracyTestResult } from "../types/types";
 
+// EASY MODEL SWITCHING - Now configured via .env (COMPARE_MODEL)
+const COMPARE_MODEL = process.env.COMPARE_MODEL || "gpt-4.1";
+
 // PRESET TEST CASES - Easy to add new ones!
 const PRESET_TESTS = {
   preset1: {
@@ -106,7 +109,7 @@ export class AccuracyController {
 
     // Get comparison mode from request body
     const compareMode = req.body.compare_mode || "ai"; // ai or default
-    const compareModeModel = req.body.compare_mode_model || "gpt-4.1";
+    const compareModeModel = req.body.compare_mode_model || COMPARE_MODEL;
 
     console.log(
       `Testing preset: ${preset} (${testCase.name}) with ${compareMode} comparison mode using ${extractMode} extraction`

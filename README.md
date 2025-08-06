@@ -54,6 +54,15 @@ Node.js API for PDF parsing, LLM-powered extraction, and data categorization.
    npm run dev
    ```
 
+## OpenAI API Key Permissions
+
+Your OpenAI API key must have the following permissions:
+
+- READ 'Models'
+- WRITE 'Model capabilities'
+- WRITE 'Files'
+- WRITE 'Responses API'
+
 ## 🚦 API Endpoints
 
 ### Data Extraction
