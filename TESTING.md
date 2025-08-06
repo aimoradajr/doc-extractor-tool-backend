@@ -99,4 +99,3 @@ The [frontend application](https://github.com/aimoradajr/doc-extractor-tool-fron
 - **F1 Score** = harmonic mean of precision and recall
 - Scores are reported overall and for each category (goals, bmps, implementation, etc).
 - Detailed comparisons show how each item was matched, partially matched, or missed.
-

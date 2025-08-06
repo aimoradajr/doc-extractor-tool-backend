@@ -1,26 +1,25 @@
 {
   "reportSummary": {
-    "summary": "The Bell Creek-West Prong Muddy Creek Watershed Implementation Plan aims to reduce nutrient and sediment loading to meet water quality standards and improve aquatic life support in the Bell Creek and West Prong Muddy Creek watersheds in Tippah County, Mississippi. The plan covers a three-year project period from 2011 to 2014, detailing BMP installations, education and outreach efforts, a monitoring strategy, and stakeholder involvement to address biological impairments identified through TMDLs.",
+    "summary": "The Bell Creek-West Prong Muddy Creek Watershed Implementation Plan aims to reduce nutrient and sediment loadings to meet water quality standards for Low Dissolved Oxygen (DO)/Organic enrichment, nutrients, and support Fish and Wildlife designated uses. Targeting agricultural lands in Tippah County, the plan implements Best Management Practices (BMPs), conducts education/outreach, and monitors water quality over a three-year project period from 2012 to 2014.",
     "watershedName": "Bell Creek-West Prong Muddy Creek Watershed",
     "planTitle": "Bell Creek-West Prong Muddy Creek Watershed Implementation Plan",
-    "planDate": "2011",
+    "planDate": "2012-2014",
     "authors": [],
     "organizations": [
       "Mississippi Soil and Water Conservation Commission",
-      "Mississippi Department of Environmental Quality",
-      "Tippah County Soil and Water Conservation District",
       "Natural Resources Conservation Service",
-      "United States Geological Survey",
-      "Mississippi State University"
+      "Tippah County Soil and Water Conservation District",
+      "Mississippi Department of Environmental Quality",
+      "Environmental Protection Agency"
     ],
     "geographicRegion": "Tippah County, Mississippi",
     "totalGoals": 1,
-    "totalBMPs": 11,
+    "totalBMPs": 10,
     "completionRate": 0
   },
   "goals": [
     {
-      "description": "Reduce nutrient and sediment loading to achieve water quality standards for Low DO/Organic enrichment, nutrient narrative standards, and Fish and Wildlife Support designated use.",
+      "description": "Reduce nutrient and sediment loading to achieve standards for Low DO/Organic enrichment and narrative standards for nutrient loading and Fish and Wildlife Support designated use.",
       "schedule": "2012-2014",
       "sourceExcerpt": "Reduce nutrient and sediment loading, achieve standards for Low DO/Organic enrichment and narrative standards for nutrient loading, and Fish and Wildlife Support designated use"
     }
@@ -28,122 +27,147 @@
   "bmps": [
     {
       "name": "Streambank and Shoreline Protection",
-      "description": "Installation of streambank and shoreline protection structures to reduce sediment input.",
+      "description": "Protect and stabilize 2,500 feet of streambank and shoreline to reduce sediment input.",
       "type": "Sediment",
-      "targetAreas": ["Streams", "Creeks"],
+      "targetAreas": ["Streambanks", "Shorelines"],
       "quantity": 2500,
-      "unit": "ft",
+      "unit": "feet",
       "estimatedCost": 172904,
       "schedule": "2012-2014",
       "sourceExcerpt": "Streambank and Shoreline Protection 2,500 feet $69.17/ft $172,904"
     },
     {
       "name": "Grade Stabilization Structures",
-      "description": "Construct grade stabilization structures to control erosion and sedimentation.",
+      "description": "Install 12 grade stabilization structures to reduce erosion in gullies and drainage ways.",
       "type": "Sediment",
-      "targetAreas": ["Eroded areas", "Critical areas"],
+      "targetAreas": ["Gullies", "Drainage ways"],
       "quantity": 12,
-      "unit": "ea",
+      "unit": "structures",
       "estimatedCost": 78000,
       "schedule": "2012-2014",
       "sourceExcerpt": "Grade Stabilization Structure 12 structures $6,500 /ea $78,000"
     },
     {
       "name": "Pasture and Hay Land Planting",
-      "description": "Planting pasture and hay lands to reduce sediment and nutrient loading.",
-      "type": "Nutrient|Sediment",
-      "targetAreas": ["Pasture land", "Hay land"],
+      "description": "Plant 100 acres of pasture and hay land to reduce erosion and nutrient runoff.",
+      "type": "Sediment|Nutrient",
+      "targetAreas": ["Pastureland", "Hay land"],
       "quantity": 100,
-      "unit": "ac",
+      "unit": "acres",
       "estimatedCost": 20000,
       "schedule": "2012-2014",
       "sourceExcerpt": "Pasture and Hay Land Planting 100 acres $200/ac $20,000"
     },
     {
       "name": "Water and Sediment Control Basins",
-      "description": "Construct basins to control water flow and reduce sediment transport.",
+      "description": "Construct 4 water and sediment control basins to reduce sediment runoff from agricultural lands.",
       "type": "Sediment",
-      "targetAreas": ["Agricultural land"],
+      "targetAreas": ["Agricultural runoff areas"],
       "quantity": 4,
-      "unit": "ea",
+      "unit": "structures",
       "estimatedCost": 40000,
       "schedule": "2012-2014",
       "sourceExcerpt": "Water and Sediment Control Basin 4 structures $10,000/ ea $40,000"
     },
     {
       "name": "Nutrient Management",
-      "description": "Practice nutrient management on agricultural lands to reduce nutrient runoff.",
+      "description": "Manage nutrients on 700 acres to reduce nutrient runoff and loading.",
       "type": "Nutrient",
-      "targetAreas": ["Agricultural land"],
+      "targetAreas": ["Agricultural lands"],
       "quantity": 700,
-      "unit": "ac",
+      "unit": "acres",
       "estimatedCost": 72156,
       "schedule": "2012-2014",
       "sourceExcerpt": "Nutrient Management 700 acres $103.80/ac $72,156"
     },
     {
       "name": "Tank/Trough",
-      "description": "Install watering tanks and troughs for livestock to reduce stream access.",
-      "type": "Pathogen|Nutrient",
-      "targetAreas": ["Pasture"],
+      "description": "Install 5 tank/trough systems to provide alternate water for livestock and reduce stream access.",
+      "type": "Pathogen|Nutrient|Sediment",
+      "targetAreas": ["Livestock pastures", "Stream buffers"],
       "quantity": 5,
-      "unit": "ea",
+      "unit": "each",
       "estimatedCost": 12500,
       "schedule": "2012-2014",
       "sourceExcerpt": "Tank/Trough 5 each $2,500/ea $12,500"
     },
     {
       "name": "Diversions",
-      "description": "Install diversions to redirect runoff and reduce sediment loads.",
+      "description": "Install 1,200 feet of diversions to manage runoff and reduce sediment transport.",
       "type": "Sediment",
-      "targetAreas": ["Agricultural runoff areas"],
+      "targetAreas": ["Agricultural lands"],
       "quantity": 1200,
-      "unit": "ft",
+      "unit": "feet",
       "estimatedCost": 1440,
       "schedule": "2012-2014",
       "sourceExcerpt": "Diversions 1,200 feet $1.20/ft $1,440"
     },
     {
       "name": "Heavy Use Area Protection",
-      "description": "Protect heavy use areas to reduce soil erosion and compaction.",
-      "type": "Sediment",
-      "targetAreas": ["Heavy use livestock/equipment areas"],
+      "description": "Install 4 heavy use area protection sites to reduce sediment and nutrient export.",
+      "type": "Sediment|Nutrient",
+      "targetAreas": ["Livestock concentration areas"],
       "quantity": 4,
-      "unit": "ea",
+      "unit": "each",
       "estimatedCost": 10000,
       "schedule": "2012-2014",
       "sourceExcerpt": "Heavy Use Area Protection 4 each $2,500/ea $10,000"
     },
     {
       "name": "Fencing",
-      "description": "Install fencing to control livestock access and reduce nutrient and sediment input to streams.",
-      "type": "Pathogen|Nutrient|Sediment",
-      "targetAreas": ["Pasture", "Streambanks"],
+      "description": "Install 10,000 feet of fencing to prevent livestock access to streams and reduce sedimentation.",
+      "type": "Sediment|Pathogen",
+      "targetAreas": ["Streams", "Riparian zones"],
       "quantity": 10000,
-      "unit": "ft",
+      "unit": "feet",
       "estimatedCost": 13000,
       "schedule": "2012-2014",
       "sourceExcerpt": "Fencing 10,000 feet $1.30/ft $13,000"
     },
     {
       "name": "Critical Area Planting",
-      "description": "Plant critical areas to reduce erosion and improve water quality.",
+      "description": "Plant 100 acres in critical areas to stabilize soils and reduce runoff.",
       "type": "Sediment|Nutrient",
-      "targetAreas": ["Critical erosion areas"],
+      "targetAreas": ["Critical erosion-prone areas"],
       "quantity": 100,
-      "unit": "ac",
+      "unit": "acres",
       "estimatedCost": 30000,
       "schedule": "2012-2014",
       "sourceExcerpt": "Critical Area Planting 100 acres $300/ac $30,000"
     }
   ],
+  "monitoring": [
+    {
+      "parameter": "Biological Impairment (Nutrients and Low DO/Organic Enrichment)",
+      "type": "biological",
+      "method": "Stress identification studies and biological sampling",
+      "frequency": "Ongoing during and after project",
+      "thresholds": [],
+      "locations": [
+        "Muddy Creek watershed",
+        "Bell Creek-West Prong Muddy Creek subwatershed"
+      ],
+      "sourceExcerpt": "Muddy Creek has 2 Total Maximum Daily Load (TMDL) documents ... biological impairment due to Nutrients and Low Dissolved Oxygen (DO)/Organic Enrichment."
+    },
+    {
+      "parameter": "Fecal Coliform",
+      "type": "microbiological",
+      "method": "Sampling for fecal coliform bacteria",
+      "frequency": "Ongoing during and after project",
+      "thresholds": [
+        {
+          "parameter": "Fecal Coliform",
+          "description": "May-October: geometric mean ≤ 200 per 100ml (5 samples over 30 days) with ≤ 400 per 100ml more than 10% of time. November-April: geometric mean ≤ 2000 per 100ml with ≤ 4000 per 100ml more than 10% of time."
+        }
+      ],
+      "locations": ["Muddy Creek watershed"],
+      "sourceExcerpt": "A fecal coliform TMDL has been developed for an evaluated water body segment of Muddy Creek, MS206E ..."
+    }
+  ],
   "implementation": [
     {
-      "description": "Assist NRCS, USGS, Tippah County SWCD, and MDEQ in forming Watershed Implementation Team (WIT).",
+      "description": "Assist NRCS, USGS, and Tippah County SWCD, with MDEQ support, in developing the Watershed Implementation Team (WIT).",
       "responsibleParties": [
-        {
-          "name": "MSWCC"
-        },
         {
           "name": "NRCS"
         },
@@ -157,216 +181,252 @@
           "name": "MDEQ"
         }
       ],
-      "status": "planned",
-      "sourceExcerpt": "Assist NRCS, USGS, and Tippah County SWCD, with assistance from MDEQ, in the development of a Watershed Implementation Team (WIT)."
+      "status": "completed",
+      "sourceExcerpt": "Assist NRCS, USGS, and the Tippah County Soil and Water Conservation District (SWCD), with assistance from Mississippi Department of Environmental Quality (MDEQ), in the development of a Watershed Implementation Team (WIT)."
     },
     {
-      "description": "Develop Watershed Implementation Plan consistent with guidance and WIT input.",
+      "description": "Develop a Watershed Implementation Plan (WIP) consistent with MDEQ guidance and WIT assistance.",
       "responsibleParties": [
         {
-          "name": "MSWCC"
+          "name": "WIT"
         },
         {
-          "name": "Watershed Implementation Team"
+          "name": "MSWCC"
         }
       ],
-      "status": "planned",
+      "status": "completed",
       "sourceExcerpt": "Develop a Watershed Implementation Plan (WIP) consistent with MDEQ guidance and assistance from the WIT."
     },
     {
-      "description": "Assist in development and implementation of watershed monitoring plan.",
+      "description": "Develop and implement a watershed monitoring plan.",
       "responsibleParties": [
         {
-          "name": "MSWCC"
-        },
-        {
-          "name": "MDEQ"
-        },
-        {
-          "name": "USGS"
+          "name": "WIT"
         }
       ],
-      "status": "planned",
+      "status": "in progress",
       "sourceExcerpt": "Assist in the development and implementation of a watershed monitoring plan for the project."
     },
     {
-      "description": "Conduct landowner meetings, obtain commitments, and develop conservation plans.",
+      "description": "Conduct watershed surveys to identify priority pollutant load areas.",
       "responsibleParties": [
         {
-          "name": "Tippah County SWCD"
-        },
-        {
-          "name": "NRCS"
-        },
-        {
-          "name": "MSWCC"
+          "name": "WIT"
         }
       ],
-      "status": "planned",
-      "sourceExcerpt": "Conduct a landowner meeting to inform potential participants about the project...Develop plans for BMPs...Assist landowners in installation of appropriate BMPs."
+      "status": "in progress",
+      "sourceExcerpt": "Determine through intensive surveys, priority areas that are contributing significant pollutant loads in the watershed."
     },
     {
-      "description": "Establish demonstration farms and hold informational field days/tours.",
+      "description": "Inform public, landowners, and stakeholders and secure participation commitments.",
       "responsibleParties": [
         {
-          "name": "MSWCC"
-        },
-        {
-          "name": "Tippah County SWCD"
-        },
-        {
-          "name": "NRCS"
+          "name": "WIT"
         }
       ],
-      "status": "planned",
-      "sourceExcerpt": "Establish at least two demonstration farms...Provide at least two informational field days/tours."
+      "status": "in progress",
+      "sourceExcerpt": "Inform the public, landowners, and other stakeholders within the project area about the project and secure commitments from priority landowners and others willing to participate in the project."
     },
     {
-      "description": "Erect signage identifying BMP locations and distribute educational materials.",
+      "description": "Develop BMP plans as approved in the WIP.",
       "responsibleParties": [
         {
-          "name": "MSWCC"
+          "name": "WIT"
+        }
+      ],
+      "status": "in progress",
+      "sourceExcerpt": "Develop plans for Best Management Practices (BMPs) in accordance with approved WIP."
+    },
+    {
+      "description": "Assist landowners/operators in BMP installation and collect pre/post soil loss and GPS data to incorporate into GIS.",
+      "responsibleParties": [
+        {
+          "name": "WIT"
+        }
+      ],
+      "status": "in progress",
+      "sourceExcerpt": "Assist landowners and operators in the installation of appropriate BMPs and collect before and after soil loss and GPS coordinates each installed BMP and incorporate into a GIS format."
+    },
+    {
+      "description": "Establish demonstration farms and conduct field days/tours to educate public about BMPs.",
+      "responsibleParties": [
+        {
+          "name": "WIT"
+        }
+      ],
+      "status": "in progress",
+      "sourceExcerpt": "Establish at least two (2) demonstration farms to inform the public about BMPs and provide a least two (2) informational field days/tours."
+    },
+    {
+      "description": "Develop and distribute informational fact sheets and publish articles about the project.",
+      "responsibleParties": [
+        {
+          "name": "WIT"
+        }
+      ],
+      "status": "in progress",
+      "sourceExcerpt": "Develop and distribute no fewer than 1,000 fact sheets highlighting benefits and publish no fewer than 4 articles about the project."
+    },
+    {
+      "description": "Erect project roadside signs at BMP sites.",
+      "responsibleParties": [
+        {
+          "name": "WIT"
+        },
+        {
+          "name": "Landowners"
+        }
+      ],
+      "status": "in progress",
+      "sourceExcerpt": "Erect no fewer than 20 project roadside signs where BMPs are installed."
+    },
+    {
+      "description": "Document site conditions with before and after photography and MDEQ inspections.",
+      "responsibleParties": [
+        {
+          "name": "WIT"
         },
         {
           "name": "MDEQ"
-        },
-        {
-          "name": "Tippah County SWCD"
-        },
-        {
-          "name": "NRCS"
         }
       ],
-      "status": "planned",
-      "sourceExcerpt": "Erect no fewer than 20 project roadside signs where water quality practices are installed...Develop and distribute fact sheets."
+      "status": "in progress",
+      "sourceExcerpt": "Document pre-existing site conditions and improvements by conducting before and after photo documentation. Assist MDEQ in inspections during construction."
     },
     {
-      "description": "Monitor pollutant load reductions through water quality monitoring and photo documentation.",
+      "description": "Secure maintenance agreements with landowners for BMPs with a 10-year maintenance period.",
       "responsibleParties": [
         {
-          "name": "MSWCC"
+          "name": "WIT"
         },
         {
-          "name": "MDEQ"
-        },
-        {
-          "name": "USGS"
+          "name": "Landowners"
         }
       ],
       "status": "planned",
-      "sourceExcerpt": "Post BMP monitoring...Photo documentation...Collect GPS coordinates and data on all BMPs installed."
+      "sourceExcerpt": "Secure maintenance agreements from cooperators/landowners in accordance with MSWCC state cost-share guidelines."
     },
     {
-      "description": "Submit bi-annual and final reports to MDEQ documenting project progress and outcomes.",
+      "description": "Submit bi-annual reports and final report to MDEQ.",
       "responsibleParties": [
         {
-          "name": "MSWCC"
+          "name": "WIT"
         }
       ],
-      "status": "planned",
-      "sourceExcerpt": "Submit bi-annual reports...Make final report to MDEQ."
-    }
-  ],
-  "monitoring": [
-    {
-      "parameter": "Biological Impairment due to Nutrients and Low Dissolved Oxygen",
-      "type": "biological and chemical",
-      "method": "Water sampling and monitoring plan developed and implemented by USGS, MDEQ, and partners",
-      "frequency": "Pre- and post-BMP monitoring over project period",
-      "thresholds": [
-        {
-          "parameter": "Dissolved Oxygen",
-          "description": "Daily average not less than 5.0 mg/L with instantaneous minimum not less than 4.0 mg/L"
-        },
-        {
-          "parameter": "Nutrients",
-          "description": "Waters shall be free from pollutants that create harmful conditions per narrative standards (no numeric criteria)"
-        },
-        {
-          "parameter": "Fecal Coliform",
-          "description": "Geometric means and maximums per season as per 2002 Water Quality Standards"
-        }
-      ],
-      "locations": [
-        "Bell Creek",
-        "West Prong Muddy Creek",
-        "Muddy Creek Watershed"
-      ],
-      "sourceExcerpt": "Water samples will be taken and analyzed for organic enrichment/low dissolved oxygen and nutrient content. After BMPs are installed, additional samples will be taken and analyzed to determine load reduction."
+      "status": "in progress",
+      "sourceExcerpt": "Submit bi-annual reports by every September 25th and March 25th of each year showing status of tasks and start/completion dates. Submit final report to MDEQ."
     }
   ],
   "outreach": [
     {
       "type": "signage",
-      "description": "Install signs at BMP sites to identify installed practices to landowners and public.",
-      "schedule": "As BMPs are completed through project period",
-      "indicator": "Number of signs erected (minimum 20)",
-      "partners": ["MSWCC", "MDEQ", "Tippah County SWCD", "NRCS", "EPA"],
+      "description": "Erect signs identifying BMP installations throughout the watershed with landowner permission; conduct field days to showcase these BMPs.",
+      "schedule": "As BMPs are completed, 2012-2014",
+      "indicator": "Number of field days held, BMP signs installed",
+      "partners": [
+        "Mississippi Soil and Water Conservation Commission",
+        "Mississippi Department of Environmental Quality",
+        "Tippah County Soil and Water Conservation District",
+        "Natural Resources Conservation Service",
+        "Environmental Protection Agency"
+      ],
       "sourceExcerpt": "Signs identifying the BMPs that have been installed will be erected throughout the watershed upon permission of landowners."
     },
     {
-      "type": "landowner meetings and field days",
-      "description": "Conduct meetings and field days to inform landowners and public about BMP implementation and benefits.",
+      "type": "landowner meeting and field days",
+      "description": "Host a landowner meeting and at least two field days to inform and showcase BMP efforts.",
       "schedule": "2012-2014",
-      "indicator": "Attendance counts and new participants installing BMPs",
-      "partners": ["MSWCC", "MDEQ", "Tippah County SWCD", "NRCS", "EPA"],
-      "sourceExcerpt": "There will be a landowner meeting held to inform landowners...at least two field days to highlight the BMPs."
+      "indicator": "Attendance at meetings/field days and BMP installation increase",
+      "partners": [
+        "Mississippi Soil and Water Conservation Commission",
+        "Mississippi Department of Environmental Quality",
+        "Tippah County Soil and Water Conservation District",
+        "Natural Resources Conservation Service",
+        "Environmental Protection Agency"
+      ],
+      "sourceExcerpt": "There will be a landowner meeting held ... two field days held to highlight the BMPs that have been installed."
     },
     {
       "type": "fact sheets",
-      "description": "Develop and distribute 1,000 fact sheets about the project and BMP results.",
-      "schedule": "End of project",
-      "indicator": "Number distributed",
-      "partners": ["MSWCC", "Tippah County SWCD", "NRCS"],
-      "sourceExcerpt": "A fact sheet will be developed at the end of the project...1,000 fact sheets will be designed and distributed."
+      "description": "Develop and distribute 1,000 fact sheets about watershed, BMPs installed, soil saved, and acres impacted.",
+      "schedule": "Developed once BMP installation is complete",
+      "indicator": "Number of fact sheets distributed",
+      "partners": [
+        "Mississippi Soil and Water Conservation Commission",
+        "Tippah County Soil and Water Conservation District",
+        "Natural Resources Conservation Service"
+      ],
+      "sourceExcerpt": "A fact sheet will be developed at the end of the project ... 1,000 fact sheets will be designed and distributed."
     },
     {
-      "type": "puppet show",
-      "description": "Present Watershed Harmony Puppet Show to promote water quality awareness.",
+      "type": "education - Watershed Harmony Puppet Show",
+      "description": "Present Watershed Harmony musical puppet show promoting water quality stewardship aligned with educational standards.",
       "schedule": "Before August 2014",
-      "indicator": "Participants documented",
-      "partners": ["MDEQ", "Bayou Town Productions"],
-      "sourceExcerpt": "Watershed Harmony will be presented before August 2014."
+      "indicator": "Attendance documented",
+      "partners": [
+        "Mississippi Department of Environmental Quality",
+        "Bayou Town Productions"
+      ],
+      "sourceExcerpt": "Watershed Harmony is a musical puppet performance ... promoting water quality in their communities."
     },
     {
-      "type": "county fair exhibit",
-      "description": "Set up booth at Tippah County Fair with project materials and activities for children and adults.",
-      "schedule": "3 consecutive years",
-      "indicator": "Brochures and coloring books distributed",
-      "partners": ["MSWCC", "MDEQ", "Tippah County SWCD"],
-      "sourceExcerpt": "A booth will be set up at the fair...Coloring books and crayons will be given to children on family night."
+      "type": "fair exhibit",
+      "description": "Set up an exhibit booth at Tippah County Fair with educational materials, pictures of BMPs, and activities for children.",
+      "schedule": "Three consecutive years during the fair",
+      "indicator": "Number of brochures and coloring books handed out",
+      "partners": [
+        "Mississippi Soil and Water Conservation Commission",
+        "Mississippi Department of Environmental Quality",
+        "Tippah County Soil and Water Conservation District"
+      ],
+      "sourceExcerpt": "A booth will be set up at the fair ... with information available to patrons ... Sam E Soil coloring books will be given to children."
     },
     {
       "type": "water bill mailers",
-      "description": "Design and mail flyers to watershed homes informing homeowners about water quality protection.",
+      "description": "Design and mail flyers with water quality improvement tips to watershed residents with their water bills.",
       "schedule": "Before August 2014",
-      "indicator": "Number of flyers sent",
-      "partners": ["MSWCC", "MDEQ", "Tippah County SWCD"],
+      "indicator": "Number of flyers mailed",
+      "partners": [
+        "Mississippi Soil and Water Conservation Commission",
+        "Mississippi Department of Environmental Quality",
+        "Tippah County Soil and Water Conservation District"
+      ],
       "sourceExcerpt": "A flyer will be designed and mailed out to the homes in the Bell/Muddy watershed."
     },
     {
       "type": "presentations",
-      "description": "Make presentations to civic organizations about water quality and nonpoint source pollution.",
+      "description": "Make presentations to civic organizations to inform about water quality and nonpoint source pollution.",
       "schedule": "Before August 2014",
       "indicator": "Attendance numbers documented",
-      "partners": ["MSWCC", "MDEQ", "Tippah County SWCD"],
+      "partners": [
+        "Mississippi Soil and Water Conservation Commission",
+        "Mississippi Department of Environmental Quality",
+        "Tippah County Soil and Water Conservation District"
+      ],
       "sourceExcerpt": "Presentations relating to water quality will be made to civic organizations."
     },
     {
       "type": "radio advertisements",
-      "description": "Run radio ads to inform about water quality and nonpoint source pollution.",
+      "description": "Run radio ads on local stations five times daily for two weeks about water quality and nonpoint pollution.",
       "schedule": "Before August 2014",
       "indicator": "Number of ads run and produced",
-      "partners": ["MSWCC", "MDEQ", "Tippah County SWCD"],
-      "sourceExcerpt": "Radio advertisements will be run on the local radio station."
+      "partners": [
+        "Mississippi Soil and Water Conservation Commission",
+        "Mississippi Department of Environmental Quality",
+        "Tippah County Soil and Water Conservation District"
+      ],
+      "sourceExcerpt": "Radio advertisements will be run on the local radio station to inform people about water quality and nonpoint source pollution."
     },
     {
-      "type": "adopt-a-stream",
-      "description": "Conduct Adopt-A-Stream workshops to promote watershed stewardship and monitoring.",
-      "schedule": "At least one event before September 2014",
-      "indicator": "Participants and adopters documented",
-      "partners": ["MDEQ", "Mississippi Wildlife Federation"],
-      "sourceExcerpt": "At least one event will take place before September 30, 2014."
+      "type": "Adopt-A-Stream workshop",
+      "description": "Conduct at least one Adopt-A-Stream workshop promoting watershed stewardship and education.",
+      "schedule": "Before September 30, 2014",
+      "indicator": "Number of participants and continuation of adoption activities",
+      "partners": [
+        "Mississippi Department of Environmental Quality",
+        "Mississippi Wildlife Federation"
+      ],
+      "sourceExcerpt": "Adopt-A-Stream is a program that promotes environmental stewardship through training workshops..."
     }
   ],
   "geographicAreas": [
@@ -375,13 +435,14 @@
       "watershedName": "Muddy Creek Watershed",
       "counties": ["Tippah"],
       "state": "Mississippi",
-      "sourceExcerpt": "The Muddy Creek Watershed is approximately 63,682 acres...Hydrologic Unit Code (HUC) code for the watershed is 08010207."
+      "sourceExcerpt": "The Bell Creek-West Prong Muddy Creek Watershed is located in Tippah County, Mississippi ... The watershed ID number is 0601, and the Hydrologic Unit Code (HUC) code for the watershed is 08010207."
     },
     {
+      "huc": null,
       "watershedName": "Bell Creek-West Prong Muddy Creek Subwatershed",
       "counties": ["Tippah"],
       "state": "Mississippi",
-      "sourceExcerpt": "The targeted area of this watershed is the Bell Creek-West Prong Muddy Creek Subwatershed...19,277 acres located within the watershed boundaries."
+      "sourceExcerpt": "The targeted area of this watershed is the Bell Creek-West Prong Muddy Creek Subwatershed ... approximately 19,277 acres."
     }
   ],
   "contacts": [
@@ -389,20 +450,22 @@
       "name": "Mark Gilbert",
       "role": "Project Manager",
       "organization": "Mississippi Soil and Water Conservation Commission",
-      "phone": "601-354-7645",
+      "phone": "(601) 354-7645",
       "email": "mgilbert@mswcc.state.ms.us"
     },
     {
       "name": "Tippah County Soil and Water Conservation District",
-      "role": "Local Coordinator",
+      "role": "Project Partner and Local Oversight",
       "organization": "Tippah County Soil and Water Conservation District",
-      "phone": "662-837-4464 ext. 3"
+      "phone": "662-837-4464 ext. 3",
+      "email": null
     },
     {
-      "name": "Natural Resources Conservation Service",
+      "name": "Natural Resources Conservation Service (NRCS)",
       "role": "Technical Assistance",
-      "organization": "USDA NRCS",
-      "phone": "662-837-4464 ext. 3"
+      "organization": "NRCS",
+      "phone": "662-837-4464 ext. 3",
+      "email": null
     }
   ],
   "organizations": [
@@ -416,29 +479,30 @@
     {
       "name": "Tippah County Soil and Water Conservation District",
       "contact": {
-        "role": "Local Coordinator"
+        "name": null,
+        "role": "Local project coordination and outreach"
       }
     },
     {
       "name": "Natural Resources Conservation Service",
       "contact": {
-        "role": "Technical Assistance"
+        "name": null,
+        "role": "Technical and planning assistance"
       }
     },
     {
-      "name": "Mississippi Department of Environmental Quality"
+      "name": "Mississippi Department of Environmental Quality",
+      "contact": {
+        "name": "Janet Chapman",
+        "role": "Environmental Quality Oversight"
+      }
     },
     {
-      "name": "Mississippi State University"
-    },
-    {
-      "name": "United States Geological Survey"
-    },
-    {
-      "name": "Mississippi Wildlife Federation"
-    },
-    {
-      "name": "Environmental Protection Agency"
+      "name": "Environmental Protection Agency",
+      "contact": {
+        "name": null,
+        "role": "Grant funding and oversight"
+      }
     }
   ]
 }
