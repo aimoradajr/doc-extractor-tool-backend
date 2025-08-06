@@ -53,7 +53,11 @@ The backend accepts a watershed plan PDF and supports three extraction modes, de
 
 - Integrate other LLMs (e.g., Anthropic Claude, Google Gemini) for broader model support and cost/accuracy options.
 - Explore advanced PDF parsing libraries that can better identify tables, images, and document structure for richer extraction.
+- Use cheaper or faster AI models (e.g., gpt-4.1-nano) or apply fine-tuning for cost savings and improved performance.
 - Develop a curated set of third-party PDF documents with corresponding ground truth data. This enables benchmarking extraction accuracy and facilitates automated evaluation and comparison of different extraction modes and models.
+- Support for larger PDF files beyond the current limit.
+
+> **Note:** The largest PDF file tested so far is 6MB. Supporting larger files is a future improvement area.
 
 ## Endpoint Summary
 

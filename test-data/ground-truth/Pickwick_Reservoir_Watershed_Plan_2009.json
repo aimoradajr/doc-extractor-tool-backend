@@ -1,19 +1,19 @@
 {
   "reportSummary": {
-    "summary": "This watershed management plan, focused on the Pickwick Reservoir Watersheds in northeast Mississippi, outlines strategies to address water quality impairments in the Bear, Yellow, and Indian Creek watersheds. The plan emphasizes reduction of sediment and nutrient loads, implementation of BMPs, and public outreach, with the goal of restoring listed streams and protecting public and ecological health across the region.",
+    "summary": "The Pickwick Reservoir Watershed Management Plan addresses water quality impairments in Yellow Creek, Indian Creek, Bear Creek, and their tributaries in northeast Mississippi. The plan seeks to reduce sediment, nitrogen, and phosphorus, restore aquatic habitats, and remove impaired stream segments from the 303(d) list through a wide suite of management practices, monitoring, and coordinated outreach over a three-year initial period.",
     "watershedName": "Pickwick Reservoir Watersheds",
-    "planTitle": "Pickwick Reservoir Watersheds (MS-06030005 and MS-0603006, in part) Watershed Management Plan",
-    "planDate": "2008",
+    "planTitle": "Pickwick Reservoir Watershed Management Plan",
+    "planDate": null,
     "authors": [],
     "organizations": [
       "Pickwick Reservoir Watershed Implementation Team",
       "Tennessee Valley Authority",
       "Tishomingo County Soil and Water Conservation District",
-      "Mississippi Department of Environmental Quality",
       "Alcorn County Soil and Water Conservation District",
       "US Environmental Protection Agency",
       "US Fish and Wildlife Service",
       "Geological Survey of Alabama",
+      "Mississippi Department of Environmental Quality",
       "Mississippi Department of Wildlife, Fisheries and Parks",
       "Mississippi Forestry Commission",
       "Mississippi Rural Water Association",
@@ -26,172 +26,191 @@
       "The Nature Conservancy",
       "Local land owners and users"
     ],
-    "geographicRegion": "Tishomingo County, Mississippi (plus portions of adjacent counties and Alabama)",
+    "geographicRegion": "Northeast Mississippi (Tishomingo, Alcorn, and Prentiss Counties)",
     "totalGoals": 8,
-    "totalBMPs": 11,
+    "totalBMPs": 12,
     "completionRate": 0
   },
   "goals": [
     {
-      "description": "Develop a mechanism for removing Caney, Bear, Cripple Deer, and Little Cripple Deer Creeks and Holly Branch from MDEQ’s list of impaired waters.",
+      "description": "Develop a mechanism for removing Caney, Bear, Cripple Deer, and Little Cripple Deer Creeks and Holly Branch from MDEQ’s list of impaired waters and return these streams to conditions needed to support the natural biological communities typical of this region.",
       "schedule": "Long-term",
-      "sourceExcerpt": "The long-term goal of those creating the Pickwick Reservoir watershed plan is to develop a mechanism for removing Caney, Bear, Cripple Deer, and Little Cripple Deer Creeks and Holly Branch from MDEQ’s list of impaired waters..."
+      "sourceExcerpt": "The long-term goal ... is to develop a mechanism for removing Caney, Bear, Cripple Deer, and Little Cripple Deer Creeks and Holly Branch from MDEQ’s list of impaired waters and return these streams to conditions needed to support the natural biological communities typical of this region."
     },
     {
       "description": "Establish a locally-led watershed team to address water quality issues.",
       "schedule": "First three years of the project",
-      "sourceExcerpt": "Short-term goals to be achieved during the first three years of this project will include: • Establishment of a locally-led watershed team to address water quality issues."
+      "sourceExcerpt": "Short-term goals to be achieved during the first three years ... Establishment of a locally-led watershed team to address water quality issues."
     },
     {
-      "description": "Completion of a Source Water Protection Plan for the Short Coleman Water Association.",
+      "description": "Complete a Source Water Protection Plan for the Short Coleman Water Association.",
       "schedule": "First three years of the project",
-      "sourceExcerpt": "• Completion of a Source Water Protection Plan for the Short Coleman Water Association."
+      "sourceExcerpt": "Completion of a Source Water Protection Plan for the Short Coleman Water Association."
     },
     {
-      "description": "Documentation of baseline conditions for sediment, nitrogen and phosphorus loading in all listed stream segments.",
+      "description": "Document baseline conditions for sediment, nitrogen, and phosphorus loading in all listed stream segments.",
       "schedule": "First three years of the project",
-      "sourceExcerpt": "• Documentation of baseline conditions for sediment, nitrogen and phosphorus loading in all listed stream segments."
+      "sourceExcerpt": "Documentation of baseline conditions for sediment, nitrogen and phosphorus loading in all listed stream segments."
     },
     {
-      "description": "Reduce sediment, nitrogen, and phosphorus loads in listed streams.",
-      "schedule": "First three years of the project (ongoing)",
-      "sourceExcerpt": "• Reduction in sediment, nitrogen and phosphorus loads.*"
+      "description": "Reduce sediment, nitrogen, and phosphorus loads.",
+      "schedule": "First three years of the project (with targets determined as baseline data become available)",
+      "sourceExcerpt": "Reduction in sediment, nitrogen and phosphorus loads.*"
     },
     {
-      "description": "Improve water quality in Caney and Bear Creeks so at least 40% of the stream lengths can be removed from the 303(d) list by 2015.",
+      "description": "Improve water quality in Caney and Bear Creeks so that at least 40% of the stream lengths can be removed from the 303(d) list of impaired water bodies by 2015.",
       "schedule": "By 2015",
-      "sourceExcerpt": "• Improve water quality in Caney and Bear Creeks so that at least 40% of the stream lengths can be removed from the 303(d) list of impaired water bodies by 2015."
+      "sourceExcerpt": "Improve water quality in Caney and Bear Creeks so that at least 40% of the stream lengths can be removed from the 303(d) list of impaired water bodies by 2015."
     },
     {
-      "description": "Restore at least 20 acres of riparian buffer in the Bear and Yellow Creek Watersheds.",
-      "schedule": "First three years of the project",
-      "sourceExcerpt": "• Restoration of at least 20 acres of riparian buffer in the Bear and Yellow Creek Watersheds."
+      "description": "Attain water quality standards in Indian Creek from the Iuka POTW outfall to Pickens Branch.",
+      "schedule": "Within initial project term",
+      "sourceExcerpt": "Attainment of water quality standards in Indian Creek from the Iuka POTW outfall to Pickens Branch."
     },
     {
-      "description": "Stabilize at least 1,500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds.",
+      "description": "Restore at least 20 acres of riparian buffer, revegetate at least 10 miles of logging roads, and stabilize at least 1500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds.",
       "schedule": "First three years of the project",
-      "sourceExcerpt": "• Stabilization of at least 1500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds."
+      "sourceExcerpt": "Restoration of at least 20 acres of riparian buffer ... revegetation of at least 10 miles of logging roads ... stabilization of at least 1500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds."
     }
   ],
   "bmps": [
     {
       "name": "Animal Exclusion",
-      "description": "Install fencing to prevent animal access to stream banks; plant excluded lands in hardwood vegetation and install alternate water systems if needed.",
-      "type": "Nutrient",
+      "description": "Install fencing to prevent animal access to stream banks and plant excluded lands in hardwood vegetation to provide a buffer.",
+      "type": "Sediment",
       "targetAreas": [
         "Bear Creek",
         "Cripple Deer Creek",
         "Little Cripple Deer Creek",
         "Holly Branch",
-        "Yellow Creek"
+        "Yellow Creek watershed"
       ],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing (offered during project implementation)",
-      "sourceExcerpt": "Cost-share assistance will be available to land owners who install fencing to prevent animal access to stream banks in listed portions of Bear, Cripple Deer and Little Cripple Deer Creeks, Holly Branch and all areas in the Yellow Creek watershed."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Animal Exclusion – Cost-share assistance will be available to land owners who install fencing to prevent animal access to stream banks in listed portions of Bear, Cripple Deer and Little Cripple Deer Creeks, Holly Branch and all areas in the Yellow Creek watershed. Assistance will also be available to plant excluded lands in hardwood vegetation to provide a buffer for the adjacent stream bank."
     },
     {
       "name": "Pasture Restoration",
-      "description": "Restore overgrazed or poorly conditioned pastures and convert to native warm-season grasses where possible.",
+      "description": "Restore overgrazed or poor-condition pastures, potentially converting to native warm-season grasses.",
       "type": "Nutrient",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
+      "targetAreas": ["Pastures"],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Cost-share assistance will be available to land owners who wish to restore overgrazed pastures or pastures which have been identified as being in poor condition."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Pasture Restoration – Cost-share assistance will be available to land owners who wish to restore overgrazed pastures or pastures which have been identified as being in poor condition."
     },
     {
       "name": "Rotational Grazing",
-      "description": "Install fencing to divide pastures and implement rotational grazing.",
+      "description": "Install fencing to divide pastures to enable rotational grazing and prevent overgrazing.",
       "type": "Nutrient",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
+      "targetAreas": ["Pastures"],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Cost-share assistance will be available to land owners who install fencing to divide pastures so that rotational grazing can be used to prevent overgrazing and pasture degradation."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Rotational Grazing – Cost-share assistance will be available to land owners who install fencing to divide pastures so that rotational grazing can be used to prevent overgrazing and pasture degradation."
     },
     {
       "name": "Grade Stabilization",
-      "description": "Construct stabilization structures to reduce erosion in gullies, ditches and other drainages.",
+      "description": "Construct grade stabilization structures to reduce erosion in gullies, ditches and other drainages.",
       "type": "Sediment",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
+      "targetAreas": ["Gullies", "ditches", "drainages"],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Cost share assistance will be available to land owners to construct stabilization structures to reduce erosion in gullies, ditches and other drainages."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Grade Stabilization – Cost share assistance will be available to land owners to construct stabilization structures to reduce erosion in gullies, ditches and other drainages."
     },
     {
       "name": "Sediment Basin",
       "description": "Construct settling basins, retention ponds or similar structures to reduce sediment run-off from agricultural lands.",
       "type": "Sediment",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
+      "targetAreas": ["Agricultural lands"],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Cost share assistance will be available to land owners to construct settling basins, retention ponds or similar structures to reduce sediment run-off from agricultural lands."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Sediment Basin – Cost share assistance will be available to land owners to construct settling basins, retention ponds or similar structures to reduce sediment run-off from agricultural lands."
     },
     {
       "name": "Harvest Planning",
-      "description": "Develop a harvest plan with BMPs for logging roads, landings, and stream crossings; required for cost-share assistance after timber harvest activities.",
+      "description": "Develop harvest plans for landowners to outline BMPs for logging and minimize sedimentation.",
       "type": "Sediment",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
+      "targetAreas": ["Forestlands"],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Land owners wishing to receive funding assistance through this project will work with the Mississippi Forestry Commission to develop a harvest plan for their land."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Harvest Planning – Land owners wishing to receive funding assistance through this project will work with the Mississippi Forestry Commission to develop a harvest plan ... including proper Best Management Practices (BMPs)..."
     },
     {
       "name": "Logging Road Revegetation",
-      "description": "Sow grasses along logging roads immediately after harvest; includes grading as needed for runoff control.",
+      "description": "Sow grasses along logging roads immediately after harvest and regrade to redirect runoff.",
       "type": "Sediment",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
-      "unit": "mi",
-      "quantity": 10,
+      "targetAreas": ["Logging roads"],
+      "quantity": null,
+      "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Cost-share assistance will be available to sow grasses along logging roads immediately after harvest is complete."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Logging Road Revegetation – Cost-share assistance will be available to sow grasses along logging roads immediately after harvest is complete."
     },
     {
       "name": "Landing Restoration",
-      "description": "Sow grasses throughout logging landing areas used during operations.",
+      "description": "Sow grasses on logging landings used to stage equipment.",
       "type": "Sediment",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
+      "targetAreas": ["Logging landings"],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Cost-share assistance will be available to sow grasses throughout areas used to stage equipment and activities during logging operations."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Landing Restoration – Cost-share assistance will be available to sow grasses throughout areas used to stage equipment ..."
     },
     {
       "name": "Stream Crossing Restoration",
-      "description": "Grade and reforest any areas where stream crossings were required during harvest activities, stabilize stream banks as needed.",
+      "description": "Grade and reforest areas where logging stream crossings were required and stabilize streambanks.",
       "type": "Sediment",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
+      "targetAreas": ["Stream crossings"],
+      "quantity": null,
       "unit": null,
       "estimatedCost": null,
-      "schedule": "Ongoing",
-      "sourceExcerpt": "Cost-share assistance will be available to grade and reforest any areas where stream crossings were required during harvest activities."
+      "schedule": "Throughout project implementation",
+      "sourceExcerpt": "Stream Crossing Restoration – Cost-share assistance will be available to grade and reforest any areas where stream crossings were required during harvest activities. If needed, funds will also be available to stabilize stream banks in these areas ..."
     },
     {
       "name": "Riparian Buffer Restoration",
-      "description": "Restore at least 20 acres of riparian buffer in the Bear and Yellow Creek Watersheds.",
-      "type": "Nutrient",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
-      "unit": "ac",
+      "description": "Restore at least 20 acres of riparian buffer in Bear and Yellow Creek Watersheds.",
+      "type": "Sediment",
+      "targetAreas": ["Riparian zones"],
       "quantity": 20,
+      "unit": "acres",
       "estimatedCost": null,
-      "schedule": "First three years of the project",
-      "sourceExcerpt": "• Restoration of at least 20 acres of riparian buffer in the Bear and Yellow Creek Watersheds."
+      "schedule": "Within initial project term",
+      "sourceExcerpt": "Restoration of at least 20 acres of riparian buffer in the Bear and Yellow Creek Watersheds."
+    },
+    {
+      "name": "Logging Road Revegetation (quantified)",
+      "description": "Revegetate at least 10 miles of logging roads in Bear and Yellow Creek Watersheds.",
+      "type": "Sediment",
+      "targetAreas": ["Logging roads"],
+      "quantity": 10,
+      "unit": "miles",
+      "estimatedCost": null,
+      "schedule": "Within initial project term",
+      "sourceExcerpt": "Revegetation of at least 10 miles of logging roads in the Bear and Yellow Creek Watersheds."
     },
     {
       "name": "Stream Bank Stabilization",
-      "description": "Stabilize at least 1,500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds.",
+      "description": "Stabilize at least 1500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds.",
       "type": "Sediment",
-      "targetAreas": ["Bear Creek", "Yellow Creek"],
-      "unit": "ft",
+      "targetAreas": ["Stream banks"],
       "quantity": 1500,
+      "unit": "feet",
       "estimatedCost": null,
-      "schedule": "First three years of the project",
-      "sourceExcerpt": "• Stabilization of at least 1500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds."
+      "schedule": "Within initial project term",
+      "sourceExcerpt": "Stabilization of at least 1500 feet of severely eroding stream bank in the Bear and Yellow Creek Watersheds."
     }
   ],
   "implementation": [
@@ -231,11 +250,11 @@
           "name": "MFC"
         }
       ],
-      "status": "planned",
+      "status": "in progress",
       "sourceExcerpt": "Solicit land owner participation in cost share programs June 2008 August 2011 SWCD, MFC"
     },
     {
-      "description": "Develop demonstration sites to increase public awareness and involvement.",
+      "description": "Develop demonstration sites to increase public awareness/involvement.",
       "responsibleParties": [
         {
           "name": "TVA"
@@ -248,7 +267,7 @@
         }
       ],
       "status": "completed",
-      "sourceExcerpt": "Develop demonstration sites to increase public awareness/ involvement June 2008 June 2009 TVA, SWCD, MFC"
+      "sourceExcerpt": "Develop demonstration sites to increase public awareness/involvement June 2008 June 2009 TVA, SWCD, MFC"
     },
     {
       "description": "Host site tour to highlight BMPs and watershed activities.",
@@ -289,7 +308,7 @@
           "name": "TVA"
         }
       ],
-      "status": "planned",
+      "status": "completed",
       "sourceExcerpt": "Develop Source Water Protection Plan for Short Coleman Water Association July 2009 March 2010 MDEQ, EPA, TVA"
     },
     {
@@ -306,16 +325,6 @@
       "sourceExcerpt": "Conduct educational events for public awareness and participation September 2008 End of project TVA, EPA"
     },
     {
-      "description": "Provide regular project updates to partners, local residents, government officials and interested parties.",
-      "responsibleParties": [
-        {
-          "name": "All partners"
-        }
-      ],
-      "status": "in progress",
-      "sourceExcerpt": "Provide regular project updates to partners, local residents, government officials and interested parties June 2008 End of project All partners"
-    },
-    {
       "description": "Establish BMPs on lands throughout the watershed to reduce pollution loading.",
       "responsibleParties": [
         {
@@ -327,73 +336,14 @@
       ],
       "status": "in progress",
       "sourceExcerpt": "Establish BMPs on lands throughout the watershed to reduce pollution loading June 2008 End of project SWCD, MFC"
-    },
-    {
-      "description": "Conduct septic system education events and assist home-owners with failing septic systems.",
-      "responsibleParties": [
-        {
-          "name": "TVA"
-        },
-        {
-          "name": "EPA"
-        }
-      ],
-      "status": "in progress",
-      "sourceExcerpt": "Conduct septic system education events and assist home-owners with failing septic systems June 2008 End of project TVA, EPA"
-    },
-    {
-      "description": "Conduct water quality protection events with reservoir user groups to increase awareness for source water protection.",
-      "responsibleParties": [
-        {
-          "name": "TVA"
-        }
-      ],
-      "status": "in progress",
-      "sourceExcerpt": "Conduct water quality protection events with reservoir user groups to increase awareness for source water protection October 2008 End of project TVA"
-    },
-    {
-      "description": "Conduct regular public meetings to provide updates/information.",
-      "responsibleParties": [
-        {
-          "name": "All partners"
-        }
-      ],
-      "status": "in progress",
-      "sourceExcerpt": "Conduct regular public meetings to provide updates/information June 2008 End of project All partners"
-    },
-    {
-      "description": "Monitor chemical status.",
-      "responsibleParties": [
-        {
-          "name": "TVA"
-        },
-        {
-          "name": "MDEQ"
-        }
-      ],
-      "status": "planned",
-      "sourceExcerpt": "Monitor chemical status September 2008 December 2011 TVA, MDEQ"
-    },
-    {
-      "description": "Monitor biological status.",
-      "responsibleParties": [
-        {
-          "name": "TVA"
-        },
-        {
-          "name": "MDEQ"
-        }
-      ],
-      "status": "in progress",
-      "sourceExcerpt": "Monitor biological status January 2008 December 2013 TVA, MDEQ"
     }
   ],
   "monitoring": [
     {
-      "parameter": "Macroinvertebrate Index (MBISQ)",
+      "parameter": "Benthic Macroinvertebrates",
       "type": "biological",
-      "method": "MDEQ standard protocols or TVA Level II sampling protocol",
-      "frequency": "Twice per 5-year interval (beginning of project, year 3, year 5)",
+      "method": "MBISQ standard protocols or TVA Level II protocols; joint sampling with MDEQ/TVA",
+      "frequency": "Twice every five years (initial, then after three years, then two more years)",
       "thresholds": [],
       "locations": [
         "Caney Creek at Mississippi Highway 365",
@@ -401,148 +351,219 @@
         "Bear Creek at Mississippi Highway 30",
         "Bear Creek at County Road 86",
         "Cripple Deer Creek at County Road 157",
-        "Cripple Deer Creek at the Alabama/Mississippi state line",
+        "Cripple Deer Creek at AL/MS state line",
         "Holly Branch at County Road 85"
       ],
-      "sourceExcerpt": "Macroinvertebrate data will be collected twice during each five year interval. Initial data will be collected at the beginning of the project (2008). Additional data will be collected after three years (2011) and again after two more years (2013)."
+      "sourceExcerpt": "Biological monitoring during this project will consist of benthic macroinvertebrates, fish and bacteriological collections."
     },
     {
       "parameter": "Fish Index of Biotic Integrity",
       "type": "biological",
-      "method": "TVA routine protocols",
-      "frequency": "Every five years",
+      "method": "TVA Fish IBI protocols",
+      "frequency": "Every five years (initial, then five years later)",
       "thresholds": [],
       "locations": [
-        "Bear Creek at Mississippi Highway 30",
-        "Bear Creek at County Road 86"
+        "TVA routine locations in Bear Creek and Yellow Creek watersheds"
       ],
-      "sourceExcerpt": "Fish data will be collected every five years. Initial data will be collected at the beginning of the project (2008) and additional data will be collected in five years (2013)."
+      "sourceExcerpt": "Fish data will be collected every five years. Initial data ... and additional data ... in five years."
     },
     {
       "parameter": "Total Suspended Solids (TSS)",
       "type": "chemical",
-      "method": "Monthly in situ/lab sampling, QA/QC per MDEQ/TVA standards",
-      "frequency": "Monthly at all sites",
+      "method": "Water sampling, laboratory analysis following quality protocols",
+      "frequency": "Monthly at all sites, plus storm event sampling at selected BMP locations",
       "thresholds": [],
       "locations": [
-        "Choate Creek at County Road 260",
-        "Coke Creek at County Road 944",
-        "Caney Creek at Mississippi Highway 365",
-        "Caney Creek at County Road 300",
-        "Little Yellow Creek at Mississippi Highway 365",
+        "Choate Creek at CR 260",
+        "Coke Creek at CR 944",
+        "Caney Creek at MS Hwy 365",
+        "Caney Creek at CR 300",
+        "Little Yellow Creek at MS Hwy 365",
         "Little Yellow Creek at mouth",
-        "Bear Creek at Mississippi Highway 30",
+        "Bear Creek at MS Hwy 30",
         "Bear Creek at Natchez Trace Parkway",
-        "Bear Creek at County Road 86",
-        "Bear Creek at County Road 68",
-        "Cripple Deer Creek at Mississippi Highway 25",
-        "Cripple Deer Creek at County Road 157",
-        "Cripple Deer Creek at the Alabama/Mississippi state line",
-        "Little Cripple Deer Creek at County Road 957",
-        "Holly Branch at County Road 85"
+        "Bear Creek at CR 86",
+        "Bear Creek at CR 68",
+        "Cripple Deer Creek at MS Hwy 25",
+        "Cripple Deer Creek at CR 157",
+        "Cripple Deer Creek at AL/MS state line",
+        "Little Cripple Deer Creek at CR 957",
+        "Holly Branch at CR 85"
       ],
-      "sourceExcerpt": "Chemical monitoring during this project will consist of multiple parameters sampled on a monthly basis throughout the project period... Measurements of total suspended solids (TSS)... will be used to tract reductions in sediment loading in these streams."
+      "sourceExcerpt": "Measurements of total suspended solids (TSS) and turbidity will be used to tract reductions in sediment loading in these streams."
+    },
+    {
+      "parameter": "Turbidity",
+      "type": "chemical",
+      "method": "In-situ measurements following QA/QC protocols",
+      "frequency": "Monthly at all sites, plus storm event sampling at selected BMP locations",
+      "thresholds": [],
+      "locations": ["Same as for TSS (see above locations)"],
+      "sourceExcerpt": "Measurements of total suspended solids (TSS) and turbidity will be used to tract reductions in sediment loading in these streams."
     },
     {
       "parameter": "Dissolved Oxygen (DO)",
       "type": "chemical",
-      "method": "Monthly sampling; devices with temperature, pH, conductivity",
-      "frequency": "Monthly; before 10:00 a.m. during summer in Yellow Creek watershed (May-September)",
+      "method": "In-situ measurements before 10:00 a.m. during summer months",
+      "frequency": "Monthly at all sites",
       "thresholds": [],
-      "locations": ["All chemical monitoring sites"],
-      "sourceExcerpt": "Measurements of dissolved oxygen (DO) and biological oxygen demand (BOD) will be used to tract conditions. Since nutrient loading in a stream greatly affects conditions leading to low DO impairment..."
+      "locations": ["Same as for TSS (see above locations)"],
+      "sourceExcerpt": "Measurements of dissolved oxygen (DO) and biological oxygen demand (BOD) will be used to tract conditions."
+    },
+    {
+      "parameter": "Biological Oxygen Demand (BOD)",
+      "type": "chemical",
+      "method": "Laboratory analysis",
+      "frequency": "Monthly at all sites",
+      "thresholds": [],
+      "locations": ["Same as for TSS (see above locations)"],
+      "sourceExcerpt": "Measurements of dissolved oxygen (DO) and biological oxygen demand (BOD) will be used to tract conditions."
+    },
+    {
+      "parameter": "Nitrogen (TKN, NO2-NO3, NH3-N)",
+      "type": "chemical",
+      "method": "Laboratory analysis",
+      "frequency": "Monthly at all sites",
+      "thresholds": [],
+      "locations": ["Same as for TSS (see above locations)"],
+      "sourceExcerpt": "Nitrogen (TKN, NO2-NO3 and NH3-N) and Phosphorus (TP) levels will also be monitored."
+    },
+    {
+      "parameter": "Total Phosphorus (TP)",
+      "type": "chemical",
+      "method": "Laboratory analysis",
+      "frequency": "Monthly at all sites",
+      "thresholds": [],
+      "locations": ["Same as for TSS (see above locations)"],
+      "sourceExcerpt": "Nitrogen (TKN, NO2-NO3 and NH3-N) and Phosphorus (TP) levels will also be monitored."
+    },
+    {
+      "parameter": "Temperature, pH, Conductivity, Alkalinity, Hardness",
+      "type": "chemical",
+      "method": "In-situ measurements or laboratory analysis",
+      "frequency": "Monthly at all sites",
+      "thresholds": [],
+      "locations": ["Same as for TSS (see above locations)"],
+      "sourceExcerpt": "Since most devices used to measure DO also contain temperature, pH and conductivity capabilities, these parameters will also be measured."
     }
   ],
   "outreach": [
     {
       "type": "public meeting",
-      "description": "Conduct public meetings during initial phases to increase awareness of local citizens and introduce project plans.",
-      "schedule": "Initial and periodic during project",
-      "indicator": "Attendance and participation",
-      "partners": ["All partners"],
-      "sourceExcerpt": "Public Meetings – Meetings will be conducted during the initial phases of this project to increase awareness of local citizens concerning current issues in the watersheds and to introduce project plans to potential partners."
+      "description": "Host public forums to increase awareness among local citizens and share project information; update meetings throughout the project.",
+      "schedule": "Initial phases and periodically during project",
+      "indicator": "Number of meetings, attendance, awareness metrics",
+      "partners": ["All partners", "Implementation Team"],
+      "sourceExcerpt": "Public forums will begin during the summer and fall of 2008 to increase awareness of water quality issues with local land owners. ... Periodically during the project, additional meetings may be conducted to help keep interested citizens up-to-date."
     },
     {
       "type": "stakeholder presentation",
-      "description": "Presentations to stakeholder groups (Cattlemen’s Association, Forestry Association, Economic Development agencies) to introduce project and provide updates.",
-      "schedule": "Periodically",
-      "indicator": "Stakeholder engagement",
-      "partners": ["All partners"],
-      "sourceExcerpt": "Stakeholder Presentations – Periodically, partners will meet with local stakeholder groups... to introduce this project to members and keep them up-to-date with project activities."
+      "description": "Present the project to stakeholder groups and provide ongoing updates.",
+      "schedule": "Periodically during project",
+      "indicator": "Presentations conducted; stakeholder engagement",
+      "partners": ["Implementation Team", "TVA"],
+      "sourceExcerpt": "Periodically, partners will meet with local stakeholder groups (Cattlemen’s Association, Forestry Association, Economic Development agencies, etc.) to introduce this project to members and keep them up-to-date..."
     },
     {
       "type": "government briefing",
-      "description": "Presentations and written reports to local, state, and federal agencies to provide project summaries and results.",
+      "description": "Brief local, state, and federal agencies on project results and progress.",
       "schedule": "As needed",
-      "indicator": "Agency feedback, report completions",
-      "partners": ["All partners"],
-      "sourceExcerpt": "Government Briefings – As needed, presentations will be made to local, state and federal agencies to provide project summaries and present results."
+      "indicator": "Briefings given",
+      "partners": ["Implementation Team"],
+      "sourceExcerpt": "As needed, presentations will be made to local, state and federal agencies to provide project summaries and present results."
     },
     {
-      "type": "activity workshop",
-      "description": "Workshops for watershed residents (e.g., septic system maintenance, clean boating, riparian buffers, forestry, Envirothon, Secchi Day).",
-      "schedule": "As needed",
-      "indicator": "Number of events held",
-      "partners": ["All partners"],
-      "sourceExcerpt": "Activity Workshops – As needed, workshops will be held to distribute information and ideas to watershed residents concerning various aspects of this project."
+      "type": "workshops",
+      "description": "Educational workshops for watershed residents (e.g., septic system, clean boating, riparian buffer seminars, forestry, water quality events).",
+      "schedule": "As needed during project",
+      "indicator": "Workshops held, participants reached",
+      "partners": ["TVA", "Implementation Team"],
+      "sourceExcerpt": "Workshops will include, but may not be limited to: Septic system maintenance workshops, Clean boating events, Riparian buffer seminars, Forestry planning workshops, Watershed Harmony presentations, Secchi Day, Envirothon, Water quality educational video"
     },
     {
-      "type": "project tour",
-      "description": "Tours given to interested land owners, potential partners, and agencies highlighting BMP project successes.",
+      "type": "project tours",
+      "description": "Conduct site tours for land owners, partners, and agencies to highlight BMP implementation and project successes.",
       "schedule": "As BMPs are implemented",
-      "indicator": "Number of tours and participants",
-      "partners": ["All partners"],
-      "sourceExcerpt": "Project Tours – As BMP projects are implemented, tours will be given to interested land owners, potential partners and various agencies to increase awareness of project activities and to highlight project successes."
+      "indicator": "Tours held, attendance",
+      "partners": ["TVA", "SWCD", "MFC"],
+      "sourceExcerpt": "As BMP projects are implemented, tours will be given to interested land owners, potential partners and various agencies to increase awareness of project activities and to highlight project successes."
     },
     {
-      "type": "education event",
-      "description": "Hands-on educational events with area schools and organizations to increase awareness of water quality issues.",
-      "schedule": "Periodic",
-      "indicator": "Number of events, student engagement",
-      "partners": ["All partners"],
-      "sourceExcerpt": "Watershed Education Events – Partners will work with area schools and organizations to provide hands-on educational events to increase awareness of water quality issues..."
-    },
-    {
-      "type": "public information update",
-      "description": "Regular updates to partners, local residents, government officials, and interested parties.",
-      "schedule": "June 2008 to end of project",
-      "indicator": "Regularity of updates",
-      "partners": ["All partners"],
-      "sourceExcerpt": "Provide regular project updates to partners, local residents, government officials and interested parties June 2008 End of project All partners"
+      "type": "youth education event",
+      "description": "Watershed education events with area schools and organizations for hands-on experience and water quality awareness.",
+      "schedule": "As opportunities arise during project",
+      "indicator": "Events, students reached",
+      "partners": ["TVA", "Implementation Team"],
+      "sourceExcerpt": "Partners will work with area schools and organizations to provide hands-on educational events to increase awareness of water quality issues..."
     }
   ],
   "geographicAreas": [
     {
-      "huc": "06030005",
-      "watershedName": "Pickwick Reservoir Watershed",
-      "counties": ["Tishomingo"],
-      "state": "Mississippi",
-      "sourceExcerpt": "Pickwick Reservoir Watersheds (MS-06030005 and MS-0603006, in part)"
-    },
-    {
-      "huc": "06030006",
-      "watershedName": "Pickwick Reservoir Watershed",
-      "counties": ["Tishomingo"],
-      "state": "Mississippi",
-      "sourceExcerpt": "Pickwick Reservoir Watersheds (MS-06030005 and MS-0603006, in part)"
-    },
-    {
+      "huc": null,
       "watershedName": "Yellow Creek Watershed",
-      "counties": ["Tishomingo"],
+      "counties": ["Tishomingo", "Alcorn"],
       "state": "Mississippi",
-      "sourceExcerpt": "Yellow Creek enters Pickwick Reservoir at TRM 215 near the Tennessee-Mississippi state line."
+      "sourceExcerpt": "Yellow Creek enters Pickwick Reservoir at TRM 215 near the Tennessee-Mississippi state line. The lower 6 miles of Yellow Creek are impounded by Pickwick Reservoir..."
     },
     {
+      "huc": null,
       "watershedName": "Bear Creek Watershed",
       "counties": ["Tishomingo"],
       "state": "Mississippi",
-      "sourceExcerpt": "Bear Creek enters Pickwick Reservoir at TRM 225 near the Mississippi-Alabama state line."
+      "sourceExcerpt": "Bear Creek enters Pickwick Reservoir at TRM 225 near the Mississippi-Alabama state line. ... Bear Creek headwaters are located in Franklin and Winston Counties in Alabama. The stream flows west 53 miles through Alabama before entering Mississippi. It then flows north 27 miles through Tishomingo County, Mississippi, before re-entering Alabama."
     },
     {
+      "huc": null,
       "watershedName": "Indian Creek Watershed",
       "counties": ["Tishomingo"],
       "state": "Mississippi",
       "sourceExcerpt": "Indian Creek enters Pickwick Reservoir at TRM 220. Its headwaters drain through the city of Iuka."
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Tennessee Valley Authority",
+      "role": "Watershed Plan Facilitation",
+      "organization": "Tennessee Valley Authority",
+      "phone": "(256) 386-2562",
+      "email": null
+    },
+    {
+      "name": "Tishomingo County Soil and Water Conservation District",
+      "role": "Project Contact and Coordination",
+      "organization": "Tishomingo County Soil and Water Conservation District",
+      "phone": "(662) 423-6272",
+      "email": null
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Pickwick Reservoir Watershed Implementation Team",
+      "contact": {
+        "name": null,
+        "role": "Coordination and implementation"
+      }
+    },
+    {
+      "name": "Tennessee Valley Authority",
+      "contact": {
+        "name": null,
+        "role": "Facilitation, Source Water Protection, Education/Outreach"
+      }
+    },
+    {
+      "name": "Tishomingo County Soil and Water Conservation District",
+      "contact": {
+        "name": null,
+        "role": "Project Coordination, Agricultural Activities"
+      }
+    },
+    {
+      "name": "Mississippi Forestry Commission",
+      "contact": {
+        "name": null,
+        "role": "Silviculture, BMP oversight"
+      }
     }
   ]
 }
