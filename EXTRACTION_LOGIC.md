@@ -35,6 +35,12 @@ The backend accepts a watershed plan PDF and supports three extraction modes, de
 - The API enforces that the LLM returns output in strict JSON format, following the expected schema for watershed management data.
 - The backend validates the output and maps it to TypeScript interfaces, omitting any null or undefined optional fields.
 
+### Current Model Usage
+
+- **Extraction**: Currently uses GPT-4.1 for optimal accuracy across all extraction modes.
+- **Accuracy Testing**: Uses GPT-4.1 for comparing extracted data against ground truth.
+- **Goal**: Transition to faster, cheaper models (e.g., GPT-4.1-nano) by improving prompts or fine-tuning to maintain accuracy while reducing costs.
+
 ## Key Steps
 
 1. **PDF Parsing:** Uses `pdf-parse` (extract1, extract2) or OpenAI file upload (extract3).
