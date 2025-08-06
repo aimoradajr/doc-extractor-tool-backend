@@ -6,20 +6,9 @@
   },
   "goals": [
     {
-      "description": "Reduce sediment loading in Broken Pumpkin Creek to restore aquatic life use and improve water quality.",
-      "sourceExcerpt": "This analysis identified sediment as the primary probable stressor of the water body and a TMDL was developed... Based on the ranges of stable and unstable yield values, a reduction in sediment of 77% to 97% is recommended in the Broken Pumpkin Creek watershed."
-    },
-    {
-      "description": "Implement best management practices (BMPs) to control nonpoint source pollution and achieve TMDL targets.",
-      "sourceExcerpt": "The USDA NRCS has a list of approved BMPS to address sedimentation and this list will be used to identify candidate BMPs in Broken Pumpkin Creek watershed."
-    },
-    {
-      "description": "Monitor water quality and track biological integrity to evaluate the effectiveness of implemented BMPs.",
-      "sourceExcerpt": "Facilitate... the completion and implementation of an effective and efficient plan to monitor baseline water quality conditions in the watershed and track changes in water quality over time resulting from the BMPs implemented through this project."
-    },
-    {
-      "description": "Engage and educate stakeholders to promote community involvement and support for watershed protection.",
-      "sourceExcerpt": "The ultimate goal is to bring about behavior changes and the use of “best management practices” that will improve water quality and the overall quality of life in the watershed."
+      "description": "Reduce sediment yields by 77-97% within the Broken Pumpkin Creek watershed to reflect stable conditions.",
+      "schedule": "Through incremental funding cycles within the project period.",
+      "sourceExcerpt": "The sediment TMDL ... concluded yields would need to be reduced by 77-97% within the watersheds in order to reflect stable conditions."
     }
   ],
   "bmps": [

@@ -45,7 +45,7 @@ export class OpenAIService {
           },
         ],
         temperature: 0.1,
-        max_tokens: 4000, // Increased for detailed comparison responses
+        max_tokens: 10000, // Increased for detailed comparison responses
       });
 
       const content = response.choices[0]?.message?.content;
@@ -616,7 +616,8 @@ IMPORTANT INSTRUCTIONS:
    - If a number is mentioned, capture both the value and unit
 
 6. 'GOAL' EXTRACTION RULES:
-   - A goal is any major intended goal that is explicitly stated in the watershed plan as something to be achieved, established, or completed. This includes environmental targets, project milestones, management steps, and outreach/education achievements.
+   - A goal is any major intended goal that is explicitly stated in the watershed plan as something to be achieved, established, or completed. Goals are broad, high-level targets (such as environmental outcomes, water quality improvements, or awareness increases).
+   - Milestones are NOT goals. Milestones are considered part of implementation—they are specific steps, deadlines, or progress markers that track the completion of activities toward goals. Do not extract milestones as goals.
    - Only extract goals that are clearly defined and explicitly stated in the document. Do not infer, summarize, or create goals that are not directly described or labeled in the text.
    - Goals may be found in narrative text, bullet lists, or tables under sections like "Goals," "Objectives," or similar headings.
    - HINTS for finding goals:
