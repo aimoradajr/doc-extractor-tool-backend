@@ -48,6 +48,7 @@ export interface ExtractedData {
   organizations?: Organization[];
   reportSummary?: ReportSummary;
   prompt_id_used?: boolean;
+  processingTimeMs?: number; // Runtime in milliseconds
 }
 
 // =============================================================================

@@ -29,9 +29,15 @@ export class UploadController {
     req: Request,
     res: Response<ExtractedData | ErrorResponse>
   ) => {
+    const startTime = Date.now();
     try {
       const result = await pdfService.extractStructuredData(req.file!.path);
-      res.json(result);
+      const processingTimeMs = Date.now() - startTime;
+
+      res.json({
+        ...result,
+        processingTimeMs,
+      });
     } catch (error) {
       console.error("Structured extraction error:", error);
       res.status(500).json({ error: "Failed to extract structured data" });
@@ -42,12 +48,18 @@ export class UploadController {
     req: Request,
     res: Response<ExtractedData | ErrorResponse>
   ) => {
+    const startTime = Date.now();
     try {
       const result = await pdfService.extractStructuredData_WithResponsesAPI(
         req.file!.path,
         false // Don't use direct file upload for extract2
       );
-      res.json(result);
+      const processingTimeMs = Date.now() - startTime;
+
+      res.json({
+        ...result,
+        processingTimeMs,
+      });
     } catch (error) {
       console.error("Structured extraction error (Responses API):", error);
       res.status(500).json({
@@ -60,12 +72,18 @@ export class UploadController {
     req: Request,
     res: Response<ExtractedData | ErrorResponse>
   ) => {
+    const startTime = Date.now();
     try {
       const result = await pdfService.extractStructuredData_WithResponsesAPI(
         req.file!.path,
         true // Use direct file upload
       );
-      res.json(result);
+      const processingTimeMs = Date.now() - startTime;
+
+      res.json({
+        ...result,
+        processingTimeMs,
+      });
     } catch (error) {
       console.error("Structured extraction error (Direct File Upload):", error);
       res.status(500).json({
