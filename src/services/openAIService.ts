@@ -1,9 +1,8 @@
 import OpenAI from "openai";
 import { ExtractedData, AccuracyTestResult } from "../types/types";
 
-// EASY MODEL SWITCHING - Just change this line!
-// const EXTRACT_MODEL = "gpt-3.5-turbo"; // or "gpt-4"
-const EXTRACT_MODEL = "gpt-4.1"; // Use gpt-4 for better accuracy
+// EASY MODEL SWITCHING - Now configured via .env (OPENAI_MODEL)
+const EXTRACT_MODEL = process.env.OPENAI_MODEL || "gpt-4.1";
 
 export class OpenAIService {
   private openai: OpenAI;
